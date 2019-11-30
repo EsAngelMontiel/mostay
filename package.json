@@ -1,16 +1,15 @@
 {
-  "name": "Mostay Basic Structure",
-  "version": "0.0.2",
-  "description": "The basic structure for future projects",
+  "name": "Mostay Web Site",
+  "version": "1.0",
+  "description": "Mostay Web Site Development",
   "repository": {
     "type": "git",
     "url": "?.git"
   },
   "author": "Mostay",
   "devDependencies": {
-    "bourbon": "^4.2.7",
-    "neat": "^2.0.0",
+    "Bootstrap": "^4.4.1",
     "Sass": "^3.4",
-    "LibSass": "^3.3"
+    "Codekit": "^3"
   }
 }

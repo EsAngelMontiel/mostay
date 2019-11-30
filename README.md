@@ -1,16 +1,15 @@
 # README #
 
-Esta es la estructura básica para el desarrollo de proyectos web y front end de Mostay.
+Sitio Web de Mostay.
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
+* Desarrollo del Sitio web de Mostay
+* 1.0
 
 ### How do I get set up? ###
 
-* Bourbun
-* Neat
+* Bootstrap
 * Sass
 * Codekit
 
