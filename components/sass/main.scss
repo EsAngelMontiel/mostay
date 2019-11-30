@@ -1,5 +1,58 @@
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
 @import "0-plugins/reset";
 @import "0-plugins/normalize";
+
+@import "0-plugins/bootstrap/functions";
+@import "0-plugins/bootstrap/variables";
+@import "0-plugins/bootstrap/mixins";
+@import "0-plugins/bootstrap/root";
+@import "0-plugins/bootstrap/reboot";
+// @import "0-plugins/bootstrap/type";
+@import "0-plugins/bootstrap/images";
+// @import "0-plugins/bootstrap/code";
+@import "0-plugins/bootstrap/grid";
+@import "0-plugins/bootstrap/tables";
+@import "0-plugins/bootstrap/forms";
+// @import "0-plugins/bootstrap/buttons";
+@import "0-plugins/bootstrap/transitions";
+@import "0-plugins/bootstrap/dropdown";
+// @import "0-plugins/bootstrap/button-group";
+// @import "0-plugins/bootstrap/input-group";
+// @import "0-plugins/bootstrap/custom-forms";
+@import "0-plugins/bootstrap/nav";
+@import "0-plugins/bootstrap/navbar";
+@import "0-plugins/bootstrap/card";
+// @import "0-plugins/bootstrap/breadcrumb";
+// @import "0-plugins/bootstrap/pagination";
+// @import "0-plugins/bootstrap/badge";
+// @import "0-plugins/bootstrap/jumbotron";
+@import "0-plugins/bootstrap/alert";
+// @import "0-plugins/bootstrap/progress";
+@import "0-plugins/bootstrap/media";
+// @import "0-plugins/bootstrap/list-group";
+// @import "0-plugins/bootstrap/close";
+// @import "0-plugins/bootstrap/toasts";
+@import "0-plugins/bootstrap/modal";
+@import "0-plugins/bootstrap/tooltip";
+// @import "0-plugins/bootstrap/popover";
+// @import "0-plugins/bootstrap/carousel";
+@import "0-plugins/bootstrap/spinners";
+@import "0-plugins/bootstrap/utilities";
+// @import "0-plugins/bootstrap/print";
+
+/* ----------------------- Font Awesome --------------------------- */
+
+@import "0-plugins/fontawesome/fontawesome.scss";
+@import "0-plugins/fontawesome/solid.scss";
+@import "0-plugins/fontawesome/brands.scss";
+
+/* -----------------------  Custom application specific styles -------------------------- */
 
 @import "variables";
 @import "mixins";
