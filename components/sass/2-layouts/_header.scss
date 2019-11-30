@@ -2,7 +2,90 @@
 /* ************************ HEADER ************************ */
 /* ******************************************************** */
 
-header {}
+$menu-h: 60px ;
+$nav-h: $menu-h - 30 ;
+$nav-padding: 15px ;
+
+header {
+  width: 100% ; height: $menu-h ;
+  position: fixed ;
+  top: 0 ; left: 0 ;
+  background-color: $black ;
+  > h1 {
+    width: 206px ; height: $menu-h ;
+    float: left ;
+    background-color: $red ;
+    > a {
+      width: 206px ; height: $menu-h ;
+      background: url("../img/mostay-logo.svg");
+      background-repeat: no-repeat ;
+      background-position: center ;
+      display: block ;
+      > span {
+        display: none ;
+      }
+    }
+  }
+  > nav {
+    height: $menu-h ;
+    float: left ;
+    padding: $nav-padding ;
+    ul {
+      height: $nav-h ;
+      display: inline-block ;
+      li {
+        height: $nav-h ;
+        display: inline-block ;
+        > a {
+          height: $nav-h ;
+          font-family: $main-font-regular ;
+          font-size: 13px ;
+          line-height: $nav-h ;
+          color: $white ;
+          padding: 0 10px ;
+          display: block ;
+          &:hover {
+            background-color: $red ;
+            text-decoration: none ;
+            color: $white ;
+            border: none ;
+          }
+        }
+      }
+    }
+  }
+  > div.social-networks {
+    height: $menu-h ;
+    float: right ;
+    > ul {
+      height: $menu-h ;
+      padding: $nav-padding ;
+      li {
+        height: $nav-h ;
+        display: inline-block ;
+        margin-left: 5px ;
+        > a {
+          height: $nav-h - 8 ; width: $nav-h - 8 ;
+          display: block ;
+          border-radius: 50% ;
+          background-color: $darkgray ;
+          font-size: 13px ;
+          line-height: $nav-h - 8 ;
+          text-align: center ;
+          > i {
+            color: $black ;
+          }
+          span {
+            display: none ;
+          }
+          &:hover {
+            background-color: $gray ;
+          }
+        }
+      }
+    }
+  }
+}
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */

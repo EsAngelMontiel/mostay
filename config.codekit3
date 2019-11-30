@@ -1696,6 +1696,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/components/sass/2-layouts/_home.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/layout/css/_home.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/components/sass/2-layouts/_main-buttons.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1931,6 +1944,16 @@
 		"oA": 0,
 		"oAP": "/layout/img/favicon.ico",
 		"oF": 0
+		},
+	"/layout/img/mostay-logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/layout/img/mostay-logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
 		},
 	"/layout/img/photo_2015-11-19_18-46-16.jpg": {
 		"ft": 16384,
