@@ -1,0 +1,36 @@
+//breakpoints
+$xmall:   320px ;
+$small:		544px;
+$medium:	768px;
+$large:		1024px;
+
+// Define your breakpoints
+$xl: (
+  columns: 12,
+  gutter: 20px,
+  media: "(min-width: 1025px)",
+); // new-breakpoint(min-width $large+1 12);
+
+$lg: (
+  columns: 12,
+  gutter: 20px,
+  media: "(max-width: 1024px)",
+);  // new-breakpoint(max-width $large 12);
+
+$md: (
+  columns: 12,
+  gutter: 20px,
+  media: "(max-width: 768px)",
+);  // new-breakpoint(max-width $medium 12);
+
+$sm: (
+  columns: 6,
+  gutter: 20px,
+  media: "(max-width: 544px)",
+);  // new-breakpoint(max-width $small 6);
+
+$xm:  (
+  columns: 4,
+  gutter: 20px,
+  media: "(max-width: 320px)",
+); // new-breakpoint(max-width $xmall 4);

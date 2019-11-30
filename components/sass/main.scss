@@ -1,0 +1,12 @@
+@import "0-plugins/reset";
+@import "0-plugins/normalize";
+
+@import "variables";
+@import "mixins";
+
+@import "1-base/base";
+@import "1-base/media";
+
+@import "2-layouts/header";
+@import "2-layouts/footer";
+@import "2-layouts/main-buttons";
