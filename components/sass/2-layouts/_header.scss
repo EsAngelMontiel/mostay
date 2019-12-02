@@ -2,15 +2,14 @@
 /* ************************ HEADER ************************ */
 /* ******************************************************** */
 
-$menu-h: 60px ;
-$nav-h: $menu-h - 30 ;
-$nav-padding: 15px ;
+
 
 header {
   width: 100% ; height: $menu-h ;
   position: fixed ;
   top: 0 ; left: 0 ;
   background-color: $black ;
+  z-index: 9 ;
   > h1 {
     width: 206px ; height: $menu-h ;
     float: left ;

@@ -1670,6 +1670,32 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/components/sass/2-layouts/_blog.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/layout/css/_blog.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"/components/sass/2-layouts/_cursos.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/layout/css/_cursos.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/components/sass/2-layouts/_footer.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1718,6 +1744,19 @@
 		"ma": 1,
 		"oA": 1,
 		"oAP": "/components/layout/css/_main-buttons.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"/components/sass/2-layouts/_portafolio.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/layout/css/_portafolio.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -1771,6 +1810,14 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/layout/blog.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/blog.html",
+		"oF": 0
 		},
 	"/layout/css/main.css": {
 		"aP": 1,
@@ -1937,6 +1984,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/layout/img/breadcrumb-bg.jpg": {
+		"ft": 16384,
+		"iS": 120378,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/layout/img/breadcrumb-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"/layout/img/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
@@ -1944,6 +2002,17 @@
 		"oA": 0,
 		"oAP": "/layout/img/favicon.ico",
 		"oF": 0
+		},
+	"/layout/img/gradient-bg.png": {
+		"ft": 32768,
+		"iS": 1019,
+		"oA": 0,
+		"oAP": "/layout/img/gradient-bg.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"/layout/img/mostay-logo.svg": {
 		"ft": 2097152,
