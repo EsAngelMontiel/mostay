@@ -3,17 +3,41 @@
 /* ******************************************************** */
 
 .blog {
-  div.titulo {
-    h1 {
-      font-family: $main-font ;
-      font-size: 40px ;
-      display: inline-block ;
-      color: $white ;
-    }
-    p {
-      font-family: $text-font ;
-      display: inline-block ;
-      color: $white ;
+  div.container {
+    > ul {
+      overflow: hidden ;
+      > li {
+        @include boxGrid(3, 3%);
+        float: left ;
+        article {
+          > a:first-child {
+            width: 100% ;
+            margin-bottom: 10px ;
+            display: block ;
+            img {
+              width: 100% ; height: auto ;
+              display: block ;
+            }
+          }
+          h1 {
+            font-family: $main-font ;
+            font-size: 26px ;
+            line-height: 26px ;
+            a {
+              color: $white ;
+              @include transition(color .3s);
+              &:hover {
+                text-decoration: none ;
+                color: $lightgray ;
+              }
+            }
+          }
+          p {
+            color: $gray ;
+          }
+          > a:last-child {}
+        }
+      }
     }
   }
 }

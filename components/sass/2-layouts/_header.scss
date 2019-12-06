@@ -19,9 +19,14 @@ header {
       background: url("../img/mostay-logo.svg");
       background-repeat: no-repeat ;
       background-position: center ;
+      background-color: rgba(0,0,0,0) ;
       display: block ;
+      @include transition(background-color .3s);
       > span {
         display: none ;
+      }
+      &:hover {
+        background-color: rgba(0,0,0,.2) ;
       }
     }
   }
@@ -43,6 +48,7 @@ header {
           color: $white ;
           padding: 0 10px ;
           display: block ;
+          @include transition(background-color .3s);
           &:hover {
             background-color: $red ;
             text-decoration: none ;
@@ -71,6 +77,7 @@ header {
           font-size: 13px ;
           line-height: $nav-h - 8 ;
           text-align: center ;
+          @include transition(background-color .3s);
           > i {
             color: $black ;
           }

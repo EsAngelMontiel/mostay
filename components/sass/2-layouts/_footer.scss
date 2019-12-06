@@ -2,7 +2,72 @@
 /* ************************ FOOTER ************************ */
 /* ******************************************************** */
 
-footer {}
+footer {
+  height: $footer-h ;
+  background-color: $darkgray ;
+  overflow: hidden ;
+  h1 {
+    width: 147px ; height: $footer-h ;
+    float: left ;
+    margin: 0 5px 0 0 !important ;
+    padding: 0 0 0 0 ;
+    > a {
+      width: 147px ; height: $footer-h ;
+      background: url("../img/mostay-logo-red.svg");
+      background-repeat: no-repeat ;
+      background-position: center ;
+      display: block ;
+      @include transition(opacity .3s);
+      > span {
+        display: none ;
+      }
+      &:hover {
+        opacity: .5 ;
+      }
+    }
+  }
+  small {
+    width: 140px ; height: $footer-h ;
+    font-family: $main-font ;
+    font-size: 14px ;
+    line-height: 14px ;
+    color: $gray ;
+    padding: 16px 0 0 0 ;
+    float: left ;
+  }
+  div.social-networks {
+    height: $footer-h ;
+    float: left ;
+    > ul {
+      height: $footer-h ;
+      padding: 15px 0 ;
+      li {
+        height: $nav-h ;
+        display: inline-block ;
+        margin-left: 5px ;
+        > a {
+          height: $nav-h - 8 ; width: $nav-h - 8 ;
+          display: block ;
+          border-radius: 50% ;
+          background-color: $gray ;
+          font-size: 13px ;
+          line-height: $nav-h - 8 ;
+          text-align: center ;
+          @include transition(background-color .3s);
+          > i {
+            color: $darkgray ;
+          }
+          span {
+            display: none ;
+          }
+          &:hover {
+            background-color: $white ;
+          }
+        }
+      }
+    }
+  }
+}
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */

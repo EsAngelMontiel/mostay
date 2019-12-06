@@ -1,6 +1,16 @@
+html {
+  position: absolute ;
+  width: 100% ;
+  height: 100% ;
+  padding: 0 ;
+  margin: 0 ;
+}
 body {
   padding: $menu-h 0 0 0 ;
   background-color: $darkgray ;
+  margin: 0 ;
+  height: 100% ;
+  display: block ;
 
   // breadcrumb
   .breadcrumb-espacio {
@@ -8,6 +18,7 @@ body {
     background: url('../img/breadcrumb-bg.jpg') no-repeat cover ;
     position: relative ;
     overflow: hidden ;
+    margin-bottom: 30px ;
     .bc-img {
       height: $bc-img-h ;
       overflow: hidden ;
@@ -26,7 +37,6 @@ body {
         background-position: bottom ;
       }
     }
-
     > .container {
       height: 100% ;
       padding-top: 40px ;
@@ -50,6 +60,31 @@ body {
       }
     }
   } // breadcrumb @extend
+
+  // Titulo de Pagina
+  .titulo {
+    margin-bottom: 45px ;
+    h1 {
+      font-family: $main-font ;
+      font-size: 40px ;
+      line-height: 40px ;
+      display: inline-block ;
+      margin: 0 10px 0 0 ;
+      color: $white ;
+    }
+    p {
+      width: 350px ;
+      font-family: $text-font ;
+      font-size: 14px ;
+      line-height: 16px ;
+      display: inline-block ;
+      color: $white ;
+      padding: 0 0 0 0 ;
+      position: relative ;
+      top: 2px ;
+      color: $gray ;
+    }
+  }
 
 }
 
