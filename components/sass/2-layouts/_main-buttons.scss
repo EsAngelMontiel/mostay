@@ -1,4 +1,19 @@
-.btn {}
+.btn {
+  height: 50px ;
+  font-family: $main-font ;
+  font-size: 16px ;
+  line-height: 50px ;
+  border: 1px solid $white ;
+  padding: 0 30px ;
+  display: inline-block ;
+  color: $white ;
+  margin: 0 auto ;
+  &:hover {
+    text-decoration: none ;
+    background-color: $white ;
+    color: $darkgray ;
+  }
+}
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */
