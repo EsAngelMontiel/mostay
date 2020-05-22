@@ -1,2 +1,2 @@
-$(document).ready(function(){});
-//# sourceMappingURL=./script-min.js.map
+$(document).ready((function(){function n(){$("#mySidenav").css("width",0),$("#main").css("margin-left",0)}$("#mySidenav").click((function(){n(),$("#bg").removeClass("show");Math.floor(12*Math.random()+1)})),$(".closebtn").click((function(t){t.preventDefault(),n(),$("#bg").removeClass("show")})),$(".navbutton").click((function(n){n.preventDefault(),$("#mySidenav").css("width","100%"),$("#main").css("margin-left",160),$("#bg").toggleClass("show");Math.floor(12*Math.random()+1)}))}));
+//# sourceMappingURL=script-min.js.map

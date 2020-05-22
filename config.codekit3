@@ -7,7 +7,7 @@
 		"uuidString": "652DF82D-DD00-4AE2-A14E-DC9E2BD5E092"
 		}
 	],
-"creatorBuild": "31934",
+"creatorBuild": "32001",
 "files": {
 	"/components/sass/0-plugins/_normalize.scss": {
 		"aP": 0,
@@ -41,7 +41,7 @@
 		"ma": 1,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/components/sass/0-plugins/bootstrap/min/.babelrc-min.js",
+		"oAP": "/components/sass/layout/js/.babelrc-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1806,7 +1806,7 @@
 		"ma": 1,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/components/scripts/min/script-min.js",
+		"oAP": "/layout/js/script-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2064,35 +2064,35 @@
 		"oAP": "/layout/index.html",
 		"oF": 0
 		},
+	"/layout/js/jquery.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/layout/js/jquery.min-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/layout/js/jquery.min-min.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/js/jquery.min-min.js.map",
+		"oF": 0
+		},
 	"/layout/js/jquery.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 1,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/layout/js/min/jquery.min-min.js",
+		"oAP": "/layout/js/jquery.min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
-		},
-	"/layout/js/min/jquery.min-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 1,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/layout/js/min/min/jquery.min-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/layout/js/min/jquery.min-min.js.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/layout/js/min/jquery.min-min.js.map",
-		"oF": 0
 		},
 	"/layout/js/script-min.js": {
 		"bF": 0,
@@ -2100,7 +2100,7 @@
 		"ma": 1,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/layout/js/min/script-min-min.js",
+		"oAP": "/layout/js/script-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2123,6 +2123,14 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"/layout/servicios.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/servicios.html",
+		"oF": 0
 		},
 	"/layout/style.css": {
 		"aP": 1,
@@ -2189,7 +2197,7 @@
 "projectAttributes": {
 	"creationDate": 596829889.523651,
 	"displayValue": "Mostay Web Site",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "/layout/img/avatar.jpg",
 	"iconImageWasSetByUser": 1
 	},
@@ -2787,6 +2795,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"grouped-accessor-pairs": {
+			"active": 0,
+			"optionString": "'anyOrder'"
+			},
 		"guard-for-in": {
 			"active": 0,
 			"optionString": ""
@@ -2963,6 +2975,10 @@
 			"active": 1,
 			"optionString": "{'checkLoops': true}"
 			},
+		"no-constructor-return": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-continue": {
 			"active": 0,
 			"optionString": ""
@@ -2988,6 +3004,10 @@
 			"optionString": ""
 			},
 		"no-dupe-class-members": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-dupe-else-if": {
 			"active": 1,
 			"optionString": ""
 			},
@@ -3291,6 +3311,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-setter-return": {
+			"active": 1,
+			"optionString": ""
+			},
 		"no-shadow": {
 			"active": 0,
 			"optionString": "{'builtinGlobals': false, 'hoist': 'functions', 'allow': []}"
@@ -3494,6 +3518,10 @@
 		"prefer-destructuring": {
 			"active": 0,
 			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
+		"prefer-exponentiation-operator": {
+			"active": 0,
+			"optionString": ""
 			},
 		"prefer-named-capture-group": {
 			"active": 0,
@@ -4083,7 +4111,7 @@
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*-min.js",
-		"autoOutputPathRelativePath": "/min",
+		"autoOutputPathRelativePath": "../../layout/js",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 2,

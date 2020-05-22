@@ -4,6 +4,7 @@
 
 
 
+
 header {
   width: 100% ; height: $menu-h ;
   position: fixed ;
@@ -30,25 +31,28 @@ header {
       }
     }
   }
+
+  // menu principal
   > nav {
     height: $menu-h ;
     float: left ;
     padding: $nav-padding ;
-    ul {
+    > ul {
       height: $nav-h ;
       display: inline-block ;
-      li {
+      > li {
         height: $nav-h ;
         display: inline-block ;
+        position: relative ;
         > a {
           height: $nav-h ;
           font-family: $main-font-regular ;
-          font-size: 13px ;
+          font-size: 14px ;
           line-height: $nav-h ;
           color: $white ;
           padding: 0 10px ;
           display: block ;
-          @include transition(background-color .3s);
+          @include transition(background-color .1s);
           &:hover {
             background-color: $red ;
             text-decoration: none ;
@@ -56,17 +60,145 @@ header {
             border: none ;
           }
         }
+        > ul {
+          display: none ;
+          opacity: 0 ;
+          @include transition(opacity .3s);
+        }
+        &:hover {
+          > ul {
+            display: block ;
+            opacity: 1 ;
+            background-color: $red ;
+            position: absolute ;
+            > li {
+              min-width: 130px ;
+              display: block ;
+              > a {
+                font-family: $main-font-regular ;
+                font-size: 13px ;
+                line-height: 16px ;
+                padding: 8px 10px ;
+                color: $white ;
+                display: block ;
+              }
+              &:last-child {
+                padding-bottom: 10px ;
+              }
+            }
+          }
+          > a {
+            background-color: $red ;
+          }
+        }
       }
     }
-  }
+  } // menu principal
+
+  // menu responsive
+    > button.nav {
+      font-size: 22px ;
+      margin: 0 0 0 0 ;
+      background-color: transparent ;
+      border: none ;
+      padding: 13px 20px ;
+      cursor: pointer;
+      color: $white ;
+      display: none ;
+      @include transition(color .3s);
+      &:hover {
+        color: $green  ;
+        cursor: pointer;
+      }
+      > svg {
+        width: 100% ;
+      }
+    }
+
+    .show {
+      display: block;
+      z-index: 10;
+    }
+
+    .sidenav {
+      height: 100% ; /* 100% Full-height */
+      width: 0 ; /* 0 width - change this with JavaScript */
+      position: fixed ; /* Stay in place */
+      z-index: 9999 ; /* Stay on top */
+      top: 0 ; /* Stay at the top */
+      left: 0 ;
+      background-color: rgba(0,0,0,.95) ;
+      overflow-x: hidden ; /* Disable horizontal scroll */
+      padding-top: 70px ; /* Place content 60px from the top */
+      transition: 0.5s ; /* 0.5 second transition effect to slide in the sidenav */
+      cursor: pointer ;
+      > li {
+        > a, > p {
+          text-align: center ;
+          padding: 10px 0 ;
+          font-family: $main-font ;
+          font-size: 30px ;
+          display: block ;
+          color: $white ;
+        }
+        &:first-child {
+          border-top: 1px solid $white ;
+        }
+        > ul {
+          display: none ;
+        }
+      }
+      a.closebtn {
+        padding: 20px ;
+        text-decoration: none;
+        font-size: 30px ;
+        font-family: $main-font ;
+        color: $red ;
+        display: block;
+        transition: 0.3s;
+        position: absolute;
+        top: -15px ;
+        right: 0 ;
+        font-size: 40px ;
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+    > li.qtranxs-lang-menu {
+      width: 160px ;
+      > ul {
+        padding: 4px 33px 0;
+        li {
+          a {
+            padding: 0 ;
+            font-size: 14px;
+            margin: 15px 0 ;
+          }
+          &.current_page_item {
+            > ul {
+              li {
+                a {
+                  color: white ;
+                }
+              }
+            }
+          }
+        }
+      }
+    } // menu respnsive
+
+
+  // Redes Sociales
   > div.social-networks {
     height: $menu-h ;
     float: right ;
     > ul {
-      height: $menu-h ;
-      padding: $nav-padding ;
+      height: $menu-h - 8 ;
+      padding: $nav-padding + 4 ;
+      margin: 0 ;
       li {
-        height: $nav-h ;
+        height: $nav-h - 8 ;
         display: inline-block ;
         margin-left: 5px ;
         > a {
@@ -108,10 +240,39 @@ header {
 
   /* ******************************** Medium ***************************** */
   @include media-breakpoint-down(md) {
+    > h1 {
+      width: 160px ;
+      > a {
+        width: 160px ;
+        background-size: 140px ;
+      }
+    }
+    > nav.nav-main {
+      display: none;
+    }
+    button.nav {
+      display: block;
+      float: left;
+      -webkit-transition-duration: 200ms;
+      -moz-transition: 200ms;
+      transition: 200ms;
+    }
   }
 
   /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
+    > h1 {
+      width: 160px ;
+      > a {
+        width: 160px ;
+        background-size: 130px ;
+      }
+    }
+
+    // Redes Sociales
+    > div.social-networks {
+      display: none ;
+    }
   }
 
   /* ******************************* Extra Small ***************************** */

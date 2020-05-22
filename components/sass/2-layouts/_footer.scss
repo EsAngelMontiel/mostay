@@ -16,6 +16,7 @@ footer {
       background: url("../img/mostay-logo-red.svg");
       background-repeat: no-repeat ;
       background-position: center ;
+      background-size: contain ;
       display: block ;
       @include transition(opacity .3s);
       > span {
@@ -84,13 +85,29 @@ footer {
 
   /* ******************************** Medium ***************************** */
   @include media-breakpoint-down(md) {
+
   }
 
   /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
+    div.social-networks {
+      display: none ;
+    }
   }
 
   /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
+    h1 {
+      width: 120px ; height: $footer-h ;
+      > a {
+        width: 120px ; height: $footer-h ;
+      }
+    }
+    small {
+      width: 140px ; height: $footer-h ;
+      font-family: $main-font ;
+      font-size: 12px ;
+      line-height: 12px ;
+    }
   }
 }
