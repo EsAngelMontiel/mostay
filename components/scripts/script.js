@@ -29,4 +29,15 @@ $(document).ready(function(){
     $('#bg').toggleClass("show");
     var imageNo = Math.floor((Math.random()*12)+1);
   });
+
+  // slider
+
+  $('.home-slider').slick({
+    infinite: true,
+    dots: true,
+    speed: 300,
+    slidesToShow: 1,
+    arrows: false,
+  });
+
 });
