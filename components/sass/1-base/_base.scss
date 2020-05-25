@@ -111,5 +111,20 @@ body {
 
   /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
+    .titulo {
+      margin-bottom: 30px ;
+      h1 {
+        width: 100% ;
+        font-size: 30px ;
+        line-height: 32px ;
+        margin: 0 0 5px 0 ;
+        display: block ;
+      }
+      p {
+        width: 100% ;
+        font-size: 12px ;
+        line-height: 16px ;
+      }
+    }
   }
 }

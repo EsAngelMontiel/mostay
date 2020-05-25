@@ -4,6 +4,7 @@
 
 .blog {
   div.container {
+    padding: 60px 0 40px 0 ;
     > ul {
       overflow: hidden ;
       margin-bottom: 40px ;
@@ -117,6 +118,78 @@
 
   /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
+    div.container {
+      padding: 60px 10px 40px 10px ;
+      > ul {
+        > li {
+          @include boxGrid(2, 3%);
+          &:last-child{
+            display: none ;
+          }
+          article {
+            h1 {
+              font-size: 18px ;
+              line-height: 20px ;
+            }
+            p {
+              font-family: $text-font ;
+              font-size: 10px ;
+              line-height: 17px ;
+              color: $gray ;
+              margin: 0 ;
+            }
+            > a:last-child {
+              font-family: $main-font-regular ;
+              font-size: 16px ;
+              color: $yellow ;
+              display: block ;
+              margin-top: 10px ;
+              &:hover {
+                text-decoration: none ;
+                color: $red ;
+              }
+            }
+          }
+        }
+      }
+      > nav {
+        width: 100% ;
+        margin-bottom: 50px ;
+        ul {
+          width: 100% ;
+          text-align: center ;
+          li {
+            display: inline-block ;
+            margin-right: 10px ;
+            a {
+              height: 50px ;
+              font-family: $main-font ;
+              font-size: 16px ;
+              line-height: 50px ;
+              border: 1px solid $white ;
+              color: $white ;
+              padding: 0 20px ;
+              display: block ;
+              @include transition(background-color .3s);
+              &:hover {
+                text-decoration: none ;
+                background-color: $white ;
+                color: $darkgray ;
+              }
+            }
+            &:last-child {
+              margin: 0 ;
+            }
+            &.active {
+              background-color: $white ;
+              a {
+                color: $darkgray ;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   /* ******************************* Extra Small ***************************** */

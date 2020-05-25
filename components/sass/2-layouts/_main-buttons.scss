@@ -8,6 +8,7 @@
   display: inline-block ;
   color: $white ;
   margin: 0 auto ;
+  @include transition(background-color .3s);
   &:hover {
     text-decoration: none ;
     background-color: $white ;
@@ -19,9 +20,9 @@
   @extend .btn;
   background-color: $blue ;
   border: none ;
-  @include transition(background-color .3s);
   &:hover {
-    background-color: $yellow ;
+    background-color: darken($blue, 12%) ;
+    color: $white ;
   }
 }
 
@@ -48,5 +49,10 @@
 
   /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
+    height: 40px ;
+    font-family: $main-font ;
+    font-size: 16px ;
+    line-height: 40px ;
+    padding: 0 20px ;
   }
 }

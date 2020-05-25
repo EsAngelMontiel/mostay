@@ -1787,6 +1787,24 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/components/sass/layout/css/regular.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/components/sass/layout/css/regular-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/components/sass/layout/css/regular.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/components/sass/layout/css/regular.css.map",
+		"oF": 0
+		},
 	"/components/sass/main.scss": {
 		"aP": 0,
 		"bl": 0,
