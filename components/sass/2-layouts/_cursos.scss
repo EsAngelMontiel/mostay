@@ -2,7 +2,107 @@
 /* ************************ CURSOS ************************ */
 /* ******************************************************** */
 
-.cursos {}
+.cursos {
+  background-color: $yellow ;
+  div.bar {
+    height: 40px ; width: 100% ;
+    background-color: $blue ;
+  }
+  div.banner-cursos {
+    width: 100% ;
+    overflow: hidden ;
+    position: relative ;
+    > img {
+      display: block;
+      width: 100vw;
+      height: 40vh;
+      object-fit: cover;
+    }
+    > div {
+      width: 100% ; height: 70% ;
+      position: absolute ;
+      bottom: 0 ;
+      @include linearGradient(top, bottom, rgba(255,161,00,0), rgba(255,161,00,1));
+      padding: 0 0 40px 0 ;
+      > div {
+        padding: 80px 0 0 0 ;
+        h1 {
+          width: 100% ;
+          font-family: $main-font ;
+          font-size: 40px ;
+          line-height: 40px ;
+          display: inline-block ;
+          margin: 0 0 20 0 ;
+          color: $white ;
+        }
+        p {
+          width: 100% ;
+          font-family: $text-font ;
+          font-size: 14px ;
+          line-height: 20px ;
+          display: inline-block ;
+          color: $white ;
+          padding: 0 0 0 0 ;
+          position: relative ;
+          margin: 0 0 20px 0 ;
+          top: 2px ;
+          color: $white ;
+        }
+      }
+    }
+  }
+  > div.container {
+    ul {
+      padding: 0 ;
+      li {
+        @include boxGrid(3, 3%);
+        float: left ;
+        article {
+          > a:first-child {
+            width: 100% ;
+            margin-bottom: 10px ;
+            display: block ;
+            img {
+              width: 100% ; height: auto ;
+              display: block ;
+            }
+          }
+          h1 {
+            font-family: $main-font ;
+            font-size: 26px ;
+            line-height: 26px ;
+            a {
+              color: $white ;
+              @include transition(color .3s);
+              &:hover {
+                text-decoration: none ;
+                color: $red ;
+              }
+            }
+          }
+          p {
+            font-family: $text-font ;
+            font-size: 12px ;
+            line-height: 17px ;
+            color: $gray ;
+            margin: 0 ;
+          }
+          > a:last-child {
+            font-family: $main-font-regular ;
+            font-size: 16px ;
+            color: $yellow ;
+            display: block ;
+            margin-top: 10px ;
+            &:hover {
+              text-decoration: none ;
+              color: $red ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */
