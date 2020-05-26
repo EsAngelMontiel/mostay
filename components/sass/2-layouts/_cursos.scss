@@ -52,54 +52,76 @@
     }
   }
   > div.container {
+    padding: 0 ;
     ul {
-      padding: 0 ;
+      padding: 30px 0 10px 0 ;
+      overflow: auto ;
       li {
         @include boxGrid(3, 3%);
         float: left ;
-        article {
+        box-shadow: 0 0 8px rgba(0,0,0,.3) ;
+        article.curso-lista {
+          background-color: $white ;
           > a:first-child {
             width: 100% ;
-            margin-bottom: 10px ;
             display: block ;
             img {
               width: 100% ; height: auto ;
               display: block ;
             }
           }
-          h1 {
-            font-family: $main-font ;
-            font-size: 26px ;
-            line-height: 26px ;
-            a {
-              color: $white ;
-              @include transition(color .3s);
-              &:hover {
-                text-decoration: none ;
+          > div {
+            padding: 30px 30px 35px ;
+            > h2 {
+              margin: 0 ;
+              a {
+                font-family: $main-font-regular ;
+                font-size: 18px ;
                 color: $red ;
+                &:hover {
+                  text-decoration: none ;
+                  color: darken($red, 30%) ;
+                }
               }
             }
-          }
-          p {
-            font-family: $text-font ;
-            font-size: 12px ;
-            line-height: 17px ;
-            color: $gray ;
-            margin: 0 ;
-          }
-          > a:last-child {
-            font-family: $main-font-regular ;
-            font-size: 16px ;
-            color: $yellow ;
-            display: block ;
-            margin-top: 10px ;
-            &:hover {
-              text-decoration: none ;
-              color: $red ;
+            h1 {
+              font-family: $main-font ;
+              font-size: 28px ;
+              line-height: 30px ;
+              a {
+                color: $darkgray ;
+                @include transition(color .3s);
+                &:hover {
+                  text-decoration: none ;
+                  color: $blue ;
+                }
+              }
+            }
+            p {
+              font-family: $text-font ;
+              font-size: 14px ;
+              line-height: 22px ;
+              color: $gray ;
+              margin: 0 ;
+              margin-bottom: 10px ;
+            }
+            > a:last-child {
+              font-family: $main-font-regular ;
+              font-size: 16px ;
+              color: $blue ;
+              display: block ;
+              &:hover {
+                text-decoration: none ;
+                color: darken($blue, 15%) ;
+              }
             }
           }
         }
       }
+    }
+    > div.btn-container {
+      text-align: center ;
+      padding: 0 0 60px 0 ;
     }
   }
 }
@@ -119,13 +141,155 @@
 
   /* ******************************** Medium ***************************** */
   @include media-breakpoint-down(md) {
+    > div.container {
+      ul {
+        padding: 20px 0 10px 0 ;
+        li {
+          @include boxGrid(3, 2%);
+          article.curso-lista {
+            > div {
+              padding: 20px 20px 25px ;
+              > h2 {
+                a {
+                  font-size: 18px ;
+                }
+              }
+              h1 {
+                font-size: 24px ;
+                line-height: 28px ;
+              }
+              p {
+                font-size: 14px ;
+                line-height: 18px ;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
+    div.banner-cursos {
+      > img {
+        height: 40vh;
+      }
+      > div {
+        width: 100% ; height: 85% ;
+        padding: 0 10px 10px ;
+        > div {
+          padding: 120px 0 0 0 ;
+          h1 {
+            width: 100% ;
+            font-family: $main-font ;
+            font-size: 30px ;
+            line-height: 32px ;
+            display: inline-block ;
+            margin: 0 0 20 0 ;
+            color: $white ;
+          }
+          p {
+            width: 100% ;
+            font-family: $text-font ;
+            font-size: 12px ;
+            line-height: 18px ;
+            display: inline-block ;
+            color: $white ;
+            padding: 0 0 0 0 ;
+            position: relative ;
+            margin: 0 0 20px 0 ;
+            top: 2px ;
+            color: $white ;
+          }
+        }
+      }
+    }
+    > div.container {
+      ul {
+        padding: 20px 10px 10px 10px ;
+        li {
+          @include boxGrid(2, 2%);
+          &:last-child {
+            display: none ;
+
+          }
+          article.curso-lista {
+            > div {
+              padding: 15px ;
+              > h2 {
+                a {
+                  font-size: 16px ;
+                }
+              }
+              h1 {
+                font-size: 20px ;
+                line-height: 22px ;
+              }
+              p {
+                font-size: 12px ;
+                line-height: 16px ;
+              }
+              > a:last-child {
+                font-size: 14px ;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
+    div.banner-cursos {
+      > img {
+        height: 300px;
+      }
+      > div {
+        width: 100% ; height: 300px ;
+        padding: 0 10px 10px ;
+        > div {
+          padding: 150px 0 0 0 ;
+        }
+      }
+    }
+    > div.container {
+      ul {
+        padding: 20px 10px 10px 10px ;
+        li {
+          @include boxGrid(2, 2%);
+          &:last-child {
+            display: none ;
+
+          }
+          article.curso-lista {
+            > div {
+              padding: 10px 10px 15px ;
+              > h2 {
+                a {
+                  font-size: 14px ;
+                }
+              }
+              h1 {
+                font-size: 20px ;
+                line-height: 22px ;
+              }
+              p {
+                font-size: 12px ;
+                line-height: 14px ;
+                margin: 0 0 5px 0 ;
+              }
+              > a:last-child {
+                font-size: 14px ;
+              }
+            }
+          }
+        }
+      }
+      > div.btn-container {
+        padding: 0 0 40px 0 ;
+      }
+    }
   }
 }

@@ -8,48 +8,52 @@
     > ul {
       overflow: hidden ;
       margin-bottom: 40px ;
+      padding: 10px ;
       > li {
         @include boxGrid(3, 3%);
         float: left ;
         article {
           > a:first-child {
             width: 100% ;
-            margin-bottom: 10px ;
             display: block ;
             img {
               width: 100% ; height: auto ;
               display: block ;
             }
           }
-          h1 {
-            font-family: $main-font ;
-            font-size: 26px ;
-            line-height: 26px ;
-            a {
-              color: $white ;
-              @include transition(color .3s);
-              &:hover {
-                text-decoration: none ;
-                color: $red ;
+          > div {
+            padding: 20px 0 ;
+            h1 {
+              font-family: $main-font ;
+              font-size: 28px ;
+              line-height: 30px ;
+              margin-bottom: 10px ;
+              a {
+                color: $white ;
+                @include transition(color .3s);
+                &:hover {
+                  text-decoration: none ;
+                  color: $red ;
+                }
               }
             }
-          }
-          p {
-            font-family: $text-font ;
-            font-size: 12px ;
-            line-height: 17px ;
-            color: $gray ;
-            margin: 0 ;
-          }
-          > a:last-child {
-            font-family: $main-font-regular ;
-            font-size: 16px ;
-            color: $yellow ;
-            display: block ;
-            margin-top: 10px ;
-            &:hover {
-              text-decoration: none ;
-              color: $red ;
+            p {
+              font-family: $text-font ;
+              font-size: 14px ;
+              line-height: 22px ;
+              color: $gray ;
+              margin: 0 ;
+              margin-bottom: 10px ;
+            }
+            > a:last-child {
+              font-family: $main-font-regular ;
+              font-size: 16px ;
+              color: $yellow ;
+              display: block ;
+              &:hover {
+                text-decoration: none ;
+                color: darken($yellow, 20%) ;
+              }
             }
           }
         }
@@ -119,34 +123,39 @@
   /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
     div.container {
-      padding: 60px 10px 40px 10px ;
+      padding: 20px 10px 40px 10px ;
       > ul {
+        padding: 0 ;
+        margin: 0 0 20px 0 ;
         > li {
-          @include boxGrid(2, 3%);
+          @include boxGrid(2, 2%);
           &:last-child{
             display: none ;
           }
           article {
-            h1 {
-              font-size: 18px ;
-              line-height: 20px ;
-            }
-            p {
-              font-family: $text-font ;
-              font-size: 10px ;
-              line-height: 17px ;
-              color: $gray ;
-              margin: 0 ;
-            }
-            > a:last-child {
-              font-family: $main-font-regular ;
-              font-size: 16px ;
-              color: $yellow ;
-              display: block ;
-              margin-top: 10px ;
-              &:hover {
-                text-decoration: none ;
-                color: $red ;
+            > div {
+              padding: 15px 0 10px 0 ;
+              h1 {
+                font-size: 20px ;
+                line-height: 22px ;
+              }
+              p {
+                font-family: $text-font ;
+                font-size: 12px ;
+                line-height: 16px ;
+                color: $gray ;
+                margin: 0 ;
+              }
+              > a:last-child {
+                font-family: $main-font-regular ;
+                font-size: 14px ;
+                color: $yellow ;
+                display: block ;
+                margin-top: 10px ;
+                &:hover {
+                  text-decoration: none ;
+                  color: $red ;
+                }
               }
             }
           }
@@ -194,5 +203,25 @@
 
   /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
+    div.container {
+      padding: 10px 10px 40px ;
+      > ul {
+        margin: 0 0 15px 0 ;
+        > li {
+          article {
+            > div {
+              padding: 10px 2px 15px ;
+              p {
+                font-size: 12px ;
+                line-height: 14px ;
+              }
+              > a:last-child {
+                font-size: 14px ;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
