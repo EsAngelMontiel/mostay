@@ -23,11 +23,11 @@
 					<li><a href="#">Cursos</a></li>
 					<li><a href="blog.html">Blog</a></li>
 					<li>
-						<a href="#">Portafolio</a>
+						<a href="portafolio.html">Portafolio</a>
 						<ul>
-							<li><a href="#">Trabajos</a></li>
-							<li><a href="#">Casos de Estudio</a></li>
-							<li><a href="#">Experimentales</a></li>
+							<li><a href="portafolio.html">Trabajos</a></li>
+							<li><a href="portafolio.html">Casos de Estudio</a></li>
+							<li><a href="portafolio.html">Experimentales</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Tienda</a></li>
@@ -48,11 +48,11 @@
 				<li><a href="#">Cursos</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li>
-					<a href="#">Portafolio</a>
+					<a href="portafolio.html">Portafolio</a>
 					<ul>
-						<li><a href="#">Trabajos</a></li>
-						<li><a href="#">Casos de Estudio</a></li>
-						<li><a href="#">Experimentales</a></li>
+						<li><a href="portafolio.html">Trabajos</a></li>
+						<li><a href="portafolio.html">Casos de Estudio</a></li>
+						<li><a href="portafolio.html">Experimentales</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Tienda</a></li>
@@ -262,20 +262,41 @@
 
 
 		<!-- **********************portafolio ********************** -->
-		<section class="portafolio">
+		<section class="portafolio portafolio-home">
 			<div class="bar"></div>
 			<div class="container">
-				<h1>Los Casos de Estudio</h1>
-				<p>Ve todo lo que implica el desarrollo de cada proyecto que hacemos en mostay.</p>
-				<ul>
+				<div class="titulo">
+					<h1>Los Casos de Estudio</h1>
+					<p>Ve todo lo que implica el desarrollo de cada proyecto que hacemos en mostay.</p>
+				</div>
+				<ul id="primero" class="casos">
 					<li>
 						<article class="casos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del curso</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
+								</span>
+							</a>
+						</article>
+					</li>
+
+					<li>
+						<article class="casos-lista">
+							<a href="#">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
+								<span>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
@@ -283,42 +304,38 @@
 					<li>
 						<article class="casos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del curso</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
-								</span>
-							</a>
-						</article>
-					</li>
-					<li>
-						<article class="casos-lista">
-							<a href="#">
-								<img src="#" alt="imagen del caso">
-								<span>
-									<h1><a href="#">nombre del curso</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
 					</li>
 				</ul>
-				<a href="#" class="btn-basico btn-blanco">Ver Todos</a>
-			</div>
-			<div class="container">
-				<h1>Los Trabajos</h1>
-				<p>Conoce todos los proyectos que hemos desarrollado en branding y desarrollo web.</p>
-				<ul>
+				<div class="btn-container">
+					<a href="#" class="btn btn-blanco">Ver Todos</a>
+				</div>
+				<div class="titulo">
+					<h1>Los Trabajos</h1>
+					<p>Conoce todos los proyectos que hemos desarrollado en branding y desarrollo web.</p>
+				</div>
+				<ul id="ultimo" class="casos">
 					<li>
 						<article class="trabajos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del proyecto</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
@@ -326,11 +343,14 @@
 					<li>
 						<article class="trabajos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del proyecto</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
@@ -338,11 +358,14 @@
 					<li>
 						<article class="trabajos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del proyecto</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
@@ -350,11 +373,14 @@
 					<li>
 						<article class="trabajos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del proyecto</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
@@ -362,11 +388,14 @@
 					<li>
 						<article class="trabajos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del proyecto</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
@@ -374,18 +403,24 @@
 					<li>
 						<article class="trabajos-lista">
 							<a href="#">
-								<img src="#" alt="imagen del caso">
+								<img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
 								<span>
-									<h1><a href="#">nombre del proyecto</a></h1>
-									<p>Crear una marca es más que hacer el logo, es la comunicación, los valores, los objetivos, es decir que hay muchos factores que hay que tomar en cuenta a la hora de crear una marca, aquí aprenderás a crear una desde cero.</p>
-									<em>Ver mas <i class="fas fa-arrow-circle-right"></i></em>
+									<span>
+										<h2>Branding</h2>
+										<h1>Nombre del curso</h1>
+										<p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+										<i class="fas fa-arrow-circle-right"></i>
+									</span>
 								</span>
 							</a>
 						</article>
 					</li>
 				</ul>
-				<a href="#" class="btn btn-blanco">Ver Todos</a>
+				<div class="btn-container">
+					<a href="#" class="btn btn-blanco">Ver Todos</a>
+				</div>
 			</div>
+
 		</section>
 
 		<!-- ********************** footer ********************** -->

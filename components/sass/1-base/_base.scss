@@ -54,6 +54,11 @@ body {
               line-height: 18px ;
               font-family: $main-font ;
               color: $white ;
+              @include transition(color .3s) ;
+              &:hover {
+                color: $red ;
+                text-decoration: none ;
+              }
             }
           }
         }

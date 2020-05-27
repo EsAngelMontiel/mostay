@@ -2131,6 +2131,22 @@
 		"oAP": "/layout/js/script-min.js.map",
 		"oF": 0
 		},
+	"/layout/portafolio-taxonomy.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/portafolio-taxonomy.html",
+		"oF": 0
+		},
+	"/layout/portafolio.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/portafolio.html",
+		"oF": 0
+		},
 	"/layout/screenshot.PNG": {
 		"ft": 32768,
 		"iS": 34325,
