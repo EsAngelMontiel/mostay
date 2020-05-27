@@ -1761,6 +1761,32 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/components/sass/2-layouts/_project.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/layout/css/_project.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"/components/sass/2-layouts/_single.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/layout/css/_single.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/components/sass/_mixins.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1853,6 +1879,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/layout/css/main.css.map",
+		"oF": 0
+		},
+	"/layout/cursos.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/cursos.html",
 		"oF": 0
 		},
 	"/layout/fonts/style.css": {
@@ -2131,6 +2165,46 @@
 		"oAP": "/layout/js/script-min.js.map",
 		"oF": 0
 		},
+	"/layout/page-about.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/page-about.html",
+		"oF": 0
+		},
+	"/layout/page-cases.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/page-cases.html",
+		"oF": 0
+		},
+	"/layout/page-contact.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/page-contact.html",
+		"oF": 0
+		},
+	"/layout/page-project.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/page-project.html",
+		"oF": 0
+		},
+	"/layout/page-template.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/page-template.html",
+		"oF": 0
+		},
 	"/layout/portafolio-taxonomy.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -2164,6 +2238,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/layout/servicios.html",
+		"oF": 0
+		},
+	"/layout/single.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/layout/single.html",
 		"oF": 0
 		},
 	"/layout/slick/ajax-loader.gif": {

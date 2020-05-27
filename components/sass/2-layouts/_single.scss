@@ -1,0 +1,285 @@
+.single {
+  $col-w: 600px ;
+  > article {
+    text-align: center ;
+    padding: 0 ;
+    > img {
+      width: 100% ; height: auto ;
+      display: block ;
+      margin: 0 0 30px 0 ;
+    }
+    > div.contenido {
+      display: inline-block ;
+      width: $col-w ;
+      overflow: hidden ;
+      padding: 0 14px ;
+      text-align: left ;
+      > a.categoria {
+        font-family: $main-font-regular ;
+        font-size: 14px ;
+        line-height: 22px ;
+        padding: 0 10px ;
+        margin: 0 0 10px 0 ;
+        background-color: $yellow ;
+        color: $darkgray ;
+        display: inline-block ;
+        @include transition(background-color .3s);
+        &:hover {
+          text-decoration: none ;
+          background-color: darken($yellow, 20%);
+        }
+      }
+      h1 {
+        font-family: $main-font ;
+        font-size: 36px ;
+        line-height: 40px ;
+        color: $white ;
+      }
+      h2 {
+        @extend h1 ;
+        font-size: 28px ;
+        line-height: 32px ;
+        color: $yellow ;
+      }
+      h3, h4, h5 {
+        @extend h2 ;
+        font-size: 20px ;
+        line-height: 24px ;
+      }
+      > time {
+        font-family: $text-font ;
+        font-size: 14px ;
+        line-height: 22px ;
+        color: $yellow ;
+        margin: 0 ;
+        position: relative ;
+        top: -5px ;
+      }
+      p {
+        font-family: $text-font ;
+        font-size: 14px ;
+        line-height: 22px ;
+        margin: 0 0 20px 0 ;
+        color: $gray ;
+        > a {
+          color: $yellow ;
+        }
+        > strong {
+          font-weight: bold ;
+        }
+      }
+      > strong {
+        @extend p ;
+        font-weight: bold ;
+        margin-bottom: 20px ;
+      }
+      iframe {
+        width: 100% ;
+        display: block ;
+        margin: 20px 0 ;
+      }
+      figure {
+        width: 100% ;
+        > img {
+          width: 100% ; height: auto ;
+        }
+        > figcaption {
+          @extend p ;
+          font-size: 12px ;
+          padding: 5px 10px 0 ;
+          color: $blue ;
+        }
+      }
+      blockquote {
+        @extend p ;
+        background-color: lighten($darkgray, 5%);
+        border-radius: 4px ;
+        padding: 20px ;
+      }
+      ul, ol {
+        li {
+          list-style-type: disc ;
+          list-style-position: inside ;
+          @extend p ;
+          margin: 0 ;
+        }
+      }
+      ol {
+        li {
+          list-style-type: decimal ;
+        }
+      }
+    }
+    > div.tags {
+      display: inline-block ;
+      width: $col-w ;
+      text-align: left ;
+      padding: 0 14px 20px 14px ;
+      > strong {
+        font-family: $text-font ;
+        font-size: 14px ;
+        line-height: 22px ;
+        margin: 0 0 10px 0 ;
+        color: $gray ;
+        display: inline-block ;
+      }
+      > a {
+        font-family: $text-font ;
+        font-size: 14px ;
+        line-height: 22px ;
+        margin: 0 0 10px 0 ;
+        color: $gray ;
+        @include transition(color .3s);
+        &:hover {
+          text-decoration: none ;
+          color: $yellow ;
+        }
+      }
+    }
+    > div.autor {
+      display: inline-block ;
+      width: $col-w ;
+      border-top: 1px solid $white ;
+      border-bottom: 1px solid $white ;
+      padding: 30px 0 ;
+      overflow: auto ;
+      > img {
+        width: 30% ; height: auto ;
+        display: block ;
+        float: left ;
+        border-radius: 50% ;
+      }
+      > span {
+        width: 70% ;
+        float: left ;
+        display: block ;
+        text-align: left ;
+        padding: 0 0 0 20px ;
+        > em {
+          font-size: 14px ;
+          font-family: $main-font-regular ;
+          color: $blue ;
+        }
+        > h2 {
+          font-family: $main-font ;
+          font-size: 22px ;
+          line-height: 26px ;
+          margin: 0 ;
+          > a {
+            color: $yellow ;
+            &:hover {
+              text-decoration: none ;
+              color: darken($yellow, 20%);
+            }
+          }
+        }
+        > strong {
+          font-family: $main-font-regular ;
+          font-size: 14px ;
+          color: $white ;
+        }
+        > p {
+          font-family: $text-font ;
+          font-size: 14px ;
+          line-height: 22px ;
+          margin: 0 0 10px 0 ;
+          color: $gray ;
+        }
+        ul {
+          width: 100% ;
+          margin: 0 ;
+          padding: 0 ;
+          overflow: auto ;
+          li {
+            margin-right: 10px ;
+            float: left ;
+            a {
+              color: $gray ;
+              @include transition(color .3s);
+              span {
+                display: none ;
+              }
+              &:hover {
+                color: $red ;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  div.btn-container {
+    padding: 20px 0 40px 0 ;
+    text-align: center ;
+  }
+}
+
+/* ************************************************************************* */
+/* ***************************** Media queries ***************************** */
+/* ************************************************************************* */
+
+.single {
+  /* ***************************** Extra Large ***************************** */
+  @include media-breakpoint-down(xl) {
+  }
+
+  /* ******************************** Large ***************************** */
+  @include media-breakpoint-down(lg) {
+  }
+
+  /* ******************************** Medium ***************************** */
+  @include media-breakpoint-down(md) {
+    $col-w: 100% ;
+    > article {
+      > div.contenido {
+        width: $col-w ;
+        h1 {
+          font-size: 30px ;
+          line-height: 34px ;
+        }
+        h2 {
+          @extend h1 ;
+          font-size: 28px ;
+          line-height: 32px ;
+        }
+        h3, h4, h5 {
+          @extend h2 ;
+          font-size: 20px ;
+          line-height: 24px ;
+        }
+      }
+      > div.tags {
+        width: $col-w ;
+        > strong {
+          margin: 0 0 0 0 ;
+        }
+      }
+      > div.autor {
+        width: $col-w ;
+        padding: 20px 10px ;
+        > img {
+          width: 35% ;
+        }
+        > span {
+          width: 65% ;
+          > p {
+            line-height: 18px ;
+          }
+          ul {
+            li {
+              margin-right: 8px ;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* ********************************* Small ***************************** */
+  @include media-breakpoint-down(sm) {
+  }
+
+  /* ******************************* Extra Small ***************************** */
+  @include media-breakpoint-down(xs) {
+  }
+}
