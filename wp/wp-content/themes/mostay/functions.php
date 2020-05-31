@@ -1,7 +1,7 @@
 <?php
 /*
- *  Author: Mostay C.A | @mostay.co
- *  URL: www.mostay.co | @mostay.co
+ *  Author: Ángel Montiel & Héctor Montiel
+ *  URL: https://www.mostay.co | IG @mostayco
  *  Custom functions, support, custom post types and more.
  */
 
@@ -28,10 +28,10 @@ if (function_exists('add_theme_support')){
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
-    add_image_size('large', 700, '', true); // Large Thumbnail
+    add_image_size('large', 1920, 1080, true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('small', 300, 300, true); // Small Thumbnail
+    //add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -117,18 +117,20 @@ function mostay_footer_nav(){
 function mostay_header_scripts(){
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.9.0', $in_footer = true); // jQuery
+        wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.4.1', $in_footer = true); // jQuery
         wp_enqueue_script('jQuery'); // Enqueue it!
-        wp_register_script('fontawesome', 'https://use.fontawesome.com/releases/v5.10.2/js/all.js', array(), '5.10.2', $in_footer = true); // fontawesome
+        wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', $in_footer = true); // fontawesome
         wp_enqueue_script('fontawesome'); // Enqueue it!
-        wp_register_script('mostayscripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', $in_footer = true); // Custom scripts
+        wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array(), '1.8.0', $in_footer = true); // slick
+        wp_enqueue_script('slick'); // Enqueue it!
+        wp_register_script('mostayscripts', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', $in_footer = true); // Custom scripts
         wp_enqueue_script('mostayscripts'); // Enqueue it!
     }
 }
 
 // Load mostay styles
 function mostay_styles(){
-    wp_register_style('mostaystyles', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
     wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
 
@@ -214,9 +216,9 @@ add_action('wp_enqueue_scripts', 'mostay_styles'); // Add Theme Stylesheet
 add_action('init', 'register_mostay_menu'); // Add mostay Menu
 add_action('init', 'mostay_pagination'); // Add our mostay Pagination
 add_action('init', 'my_custom_posttypes' ); //Mostay Custon Posttypes
-//add_action('init', 'my_custom_taxonomies' ); //Mostay Custon Taxonomies
-add_action( 'init', 'change_post_object_label' ); //Change post Name
-add_action( 'admin_menu', 'change_post_menu_label' ); //Change post Name
+add_action('init', 'my_custom_taxonomies' ); //Mostay Custon Taxonomies
+// add_action( 'init', 'change_post_object_label' ); //Change post Name
+// add_action( 'admin_menu', 'change_post_menu_label' ); //Change post Name
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
@@ -427,4 +429,69 @@ function my_custom_taxonomies() {
 
 }
 */
+
+//General Custom Fields
+$new_general_setting = new new_general_setting();
+
+class new_general_setting {
+    function new_general_setting( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'company_phone', 'esc_attr' );
+        add_settings_field('comp_phone', '<label for="company phone">'.__('company phone' , 'company_phone' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+        register_setting( 'general', 'company_email', 'esc_attr' );
+        add_settings_field('comp_email', '<label for="company email">'.__('company email' , 'company_email' ).'</label>' , array(&$this, 'fields_html1') , 'general' );
+
+        register_setting( 'general', 'facebook', 'esc_attr' );
+        add_settings_field('faceb', '<label for="facebook">'.__('Facebook' , 'facebook' ).'</label>' , array(&$this, 'fields_html2') , 'general' );
+
+        register_setting( 'general', 'instagram', 'esc_attr' );
+        add_settings_field('insta', '<label for="instagram">'.__('instagram' , 'instagram' ).'</label>' , array(&$this, 'fields_html3') , 'general' );
+
+        register_setting( 'general', 'youtube', 'esc_attr' );
+        add_settings_field('you', '<label for="youtube">'.__('YouTube' , 'youtube' ).'</label>' , array(&$this, 'fields_html4') , 'general' );
+
+        register_setting( 'general', 'linkedin', 'esc_attr' );
+        add_settings_field('linkedin', '<label for="linkedin">'.__('LinkedIn' , 'linkedin' ).'</label>' , array(&$this, 'fields_html5') , 'general' );
+
+        register_setting( 'general', 'twitter', 'esc_attr' );
+        add_settings_field('twitter', '<label for="twitter">'.__('Twitter' , 'twitter' ).'</label>' , array(&$this, 'fields_html6') , 'general' );
+
+
+
+
+    }
+    function fields_html() {
+        $value = get_option( 'company_phone', '' );
+        echo '<input type="text" id="company_phone" name="company_phone" value="' . $value . '" />';
+    }
+    function fields_html1() {
+        $value = get_option( 'company_email', '' );
+        echo '<input type="text" id="company_email" name="company_email" value="' . $value . '" />';
+    }
+    function fields_html2() {
+        $value2 = get_option( 'facebook', '' );
+        echo '<input type="text" id="facebook" name="facebook" value="' . $value2 . '" />';
+    }
+    function fields_html3() {
+        $value3 = get_option( 'instagram', '' );
+        echo '<input type="text" id="instagram" name="instagram" value="' . $value3 . '" />';
+    }
+    function fields_html4() {
+        $value4 = get_option( 'youtube', '' );
+        echo '<input type="text" id="youtube" name="youtube" value="' . $value4 . '" />';
+    }
+    function fields_html5() {
+        $value5 = get_option( 'linkedin', '' );
+        echo '<input type="text" id="linkedin" name="linkedin" value="' . $value5 . '" />';
+    }
+    function fields_html6() {
+        $value6 = get_option( 'twitter', '' );
+        echo '<input type="text" id="twitter" name="twitter" value="' . $value6 . '" />';
+    }
+
+
+}
 ?>

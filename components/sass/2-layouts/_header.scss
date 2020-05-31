@@ -37,7 +37,7 @@ header {
     height: $menu-h ;
     float: left ;
     padding: $nav-padding ;
-    > ul {
+    ul {
       height: $nav-h ;
       display: inline-block ;
       > li {
@@ -52,7 +52,7 @@ header {
           color: $white ;
           padding: 0 10px ;
           display: block ;
-          @include transition(background-color .1s);
+          @include transition(background-color .3s);
           &:hover {
             background-color: $red ;
             text-decoration: none ;
@@ -69,18 +69,24 @@ header {
           > ul {
             display: block ;
             opacity: 1 ;
-            background-color: $red ;
+            // background-color: $red ;
             position: absolute ;
             > li {
               min-width: 130px ;
               display: block ;
               > a {
+                min-height: $nav-h ;
+                background-color: $red ;
                 font-family: $main-font-regular ;
                 font-size: 13px ;
                 line-height: 16px ;
                 padding: 8px 10px ;
                 color: $white ;
                 display: block ;
+                @include transition(background-color .3s);
+                &:hover {
+                  background-color: darken($red, 20%);
+                }
               }
               &:last-child {
                 padding-bottom: 10px ;

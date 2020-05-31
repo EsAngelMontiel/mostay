@@ -23,8 +23,8 @@
         ?>
     </title>
     <link href="//www.google-analytics.com" rel="dns-prefetch">
-    <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
-    <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+    <link href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" rel="shortcut icon">
+    <link href="<?php echo get_template_directory_uri(); ?>/img/touch.png" rel="apple-touch-icon-precomposed">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="<?php bloginfo('description'); ?>">
@@ -41,9 +41,81 @@
         </h1>
         <!-- /logo -->
         <!--  main nav -->
-        <nav class="main-nav" role="navigation">
+        <nav class="nav-main" role="navigation">
             <?php mostay_main_nav(); ?>
         </nav>
         <!--  /main nav -->
+
+        <ul id="mySidenav" class="sidenav">
+  				<a href="javascript:void(0)" class="closebtn">×</a>
+  				<li><a href="cursos.html">Cursos</a></li>
+  				<li><a href="blog.html">Blog</a></li>
+  				<li>
+  					<a href="portafolio.html">Portafolio</a>
+  					<ul>
+  						<li><a href="portafolio.html">Trabajos</a></li>
+  						<li><a href="portafolio.html">Casos de Estudio</a></li>
+  						<li><a href="portafolio.html">Experimentales</a></li>
+  					</ul>
+  				</li>
+  				<li><a href="#">Tienda</a></li>
+  				<li>
+  					<a href="#">Info</a>
+  					<ul>
+  						<li><a href="#">Nosotros</a></li>
+  						<li><a href="#">Terminos y Condiciones</a></li>
+  						<li><a href="#">Preguntas Frecuentes</a></li>
+  						<li><a href="#">Contacto</a></li>
+  					</ul>
+  				</li>
+  				<li>
+  					<p>Redes Sociales</p>
+  					<ul>
+  						<li><a href="#">Instagram</a></li>
+  						<li><a href="#">Youtube</a></li>
+  						<li><a href="#">LinkedIn</a></li>
+  						<li><a href="#">behance</a></li>
+  						<li><a href="#">Facebook</a></li>
+  					</ul>
+  				</li>
+  			</ul>
+  			<button class="nav navbutton" type="button" name="button"><i class="fas fa-bars"></i></button>
+
+
+        <div class="social-networks">
+          <?php
+          $instagram = get_option( 'instagram', 'Instagram' );
+          $linkedin = get_option( 'linkedin', 'LinkedIn' );
+          $facebook = get_option( 'facebook', 'Facebook' );
+          $youtube = get_option( 'youtube', 'YouTube' );
+          $twitter = get_option( 'twitter', 'Twitter' );
+          ?>
+          <ul class="sn">
+              <?php if ($instagram !== '') {?>
+                <li><a href="https://www.instagram.com/<?php echo $instagram ?>" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+              <?php } else {} ?>
+              <?php if ($youtube !== '') {?>
+                <li><a href="https://www.youtube.com/channel/<?php echo $youtube ?>" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
+              <?php } else {} ?>
+              <?php if ($twitter !== '') {?>
+                <li><a href="https://www.twitter.com/<?php echo $twitter ?>" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+              <?php } else {} ?>
+              <?php if ($linkedin !== '') {?>
+                <li><a href="https://www.linkedin.com/in/<?php echo $linkedin ?>" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+              <?php } else {} ?>
+              <?php if ($facebook !== '') {?>
+                <li><a href="https://www.facebook.com/<?php echo $facebook ?>" target="_blank"><i class="fab fa-facebook-square"></i><span>Facebook</span></a></li>
+              <?php } else {} ?>
+
+
+            </ul>
+  				<!-- <ul>
+  					<li><a href="#" target="_blank"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+  					<li><a href="#" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+  					<li><a href="#" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+  					<li><a href="#" target="_blank"><i class="fab fa-behance-square"></i><span>Behance</span></a></li>
+  					<li><a href="#" target="_blank"><i class="fab fa-patreon"></i><span>Patreon</span></a></li>
+  				</ul> -->
+  			</div>
     </header>
     <!-- /header -->
