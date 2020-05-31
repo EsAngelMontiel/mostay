@@ -45,43 +45,11 @@
             <?php mostay_main_nav(); ?>
         </nav>
         <!--  /main nav -->
-
         <ul id="mySidenav" class="sidenav">
   				<a href="javascript:void(0)" class="closebtn">×</a>
-  				<li><a href="cursos.html">Cursos</a></li>
-  				<li><a href="blog.html">Blog</a></li>
-  				<li>
-  					<a href="portafolio.html">Portafolio</a>
-  					<ul>
-  						<li><a href="portafolio.html">Trabajos</a></li>
-  						<li><a href="portafolio.html">Casos de Estudio</a></li>
-  						<li><a href="portafolio.html">Experimentales</a></li>
-  					</ul>
-  				</li>
-  				<li><a href="#">Tienda</a></li>
-  				<li>
-  					<a href="#">Info</a>
-  					<ul>
-  						<li><a href="#">Nosotros</a></li>
-  						<li><a href="#">Terminos y Condiciones</a></li>
-  						<li><a href="#">Preguntas Frecuentes</a></li>
-  						<li><a href="#">Contacto</a></li>
-  					</ul>
-  				</li>
-  				<li>
-  					<p>Redes Sociales</p>
-  					<ul>
-  						<li><a href="#">Instagram</a></li>
-  						<li><a href="#">Youtube</a></li>
-  						<li><a href="#">LinkedIn</a></li>
-  						<li><a href="#">behance</a></li>
-  						<li><a href="#">Facebook</a></li>
-  					</ul>
-  				</li>
+  				<?php mostay_side_nav(); ?>
   			</ul>
   			<button class="nav navbutton" type="button" name="button"><i class="fas fa-bars"></i></button>
-
-
         <div class="social-networks">
           <?php
           $instagram = get_option( 'instagram', 'Instagram' );
@@ -106,16 +74,7 @@
               <?php if ($facebook !== '') {?>
                 <li><a href="https://www.facebook.com/<?php echo $facebook ?>" target="_blank"><i class="fab fa-facebook-square"></i><span>Facebook</span></a></li>
               <?php } else {} ?>
-
-
             </ul>
-  				<!-- <ul>
-  					<li><a href="#" target="_blank"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
-  					<li><a href="#" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-  					<li><a href="#" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-  					<li><a href="#" target="_blank"><i class="fab fa-behance-square"></i><span>Behance</span></a></li>
-  					<li><a href="#" target="_blank"><i class="fab fa-patreon"></i><span>Patreon</span></a></li>
-  				</ul> -->
   			</div>
     </header>
     <!-- /header -->

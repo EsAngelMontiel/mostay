@@ -68,50 +68,50 @@ function mostay_main_nav(){
 }
 
 // mostay footer navigation
-function mostay_footer_nav(){
+// function mostay_footer_nav(){
+//     wp_nav_menu(array(
+//         'theme_location'  => 'footer-menu',
+//         'menu'            => '',
+//         'container'       => '',
+//         'container_class' => '',
+//         'container_id'    => '',
+//         'menu_class'      => 'footer-menu',
+//         'menu_id'         => '',
+//         'echo'            => true,
+//         'fallback_cb'     => 'wp_page_menu',
+//         'before'          => '',
+//         'after'           => '',
+//         'link_before'     => '',
+//         'link_after'      => '',
+//         'items_wrap'      => '<ul>%3$s</ul>',
+//         'depth'           => 0,
+//         'walker'          => ''
+//         )
+//     );
+// }
+
+// mostay footer navigation
+function mostay_side_nav(){
     wp_nav_menu(array(
-        'theme_location'  => 'footer-menu',
-        'menu'            => '',
-        'container'       => '',
-        'container_class' => '',
-        'container_id'    => '',
-        'menu_class'      => 'footer-menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => ''
+          'theme_location'  => 'side-menu',
+          'menu'            => '',
+          'container'       => false,
+          'container_class' => '',
+          'container_id'    => '',
+          'menu_class'      => 'side-menu',
+          'menu_id'         => '',
+          'echo'            => true,
+          'fallback_cb'     => 'wp_page_menu',
+          'before'          => '',
+          'after'           => '',
+          'link_before'     => '',
+          'link_after'      => '',
+          'items_wrap'      => '%3$s',
+          'depth'           => 0,
+          'walker'          => ''
         )
     );
 }
-
-// mostay footer navigation
-/*function mostay_side_nav(){
-    wp_nav_menu(array(
-        'theme_location'  => 'side-menu',
-        'menu'            => '',
-        'container'       => '',
-        'container_class' => '',
-        'container_id'    => '',
-        'menu_class'      => 'side-menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => ''
-        )
-    );
-}*/
 
 // Load mostay scripts (header.php)
 function mostay_header_scripts(){
@@ -130,16 +130,18 @@ function mostay_header_scripts(){
 
 // Load mostay styles
 function mostay_styles(){
-    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
-    wp_enqueue_style('mostaystyles'); // Enqueue it!
+  wp_register_style('slick', get_template_directory_uri() . '/slick/slick.css', array(), '1.0', 'all');
+  wp_enqueue_style('slick'); // Enqueue it!
+  wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+  wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
 
 // Register mostay Navigations
 function register_mostay_menu(){
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'mostay'), // Main Navigation
-        //'side-menu' => __('Sidebar Menu', 'mostay'), // Sidebar Navigation
-        'footer-menu' => __('Footer Menu', 'mostay') // Extra Navigation if needed (duplicate as many as you need!)
+        'side-menu' => __('Sidebar Menu', 'mostay'), // Sidebar Navigation
+        // 'footer-menu' => __('Footer Menu', 'mostay') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
