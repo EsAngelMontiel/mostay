@@ -36,7 +36,7 @@
               position: absolute ;
               top: 0 ; left: 0 ;
               display: block ;
-              background-color: rgba(0,0,0,.7);
+              background-color: rgba(0,0,0,.9);
               opacity: 0 ;
               @include transition(opacity .3s);
               > span {

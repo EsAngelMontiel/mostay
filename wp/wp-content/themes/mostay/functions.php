@@ -29,9 +29,9 @@ if (function_exists('add_theme_support')){
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('large', 1920, 1080, true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 300, 300, true); // Small Thumbnail
-    //add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('medium', 1200, 600, true); // Medium Thumbnail
+    add_image_size('small', 500, 500, true); // Small Thumbnail
+    add_image_size('cover-size', 1200, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -189,8 +189,8 @@ function mostay_pagination(){
         'prev_next' => false,
         'type'  => 'array',
         'prev_next'   => TRUE,
-        'prev_text'    => __('«'),
-        'next_text'    => __('»'),
+        'prev_text'    => __('Atrás'),
+        'next_text'    => __('Siguiente'),
     ) );
     if( is_array( $pages ) ) {
         $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
@@ -248,22 +248,22 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <di
 \*------------------------------------*/
 
 function my_custom_posttypes() {
-    // Productos Post Types
+    // Proyectos Post Types
     $labels = array(
-        'name'               => 'Productos',
-        'singular_name'      => 'Producto',
-        'menu_name'          => 'Productos',
-        'name_admin_bar'     => 'Producto',
-        'add_new'            => 'Add New',
-        'add_new_item'       => 'Add New Producto',
-        'new_item'           => 'New Producto',
-        'edit_item'          => 'Edit Producto',
-        'view_item'          => 'View Producto',
-        'all_items'          => 'All Productos',
-        'search_items'       => 'Search Productos',
-        'parent_item_colon'  => 'Parent Productos:',
-        'not_found'          => 'No Productos found.',
-        'not_found_in_trash' => 'No Productos found in Trash.',
+        'name'               => 'Proyectos',
+        'singular_name'      => 'Proyecto',
+        'menu_name'          => 'Proyectos',
+        'name_admin_bar'     => 'Proyecto',
+        'add_new'            => 'Crear',
+        'add_new_item'       => 'Crear Proyecto',
+        'new_item'           => 'Nuevo Proyecto',
+        'edit_item'          => 'Editar Proyecto',
+        'view_item'          => 'Ver los Proyecto',
+        'all_items'          => 'Todos los Proyectos',
+        'search_items'       => 'Buscar Proyectos',
+        'parent_item_colon'  => 'Proyectos Padre:',
+        'not_found'          => 'Ningún Proyecto Encontrado.',
+        'not_found_in_trash' => 'Ningún Proyecto encontrado en la Papelera.'
     );
 
     $args = array(
@@ -272,35 +272,34 @@ function my_custom_posttypes() {
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
-        'menu_icon'          => 'dashicons-cart',
+        'menu_icon'          => 'dashicons-buddicons-replies',
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'taxs' ),
+        'rewrite'            => array( 'slug' => 'proyectos' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
-        'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'         => array( 'category', 'post_tag' )
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
     );
-    register_post_type('producto', $args );
+    register_post_type('proyectos', $args );
     flush_rewrite_rules();
 
     // Nosotros Post Types
     $labels = array(
-        'name'               => 'Nosotros',
-        'singular_name'      => 'Nosotros',
-        'menu_name'          => 'Nosotros',
-        'name_admin_bar'     => 'Nosotros',
-        'add_new'            => 'Add New',
-        'add_new_item'       => 'Add New Nosotros',
-        'new_item'           => 'New Nosotros',
-        'edit_item'          => 'Edit Nosotros',
-        'view_item'          => 'View Nosotros',
-        'all_items'          => 'All Nosotros',
-        'search_items'       => 'Search Nosotros',
-        'parent_item_colon'  => 'Parent Nosotros:',
-        'not_found'          => 'No Nosotro found.',
-        'not_found_in_trash' => 'No Nosotros found in Trash.',
+        'name'               => 'Casos',
+        'singular_name'      => 'Caso',
+        'menu_name'          => 'Casos',
+        'name_admin_bar'     => 'Casos',
+        'add_new'            => 'Crear',
+        'add_new_item'       => 'Crear Casos',
+        'new_item'           => 'Nuevo Caso',
+        'edit_item'          => 'Edit Casos',
+        'view_item'          => 'Ver Casos',
+        'all_items'          => 'Todos los Casos',
+        'search_items'       => 'Buscar Caso',
+        'parent_item_colon'  => 'Caso Padre:',
+        'not_found'          => 'Ningún Caso entontrado.',
+        'not_found_in_trash' => 'Ningún caso encontrado en la papelera.',
     );
 
     $args = array(
@@ -309,17 +308,16 @@ function my_custom_posttypes() {
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
-        'menu_icon'          => 'dashicons-store',
+        'menu_icon'          => 'dashicons-visibility',
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'taxs' ),
+        'rewrite'            => array( 'slug' => 'casos' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
-        'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'         => array( 'category', 'post_tag' )
+        'supports'           => array( 'title', 'editor', 'thumbnail' )
     );
-    register_post_type('nosotros', $args );
+    register_post_type('casos', $args );
     flush_rewrite_rules();
 }
 
@@ -368,132 +366,144 @@ flush_rewrite_rules();
          Custom Taxonomies
 \*------------------------------------*/
 
-/*
+
 function my_custom_taxonomies() {
-    // Type of Product/Service taxonomy
+    // Categoria taxonomy (non-hierarchical)
     $labels = array(
-        'name'              => 'Type of Products/Services',
-        'singular_name'     => 'Type of Product/Service',
-        'search_items'      => 'Search Types of Products/Services',
-        'all_items'         => 'All Types of Products/Services',
-        'parent_item'       => 'Parent Type of Product/Service',
-        'parent_item_colon' => 'Parent Type of Product/Service:',
-        'edit_item'         => 'Edit Type of Product/Service',
-        'update_item'       => 'Update Type of Product/Service',
-        'add_new_item'      => 'Add New Type of Product/Service',
-        'new_item_name'     => 'New Type of Product/Service Name',
-        'menu_name'         => 'Type of Product/Service',
+      'name'                       => 'Categorías',
+      'singular_name'              => 'Categoría',
+      'search_items'               => 'Buscar Categorías',
+      'popular_items'              => 'Categorías Populares',
+      'all_items'                  => 'Todas las Categorías',
+      'parent_item'                => null,
+      'parent_item_colon'          => null,
+      'edit_item'                  => 'Editar Categoría',
+      'update_item'                => 'Actualizar Categoría',
+      'add_new_item'               => 'Crear Categoría',
+      'new_item_name'              => 'Nuevo Nombre de Categoría',
+      'separate_items_with_commas' => 'Separar categorías con comas',
+      'add_or_remove_items'        => 'Crear o Eliminar Categorías',
+      'choose_from_most_used'      => 'Seleccionar la categoría mas usada',
+      'not_found'                  => 'Ninguna Categoría Encontrada.',
+      'menu_name'                  => 'Categorías',
     );
 
     $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'product-types' ),
+      'hierarchical'          => true,
+      'labels'                => $labels,
+      'show_ui'               => true,
+      'show_admin_column'     => true,
+      'update_count_callback' => '_update_post_term_count',
+      'query_var'             => true,
+      'rewrite'               => array( 'slug' => 'categorias' ),
     );
 
-    register_taxonomy( 'product-type', array( 'taxs' ), $args );
+    register_taxonomy( 'categorias', array( 'proyectos' ), $args );
 
 
-     // Mood taxonomy (non-hierarchical)
+    // Categoria taxonomy (non-hierarchical)
     $labels = array(
-        'name'                       => 'Moods',
-        'singular_name'              => 'Mood',
-        'search_items'               => 'Search Moods',
-        'popular_items'              => 'Popular Moods',
-        'all_items'                  => 'All Moods',
-        'parent_item'                => null,
-        'parent_item_colon'          => null,
-        'edit_item'                  => 'Edit Mood',
-        'update_item'                => 'Update Mood',
-        'add_new_item'               => 'Add New Mood',
-        'new_item_name'              => 'New Mood Name',
-        'separate_items_with_commas' => 'Separate moods with commas',
-        'add_or_remove_items'        => 'Add or remove moods',
-        'choose_from_most_used'      => 'Choose from the most used moods',
-        'not_found'                  => 'No moods found.',
-        'menu_name'                  => 'Moods',
+      'name'                       => 'Categorías',
+      'singular_name'              => 'Categoría',
+      'search_items'               => 'Buscar Categorías',
+      'popular_items'              => 'Categorías Populares',
+      'all_items'                  => 'Todas las Categorías',
+      'parent_item'                => null,
+      'parent_item_colon'          => null,
+      'edit_item'                  => 'Editar Categoría',
+      'update_item'                => 'Actualizar Categoría',
+      'add_new_item'               => 'Crear Categoría',
+      'new_item_name'              => 'Nuevo Nombre de Categoría',
+      'separate_items_with_commas' => 'Separar categorías con comas',
+      'add_or_remove_items'        => 'Crear o Eliminar Categorías',
+      'choose_from_most_used'      => 'Seleccionar la categoría mas usada',
+      'not_found'                  => 'Ninguna Categoría Encontrada.',
+      'menu_name'                  => 'Categorías',
     );
 
     $args = array(
-        'hierarchical'          => false,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'update_count_callback' => '_update_post_term_count',
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'moods' ),
+      'hierarchical'          => true,
+      'labels'                => $labels,
+      'show_ui'               => true,
+      'show_admin_column'     => true,
+      'update_count_callback' => '_update_post_term_count',
+      'query_var'             => true,
+      'rewrite'               => array( 'slug' => 'categorias2' ),
     );
 
-    register_taxonomy( 'mood', array( 'Taxs', 'post' ), $args );
+    register_taxonomy( 'categorias2', array( 'casos' ), $args );
 
 }
-*/
+
 
 //General Custom Fields
 $new_general_setting = new new_general_setting();
 
 class new_general_setting {
-    function new_general_setting( ) {
-        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
-    }
-    function register_fields() {
-        register_setting( 'general', 'company_phone', 'esc_attr' );
-        add_settings_field('comp_phone', '<label for="company phone">'.__('company phone' , 'company_phone' ).'</label>' , array(&$this, 'fields_html') , 'general' );
-
-        register_setting( 'general', 'company_email', 'esc_attr' );
-        add_settings_field('comp_email', '<label for="company email">'.__('company email' , 'company_email' ).'</label>' , array(&$this, 'fields_html1') , 'general' );
-
-        register_setting( 'general', 'facebook', 'esc_attr' );
-        add_settings_field('faceb', '<label for="facebook">'.__('Facebook' , 'facebook' ).'</label>' , array(&$this, 'fields_html2') , 'general' );
-
-        register_setting( 'general', 'instagram', 'esc_attr' );
-        add_settings_field('insta', '<label for="instagram">'.__('instagram' , 'instagram' ).'</label>' , array(&$this, 'fields_html3') , 'general' );
-
-        register_setting( 'general', 'youtube', 'esc_attr' );
-        add_settings_field('you', '<label for="youtube">'.__('YouTube' , 'youtube' ).'</label>' , array(&$this, 'fields_html4') , 'general' );
-
-        register_setting( 'general', 'linkedin', 'esc_attr' );
-        add_settings_field('linkedin', '<label for="linkedin">'.__('LinkedIn' , 'linkedin' ).'</label>' , array(&$this, 'fields_html5') , 'general' );
-
-        register_setting( 'general', 'twitter', 'esc_attr' );
-        add_settings_field('twitter', '<label for="twitter">'.__('Twitter' , 'twitter' ).'</label>' , array(&$this, 'fields_html6') , 'general' );
-
-
-
-
-    }
-    function fields_html() {
-        $value = get_option( 'company_phone', '' );
-        echo '<input type="text" id="company_phone" name="company_phone" value="' . $value . '" />';
-    }
-    function fields_html1() {
-        $value = get_option( 'company_email', '' );
-        echo '<input type="text" id="company_email" name="company_email" value="' . $value . '" />';
-    }
-    function fields_html2() {
-        $value2 = get_option( 'facebook', '' );
-        echo '<input type="text" id="facebook" name="facebook" value="' . $value2 . '" />';
-    }
-    function fields_html3() {
-        $value3 = get_option( 'instagram', '' );
-        echo '<input type="text" id="instagram" name="instagram" value="' . $value3 . '" />';
-    }
-    function fields_html4() {
-        $value4 = get_option( 'youtube', '' );
-        echo '<input type="text" id="youtube" name="youtube" value="' . $value4 . '" />';
-    }
-    function fields_html5() {
-        $value5 = get_option( 'linkedin', '' );
-        echo '<input type="text" id="linkedin" name="linkedin" value="' . $value5 . '" />';
-    }
-    function fields_html6() {
-        $value6 = get_option( 'twitter', '' );
-        echo '<input type="text" id="twitter" name="twitter" value="' . $value6 . '" />';
-    }
-
-
+  function new_general_setting( ) {
+      add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+  }
+  function register_fields() {
+      register_setting( 'general', 'company_phone', 'esc_attr' );
+      add_settings_field('comp_phone', '<label for="company phone">'.__('company phone' , 'company_phone' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+      register_setting( 'general', 'company_email', 'esc_attr' );
+      add_settings_field('comp_email', '<label for="company email">'.__('company email' , 'company_email' ).'</label>' , array(&$this, 'fields_html1') , 'general' );
+      register_setting( 'general', 'facebook', 'esc_attr' );
+      add_settings_field('faceb', '<label for="facebook">'.__('Facebook' , 'facebook' ).'</label>' , array(&$this, 'fields_html2') , 'general' );
+      register_setting( 'general', 'instagram', 'esc_attr' );
+      add_settings_field('insta', '<label for="instagram">'.__('instagram' , 'instagram' ).'</label>' , array(&$this, 'fields_html3') , 'general' );
+      register_setting( 'general', 'youtube', 'esc_attr' );
+      add_settings_field('you', '<label for="youtube">'.__('YouTube' , 'youtube' ).'</label>' , array(&$this, 'fields_html4') , 'general' );
+      register_setting( 'general', 'linkedin', 'esc_attr' );
+      add_settings_field('linkedin', '<label for="linkedin">'.__('LinkedIn' , 'linkedin' ).'</label>' , array(&$this, 'fields_html5') , 'general' );
+      register_setting( 'general', 'twitter', 'esc_attr' );
+      add_settings_field('twitter', '<label for="twitter">'.__('Twitter' , 'twitter' ).'</label>' , array(&$this, 'fields_html6') , 'general' );
+  }
+  function fields_html() {
+      $value = get_option( 'company_phone', '' );
+      echo '<input type="text" id="company_phone" name="company_phone" value="' . $value . '" />';
+  }
+  function fields_html1() {
+      $value = get_option( 'company_email', '' );
+      echo '<input type="text" id="company_email" name="company_email" value="' . $value . '" />';
+  }
+  function fields_html2() {
+      $value2 = get_option( 'facebook', '' );
+      echo '<input type="text" id="facebook" name="facebook" value="' . $value2 . '" />';
+  }
+  function fields_html3() {
+      $value3 = get_option( 'instagram', '' );
+      echo '<input type="text" id="instagram" name="instagram" value="' . $value3 . '" />';
+  }
+  function fields_html4() {
+      $value4 = get_option( 'youtube', '' );
+      echo '<input type="text" id="youtube" name="youtube" value="' . $value4 . '" />';
+  }
+  function fields_html5() {
+      $value5 = get_option( 'linkedin', '' );
+      echo '<input type="text" id="linkedin" name="linkedin" value="' . $value5 . '" />';
+  }
+  function fields_html6() {
+      $value6 = get_option( 'twitter', '' );
+      echo '<input type="text" id="twitter" name="twitter" value="' . $value6 . '" />';
+  }
 }
+
+// **************** Auhor Info ****************
+function edit_contactmethods( $contactmethods ) {
+  $contactmethods['title'] = 'title';
+  $contactmethods['facebook'] = 'Facebook';
+  $contactmethods['twitter'] = 'Twitter';
+  $contactmethods['youtube'] = 'YouTube';
+  $contactmethods['instagram'] = 'Instagram';
+  $contactmethods['linkedin'] = 'LinkedIn';
+  $contactmethods['behance'] = 'Behance';
+  $contactmethods['dribbble'] = 'Dribbble';
+  // unset($contactmethods['yim']);
+  // unset($contactmethods['aim']);
+  // unset($contactmethods['jabber']);
+  return $contactmethods;
+}
+add_filter('user_contactmethods','edit_contactmethods',10,1);
+
 ?>

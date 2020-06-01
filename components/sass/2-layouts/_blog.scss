@@ -11,10 +11,10 @@
     background-color: $blue ;
   }
   div.container {
-    padding: 60px 0 60px 0 ;
+    padding: 20px 0 60px 0 ;
     > ul {
       overflow: hidden ;
-      margin-bottom: 40px ;
+      margin-bottom: 0 ;
       padding: 10px ;
       > li {
         @include boxGrid(3, 3%);

@@ -7834,6 +7834,1206 @@
 		"oAP": "/wp/wp-content/languages/es_MX.po",
 		"oF": 0
 		},
+	"/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX-0268229898900dd8cfe9853d6ba6e67b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX-0268229898900dd8cfe9853d6ba6e67b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX-d6a7201ab49b2683e384e4910468064e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX-d6a7201ab49b2683e384e4910468064e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX.mo": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX.mo",
+		"oF": 0
+		},
+	"/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX.po": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/languages/plugins/advanced-custom-fields-es_MX.po",
+		"oF": 0
+		},
+	"/wp/wp-content/languages/plugins/all-in-one-wp-migration-es_MX.mo": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/languages/plugins/all-in-one-wp-migration-es_MX.mo",
+		"oF": 0
+		},
+	"/wp/wp-content/languages/plugins/all-in-one-wp-migration-es_MX.po": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/languages/plugins/all-in-one-wp-migration-es_MX.po",
+		"oF": 0
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-02acd74879196411261af7576fdb4b93.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-02acd74879196411261af7576fdb4b93-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-056e3f14efed538fde21950202add8dc.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-056e3f14efed538fde21950202add8dc-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-05d09138941a659d44e69e36a6128b77.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-05d09138941a659d44e69e36a6128b77-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-07ab4692a994f127e1cd893f363cfa3e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-07ab4692a994f127e1cd893f363cfa3e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-09c5919a18291dd26d6f52f9d1563a8e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-09c5919a18291dd26d6f52f9d1563a8e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-0a3b65850c50f16de824a40fa5ff0f0f.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-0a3b65850c50f16de824a40fa5ff0f0f-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-0b8996a2cb219ae7e381f93b3be0b67d.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-0b8996a2cb219ae7e381f93b3be0b67d-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-0cf7579f6fbc3a394bde81590518d79e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-0cf7579f6fbc3a394bde81590518d79e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-0e3dcd4f3ff5aa786acbbd18de58d420.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-0e3dcd4f3ff5aa786acbbd18de58d420-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-0f41b2a348452c70c6481186c90ee539.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-0f41b2a348452c70c6481186c90ee539-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-124cfb7a5d89d9c89c181e1d53e04227.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-124cfb7a5d89d9c89c181e1d53e04227-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-154eb5541053115f9cf2cc279decf649.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-154eb5541053115f9cf2cc279decf649-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-18a31075fa5f4596edaf76ec78921ff4.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-18a31075fa5f4596edaf76ec78921ff4-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-18cb1508cf8b268459dfb0b7544a4a6f.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-18cb1508cf8b268459dfb0b7544a4a6f-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-1ab3c5ff6a861a0bbc5e57811248de9b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-1ab3c5ff6a861a0bbc5e57811248de9b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-1b59d077cd5a766feef182aa33bfdeb6.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-1b59d077cd5a766feef182aa33bfdeb6-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-1c0b6556acc988893b0a5233ecc0a0cf.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-1c0b6556acc988893b0a5233ecc0a0cf-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-1ecbf13afe7c7d7136c189b714bbb8ec.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-1ecbf13afe7c7d7136c189b714bbb8ec-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-1f453658d28cb7b0dbbf2fe5656a0e52.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-1f453658d28cb7b0dbbf2fe5656a0e52-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-1fd108afcd6b1150ccd257c03371fcf4.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-1fd108afcd6b1150ccd257c03371fcf4-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-206459d169f12b652a1dabe78a376826.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-206459d169f12b652a1dabe78a376826-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-21fee52f2b4be704278bd81018c89b15.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-21fee52f2b4be704278bd81018c89b15-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-264d96e187371a7fc19cfb0c0e17601f.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-264d96e187371a7fc19cfb0c0e17601f-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-266b21f550f6c336217746f77332e8d9.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-266b21f550f6c336217746f77332e8d9-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-296a2578b2d8df6921f0d13a4fa83a63.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-296a2578b2d8df6921f0d13a4fa83a63-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-2a130218c40b2b37eedb3857f22c90a1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-2a130218c40b2b37eedb3857f22c90a1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-2a4f5667ed4e81d44f6ccfb84523b904.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-2a4f5667ed4e81d44f6ccfb84523b904-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-2a7eca80ba12897c21ffaa74974c8fef.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-2a7eca80ba12897c21ffaa74974c8fef-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-2cd54bc9eeab906cf0f6abb2399e9fb7.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-2cd54bc9eeab906cf0f6abb2399e9fb7-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-2e5b773a600e6595bad14136c2d73f08.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-2e5b773a600e6595bad14136c2d73f08-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-30a76cbd1d834be53da07353ae9c04f6.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-30a76cbd1d834be53da07353ae9c04f6-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-346e00957d00882d99868c46bad422f4.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-346e00957d00882d99868c46bad422f4-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-36b6e0ecd8b0ca24f5b02a505afa04ad.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-36b6e0ecd8b0ca24f5b02a505afa04ad-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-36e7818bfdfd4a6943db89e1565c4cc7.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-36e7818bfdfd4a6943db89e1565c4cc7-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-376011c6441a11bdb03699ed8ce0becc.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-376011c6441a11bdb03699ed8ce0becc-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-398358f27f594f39ff10747d855fc068.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-398358f27f594f39ff10747d855fc068-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-39de01d53e1a7555444d48e522e8dfa0.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-39de01d53e1a7555444d48e522e8dfa0-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-40b17adf34449ee7e3e363a1c1c25b5d.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-40b17adf34449ee7e3e363a1c1c25b5d-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-42bda93e026cec336f1afb5ad835ab7a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-42bda93e026cec336f1afb5ad835ab7a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-4a74985a61168391319ab15c958cf984.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-4a74985a61168391319ab15c958cf984-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-4c7c269e37d7cb4f326b016333ed89f8.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-4c7c269e37d7cb4f326b016333ed89f8-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-4e3234bb41d0851c150e919809099a0c.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-4e3234bb41d0851c150e919809099a0c-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-571d84627e5bb3bf6dfe96cb83a16bff.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-571d84627e5bb3bf6dfe96cb83a16bff-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5732890af28c709ee103d63f5e400d73.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5732890af28c709ee103d63f5e400d73-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5a5292d4981044a0b7513bae8a1b295e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5a5292d4981044a0b7513bae8a1b295e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5aebce178e3b807850cc26e942059a9b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5aebce178e3b807850cc26e942059a9b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5b37725cbb6d468f2f7f24e4197c910f.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5b37725cbb6d468f2f7f24e4197c910f-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5ca9d7c1e762634623941efe4d5a2469.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5ca9d7c1e762634623941efe4d5a2469-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5dbb887395521bca37d8989620c54fd0.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5dbb887395521bca37d8989620c54fd0-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-5e97339e0756e5bda516a3bcccc55291.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-5e97339e0756e5bda516a3bcccc55291-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-600a680df13366b0dff255bf450a774d.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-600a680df13366b0dff255bf450a774d-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-62e815516fb81906c218cf351160c884.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-62e815516fb81906c218cf351160c884-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-63c86bee87d5e82df937a2c2dce16b08.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-63c86bee87d5e82df937a2c2dce16b08-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-64d497c5d8b8575a28edb2fc5ff5b5a1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-64d497c5d8b8575a28edb2fc5ff5b5a1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-6b540692fe4f3228bbf79cd1e559660a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-6b540692fe4f3228bbf79cd1e559660a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-6b82d38e8ac7d8966cd8377aae33e5fd.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-6b82d38e8ac7d8966cd8377aae33e5fd-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-6cbf0d6770d52e8763d2ee282a94c30f.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-6cbf0d6770d52e8763d2ee282a94c30f-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-724b9c3fa3633db8112718fc03c8079b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-724b9c3fa3633db8112718fc03c8079b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-73078688a92ac960cb12644c13b110b0.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-73078688a92ac960cb12644c13b110b0-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-745e871de011e6c267379c88172c4f84.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-745e871de011e6c267379c88172c4f84-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-74d045bafa8cbebd4fe0f277010a5102.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-74d045bafa8cbebd4fe0f277010a5102-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-75390e8f65306e29d19720d2ddda8e90.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-75390e8f65306e29d19720d2ddda8e90-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-759a1ecfc9e66ff8de9f9a98045ceb87.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-759a1ecfc9e66ff8de9f9a98045ceb87-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-75a7eaceda97b32841d31b557468c4ab.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-75a7eaceda97b32841d31b557468c4ab-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-75d33b4e15a83feea4a7a74e5b2207dd.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-75d33b4e15a83feea4a7a74e5b2207dd-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-77b25a5ccb12a232ba73108568db40e0.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-77b25a5ccb12a232ba73108568db40e0-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-79d0b523871c2f1d9a119aa7bd14ac21.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-79d0b523871c2f1d9a119aa7bd14ac21-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-79f91321ec3ca398900fee5735aa23a9.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-79f91321ec3ca398900fee5735aa23a9-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-7a0089e0f72f7726bb4920c2ee0e04e8.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-7a0089e0f72f7726bb4920c2ee0e04e8-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-7cbf48bcd2a87f95ec4eda44a0eb7258.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-7cbf48bcd2a87f95ec4eda44a0eb7258-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-7ccc612d69e4b064526ea8bc1dac3a79.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-7ccc612d69e4b064526ea8bc1dac3a79-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-7e5d2c9dbcb942e4c4e0f319104c16d0.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-7e5d2c9dbcb942e4c4e0f319104c16d0-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-809b6b441475f60be6875318fedb118d.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-809b6b441475f60be6875318fedb118d-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-811738b7af9095a276a319dfbe46bceb.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-811738b7af9095a276a319dfbe46bceb-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-818de2a45ff7eb25cd76b75b402b5c04.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-818de2a45ff7eb25cd76b75b402b5c04-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-81fa76932399ec1b6d1c882dfe0f38b2.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-81fa76932399ec1b6d1c882dfe0f38b2-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-83c12cf92f9b74ecc178cefa51d88dde.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-83c12cf92f9b74ecc178cefa51d88dde-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-84b8b958854766b6b4b4d21a482acf19.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-84b8b958854766b6b4b4d21a482acf19-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-85bc274b5e191417528a5d83a3e0df4c.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-85bc274b5e191417528a5d83a3e0df4c-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-86f183bc49f007e059e226dec4e78466.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-86f183bc49f007e059e226dec4e78466-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-87c5431fc38ba348d837ebed0331c445.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-87c5431fc38ba348d837ebed0331c445-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-8c74bc279a70f95ca5874f30b9a39965.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-8c74bc279a70f95ca5874f30b9a39965-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-8ec38ff3b075251215c400d813522164.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-8ec38ff3b075251215c400d813522164-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-90b863d65ec140f99ebc0855bade2d35.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-90b863d65ec140f99ebc0855bade2d35-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-90d7eeda62b9eba288367d299dab8304.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-90d7eeda62b9eba288367d299dab8304-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-93691bbb61f9d37c583e85aab1e1d489.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-93691bbb61f9d37c583e85aab1e1d489-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-97d11a05fccdd9ecef9e4fcb7c0a6a46.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-97d11a05fccdd9ecef9e4fcb7c0a6a46-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-987cb2ea425b511e6d4b374ca417189c.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-987cb2ea425b511e6d4b374ca417189c-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-9a73667f668670d494d233823a0e936f.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-9a73667f668670d494d233823a0e936f-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-9b8014a68baafa4f1874783d1820cca7.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-9b8014a68baafa4f1874783d1820cca7-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-9b9fdaa6d7447798fbd2c0393d43cf8a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-9b9fdaa6d7447798fbd2c0393d43cf8a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-9e193e1001d6d89ebfd1dc6040b524a1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-9e193e1001d6d89ebfd1dc6040b524a1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a11697bf8fcba5f513c6d982904407e4.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a11697bf8fcba5f513c6d982904407e4-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a239aacc1837e5b8b6968881fcefaf44.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a239aacc1837e5b8b6968881fcefaf44-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a2ae79133a4c6da7ca0b4529c4aa6e7a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a2ae79133a4c6da7ca0b4529c4aa6e7a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a354d4299731b33e847e6eb5329b1a7e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a354d4299731b33e847e6eb5329b1a7e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a3f7f18b58640a626fd1dfafe4b5ba63.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a3f7f18b58640a626fd1dfafe4b5ba63-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a3f9dc6e9d40e3a716d512c21559fe0b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a3f9dc6e9d40e3a716d512c21559fe0b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-a46e2cdf66e3645fd11b123961dc9b40.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-a46e2cdf66e3645fd11b123961dc9b40-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-aa332e7383ce333ae0d4b6ed4d4c96fe.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-aa332e7383ce333ae0d4b6ed4d4c96fe-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-af52ab8cb2e7713cf3037751dd593965.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-af52ab8cb2e7713cf3037751dd593965-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b007baff76144318d6c33cd26f4bfdb9.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b007baff76144318d6c33cd26f4bfdb9-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b0a592b6fe83588c5d1b8ed6850b6a74.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b0a592b6fe83588c5d1b8ed6850b6a74-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b155b7bf28890099b74a84417cbaafe9.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b155b7bf28890099b74a84417cbaafe9-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b1bb8fbd24d68a9c893faf1a6f7b493b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b1bb8fbd24d68a9c893faf1a6f7b493b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b1bcbab1d6a7ca6b0433d67776f347f1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b1bcbab1d6a7ca6b0433d67776f347f1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b31f51fa0bb40ceb060aaa9f77ca1771.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b31f51fa0bb40ceb060aaa9f77ca1771-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-b826befd7acca93e8e4c12b7cd2fc7f1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-b826befd7acca93e8e4c12b7cd2fc7f1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ba8d2fb7c85928310d4f3a907b7d9bdd.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ba8d2fb7c85928310d4f3a907b7d9bdd-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-baa529102e65ee476d9a82ac1564e366.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-baa529102e65ee476d9a82ac1564e366-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-c0faba84c7842505f8893c2c327a9f78.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-c0faba84c7842505f8893c2c327a9f78-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-c22945301f466e2d78d6e80404a22664.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-c22945301f466e2d78d6e80404a22664-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-c2435bc8dfd186b147aba658416d115e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-c2435bc8dfd186b147aba658416d115e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-c2d9a34cf502bd5b5a80ca646a1420b3.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-c2d9a34cf502bd5b5a80ca646a1420b3-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-c2e7c011ee5dd15c730dad6f5e884539.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-c2e7c011ee5dd15c730dad6f5e884539-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-c6c5331d3afe1391f2ca83e991ccc086.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-c6c5331d3afe1391f2ca83e991ccc086-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-cc02e92f0af36b7c4f36de274b6e1ca3.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-cc02e92f0af36b7c4f36de274b6e1ca3-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-cc16013df9d4b0a0ba45297b90b06f20.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-cc16013df9d4b0a0ba45297b90b06f20-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-cc658045f5281864af07573751f8ff22.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-cc658045f5281864af07573751f8ff22-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-cd9fc1d9fc46b55bb32d0fd471457690.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-cd9fc1d9fc46b55bb32d0fd471457690-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ce966b75625b434ab1259ce171c61293.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ce966b75625b434ab1259ce171c61293-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-d2b4400b6de0e69404e0f7f61d16bc55.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-d2b4400b6de0e69404e0f7f61d16bc55-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-d5ea33028f13b50f40bbcce807e37fc0.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-d5ea33028f13b50f40bbcce807e37fc0-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ddb7f533a41db7e057e43bcf87270ece.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ddb7f533a41db7e057e43bcf87270ece-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-e0bde0ac58f55fc6b1426844e6697db3.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-e0bde0ac58f55fc6b1426844e6697db3-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-e46884f39517e74b7de819976d889acd.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-e46884f39517e74b7de819976d889acd-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-e8faa9474808d756455fe69932b5fc8e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-e8faa9474808d756455fe69932b5fc8e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-e930ab0f3b2fd33635ed5033ec41fbd4.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-e930ab0f3b2fd33635ed5033ec41fbd4-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ea6fb371f81c4d3584bbc795fa4ac09c.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ea6fb371f81c4d3584bbc795fa4ac09c-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ea967f41689ec1c0cda73a32439a5405.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ea967f41689ec1c0cda73a32439a5405-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ed2f62f6080e473f023f3b6641e4351d.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ed2f62f6080e473f023f3b6641e4351d-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-ef5798395d7601ab6fea0f1efd60f40a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-ef5798395d7601ab6fea0f1efd60f40a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-f2d5abd38e77f463761f5ce3181f73f1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-f2d5abd38e77f463761f5ce3181f73f1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-f31b0aa0c71dd74b7103120610ca6253.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-f31b0aa0c71dd74b7103120610ca6253-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-f3f1cc4f5811d4bf8a04a58feca06858.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-f3f1cc4f5811d4bf8a04a58feca06858-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-f60049653c419cfb1e3dc8876e7a8bdb.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-f60049653c419cfb1e3dc8876e7a8bdb-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-fc1fe56fadfdeeb25d1bc441581d92b6.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-fc1fe56fadfdeeb25d1bc441581d92b6-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-fc4895b6508f32c16c4d8bc69f8162b6.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-fc4895b6508f32c16c4d8bc69f8162b6-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-fccc2ef327a40a2d734aab3fb1b1a403.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-fccc2ef327a40a2d734aab3fb1b1a403-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-fd20fc8ea1484781160e8ea0d229d5e9.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-fd20fc8ea1484781160e8ea0d229d5e9-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-fde4427d32e8542cdde04dbd2b8676c2.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-fde4427d32e8542cdde04dbd2b8676c2-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX-fffdec5db595ec0ca7d043c87bae79b8.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX-fffdec5db595ec0ca7d043c87bae79b8-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX.mo": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX.mo",
+		"oF": 0
+		},
+	"/wp/wp-content/languages/plugins/woocommerce-es_MX.po": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/languages/plugins/woocommerce-es_MX.po",
+		"oF": 0
+		},
 	"/wp/wp-content/plugins/advanced-custom-fields/acf.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -32374,6 +33574,345 @@
 		"oAP": "/wp/wp-content/plugins/woocommerce/woocommerce.php",
 		"oF": 0
 		},
+	"/wp/wp-content/plugins/wp-user-avatar/css/jquery.ui.slider.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/css/jquery.ui.slider-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/css/wp-user-avatar.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/css/wp-user-avatar-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/mailoptin-banner.png": {
+		"ft": 32768,
+		"iS": 29717,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/mailoptin-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wp-user-avatar-banner.png": {
+		"ft": 32768,
+		"iS": 41157,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wp-user-avatar-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua-150x150.png": {
+		"ft": 32768,
+		"iS": 3530,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua-150x150.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua-20x20.png": {
+		"ft": 32768,
+		"iS": 566,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua-20x20.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua-300x300.png": {
+		"ft": 32768,
+		"iS": 7466,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua-300x300.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png": {
+		"ft": 32768,
+		"iS": 1593,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua-96x96.png": {
+		"ft": 32768,
+		"iS": 2398,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua-96x96.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua-icon.png": {
+		"ft": 32768,
+		"iS": 1298,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/images/wpua.png": {
+		"ft": 32768,
+		"iS": 12024,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/images/wpua.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-admin.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-admin.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-functions.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-functions.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-list-table.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-list-table.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-resource-manager.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-resource-manager.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-shortcode.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-shortcode.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-subscriber.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-subscriber.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-update.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-update.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-widget.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar-widget.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/class-wp-user-avatar.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/mo-notice.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/mo-notice.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/tinymce/editor_plugin.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/wp/wp-content/themes/mostay/js/editor_plugin-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/tinymce/window.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/tinymce/window.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/wpua-functions.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/wpua-functions.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/wpua-globals.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/wpua-globals.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/wpua-media-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/wpua-media-page.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/wpua-options-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/wpua-options-page.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/includes/wpua-tinymce.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/includes/wpua-tinymce.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/index.html",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/js/wp-user-avatar-admin.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp/wp-content/themes/mostay/js/wp-user-avatar-admin-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/js/wp-user-avatar-user.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp/wp-content/themes/mostay/js/wp-user-avatar-user-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/js/wp-user-avatar.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp/wp-content/themes/mostay/js/wp-user-avatar-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/lang/wp-user-avatar-en_US.mo": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/lang/wp-user-avatar-en_US.mo",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/lang/wp-user-avatar-en_US.po": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/lang/wp-user-avatar-en_US.po",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/readme.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/readme.txt",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/uninstall.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/uninstall.php",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/wp-user-avatar/wp-user-avatar.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/wp-user-avatar/wp-user-avatar.php",
+		"oF": 0
+		},
 	"/wp/wp-content/plugins/wps-hide-login/autoload.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -32716,6 +34255,14 @@
 		"oAP": "/wp/wp-content/themes/mostay/404.php",
 		"oF": 0
 		},
+	"/wp/wp-content/themes/mostay/archive.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/archive.php",
+		"oF": 0
+		},
 	"/wp/wp-content/themes/mostay/css/main.css": {
 		"aP": 1,
 		"bl": 0,
@@ -33026,6 +34573,14 @@
 		"oAP": "/wp/wp-content/themes/mostay/languages/ro_RO.po",
 		"oF": 0
 		},
+	"/wp/wp-content/themes/mostay/page-blog.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/page-blog.php",
+		"oF": 0
+		},
 	"/wp/wp-content/themes/mostay/page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -33263,6 +34818,25 @@
 		"oAP": "/wp/wp-content/themes/mostay/style.css.map",
 		"oF": 0
 		},
+	"/wp/wp-content/themes/mostay/tag.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/tag.php",
+		"oF": 0
+		},
+	"/wp/wp-content/uploads/2020/05/000000-1200x600-1591020082.jpg": {
+		"ft": 16384,
+		"iS": 29058,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/000000-1200x600-1591020082.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/wp/wp-content/uploads/2020/05/000000-150x150.jpg": {
 		"ft": 16384,
 		"iS": 1798,
@@ -33271,18 +34845,18 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/000000-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/wp/wp-content/uploads/2020/05/000000-250x250.jpg": {
+	"/wp/wp-content/uploads/2020/05/000000-300x200.jpg": {
 		"ft": 16384,
-		"iS": 2949,
+		"iS": 3558,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/wp/wp-content/uploads/2020/05/000000-250x250.jpg",
+		"oAP": "/wp/wp-content/uploads/2020/05/000000-300x200.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/000000.jpg": {
@@ -33291,6 +34865,303 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/wp/wp-content/uploads/2020/05/000000.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-1200x200-1591013928.jpg": {
+		"ft": 16384,
+		"iS": 30969,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1200x200-1591013928.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-1200x200.jpg": {
+		"ft": 16384,
+		"iS": 28944,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1200x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-1200x600-1591013831.jpg": {
+		"ft": 16384,
+		"iS": 102027,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1200x600-1591013831.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-1200x600.jpg": {
+		"ft": 16384,
+		"iS": 68886,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1200x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-150x150-1591013844.jpg": {
+		"ft": 16384,
+		"iS": 7158,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-150x150-1591013844.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-150x150.jpg": {
+		"ft": 16384,
+		"iS": 5431,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-1536x864.jpg": {
+		"ft": 16384,
+		"iS": 118206,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1536x864.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-1920x1080-1591013861.jpg": {
+		"ft": 16384,
+		"iS": 307265,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1920x1080-1591013861.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-500x500.jpg": {
+		"ft": 16384,
+		"iS": 28560,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-500x500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover-768x432.jpg": {
+		"ft": 16384,
+		"iS": 36299,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-768x432.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/05/post-cover.jpg": {
+		"ft": 16384,
+		"iS": 1099148,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/05/post-cover.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x200.jpg": {
+		"ft": 16384,
+		"iS": 26706,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x600.jpg": {
+		"ft": 16384,
+		"iS": 74602,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-150x150.jpg": {
+		"ft": 16384,
+		"iS": 3716,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-500x500.jpg": {
+		"ft": 16384,
+		"iS": 23407,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-500x500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-768x768.jpg": {
+		"ft": 16384,
+		"iS": 48416,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-768x768.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado.jpg": {
+		"ft": 16384,
+		"iS": 218098,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/breadcrumb-bg-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7224,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/breadcrumb-bg-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/breadcrumb-bg-500x200.jpg": {
+		"ft": 16384,
+		"iS": 28346,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/breadcrumb-bg-500x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/breadcrumb-bg-768x128.jpg": {
+		"ft": 16384,
+		"iS": 24848,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/breadcrumb-bg-768x128.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/breadcrumb-bg.jpg": {
+		"ft": 16384,
+		"iS": 61601,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/breadcrumb-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/cover-1200x200.jpg": {
+		"ft": 16384,
+		"iS": 17632,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/cover-1200x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/cover-1200x600.jpg": {
+		"ft": 16384,
+		"iS": 54036,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/cover-1200x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/cover-150x150.jpg": {
+		"ft": 16384,
+		"iS": 4905,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/cover-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/cover-500x500.jpg": {
+		"ft": 16384,
+		"iS": 21769,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/cover-500x500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/cover-768x576.jpg": {
+		"ft": 16384,
+		"iS": 29196,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/cover-768x576.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/cover.jpg": {
+		"ft": 16384,
+		"iS": 609691,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/cover.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

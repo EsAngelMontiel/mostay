@@ -18,7 +18,7 @@ body {
     background: url('../img/breadcrumb-bg.jpg') no-repeat cover ;
     position: relative ;
     overflow: hidden ;
-    margin-bottom: 30px ;
+    margin-bottom: 10px ;
     &.about {
       height: $bc-img-h + 200 ;
       .bc-img {
@@ -90,6 +90,17 @@ body {
       li {
         display: inline-block ;
         margin-right: 10px ;
+        span.current {
+          height: 50px ;
+          font-family: $main-font ;
+          font-size: 16px ;
+          line-height: 50px ;
+          border: 1px solid $white ;
+          color: $darkgray ;
+          padding: 0 20px ;
+          display: block ;
+          background-color: $white ;
+        }
         a {
           height: 50px ;
           font-family: $main-font ;
@@ -109,19 +120,13 @@ body {
         &:last-child {
           margin: 0 ;
         }
-        &.active {
-          background-color: $white ;
-          a {
-            color: $darkgray ;
-          }
-        }
       }
     }
   }
 
   // Titulo de Pagina
   .titulo {
-    margin-bottom: 45px ;
+    margin-bottom: 30px ;
     h1 {
       font-family: $main-font ;
       font-size: 40px ;
@@ -129,6 +134,14 @@ body {
       display: inline-block ;
       margin: 0 10px 0 0 ;
       color: $white ;
+      a {
+        color: $white ;
+        @include transition(color .3s);
+        &:hover {
+          color: $yellow ;
+          text-decoration: none ;
+        }
+      }
     }
     p {
       width: 350px ;
