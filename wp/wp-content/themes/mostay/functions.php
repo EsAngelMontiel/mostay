@@ -315,7 +315,7 @@ function my_custom_posttypes() {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
-        'supports'           => array( 'title', 'editor', 'thumbnail' )
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
     );
     register_post_type('casos', $args );
     flush_rewrite_rules();
@@ -505,5 +505,18 @@ function edit_contactmethods( $contactmethods ) {
   return $contactmethods;
 }
 add_filter('user_contactmethods','edit_contactmethods',10,1);
+
+// **************** Add class to next btn ****************
+function posts_link_next_class($format){
+     $format = str_replace('href=', 'class="btn" href=', $format);
+     return $format;
+}
+add_filter('next_post_link', 'posts_link_next_class');
+
+function posts_link_prev_class($format) {
+     $format = str_replace('href=', 'class="btn" href=', $format);
+     return $format;
+}
+add_filter('previous_post_link', 'posts_link_prev_class');
 
 ?>

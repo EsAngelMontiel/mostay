@@ -104,49 +104,47 @@
       <h1>Posts Relacionados.</h1>
       <p>También puedes ver el resto de los post al darle click a ver todos.</p>
     </div>
+    <?php
+    $argo = array(
+      'post_type'      => 'post',
+      'posts_per_page' =>  3 ,
+      'order'          => 'DESC',
+    );
+
+    $the_query = new WP_Query( $argo );
+
+    if ($the_query->have_posts()){ ?>
     <ul>
-      <li>
-        <article class="blog-post">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-          </a>
-          <div>
-            <h1><a href="#">El Social Media Week en CDMX.</a></h1>
-            <time datetime="2020-02-14">23 de Febrero de 2019</time>
-            <p>Maecenas rhoncus eleifend ante. Vestibulum elementum orci ut velit tempor, quis vestibulum ex volutpat. Aliquam hendrerit facilisis dui, interdum eleifend metus fermentum non. Nunc facilisis ornare turpis nec convallis.</p>
-            <a href="#">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="blog-post">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-          </a>
-          <div>
-            <h1><a href="#">El Social Media Week en CDMX.</a></h1>
-            <time datetime="2020-02-14">23 de Febrero de 2019</time>
-            <p>Maecenas rhoncus eleifend ante. Vestibulum elementum orci ut velit tempor, quis vestibulum ex volutpat. Aliquam hendrerit facilisis dui, interdum eleifend metus fermentum non. Nunc facilisis ornare turpis nec convallis.</p>
-            <a href="#">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="blog-post">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-          </a>
-          <div>
-            <h1><a href="#">El Social Media Week en CDMX.</a></h1>
-            <time datetime="2020-02-14">23 de Febrero de 2019</time>
-            <p>Maecenas rhoncus eleifend ante. Vestibulum elementum orci ut velit tempor, quis vestibulum ex volutpat. Aliquam hendrerit facilisis dui, interdum eleifend metus fermentum non. Nunc facilisis ornare turpis nec convallis.</p>
-            <a href="#">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </article>
-      </li>
+      <?php while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
+        $url = $thumb['0'];
+        $my_date01 = get_the_date( 'j F, Y', '', '', false );
+        $my_date02 = get_the_date( 'Y-m-d', '', '', false );
+
+        ?>
+        <li>
+          <article class="blog-post">
+            <a href="<?php the_permalink(); ?>">
+              <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
+            </a>
+            <div>
+              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
+              <?php the_excerpt(); ?>
+              <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </article>
+        </li>
+      <?php } ?>
     </ul>
+    <?php
+    } else { }
+    wp_reset_postdata();
+    wp_reset_query();
+    ?>
     <div class="btn-container">
-      <a href="<?php echo get_page_link(13); ?>" class="btn btn-blanco">Ver Todos</a>
+      <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Ver Todos</a>
     </div>
 
   </div>

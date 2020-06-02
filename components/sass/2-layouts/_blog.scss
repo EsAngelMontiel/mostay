@@ -5,6 +5,9 @@
 .blog {
   &.featured-posts {
     background-color: $black ;
+    > div.container {
+      padding: 90px 0 70px 0;
+    }
   }
   > div.bar {
     height: 40px ; width: 100% ;

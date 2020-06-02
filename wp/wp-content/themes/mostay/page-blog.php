@@ -86,56 +86,55 @@ $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
       <h1>Los Casos de Estudio</h1>
       <p>Ve todo lo que implica el desarrollo de cada proyecto que hacemos en mostay.</p>
     </div>
-    <ul id="primero" class="casos">
-      <li>
-        <article class="casos-lista">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-            <span>
-              <span>
-                <h2>Branding</h2>
-                <h1>Nombre del curso</h1>
-                <p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
-                <i class="fas fa-arrow-circle-right"></i>
-              </span>
-            </span>
-          </a>
-        </article>
-      </li>
+    <?php
+    $argo = array(
+      'post_type'      => 'casos',
+      'posts_per_page' =>  3 ,
+      'order'          => 'DESC',
+    );
 
+    $the_query = new WP_Query( $argo );
+
+    if ($the_query->have_posts()){ ?>
+    <ul id="primero" class="casos">
+      <?php while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
+        $url = $thumb['0']; ?>
       <li>
-        <article class="casos-lista">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
+        <article class="trabajos-lista">
+          <a href="<?php the_permalink(); ?>">
+            <img src="<?php echo $url ; ?>" alt="imagen del articulo">
             <span>
               <span>
-                <h2>Branding</h2>
-                <h1>Nombre del curso</h1>
-                <p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
+                <?php
+                $terms = wp_get_post_terms($post->ID, 'categorias2');
+                if ($terms) {
+                    $output = array();
+                    foreach ($terms as $term) {
+                        $categorias = $term->name ;
+                    }
+                    echo '<h2>'.$categorias.'</h2>';
+                }
+                ?>
+                <h2><?php single_cat_title(); ?></h2>
+                <h1><?php the_title(); ?></h1>
+                <?php the_excerpt(); ?>
                 <i class="fas fa-arrow-circle-right"></i>
               </span>
             </span>
           </a>
         </article>
       </li>
-      <li>
-        <article class="casos-lista">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-            <span>
-              <span>
-                <h2>Branding</h2>
-                <h1>Nombre del curso</h1>
-                <p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
-                <i class="fas fa-arrow-circle-right"></i>
-              </span>
-            </span>
-          </a>
-        </article>
-      </li>
+      <?php } ?>
     </ul>
+    <?php
+    } else { }
+    wp_reset_postdata();
+    wp_reset_query();
+    ?>
     <div class="btn-container">
-      <a href="#" class="btn btn-blanco">Ver Todos</a>
+      <a href="<?php echo get_page_link(13); ?>" class="btn btn-blanco">Ver Todos</a>
     </div>
 
   </div>

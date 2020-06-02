@@ -34581,6 +34581,22 @@
 		"oAP": "/wp/wp-content/themes/mostay/page-blog.php",
 		"oF": 0
 		},
+	"/wp/wp-content/themes/mostay/page-casos.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/page-casos.php",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/page-proyectos.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/page-proyectos.php",
+		"oF": 0
+		},
 	"/wp/wp-content/themes/mostay/page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -34630,6 +34646,22 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp/wp-content/themes/mostay/sidebar.php",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/single-casos.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/single-casos.php",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/single-proyectos.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/single-proyectos.php",
 		"oF": 0
 		},
 	"/wp/wp-content/themes/mostay/single.php": {
@@ -34889,7 +34921,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1200x200.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/post-cover-1200x600-1591013831.jpg": {
@@ -34911,7 +34943,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1200x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/post-cover-150x150-1591013844.jpg": {
@@ -34933,7 +34965,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/post-cover-1536x864.jpg": {
@@ -34944,7 +34976,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-1536x864.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/post-cover-1920x1080-1591013861.jpg": {
@@ -34966,7 +34998,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-500x500.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/post-cover-768x432.jpg": {
@@ -34977,7 +35009,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/05/post-cover-768x432.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/05/post-cover.jpg": {
@@ -34999,7 +35031,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x200.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x600.jpg": {
@@ -35010,7 +35042,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-1080x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-150x150.jpg": {
@@ -35021,7 +35053,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-500x500.jpg": {
@@ -35032,7 +35064,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-500x500.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-768x768.jpg": {
@@ -35043,7 +35075,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado-768x768.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/Autorretrato-Cuadrado.jpg": {
@@ -35120,7 +35152,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/cover-1200x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/cover-150x150.jpg": {
@@ -35131,7 +35163,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/cover-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/cover-500x500.jpg": {
@@ -35142,7 +35174,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/cover-500x500.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/cover-768x576.jpg": {
@@ -35153,7 +35185,7 @@
 		"oAP": "/wp/wp-content/uploads/2020/06/cover-768x576.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/wp/wp-content/uploads/2020/06/cover.jpg": {
