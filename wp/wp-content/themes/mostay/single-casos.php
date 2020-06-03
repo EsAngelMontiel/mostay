@@ -79,7 +79,7 @@ $large_2 = $img_2['sizes'][ $size_large_2 ];
       <?php if (!empty($behance)): ?>
         <a href="<?php echo $behance ; ?>" class="btn" target="_blank"><i class="fab fa-behance-square"></i> <span> Ver en Behance</span></a>
       <?php endif; ?>
-      <a href="<?php echo get_page_link(71); ?>" class="btn"><i class="fas fa-briefcase"></i><span> Volver a Proyectos</span></a>
+      <a href="<?php echo get_page_link(13); ?>" class="btn"><i class="fas fa-briefcase"></i><span> Volver a Proyectos</span></a>
       <!-- <a href="#" class="btn"><span>Siguiente Proyecto </span> <i class="fas fa-arrow-right"></i></a> -->
       <?php previous_post_link('%link', '<i class="fas fa-arrow-left"></i><span> Proyecto Anterior</span>'); ?>
       <?php next_post_link('%link', '<span>Siguiente Proyecto</span> <i class="fas fa-arrow-right"></i>'); ?>

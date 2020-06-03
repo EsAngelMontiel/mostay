@@ -34573,6 +34573,14 @@
 		"oAP": "/wp/wp-content/themes/mostay/languages/ro_RO.po",
 		"oF": 0
 		},
+	"/wp/wp-content/themes/mostay/page-about.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/page-about.php",
+		"oF": 0
+		},
 	"/wp/wp-content/themes/mostay/page-blog.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -34856,6 +34864,22 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp/wp-content/themes/mostay/tag.php",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/taxonomy-categorias.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/taxonomy-categorias.php",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/taxonomy-categorias2.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/taxonomy-categorias2.php",
 		"oF": 0
 		},
 	"/wp/wp-content/uploads/2020/05/000000-1200x600-1591020082.jpg": {

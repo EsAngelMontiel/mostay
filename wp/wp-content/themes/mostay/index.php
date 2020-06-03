@@ -1,61 +1,115 @@
 <?php get_header(); ?>
 
 <!-- ********************** slider ********************** -->
+<?php
+$post_id = 101 ;
+
+$post1 = get_field('post_1', $post_id);
+$post2 = get_field('post_2', $post_id);
+$post3 = get_field('post_3', $post_id);
+$post4 = get_field('post_4', $post_id);
+
+$tipo1 = get_field('tipo_1', $post_id);
+$tipo2 = get_field('tipo_2', $post_id);
+$tipo3 = get_field('tipo_3', $post_id);
+$tipo4 = get_field('tipo_4', $post_id);
+
+?>
 <section class="mostay-cartelera">
+  <?php if( !empty($post1)): ?>
   <ul class="home-slider">
-    <li>
-      <img src="https://dummyimage.com/1920x1080/7d7d7d/000000.jpg" alt="image">
-      <div>
-        <div class="container">
-          <div>
-            <strong>Diseño Web</strong>
-            <h1>10 formas de aprovechar Adobe Experience Design.</h1>
-            <h2>Por Angel Montiel</h2>
-            <a class="btn-verde" href="#" alt="nombre del boton">Ver Artículo</a>
+      <li>
+        <?php
+        // override $post
+      	$post = $post1;
+      	setup_postdata( $post );
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+        $url = $thumb['0'];
+        ?>
+        <img src="<?php echo $url ;?>" alt="image">
+        <div>
+          <div class="container">
+            <div>
+              <strong><?php echo $tipo1 ; ?></strong>
+              <h1><?php the_title(); ?></h1>
+              <?php the_excerpt(); ?>
+              <a class="btn-verde" href="<?php the_permalink(); ?>" alt="nombre del boton">Ver Artículo</a>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-    <li>
-      <img src="https://dummyimage.com/1920x1080/7d7d56/000000.jpg" alt="image">
-      <div>
-        <div class="container">
+        <?php wp_reset_postdata(); ?>
+      </li>
+      <?php if( !empty($post2)): ?>
+        <li>
+          <?php
+          // override $post
+        	$post = $post2;
+        	setup_postdata( $post );
+          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+          $url = $thumb['0'];
+          ?>
+          <img src="<?php echo $url ;?>" alt="image">
           <div>
-            <strong>Diseño Web</strong>
-            <h1>10 formas de aprovechar Adobe Experience Design.</h1>
-            <h2>Por Angel Montiel</h2>
-            <a class="btn-verde" href="#" alt="nombre del boton">Ver Artículo</a>
+            <div class="container">
+              <div>
+                <strong><?php echo $tipo2 ; ?></strong>
+                <h1><?php the_title(); ?></h1>
+                <?php the_excerpt(); ?>
+                <a class="btn-verde" href="<?php the_permalink(); ?>" alt="nombre del boton">Ver Artículo</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <img src="https://dummyimage.com/1920x1080/7d7d34/000000.jpg" alt="image">
-      <div>
-        <div class="container">
+          <?php wp_reset_postdata(); ?>
+        </li>
+      <?php endif; ?>
+      <?php if( !empty($post3)): ?>
+        <li>
+          <?php
+          // override $post
+        	$post = $post3;
+        	setup_postdata( $post );
+          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+          $url = $thumb['0'];
+          ?>
+          <img src="<?php echo $url ;?>" alt="image">
           <div>
-            <strong>Diseño Web</strong>
-            <h1>10 formas de aprovechar Adobe Experience Design.</h1>
-            <h2>Por Angel Montiel</h2>
-            <a class="btn-verde" href="#" alt="nombre del boton">Ver Artículo</a>
+            <div class="container">
+              <div>
+                <strong><?php echo $tipo3 ; ?></strong>
+                <h1><?php the_title(); ?></h1>
+                <?php the_excerpt(); ?>
+                <a class="btn-verde" href="<?php the_permalink(); ?>" alt="nombre del boton">Ver Artículo</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <img src="https://dummyimage.com/1920x1080/7d7d34/000000.jpg" alt="image">
-      <div>
-        <div class="container">
+          <?php wp_reset_postdata(); ?>
+        </li>
+      <?php endif; ?>
+      <?php if( !empty($post4)): ?>
+        <li>
+          <?php
+          // override $post
+        	$post = $post4;
+        	setup_postdata( $post );
+          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+          $url = $thumb['0'];
+          ?>
+          <img src="<?php echo $url ;?>" alt="image">
           <div>
-            <strong>Diseño Web</strong>
-            <h1>10 formas de aprovechar Adobe Experience Design.</h1>
-            <h2>Por Angel Montiel</h2>
-            <a class="btn-verde" href="#" alt="nombre del boton">Ver Artículo</a>
+            <div class="container">
+              <div>
+                <strong><?php echo $tipo4 ; ?></strong>
+                <h1><?php the_title(); ?></h1>
+                <?php the_excerpt(); ?>
+                <a class="btn-verde" href="<?php the_permalink(); ?>" alt="nombre del boton">Ver Artículo</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </li>
+          <?php wp_reset_postdata(); ?>
+        </li>
+      <?php endif; ?>
   </ul>
+  <?php endif; ?>
 </section>
 
 <!-- ********************** resumen de posts ********************** -->

@@ -62,13 +62,15 @@
         width: 150% ;
         position: relative ;
         left: -25% ;
-        margin: 0 ; padding: 0 ;
+        margin: 20px 0 30px 0 ;
+        padding: 0 ;
         text-align: center;
         > img {
           width: 100% ; height: auto ;
 
         }
         > figcaption {
+          margin: 0 ;
           display: inline-block ;
           width: $col-w ;
           @extend p ;
