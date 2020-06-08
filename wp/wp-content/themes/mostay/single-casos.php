@@ -19,6 +19,9 @@ $img_2 = get_field('img_2', $post_id);
 $size_large_2 = 'medium';
 $large_2 = $img_2['sizes'][ $size_large_2 ];
 
+// links
+$behance = get_field('behance', $post_id);
+
 ?>
 
 

@@ -221,7 +221,19 @@ body {
       }
     }
     .breadcrumb-espacio {
+      $bc-img-h: 50px ;
+      height: $bc-img-h ; width: 100% ;
+      .bc-img {
+        height: $bc-img-h ;
+        img {
+          width: 100% ; height: auto ;
+          min-height: $bc-img-h ;
+        }
+      }
+
       > .container {
+        padding-top: 15px ;
+        top: - $bc-img-h ;
         > nav {
           ol {
             li {
