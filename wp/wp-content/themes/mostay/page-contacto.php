@@ -1,4 +1,4 @@
-<?php /* Template Name: About */
+<?php /* Template Name: Contact */
 get_header();
 if (have_posts()): while (have_posts()) : the_post();
 $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
@@ -94,7 +94,6 @@ $email = get_field('email', $post_id);
 
   </div>
 </section>
-
 
 <?php endwhile; ?>
 <?php else: ?>

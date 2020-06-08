@@ -10,6 +10,7 @@
     > div.contenido {
       display: inline-block ;
       width: $col-w ;
+      margin: 0 0 30px 0 ;
       // text-align: left ;
       > a.categoria {
         text-align: center ;
@@ -29,19 +30,28 @@
         font-family: $main-font ;
         font-size: 36px ;
         line-height: 40px ;
+        margin: 0 0 20px 0 !important ;
         color: $white ;
       }
-      > h2, > h3 {
+      > h2 {
         @extend h1 ;
-        font-size: 30px ;
+        font-size: 28px ;
+        line-height: 30px ;
         color: $blue ;
-        margin: 30px 0 10px 0 ;
+        margin: 0 0 10px 0 ;
+      }
+      > h3 {
+        @extend h2 ;
+        font-size: 20px ;
+        line-height: 22px ;
+        color: $blue ;
+        margin: 0 0 10px 0 ;
       }
       p {
         font-family: $text-font ;
         font-size: 14px ;
         line-height: 22px ;
-        margin: 0 0 50px 0 ;
+        margin: 0 0 20px 0 ;
         color: $gray ;
         text-align: left ;
         > a {
@@ -49,6 +59,9 @@
         }
         > strong {
           font-weight: bold ;
+        }
+        > em {
+          font-style: italic ;
         }
         > img {
           width: 150% ; height: auto ;

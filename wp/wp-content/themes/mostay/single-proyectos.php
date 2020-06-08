@@ -5,7 +5,7 @@ $cover_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
 
 // Cover
 $cover = get_field('cover', $post_id);
-$cover_size = 'medium';
+$cover_size = 'cover-project';
 $main_cover = $cover['sizes'][ $cover_size ];
 
 // Img 01

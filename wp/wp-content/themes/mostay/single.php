@@ -102,7 +102,7 @@
   <div class="container">
     <div class="titulo">
       <h1>Posts Relacionados.</h1>
-      <p>También puedes ver el resto de los post al darle click a ver todos.</p>
+      <p>Gracias por leer este artículo, aqui te muestro 3 que te pueden interesar.</p>
     </div>
     <?php
     $argo = array(

@@ -84,7 +84,7 @@ $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
   <div class="container">
     <div class="titulo">
       <h1>Los Casos de Estudio</h1>
-      <p>Ve todo lo que implica el desarrollo de cada proyecto que hacemos en mostay.</p>
+      <p>Ve detalles de todo lo que implica el desarrollo de cada proyecto en mostay.</p>
     </div>
     <?php
     $argo = array(

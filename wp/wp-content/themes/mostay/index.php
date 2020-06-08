@@ -117,7 +117,7 @@ $tipo4 = get_field('tipo_4', $post_id);
   <div class="container">
     <div class="titulo">
       <h1>El blog</h1>
-      <p>Encuentra información sobre diseño y las ultimas noticias sobre el branding y el diseño web.</p>
+      <p>Información sobre diseño, Branding y mi proceso personal en el desarrollo de Marcas.</p>
     </div>
     <?php
     $argo = array(
@@ -232,7 +232,7 @@ $tipo4 = get_field('tipo_4', $post_id);
   <div class="container">
     <div class="titulo">
       <h1>Los Casos de Estudio</h1>
-      <p>Ve todo lo que implica el desarrollo de cada proyecto que hacemos en mostay.</p>
+      <p>Ve detalles de todo lo que implica el desarrollo de cada proyecto en mostay.</p>
     </div>
     <?php
     $argo = array(
@@ -286,7 +286,7 @@ $tipo4 = get_field('tipo_4', $post_id);
     </div>
     <div class="titulo">
       <h1>Los Trabajos</h1>
-      <p>Conoce todos los proyectos que hemos desarrollado en branding y desarrollo web.</p>
+      <p>Conoce todas las marcas y rediseños que se han desarrollado en Mostay.</p>
     </div>
     <?php
     $argo = array(

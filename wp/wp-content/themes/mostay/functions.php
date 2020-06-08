@@ -31,6 +31,7 @@ if (function_exists('add_theme_support')){
     add_image_size('large', 1920, 1080, true); // Large Thumbnail
     add_image_size('medium', 1200, 600, true); // Medium Thumbnail
     add_image_size('small', 500, 500, true); // Small Thumbnail
+    add_image_size('cover-project', 1200, '', false); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
     add_image_size('cover-size', 1200, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Enables post and comment RSS feed links to head
