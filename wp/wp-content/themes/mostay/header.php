@@ -31,50 +31,60 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <!-- logo -->
-        <h1>
-            <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>">
-                <span><?php bloginfo('name'); ?></span>
-            </a>
-        </h1>
-        <!-- /logo -->
-        <!--  main nav -->
-        <nav class="nav-main" role="navigation">
-            <?php mostay_main_nav(); ?>
-        </nav>
-        <!--  /main nav -->
-        <ul id="mySidenav" class="sidenav">
-  				<a href="javascript:void(0)" class="closebtn">×</a>
-  				<?php mostay_side_nav(); ?>
-  			</ul>
-  			<button class="nav navbutton" type="button" name="button"><i class="fas fa-bars"></i></button>
-        <div class="social-networks">
-          <?php
-          $instagram = get_option( 'instagram', 'Instagram' );
-          $linkedin = get_option( 'linkedin', 'LinkedIn' );
-          $facebook = get_option( 'facebook', 'Facebook' );
-          $youtube = get_option( 'youtube', 'YouTube' );
-          $twitter = get_option( 'twitter', 'Twitter' );
-          ?>
-          <ul class="sn">
-              <?php if ($instagram !== '') {?>
-                <li><a href="https://www.instagram.com/<?php echo $instagram ?>" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-              <?php } else {} ?>
-              <?php if ($youtube !== '') {?>
-                <li><a href="https://www.youtube.com/channel/<?php echo $youtube ?>" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
-              <?php } else {} ?>
-              <?php if ($twitter !== '') {?>
-                <li><a href="https://www.twitter.com/<?php echo $twitter ?>" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-              <?php } else {} ?>
-              <?php if ($linkedin !== '') {?>
-                <li><a href="https://www.linkedin.com/in/<?php echo $linkedin ?>" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-              <?php } else {} ?>
-              <?php if ($facebook !== '') {?>
-                <li><a href="https://www.facebook.com/<?php echo $facebook ?>" target="_blank"><i class="fab fa-facebook-square"></i><span>Facebook</span></a></li>
-              <?php } else {} ?>
-            </ul>
-  			</div>
-    </header>
-    <!-- /header -->
+  <!-- Preloader -->
+  <div id="loader-wrapper">
+      <div id="loader" >
+        <div>
+         <div class="loader">
+           <img src="<?php echo get_template_directory_uri(); ?>/img/mostay.gif" alt="loader">
+         </div>
+        </div>
+      </div>
+  </div>
+  <!-- header -->
+  <header>
+      <!-- logo -->
+      <h1>
+          <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>">
+              <span><?php bloginfo('name'); ?></span>
+          </a>
+      </h1>
+      <!-- /logo -->
+      <!--  main nav -->
+      <nav class="nav-main" role="navigation">
+          <?php mostay_main_nav(); ?>
+      </nav>
+      <!--  /main nav -->
+      <ul id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn">×</a>
+				<?php mostay_side_nav(); ?>
+			</ul>
+			<button class="nav navbutton" type="button" name="button"><i class="fas fa-bars"></i></button>
+      <div class="social-networks">
+        <?php
+        $instagram = get_option( 'instagram', 'Instagram' );
+        $linkedin = get_option( 'linkedin', 'LinkedIn' );
+        $facebook = get_option( 'facebook', 'Facebook' );
+        $youtube = get_option( 'youtube', 'YouTube' );
+        $twitter = get_option( 'twitter', 'Twitter' );
+        ?>
+        <ul class="sn">
+            <?php if ($instagram !== '') {?>
+              <li><a href="https://www.instagram.com/<?php echo $instagram ?>" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+            <?php } else {} ?>
+            <?php if ($youtube !== '') {?>
+              <li><a href="https://www.youtube.com/channel/<?php echo $youtube ?>" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
+            <?php } else {} ?>
+            <?php if ($twitter !== '') {?>
+              <li><a href="https://www.twitter.com/<?php echo $twitter ?>" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+            <?php } else {} ?>
+            <?php if ($linkedin !== '') {?>
+              <li><a href="https://www.linkedin.com/in/<?php echo $linkedin ?>" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+            <?php } else {} ?>
+            <?php if ($facebook !== '') {?>
+              <li><a href="https://www.facebook.com/<?php echo $facebook ?>" target="_blank"><i class="fab fa-facebook-square"></i><span>Facebook</span></a></li>
+            <?php } else {} ?>
+          </ul>
+			</div>
+  </header>
+  <!-- /header -->

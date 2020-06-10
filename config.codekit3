@@ -1678,6 +1678,19 @@
 		"oS": 3,
 		"sct": 1
 		},
+	"/components/sass/2-layouts/_about.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/wp/wp-content/themes/mostay/css/_about.css",
+		"oF": 0,
+		"oS": 3,
+		"sct": 1
+		},
 	"/components/sass/2-layouts/_blog.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1765,6 +1778,19 @@
 		"ma": 1,
 		"oA": 1,
 		"oAP": "/components/wp/wp-content/themes/mostay/css/_portafolio.css",
+		"oF": 0,
+		"oS": 3,
+		"sct": 1
+		},
+	"/components/sass/2-layouts/_preloader.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/components/wp/wp-content/themes/mostay/css/_preloader.css",
 		"oF": 0,
 		"oS": 3,
 		"sct": 1
@@ -35505,12 +35531,140 @@
 		"oAP": "/wp/wp-content/themes/mostay/css/main.css.map",
 		"oF": 0
 		},
-	"/wp/wp-content/themes/mostay/fonts/readme.txt": {
+	"/wp/wp-content/themes/mostay/fonts/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.eot": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/wp/wp-content/themes/mostay/fonts/readme.txt",
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.eot",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.ttf",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.woff",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-brands-400.woff2",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.eot",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.ttf",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.woff",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-regular-400.woff2",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.eot",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.ttf",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.woff",
+		"oF": 0
+		},
+	"/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/fonts/webfonts/fa-solid-900.woff2",
 		"oF": 0
 		},
 	"/wp/wp-content/themes/mostay/footer.php": {
@@ -35597,6 +35751,14 @@
 		"opt": 0,
 		"plM": 52780316221407,
 		"prP": 0
+		},
+	"/wp/wp-content/themes/mostay/img/mostay.gif": {
+		"ft": 4194304,
+		"iS": 2681,
+		"oA": 0,
+		"oAP": "/wp/wp-content/themes/mostay/img/mostay.gif",
+		"oF": 0,
+		"opt": 0
 		},
 	"/wp/wp-content/themes/mostay/img/photo_2015-11-19_18-46-16.jpg": {
 		"ft": 16384,
@@ -37088,6 +37250,94 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/wp/wp-content/uploads/2016/09/05-mosckups-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-1200x200.jpg": {
+		"ft": 16384,
+		"iS": 45071,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-1200x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-1200x600.jpg": {
+		"ft": 16384,
+		"iS": 71381,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-1200x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-1200x675.jpg": {
+		"ft": 16384,
+		"iS": 77899,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-1200x675.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-150x150.jpg": {
+		"ft": 16384,
+		"iS": 5029,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-1536x864.jpg": {
+		"ft": 16384,
+		"iS": 118221,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-1536x864.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-500x500.jpg": {
+		"ft": 16384,
+		"iS": 28508,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-500x500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos-768x432.jpg": {
+		"ft": 16384,
+		"iS": 37922,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos-768x432.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2018/04/06-bocetos.jpg": {
+		"ft": 16384,
+		"iS": 980593,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2018/04/06-bocetos.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -38864,6 +39114,94 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-1200x200.jpg": {
+		"ft": 16384,
+		"iS": 32371,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-1200x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-1200x600.jpg": {
+		"ft": 16384,
+		"iS": 57872,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-1200x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-1200x675.jpg": {
+		"ft": 16384,
+		"iS": 61388,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-1200x675.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-150x150.jpg": {
+		"ft": 16384,
+		"iS": 4182,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-1536x864.jpg": {
+		"ft": 16384,
+		"iS": 90471,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-1536x864.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-500x500.jpg": {
+		"ft": 16384,
+		"iS": 23946,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-500x500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos-768x432.jpg": {
+		"ft": 16384,
+		"iS": 29995,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos-768x432.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/05-bocetos.jpg": {
+		"ft": 16384,
+		"iS": 877134,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/05-bocetos.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/wp/wp-content/uploads/2020/06/05-menu-1200x200.jpg": {
 		"ft": 16384,
 		"iS": 36745,
@@ -40135,6 +40473,94 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-1920x1080.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-1200x200.jpg": {
+		"ft": 16384,
+		"iS": 29289,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-1200x200.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-1200x600.jpg": {
+		"ft": 16384,
+		"iS": 60583,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-1200x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-1200x675.jpg": {
+		"ft": 16384,
+		"iS": 64588,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-1200x675.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-150x150.jpg": {
+		"ft": 16384,
+		"iS": 4478,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-1536x864.jpg": {
+		"ft": 16384,
+		"iS": 98224,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-1536x864.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-500x500.jpg": {
+		"ft": 16384,
+		"iS": 27558,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-500x500.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2-768x432.jpg": {
+		"ft": 16384,
+		"iS": 31076,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2-768x432.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wp/wp-content/uploads/2020/06/boceto-001-2.jpg": {
+		"ft": 16384,
+		"iS": 1107825,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/uploads/2020/06/boceto-001-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -41460,11 +41886,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/wp/wp-content/uploads/2020/06/Cover2-5-1200x600.png": {
+	"/wp/wp-content/uploads/2020/06/Cover2-5-1200x600-1591710831.png": {
 		"ft": 32768,
-		"iS": 68233,
+		"iS": 95941,
 		"oA": 0,
-		"oAP": "/wp/wp-content/uploads/2020/06/Cover2-5-1200x600.png",
+		"oAP": "/wp/wp-content/uploads/2020/06/Cover2-5-1200x600-1591710831.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

@@ -40,4 +40,10 @@ $(document).ready(function(){
     arrows: false,
   });
 
+
+});
+
+// Preloader Code /*
+$(window).bind("load", function () {
+	$('body').addClass('loaded').scrollTop(0);
 });

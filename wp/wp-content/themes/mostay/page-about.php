@@ -7,19 +7,36 @@ $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
 $behance = get_field('behance', $post_id);
 $linkedin = get_field('linkedin', $post_id);
 $instagram = get_field('instagram', $post_id);
+$youtube = get_field('video_cover', $post_id);
 $email = get_field('email', $post_id);
 ?>
 
-<section class="breadcrumb-espacio about">
+<section class="breadcrumb-espacio">
   <div class="bc-img">
-    <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
+    <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+      <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
+    <?php endif; ?>
     <span class="bc-gradient"></span>
+  </div>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
+        <li>/</li>
+        <li class="breadcrumb-item active"><?php the_title(); ?></li>
+      </ol>
+    </nav>
   </div>
 </section>
 
 <!-- ********************** resumen de posts ********************** -->
-<section class="project">
+<section class="about">
   <article class="container">
+    <?php if (!empty($youtube)): ?>
+      <div class="video-cover">
+        <?php echo $youtube ; ?>
+      </div>
+    <?php endif; ?>
     <div class="contenido">
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>
@@ -36,7 +53,11 @@ $email = get_field('email', $post_id);
       <a href="https://www.instagram.com/<?php echo $instagram ; ?>" class="btn btn-blanco" target="_blank"><i class="fab fa-instagram"></i><span> Instagram</span></a>
     <?php endif ; ?>
     <?php if (!empty($email)):?>
-      <a href="mailto:<?php echo $email ; ?>" class="btn btn-blanco" target="_blank"><i class="fas fa-envelope"></i><span> Email</span></a>
+      <SCRIPT TYPE="text/javascript">
+        emailE = 'mostay.co'
+        emailE = ('<?php echo $email ; ?>' + '@' + emailE)
+        document.write('<A class="btn btn-blanco" href="mailto:' + emailE + '"><i class="fas fa-envelope"></i><span> Email</span></a>')
+      </script>
     <?php endif ; ?>
   </div>
 </section>
@@ -46,8 +67,8 @@ $email = get_field('email', $post_id);
   <div class="bar"></div>
   <div class="container">
     <div class="titulo">
-      <h1>Posts Relacionados.</h1>
-      <p>También puedes ver el resto de los post al darle click a ver todos.</p>
+      <h1>El Blog.</h1>
+      <p>Información sobre diseño, Branding y mi proceso personal en el desarrollo de Marcas.</p>
     </div>
     <?php
     $argo = array(

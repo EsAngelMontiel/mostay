@@ -63,7 +63,9 @@ $behance = get_field('behance', $post_id);
   <section class="project">
     <article class="container">
       <?php if (!empty($cover)): ?>
-        <img src="<?php echo $main_cover ; ?>" alt="<?php the_title(); ?>">
+        <div class="logo-cover">
+          <img src="<?php echo $main_cover ; ?>" alt="<?php the_title(); ?>">
+        </div>
       <?php endif; ?>
       <div class="contenido">
         <?php

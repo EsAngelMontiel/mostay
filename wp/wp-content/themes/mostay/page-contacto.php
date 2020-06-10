@@ -2,6 +2,7 @@
 get_header();
 if (have_posts()): while (have_posts()) : the_post();
 $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
+$main_cover = get_the_post_thumbnail_url(get_the_ID(),'medium');
 
 // Redes
 $behance = get_field('behance', $post_id);
@@ -10,15 +11,26 @@ $instagram = get_field('instagram', $post_id);
 $email = get_field('email', $post_id);
 ?>
 
-<section class="breadcrumb-espacio about">
+<section class="breadcrumb-espacio">
   <div class="bc-img">
-    <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
+    <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+      <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
+    <?php endif; ?>
     <span class="bc-gradient"></span>
+  </div>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
+        <li>/</li>
+        <li class="breadcrumb-item active"><?php the_title(); ?></li>
+      </ol>
+    </nav>
   </div>
 </section>
 
 <!-- ********************** resumen de posts ********************** -->
-<section class="project">
+<section class="about">
   <article class="container">
     <div class="contenido">
       <h1><?php the_title(); ?></h1>
@@ -36,7 +48,11 @@ $email = get_field('email', $post_id);
       <a href="https://www.instagram.com/<?php echo $instagram ; ?>" class="btn btn-blanco" target="_blank"><i class="fab fa-instagram"></i><span> Instagram</span></a>
     <?php endif ; ?>
     <?php if (!empty($email)):?>
-      <a href="mailto:<?php echo $email ; ?>" class="btn btn-blanco" target="_blank"><i class="fas fa-envelope"></i><span> Email</span></a>
+      <SCRIPT TYPE="text/javascript">
+        emailE = 'mostay.co'
+        emailE = ('<?php echo $email ; ?>' + '@' + emailE)
+        document.write('<A class="btn btn-blanco" href="mailto:' + emailE + '"><i class="fas fa-envelope"></i><span> Email</span></a>')
+      </script>
     <?php endif ; ?>
   </div>
 </section>

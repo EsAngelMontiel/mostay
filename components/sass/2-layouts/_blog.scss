@@ -44,6 +44,7 @@
                 &:hover {
                   text-decoration: none ;
                   color: $red ;
+                  cursor: pointer ;
                 }
               }
             }
@@ -72,6 +73,7 @@
               &:hover {
                 text-decoration: none ;
                 color: darken($yellow, 20%) ;
+                cursor: pointer ; 
               }
             }
           }
@@ -145,6 +147,11 @@
 
   /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
+    &.featured-posts {
+      > div.container {
+        padding: 50px 10px 50px 10px;
+      }
+    }
     div.container {
       padding: 10px 10px 40px ;
       > ul {
