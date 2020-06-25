@@ -520,4 +520,8 @@ function posts_link_prev_class($format) {
 }
 add_filter('previous_post_link', 'posts_link_prev_class');
 
+// remove permalink problem
+
+remove_filter('template_redirect', 'redirect_canonical');
+
 ?>

@@ -7652,6 +7652,46 @@
 		"oAP": "/wp/wp-config.php",
 		"oF": 0
 		},
+	"/wp/wp-content/ai1wm-backups/.htaccess": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/ai1wm-backups/.htaccess",
+		"oF": 0
+		},
+	"/wp/wp-content/ai1wm-backups/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/ai1wm-backups/index.html",
+		"oF": 0
+		},
+	"/wp/wp-content/ai1wm-backups/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/ai1wm-backups/index.php",
+		"oF": 0
+		},
+	"/wp/wp-content/ai1wm-backups/localhost-mostay-wp-20200610-155824-voubql.wpress": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/ai1wm-backups/localhost-mostay-wp-20200610-155824-voubql.wpress",
+		"oF": 0
+		},
+	"/wp/wp-content/ai1wm-backups/web.config": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/ai1wm-backups/web.config",
+		"oF": 0
+		},
 	"/wp/wp-content/index.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -12425,6 +12465,30 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/wp/wp-content/plugins/all-in-one-wp-migration/readme.txt",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/all-in-one-wp-migration/storage/error.log": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/all-in-one-wp-migration/storage/error.log",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/all-in-one-wp-migration/storage/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/all-in-one-wp-migration/storage/index.html",
+		"oF": 0
+		},
+	"/wp/wp-content/plugins/all-in-one-wp-migration/storage/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/wp/wp-content/plugins/all-in-one-wp-migration/storage/index.php",
 		"oF": 0
 		},
 	"/wp/wp-content/plugins/all-in-one-wp-migration/uninstall.php": {

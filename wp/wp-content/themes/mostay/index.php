@@ -232,7 +232,7 @@ $tipo4 = get_field('tipo_4', $post_id);
   <div class="container">
     <div class="titulo">
       <h1>Los Casos de Estudio</h1>
-      <p>Ve detalles de todo lo que implica el desarrollo de cada proyecto en mostay.</p>
+      <p>Conoce en detalle el proceso de como desarrollo una marca en Mostay.</p>
     </div>
     <?php
     $argo = array(

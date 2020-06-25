@@ -50,9 +50,7 @@
                   color: $red ;
                   font-family: $main-font-regular ;
                   font-size: 20px ;
-                  margin-bottom: 20px ;
-                  position: relative ;
-                  top: -20px ;
+                  margin-bottom: 0 ;
                 }
                 > p {
                   font-family: $text-font ;
@@ -201,6 +199,13 @@
                   }
                   > h2 {
                     font-size: 16px ;
+                    margin: 0 ;
+                    position: relative ;
+                    top: 0 ;
+                  }
+                  > p {
+                    font-size: 14px ;
+                    line-height: 20px ;
                   }
                 }
               }
