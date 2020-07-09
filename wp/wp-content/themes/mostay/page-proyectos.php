@@ -77,6 +77,7 @@ $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
                     echo '<h2>'.$categorias.'</h2>';
                 }
                 ?>
+                <h2><?php single_cat_title(); ?></h2>
                 <h1><?php the_title(); ?></h1>
                 <?php the_excerpt(); ?>
                 <i class="fas fa-arrow-circle-right"></i>

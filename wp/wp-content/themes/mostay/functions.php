@@ -524,4 +524,13 @@ add_filter('previous_post_link', 'posts_link_prev_class');
 
 remove_filter('template_redirect', 'redirect_canonical');
 
+// Security
+
+function add_security_headers() {
+    header( 'X-Content-Type-Options: nosniff' );
+    header( 'X-Frame-Options: SAMEORIGIN' );
+    header( 'Strict-Transport-Security: max-age=10886400' );
+}
+add_action( 'send_headers', 'add_security_headers' );
+
 ?>
