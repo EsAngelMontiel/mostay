@@ -533,4 +533,8 @@ function add_security_headers() {
 }
 add_action( 'send_headers', 'add_security_headers' );
 
+// Add Page Excerpt support
+add_post_type_support( 'page', 'excerpt' );
+
+
 ?>
