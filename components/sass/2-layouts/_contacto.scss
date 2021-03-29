@@ -1,0 +1,148 @@
+/* ******************************************************** */
+/* ************************ CONTACT ************************ */
+/* ******************************************************** */
+
+.contacto {
+  $col-w: 600px ;
+  padding: 0 0 50px 0 ;
+  > article {
+    text-align: center ;
+    padding: 0 ;
+    > div.contenido {
+      display: inline-block ;
+      width: $col-w ;
+      overflow: hidden ;
+      padding: 0 14px ;
+      text-align: left ;
+      > span.categoria > a {
+        font-family: $main-font-regular ;
+        font-size: 14px ;
+        line-height: 22px ;
+        padding: 0 10px ;
+        margin: 0 0 10px 0 ;
+        background-color: $yellow ;
+        color: $darkgray ;
+        display: inline-block ;
+        @include transition(background-color .3s);
+        &:hover {
+          text-decoration: none ;
+          background-color: darken($yellow, 20%);
+        }
+      }
+      h1 {
+        font-family: $main-font ;
+        font-size: 36px ;
+        line-height: 40px ;
+        color: $white ;
+      }
+      h2 {
+        @extend h1 ;
+        font-size: 28px ;
+        line-height: 32px ;
+        color: $yellow ;
+      }
+      h3, h4, h5 {
+        @extend h2 ;
+        font-size: 20px ;
+        line-height: 24px ;
+      }
+      > time {
+        font-family: $text-font ;
+        font-size: 14px ;
+        line-height: 22px ;
+        color: $yellow ;
+        margin: 0 ;
+        position: relative ;
+        top: -5px ;
+      }
+      p {
+        font-family: $text-font ;
+        font-size: 14px ;
+        line-height: 22px ;
+        margin: 0 0 20px 0 ;
+        color: $gray ;
+        > a {
+          color: $yellow ;
+        }
+        > strong {
+          font-weight: bold ;
+        }
+      }
+      > strong {
+        @extend p ;
+        font-weight: bold ;
+        margin-bottom: 20px ;
+      }
+    }
+  }
+}
+
+/* ************************************************************************* */
+/* ***************************** Media queries ***************************** */
+/* ************************************************************************* */
+
+.contacto {
+  /* ***************************** Extra Large ***************************** */
+  @include media-breakpoint-down(xl) {
+  }
+
+  /* ******************************** Large ***************************** */
+  @include media-breakpoint-down(lg) {
+  }
+
+  /* ******************************** Medium ***************************** */
+  @include media-breakpoint-down(md) {
+    $col-w: 100% ;
+    > article {
+      > div.contenido {
+        width: $col-w ;
+        h1 {
+          font-size: 30px ;
+          line-height: 34px ;
+        }
+        h2 {
+          @extend h1 ;
+          font-size: 28px ;
+          line-height: 32px ;
+        }
+        h3, h4, h5 {
+          @extend h2 ;
+          font-size: 20px ;
+          line-height: 24px ;
+        }
+      }
+      > div.tags {
+        width: $col-w ;
+        > strong {
+          margin: 0 0 0 0 ;
+        }
+      }
+      > div.autor {
+        width: $col-w ;
+        padding: 20px 10px ;
+        > img {
+          width: 35% ;
+        }
+        > span {
+          width: 65% ;
+          > p {
+            line-height: 18px ;
+          }
+          ul {
+            li {
+              margin-right: 8px ;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* ********************************* Small ***************************** */
+  @include media-breakpoint-down(sm) {
+  }
+
+  /* ******************************* Extra Small ***************************** */
+  @include media-breakpoint-down(xs) {
+  }
+}

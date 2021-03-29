@@ -85,30 +85,49 @@ $link_02 = get_field('link_2', $post_id);
       </div>
       <!-- Begin Mailchimp Signup Form -->
       <div id="mc_embed_signup">
-        <form action="https://mostay.us7.list-manage.com/subscribe/post?u=69f0ea2ee71f47064483eec66&amp;id=aeedb7f0ec" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <form action="https://mostay.us7.list-manage.com/subscribe/post?u=69f0ea2ee71f47064483eec66&amp;id=aeedb7f0ec&ORIGIN=checklists" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
-            <div class="indicates-required"><span class="asterisk">*</span> Datos Requeridos</div>
-            <div class="mc-field-group">
-              <label for="mce-EMAIL">Email  <span class="asterisk">*</span>
+
+        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+        <div class="mc-field-group two-columns">
+          <label for="mce-FNAME">Nombre(s) <span class="asterisk">*</span>
+        </label>
+          <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+        </div>
+        <div class="mc-field-group two-columns">
+          <label for="mce-LNAME">Apellido(s) <span class="asterisk">*</span>
+        </label>
+          <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+        </div>
+        <div class="mc-field-group">
+          <label for="mce-EMAIL">Email  <span class="asterisk">*</span>
+        </label>
+          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+        </div>
+        <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
+          <div class="content__gdpr">
+            <label>Permiso</label>
+            <p>Este formulario recolecta tu nombre completo y correo para poder agregarte a una lista de correos, hacerte llegar información valiosa, futuros cursos y nuevos recursos gratuitos como esta guía mediante un newsletter. Puedes leer nuestra <a href="https://mostay.co/politicas-privacidad/" target="_blank">política de privacidad</a> para entender cómo protegemos y manejamos tu información de forma segura. ¡Mostay no comparte información con terceros y no te llenará la bandeja con spam! tambien puedes enviarme un mensaje directo a mi Instagram <a href="https://www.instagram.com/mostayco">@MostayCo</a></p>
+            <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
+              <label class="checkbox subfield" for="gdpr_41031">
+                <input type="checkbox" id="gdpr_41031" name="gdpr[41031]" value="Y" class="av-checkbox gdpr">
+                <span>Email</span>
               </label>
-              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-            </div>
-            <div class="mc-field-group">
-              <label for="mce-FNAME">Nombre </label>
-              <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-            </div>
-            <div class="mc-field-group">
-              <label for="mce-LNAME">Apellido </label>
-              <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-            </div>
-            <div id="mce-responses" class="clear">
-              <div class="response" id="mce-error-response" style="display:none"></div>
-              <div class="response" id="mce-success-response" style="display:none"></div>
-            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_69f0ea2ee71f47064483eec66_aeedb7f0ec" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn-verde"></div>
+            </fieldset>
+            <p>Ye puedes dar de baja en cualquier momento dando click en el pie de los  correos. Para mas información visita la pagina de Políticas de Privacidad.</p>
+        </div>
+        <div class="content__gdprLegal">
+          <p>Yo uso Mailchimp como mi plataforma de marketing. Al hacer click en Contáctame, estas aceptando que tu información sea transferida a Mailchimp para ser procesada. <a href="https://mailchimp.com/legal/" target="_blank">Para conocer mas sobre las politicas de privacidad de Mailchimp puedas hacer click aquí.</a></p>
           </div>
-        </form>
+          </div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_69f0ea2ee71f47064483eec66_aeedb7f0ec" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" class="button btn-verde"></div>
+        </div>
+      </form>
       </div>
 
       <!--End mc_embed_signup-->

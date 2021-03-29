@@ -124,6 +124,8 @@ function mostay_header_scripts(){
         wp_enqueue_script('fontawesome'); // Enqueue it!
         wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array(), '1.8.0', $in_footer = true); // slick
         wp_enqueue_script('slick'); // Enqueue it!
+        wp_register_script('smoothscroll', get_template_directory_uri() . '/js/smooth-scroll.polyfills.min.js', array(), '1.0.0', $in_footer = true); // smoothscroll
+        wp_enqueue_script('smoothscroll'); // Enqueue it!
         wp_register_script('mostayscripts', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', $in_footer = true); // Custom scripts
         wp_enqueue_script('mostayscripts'); // Enqueue it!
     }

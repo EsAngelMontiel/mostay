@@ -41,11 +41,11 @@ header {
       height: $nav-h ;
       display: inline-block ;
       > li {
-        height: $nav-h ;
+        min-height: $nav-h ;
         display: inline-block ;
         position: relative ;
         > a {
-          height: $nav-h ;
+          min-height: $nav-h ;
           font-family: $main-font-regular ;
           font-size: 14px ;
           line-height: $nav-h ;
@@ -146,6 +146,10 @@ header {
           font-size: 30px ;
           display: block ;
           color: $white ;
+          @include transition(color .3s);
+          &:hover {
+            color: $red ;
+          }
         }
         &:first-child {
           border-top: 1px solid $white ;

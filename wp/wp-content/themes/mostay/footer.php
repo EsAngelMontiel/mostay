@@ -43,6 +43,11 @@
 
       gtag('config', 'UA-56774363-1');
     </script>
+    <script>
+      var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1400
+      });
+    </script>
 
 
 </body>

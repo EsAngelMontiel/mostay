@@ -30,7 +30,7 @@ $email = get_field('email', $post_id);
 </section>
 
 <!-- ********************** resumen de posts ********************** -->
-<section class="about">
+<section class="contacto">
   <article class="container">
     <div class="contenido">
       <h1><?php the_title(); ?></h1>
