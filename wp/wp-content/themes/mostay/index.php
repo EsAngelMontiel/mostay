@@ -123,6 +123,7 @@ $tipo4 = get_field('tipo_4', $post_id);
     $argo = array(
       'post_type'      => 'post',
       'posts_per_page' =>  3 ,
+      'offset' =>  1 ,
       'order'          => 'DESC',
     );
 
