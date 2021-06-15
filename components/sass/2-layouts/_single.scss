@@ -228,6 +228,24 @@
         }
       }
     }
+    div.comments {
+      display: inline-block ;
+      width: $col-w ;
+      overflow: hidden ;
+      padding: 20px 14px ;
+      text-align: left ;
+      > div#respond {
+        h3 {
+          font-family: $main-font ;
+          font-size: 30px ;
+          line-height: 34px ;
+          width: 100% ;
+          color: $red ;
+          text-align: center ;
+          display: block ;
+        }
+      }
+    }
   }
   div.btn-container {
     padding: 20px 0 40px 0 ;

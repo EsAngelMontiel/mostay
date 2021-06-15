@@ -82,10 +82,19 @@
         </ul>
       </span>
     </div>
+    <div class="comments">
+      <?php
+      if (comments_open()){
+          comments_template();
+      }
+      ?>
+    </div>
+
   </article>
   <div class="btn-container">
     <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Volver al Blog</a>
   </div>
+
 <?php endwhile; ?>
   <?php else: ?>
       <!-- article -->
