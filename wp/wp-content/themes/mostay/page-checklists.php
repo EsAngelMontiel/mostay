@@ -2,16 +2,16 @@
 get_header();
 if (have_posts()): while (have_posts()) : the_post();
 $main_img = get_the_post_thumbnail_url(get_the_ID(),'large');
-$main_thumb = get_the_post_thumbnail_url(get_the_ID(),'small');
+$main_thumb = get_the_post_thumbnail_url(get_the_ID(),'thumb');
 
 // Img 01
 $img_1 = get_field('mockup', $post_id);
-$size = 'cover-project';
+$size = 'large';
 $mockup = $img_1['sizes'][ $size ];
 
 // Article 01
 $art_img_01 = get_field('cover1', $post_id);
-$size_02 = 'small';
+$size_02 = 'thumb';
 $art_cover_01 = $art_img_01['sizes'][ $size_02 ];
 $title_01 = get_field('titulo_01', $post_id);
 $resumen_01 = get_field('resumen_01', $post_id);

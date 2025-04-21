@@ -58,7 +58,7 @@ $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
     <ul class="casos">
       <?php
       while (have_posts()) : the_post();
-      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
+      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumb' );
       $url = $thumb['0'];
       ?>
       <li>
@@ -125,7 +125,7 @@ $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
     <ul>
       <?php while ( $the_query->have_posts() ) {
         $the_query->the_post();
-        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumb' );
         $url = $thumb['0'];
         $my_date01 = get_the_date( 'j F, Y', '', '', false );
         $my_date02 = get_the_date( 'Y-m-d', '', '', false );

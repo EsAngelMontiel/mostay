@@ -20,19 +20,27 @@
     Theme Support
 \*------------------------------------*/
 
-if (!isset($content_width)){ $content_width = 1170 ;}
+if (!isset($content_width)) {
+    $content_width = 1170;
+}
 
-if (function_exists('add_theme_support')){
+if (function_exists('add_theme_support')) {
     // Add Menu Support
     add_theme_support('menus');
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
-    add_image_size('large', 1920, 1080, true); // Large Thumbnail
-    add_image_size('medium', 1200, 600, true); // Medium Thumbnail
-    add_image_size('small', 500, 500, true); // Small Thumbnail
-    add_image_size('cover-project', 1200, '', false); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-    add_image_size('cover-size', 1200, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('hero-xl', 3840, 2160, true);
+    add_image_size('hero-lg', 1920, 1080, true);
+    add_image_size('hero-md', 800, 800, true);
+    add_image_size('hero-sm', 480, 480, true);
+
+    add_image_size('xlarge', 3840, 9999);
+    add_image_size('large', 1920, 9999);
+    add_image_size('medium', 800, 9999);
+    add_image_size('small', 480, 9999);
+
+    add_image_size('thumb', 480, 280, true);
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -42,83 +50,122 @@ if (function_exists('add_theme_support')){
 }
 
 /*------------------------------------*\
-    Functions
+    Custom Nav Walker Classes
 \*------------------------------------*/
 
-// mostay main navigation
-function mostay_main_nav(){
-    wp_nav_menu(array(
-        'theme_location'  => 'header-menu',
-        'menu'            => '',
-        'container'       => '',
-        'container_class' => '',
-        'container_id'    => '',
-        'menu_class'      => 'main-menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => ''
-        )
-    );
+class Mostay_Main_Nav_Walker extends Walker_Nav_Menu {
+    // Inicia cada elemento del menú
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+        static $menu_counter = 1; // Contador para los números en <span>
+        $classes = !empty($item->classes) ? implode(' ', $item->classes) : '';
+        $classes .= ' mainMenu__item'; // Clase personalizada para cada <li>
+
+        $output .= '<li class="' . esc_attr($classes) . '">';
+        $output .= '<a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
+        $output .= '<span>' . str_pad($menu_counter++, 2, '0', STR_PAD_LEFT) . '</span>'; // Número con dos dígitos
+    }
+
+    // Termina cada elemento del menú
+    function end_el(&$output, $item, $depth = 0, $args = null) {
+        $output .= '</li>';
+    }
 }
 
-// mostay footer navigation
-// function mostay_footer_nav(){
-//     wp_nav_menu(array(
-//         'theme_location'  => 'footer-menu',
-//         'menu'            => '',
-//         'container'       => '',
-//         'container_class' => '',
-//         'container_id'    => '',
-//         'menu_class'      => 'footer-menu',
-//         'menu_id'         => '',
-//         'echo'            => true,
-//         'fallback_cb'     => 'wp_page_menu',
-//         'before'          => '',
-//         'after'           => '',
-//         'link_before'     => '',
-//         'link_after'      => '',
-//         'items_wrap'      => '<ul>%3$s</ul>',
-//         'depth'           => 0,
-//         'walker'          => ''
-//         )
-//     );
-// }
+class Secondary_Menu_Walker extends Walker_Nav_Menu {
+    private $counter;
+    private $start_value;
 
-// mostay footer navigation
-function mostay_side_nav(){
-    wp_nav_menu(array(
-          'theme_location'  => 'side-menu',
-          'menu'            => '',
-          'container'       => false,
-          'container_class' => '',
-          'container_id'    => '',
-          'menu_class'      => 'side-menu',
-          'menu_id'         => '',
-          'echo'            => true,
-          'fallback_cb'     => 'wp_page_menu',
-          'before'          => '',
-          'after'           => '',
-          'link_before'     => '',
-          'link_after'      => '',
-          'items_wrap'      => '%3$s',
-          'depth'           => 0,
-          'walker'          => ''
-        )
-    );
+    // Constructor: inicializa el contador con un valor inicial
+    public function __construct($start_value = 6) {
+        $this->start_value = $start_value;
+        $this->counter = $start_value;
+    }
+
+    // Función que genera el HTML de cada elemento <li>
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+        $svg_icons = [
+            'instagram' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>',
+            'youtube' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>',
+            'linkedin' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V165.49h92.88zM53.79 108.1C24.08 108.1 0 83.55 0 54A53.79 53.79 0 0153.79 0c29.9 0 54 24.58 54 54a53.79 53.79 0 01-53.79 54.1zm394.2 339.9h-92.69v-146.6c0-34.88-.7-79.67-48.54-79.67-48.54 0-55.94 37.93-55.94 77.18V448H158.4V165.49h89V202h1.28c12.38-23.44 42.7-48.18 87.84-48.18 93.88 0 111.2 61.78 111.2 142.3V448z"/></svg>',
+            'twitter' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>',
+        ];
+
+        $classes = (array) $item->classes;
+        $icon = '';
+
+        foreach ($svg_icons as $class => $svg) {
+            if (in_array($class, $classes)) {
+                $icon = $svg;
+                break;
+            }
+        }
+
+        // Añade clases y abre el <li>
+        $output .= '<li class="secondaryMenu__item' . ($icon ? ' snLink' : '') . '">';
+
+        // Genera el contenido del enlace
+        $output .= '<a href="' . esc_url($item->url) . '"';
+        // Add target="_blank" if it's a social link
+        if ($icon) {
+            $output .= ' target="_blank"';
+        }
+        
+        $output .= '>';
+        $output .= $icon ? '<span>' . esc_html($item->title) . '</span>' . $icon : esc_html($item->title);
+        $output .= '</a>';
+
+
+        // Añade el número secuencial si no hay SVG
+        if (!$icon) {
+            $output .= '<span>' . str_pad($this->counter++, 2, '0', STR_PAD_LEFT) . '</span>';
+        }
+
+        // Cierra el <li>
+        $output .= '</li>';
+    }
 }
+
+/*------------------------------------*\
+    Custom Navigation Functions
+\*------------------------------------*/
+
+// Display Main Navigation
+function mostay_main_nav() {
+    if (has_nav_menu('header-menu')) {
+        wp_nav_menu(array(
+            'theme_location' => 'header-menu',
+            'container'      => false,
+            'menu_class'     => 'mainMenu',
+            'walker'         => new Mostay_Main_Nav_Walker(),
+        ));
+    } else {
+        echo '<p>' . __('Please assign a menu to the header menu location in the admin panel.', 'mostay') . '</p>';
+    }
+}
+
+// Display Secondary Navigation
+function mostay_secondary_nav() {
+    if (has_nav_menu('secondary-menu')) {
+        wp_nav_menu(array(
+            'theme_location' => 'secondary-menu',
+            'container'      => false,
+            'menu_class'     => 'secondaryMenu',
+            'walker'         => new Secondary_Menu_Walker(),
+        ));
+    } else {
+        echo '<p>' . __('Please assign a menu to the secondary menu location in the admin panel.', 'mostay') . '</p>';
+    }
+}
+
+/*------------------------------------*\
+    Enqueue Scripts and Styles
+\*------------------------------------*/
 
 // Load mostay scripts (header.php)
 function mostay_header_scripts(){
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.4.1', $in_footer = true); // jQuery
+        wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.7.1', $in_footer = true); // jQuery
         wp_enqueue_script('jQuery'); // Enqueue it!
         wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', $in_footer = true); // fontawesome
         wp_enqueue_script('fontawesome'); // Enqueue it!
@@ -126,6 +173,8 @@ function mostay_header_scripts(){
         wp_enqueue_script('slick'); // Enqueue it!
         wp_register_script('smoothscroll', get_template_directory_uri() . '/js/smooth-scroll.polyfills.min.js', array(), '1.0.0', $in_footer = true); // smoothscroll
         wp_enqueue_script('smoothscroll'); // Enqueue it!
+        wp_register_script('bodyScrollLock', get_template_directory_uri() . '/js/bodyScrollLock.min.js', array(), '1.0.0', $in_footer = true); // bodyScrollLock
+        wp_enqueue_script('bodyScrollLock'); // Enqueue it!
         wp_register_script('mostayscripts', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', $in_footer = true); // Custom scripts
         wp_enqueue_script('mostayscripts'); // Enqueue it!
     }
@@ -135,6 +184,8 @@ function mostay_header_scripts(){
 function mostay_styles(){
   wp_register_style('slick', get_template_directory_uri() . '/slick/slick.css', array(), '1.0', 'all');
   wp_enqueue_style('slick'); // Enqueue it!
+  wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Bree+Serif|Roboto+Slab|Roboto:300,400,700&display=swap', array(), '1.0', 'all');
+  wp_enqueue_style('googlefonts'); // Enqueue it!
   wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
   wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
@@ -146,6 +197,12 @@ function register_mostay_menu(){
         'side-menu' => __('Sidebar Menu', 'mostay'), // Sidebar Navigation
         // 'footer-menu' => __('Footer Menu', 'mostay') // Extra Navigation if needed (duplicate as many as you need!)
     ));
+}
+
+function register_mostay_secondary_menus() {
+    register_nav_menus([
+        'secondary-menu' => __('Secondary Menu'),
+    ]);
 }
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
@@ -219,6 +276,7 @@ function mostay_pagination(){
 add_action('init', 'mostay_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'mostay_styles'); // Add Theme Stylesheet
 add_action('init', 'register_mostay_menu'); // Add mostay Menu
+add_action('init', 'register_mostay_secondary_menus'); // Add secondary Menu
 add_action('init', 'mostay_pagination'); // Add our mostay Pagination
 add_action('init', 'my_custom_posttypes' ); //Mostay Custon Posttypes
 add_action('init', 'my_custom_taxonomies' ); //Mostay Custon Taxonomies
@@ -244,6 +302,8 @@ add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sideba
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 //add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'wpautop', 99);
 
 
 /*------------------------------------*\
@@ -287,52 +347,10 @@ function my_custom_posttypes() {
     register_post_type('proyectos', $args );
     flush_rewrite_rules();
 
-    // Nosotros Post Types
-    $labels = array(
-        'name'               => 'Casos',
-        'singular_name'      => 'Caso',
-        'menu_name'          => 'Casos',
-        'name_admin_bar'     => 'Casos',
-        'add_new'            => 'Crear',
-        'add_new_item'       => 'Crear Casos',
-        'new_item'           => 'Nuevo Caso',
-        'edit_item'          => 'Edit Casos',
-        'view_item'          => 'Ver Casos',
-        'all_items'          => 'Todos los Casos',
-        'search_items'       => 'Buscar Caso',
-        'parent_item_colon'  => 'Caso Padre:',
-        'not_found'          => 'Ningún Caso entontrado.',
-        'not_found_in_trash' => 'Ningún caso encontrado en la papelera.',
-    );
-
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'menu_icon'          => 'dashicons-visibility',
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'casos' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 5,
-        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
-    );
-    register_post_type('casos', $args );
-    flush_rewrite_rules();
 }
 
 function my_rewrite_flush() {
-    // First, we "add" the custom post type via the above written function.
-    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
-    // They are only referenced in the post_type column with a post entry,
-    // when you add a post of this CPT.
     my_custom_posttypes();
-
-    // ATTENTION: This is *only* done during plugin activation hook in this example!
-    // You should *NEVER EVER* do this on every page load!!
     flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'my_rewrite_flush' );
@@ -404,38 +422,6 @@ function my_custom_taxonomies() {
     register_taxonomy( 'categorias', array( 'proyectos' ), $args );
 
 
-    // Categoria taxonomy (non-hierarchical)
-    $labels = array(
-      'name'                       => 'Categorías',
-      'singular_name'              => 'Categoría',
-      'search_items'               => 'Buscar Categorías',
-      'popular_items'              => 'Categorías Populares',
-      'all_items'                  => 'Todas las Categorías',
-      'parent_item'                => null,
-      'parent_item_colon'          => null,
-      'edit_item'                  => 'Editar Categoría',
-      'update_item'                => 'Actualizar Categoría',
-      'add_new_item'               => 'Crear Categoría',
-      'new_item_name'              => 'Nuevo Nombre de Categoría',
-      'separate_items_with_commas' => 'Separar categorías con comas',
-      'add_or_remove_items'        => 'Crear o Eliminar Categorías',
-      'choose_from_most_used'      => 'Seleccionar la categoría mas usada',
-      'not_found'                  => 'Ninguna Categoría Encontrada.',
-      'menu_name'                  => 'Categorías',
-    );
-
-    $args = array(
-      'hierarchical'          => true,
-      'labels'                => $labels,
-      'show_ui'               => true,
-      'show_admin_column'     => true,
-      'update_count_callback' => '_update_post_term_count',
-      'query_var'             => true,
-      'rewrite'               => array( 'slug' => 'categorias2' ),
-    );
-
-    register_taxonomy( 'categorias2', array( 'casos' ), $args );
-
 }
 
 
@@ -502,9 +488,6 @@ function edit_contactmethods( $contactmethods ) {
   $contactmethods['linkedin'] = 'LinkedIn';
   $contactmethods['behance'] = 'Behance';
   $contactmethods['dribbble'] = 'Dribbble';
-  // unset($contactmethods['yim']);
-  // unset($contactmethods['aim']);
-  // unset($contactmethods['jabber']);
   return $contactmethods;
 }
 add_filter('user_contactmethods','edit_contactmethods',10,1);
@@ -537,6 +520,42 @@ add_action( 'send_headers', 'add_security_headers' );
 
 // Add Page Excerpt support
 add_post_type_support( 'page', 'excerpt' );
+
+
+// Get Image
+function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_imagen') {
+    if (!$post_id) {
+        $post_id = get_the_ID(); 
+    }
+
+    if ($tipo === 'hero') {
+        $imagen_id = get_post_thumbnail_id($post_id);
+        $size_default = 'hero-lg';
+        $size_srcset = 'hero-xl';
+        $sizes = "(max-width: 700px) 480px, 
+                  (max-width: 1024px) 800px, 
+                  (max-width: 1440px) 1920px, 
+                  3840px";
+    } else {
+        $imagen = get_field($acf_campo, $post_id);
+        $imagen_id = $imagen ? $imagen['ID'] : null;
+        $size_default = 'large';
+        $size_srcset = 'xlarge';
+        $sizes = "(max-width: 700px) 480px, 
+                  (max-width: 1024px) 800px, 
+                  (max-width: 1440px) 1920px, 
+                  3840px";
+    }
+
+    if (!$imagen_id) return; 
+
+    echo '<img src="' . esc_url(wp_get_attachment_image_url($imagen_id, $size_default)) . '" 
+                srcset="' . esc_attr(wp_get_attachment_image_srcset($imagen_id, $size_srcset)) . '" 
+                sizes="' . esc_attr($sizes) . '" 
+                alt="' . esc_attr(get_the_title($post_id)) . '">';
+}
+
+
 
 
 ?>

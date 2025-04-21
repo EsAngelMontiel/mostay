@@ -1,5 +1,6 @@
+@use '../1-base/mixins' as m;
+
 .about {
-  $col-w: 600px ;
   > article {
     > .about-header {
       height: 94vh ; width: 100% ;
@@ -8,68 +9,65 @@
       > div.video {
         width: 100% ; height: 100% ;
         > video {
-          /* Make video to at least 100% wide and tall */
           min-width: 100%;
           min-height: 100%;
 
-          /* Setting width & height to auto prevents the browser from stretching or squishing the video */
           width: auto;
           height: auto;
 
-          /* Center the video */
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%,-50%);
         }
       }
-      div.about-title {
-        width: 100% ; height: 100% ;
-        @include linearGradient(top, bottom, rgba(51,49,50,0), rgba(51,49,50,1));
-        position: absolute ;
-        top: 0 ; left: 0 ;
+    }
+    div.about-title {
+      width: 100% ; height: 100% ;
+      background: linear-gradient(to bottom, rgba(51,49,50,0), rgba(51,49,50,1));
+      position: absolute ;
+      top: 0 ; left: 0 ;
+      > div {
+        height: 100% ;
+        position: relative;
         > div {
-          height: 100% ;
-          position: relative;
-          > div {
-            width: 100% ;
-            text-align: center ;
-            position: absolute;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            > h1 {
-              width: $col-w ;
-              font-family: $main-font ;
-              font-size: 45px ;
-              line-height: 45px ;
-              color: $yellow ;
-              display: inline-block;
-            }
+          width: 100% ;
+          text-align: center ;
+          position: absolute;
+          top: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          > h1 {
+            width: var(--col-w) ;
+            font-family: var(--main-font) ;
+            font-size: 45px ;
+            line-height: 45px ;
+            color: var(--yellow) ;
+            display: inline-block;
           }
-          > a {
-            width: 30px ; height: 30px ;
-            font-size: 30px ;
-            position: absolute ;
-            bottom: 60px ;
-            left: 50% ;
-            display: block ;
-            color: $gray ;
-            margin: 0 0 0 -15px ;
-            &:hover {
-              color: $yellow ;
-              cursor: pointer ;
-            }
+        }
+        > a {
+          width: 30px ; height: 30px ;
+          font-size: 30px ;
+          position: absolute ;
+          bottom: 60px ;
+          left: 50% ;
+          display: block ;
+          color: var(--gray) ;
+          margin: 0 0 0 -15px ;
+          &:hover {
+            color: var(--yellow) ;
+            cursor: pointer ;
           }
         }
       }
     }
     > div.contenido {
-      padding: 100px 0 180px 0 ;
+      padding: 6.25rem 0 11.25rem 0 ;
       overflow: auto ;
       > div {
-        @include boxGrid(2, 3%);
-        float: left ;
+        //@include boxGrid(2, 3%);
+        //float: left ;
         overflow: hidden ;
         > video {
           width: 100% ; height: auto ;
@@ -78,42 +76,42 @@
           padding: 70px 50px ;
         }
         > h2 {
-          font-family: $main-font ;
+          font-family: var(--main-font) ;
           font-size: 40px ;
           line-height: 42px ;
-          color: $yellow ;
+          color: var(--yellow) ;
           margin-bottom: 15px ;
         }
         > h4 {
-          font-family: $text-font ;
+          font-family: var(--text-font) ;
           font-size: 20px ;
           line-height: 28px ;
-          color: $white ;
+          color: var(--white) ;
           margin-bottom: 15px ;
         }
         > p {
-          font-family: $text-font ;
+          font-family: var(--text-font) ;
           font-size: 14px ;
           line-height: 26px ;
-          color: $gray ;
+          color: var(--gray) ;
         }
       }
     }
     > div.about-me {
-      background-color: $blue ;
+      background-color: var(--blue) ;
       position: relative ;
       > div {
         padding: 160px 0 380px  ;
         > div.my-photo {
-          $photo-h: 220px ; // only change this
-          $photo-p: $photo-h / 2 ;
-          $negative-p: -#{$photo-p} ;
-          width: $photo-h ; height: $photo-h ;
-          background-color: $red ;
+          --photo-h: 220px ; 
+          $photo-p: calc(var(--photo-h) / 2) ;
+          --negative-p: calc(-1 * var(--photo-p)) ;
+          width: var(--photo-h) ; height: var(--photo-h) ;
+          background-color: var(--red) ;
           border-radius: 50% ;
           position: absolute ;
-          top: $negative-p ; left: 50% ;
-          margin: 0 0 0 $negative-p ;
+          top: var(--negative-p) ; left: 50% ;
+          margin: 0 0 0 var(--negative-p) ;
           overflow: hidden ;
           > img {
             width: 100% ; height: auto ;
@@ -123,23 +121,23 @@
           width: 420px ;
           margin: 0 auto ;
           > h2 {
-            font-family: $main-font ;
+            font-family: var(--main-font) ;
             font-size: 32px ;
             line-height: 34px ;
-            color: $white ;
+            color: var(--white) ;
             margin-bottom: 20px ;
             > span {
-              color: $yellow ;
+              color: var(--yellow) ;
             }
           }
           > p {
-            font-family: $text-font ;
+            font-family: var(--text-font) ;
             font-size: 15px ;
             line-height: 22px ;
-            color: $white ;
+            color: var(--white) ;
             > a {
               font-weight: bold ;
-              color: $yellow ;
+              color: var(--yellow) ;
             }
           }
         }
@@ -159,20 +157,20 @@
           }
         }
         > div.my-bio {
-          width: $col-w ;
+          width: var(--col-w) ;
           margin: 0 auto ;
           > h2 {
-            font-family: $main-font ;
+            font-family: var(--main-font) ;
             font-size: 32px ;
             line-height: 40px ;
-            color: $yellow ;
+            color: var(--yellow) ;
             margin-bottom: 20px ;
           }
           > h4 {
-            font-family: $text-font ;
+            font-family: var(--text-font) ;
             font-size: 20px ;
             line-height: 28px ;
-            color: $gray ;
+            color: var(--gray) ;
             margin-bottom: 15px ;
           }
         }
@@ -183,8 +181,8 @@
         ul {
           overflow: auto ;
           li {
-            @include boxGrid(4, 3%);
-            float: left ;
+            //@include boxGrid(4, 3%);
+            //float: left ;
             overflow: hidden ;
             div {
               width: 100% ; height: auto ;
@@ -196,18 +194,18 @@
               }
             }
             strong {
-              font-family: $main-font ;
+              font-family: var(--main-font) ;
               font-size: 26px ;
-              color: $yellow ;
+              color: var(--yellow) ;
             }
             p {
-              font-family: $text-font ;
+              font-family: var(--text-font) ;
               font-size: 15px ;
               line-height: 22px ;
-              color: $white ;
+              color: var(--white) ;
             }
             a {
-              color: $yellow ;
+              color: var(--yellow) ;
             }
           }
         }
@@ -218,66 +216,63 @@
         position: relative ;
         padding: 60px 0 60px 0 ;
         > div.my-bio {
-          width: $col-w ;
+          width: var(--col-w) ;
           margin: 0 auto ;
           > h2 {
-            font-family: $main-font ;
+            font-family: var(--main-font) ;
             font-size: 32px ;
             line-height: 40px ;
-            color: $white ;
+            color: var(--white) ;
             margin-bottom: 20px ;
             > span {
-              color: $yellow ;
+              color: var(--yellow) ;
             }
           }
           > h4 {
-            font-family: $text-font ;
+            font-family: var(--text-font) ;
             font-size: 20px ;
             line-height: 28px ;
-            color: $gray ;
+            color: var(--gray) ;
             margin-bottom: 15px ;
           }
         }
       }
     }
     div.opt-in {
-      background-color: $black ;
+      background-color: var(--black) ;
       > div.bar {
         height: 40px ; width: 100% ;
-        background-color: $yellow ;
+        background-color: var(--yellow) ;
       }
       > div.container {
         padding: 90px 0 70px 0;
         > small {
-          font-family: $text-font ;
+          font-family: var(--text-font) ;
           font-size: 14px ;
           line-height: 14px !important ;
-          color: $gray ;
-          > a {
-
-          }
+          color: var(--gray) ;
         }
         div#mc_embed_signup {
           margin-bottom: 30px ;
           form {
             div.indicates-required {
               text-align: right ;
-              font-family: $text-font ;
+              font-family: var(--text-font) ;
               font-size: 12px ;
-              color: $gray ;
+              color: var(--gray) ;
               > span {
-                color: $red ;
+                color: var(--red) ;
               }
             }
             div.mc-field-group {
               margin-bottom: 30px ;
               label {
-                font-family: $main-font ;
+                font-family: var(--main-font) ;
                 font-size: 16px ;
                 display: block ;
-                color: $yellow ;
+                color: var(--yellow) ;
                 > span {
-                  color: $red ;
+                  color: var(--red) ;
                 }
               }
               input {
@@ -304,9 +299,9 @@
         }
         div#mergeRow-gdpr {
           p {
-            color: $gray ;
+            color: var(--gray) ;
             > a {
-              color: $yellow ;
+              color: var(--yellow) ;
             }
           }
           > div.content__gdpr {
@@ -318,8 +313,8 @@
                   display: inline-block ;
                 }
                 span {
-                  font-family: $text-font ;
-                  color: $white ;
+                  font-family: var(--text-font) ;
+                  color: var(--white) ;
                   line-height: 30px ;
                   display: inline-block ;
                   position: relative ;
@@ -331,21 +326,20 @@
         }
       }
     }
+
   }
 }
+
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */
 /* ************************************************************************* */
 
+/*
 .about {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
 
-  /* ******************************** Large ***************************** */
   @include media-breakpoint-down(lg) {
-    $col-w: 600px ;
+    var(--col-w): 600px ;
     > article {
       > .about-header {
         height: 60vh ; width: 100% ;
@@ -383,22 +377,22 @@
          ul {
            li {
              strong {
-               font-family: $main-font ;
+               font-family: var(--main-font) ;
                font-size: 24px ;
                line-height: 26px ;
-               color: $yellow ;
+               color: var(--yellow) ;
                margin-bottom: 6px ;
                display: inline-block ;
              }
              p {
-               font-family: $text-font ;
+               font-family: var(--text-font) ;
                font-size: 15px ;
                line-height: 22px ;
-               color: $white ;
+               color: var(--white) ;
              }
              a {
                font-size: 15px ;
-               color: $yellow ;
+               color: var(--yellow) ;
              }
            }
          }
@@ -408,16 +402,15 @@
         > div {
           padding: 30px 0 70px 0 ;
           > div.my-bio {
-            width: $col-w ;
+            width: var(--col-w) ;
           }
         }
       }
     }
   }
 
-  /* ******************************** Medium ***************************** */
   @include media-breakpoint-down(md) {
-    $col-w: 80% ;
+    var(--col-w): 80% ;
     > article {
       > .about-header {
         height: 60vh ; width: 100% ;
@@ -428,7 +421,7 @@
           > div {
             > div {
               > h1 {
-                width: $col-w ;
+                width: var(--col-w) ;
                 font-size: 42px ;
                 line-height: 42px ;
               }
@@ -459,7 +452,7 @@
             margin-bottom: 6px ;
           }
           > p {
-            font-family: $text-font ;
+            font-family: var(--text-font) ;
             font-size: 14px ;
             line-height: 18px ;
           }
@@ -469,15 +462,15 @@
         > div {
           padding: 160px 0 250px  ;
           > div.my-photo {
-            $photo-h: 220px ; // only change this
-            $photo-p: $photo-h / 2 ;
-            $negative-p: -#{$photo-p} ;
-            width: $photo-h ; height: $photo-h ;
-            background-color: $red ;
+            var(--photo-h): 220px ; // only change this
+            $photo-p: var(--photo-h) / 2 ;
+            var(--negative-p): calc(-1 * var(--photo-p)) ;
+            width: var(--photo-h) ; height: var(--photo-h) ;
+            background-color: var(--red) ;
             border-radius: 50% ;
             position: absolute ;
-            top: $negative-p ; left: 50% ;
-            margin: 0 0 0 $negative-p ;
+            top: var(--negative-p) ; left: 50% ;
+            margin: 0 0 0 var(--negative-p) ;
             overflow: hidden ;
             > img {
               width: 100% ; height: auto ;
@@ -487,23 +480,23 @@
             width: 420px ;
             margin: 0 auto ;
             > h2 {
-              font-family: $main-font ;
+              font-family: var(--main-font) ;
               font-size: 32px ;
               line-height: 34px ;
-              color: $white ;
+              color: var(--white) ;
               margin-bottom: 20px ;
               > span {
-                color: $yellow ;
+                color: var(--yellow) ;
               }
             }
             > p {
-              font-family: $text-font ;
+              font-family: var(--text-font) ;
               font-size: 15px ;
               line-height: 22px ;
-              color: $white ;
+              color: var(--white) ;
               > a {
                 font-weight: bold ;
-                color: $yellow ;
+                color: var(--yellow) ;
               }
             }
           }
@@ -516,7 +509,7 @@
             top: -200px ;
           }
           > div.my-bio {
-            width: $col-w ;
+            width: var(--col-w) ;
           }
         }
       }
@@ -538,7 +531,7 @@
                 line-height: 16px ;
               }
               a {
-                color: $yellow ;
+                color: var(--yellow) ;
               }
             }
           }
@@ -547,9 +540,8 @@
     }
   }
 
-  /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
-    $col-w: 100% ;
+    var(--col-w): 100% ;
     > article {
       > .about-header {
         height: 50vh ; width: 100% ;
@@ -557,7 +549,7 @@
           > div {
             padding: 0 ;
             > div {
-              width: $col-w ;
+              width: var(--col-w) ;
               > h1 {
                 width: 80% ;
                 font-size: 30px ;
@@ -594,16 +586,16 @@
         > div {
           padding: 140px 40px 140px 40px ;
           > div.my-photo {
-            $photo-h: 200px ; // only change this
-            $photo-p: $photo-h / 2 ;
-            $negative-p: -#{$photo-p} ;
-            width: $photo-h ; height: $photo-h ;
+            var(--photo-h): 200px ; // only change this
+            $photo-p: var(--photo-h) / 2 ;
+            var(--negative-p): calc(-1 * var(--photo-p)) ;
+            width: var(--photo-h) ; height: var(--photo-h) ;
             border-radius: 50% ;
-            top: $negative-p ; left: 50% ;
-            margin: 0 0 0 $negative-p ;
+            top: var(--negative-p) ; left: 50% ;
+            margin: 0 0 0 var(--negative-p) ;
           }
           > div.my-bio {
-            width: $col-w ;
+            width: var(--col-w) ;
             > h2 {
               font-size: 24px ;
               line-height: 32px ;
@@ -630,12 +622,12 @@
           }
           > div.my-bio {
             padding: 0 40px 0 40px ;
-            width: $col-w ;
+            width: var(--col-w) ;
             > h2 {
-              font-family: $main-font ;
+              font-family: var(--main-font) ;
               font-size: 20px ;
               line-height: 26px ;
-              color: $yellow ;
+              color: var(--yellow) ;
               margin-bottom: 20px ;
             }
             > h4 {
@@ -670,12 +662,12 @@
         > div {
           padding: 30px 40px 70px 40px ;
           > div.my-bio {
-            width: $col-w ;
+            width: var(--col-w) ;
             > h2 {
               font-size: 28px ;
               line-height: 32px ;
               > span {
-                color: $yellow ;
+                color: var(--yellow) ;
               }
             }
           }
@@ -710,8 +702,8 @@
                     display: inline-block ;
                   }
                   span {
-                    font-family: $text-font ;
-                    color: $white ;
+                    font-family: var(--text-font) ;
+                    color: var(--white) ;
                     line-height: 30px ;
                     display: inline-block ;
                     position: relative ;
@@ -726,9 +718,8 @@
     }
   }
 
-  /* ******************************* Extra Small ***************************** */
   @include media-breakpoint-down(xs) {
-    $col-w: 100% ;
+    var(--col-w): 100% ;
     > article {
       > .about-header {
         height: 70vh ; width: 100% ;
@@ -736,7 +727,7 @@
           > div {
             padding: 0 ;
             > div {
-              width: $col-w ;
+              width: var(--col-w) ;
               > h1 {
                 width: 90% ;
                 font-size: 28px ;
@@ -773,16 +764,16 @@
         > div {
           padding: 110px 30px 120px 30px ;
           > div.my-photo {
-            $photo-h: 180px ; // only change this
-            $photo-p: $photo-h / 2 ;
-            $negative-p: -#{$photo-p} ;
-            width: $photo-h ; height: $photo-h ;
+            var(--photo-h): 180px ; // only change this
+            $photo-p: var(--photo-h) / 2 ;
+            var(--negative-p): calc(-1 * var(--photo-p)) ;
+            width: var(--photo-h) ; height: var(--photo-h) ;
             border-radius: 50% ;
-            top: $negative-p ; left: 50% ;
-            margin: 0 0 0 $negative-p ;
+            top: var(--negative-p) ; left: 50% ;
+            margin: 0 0 0 var(--negative-p) ;
           }
           > div.my-bio {
-            width: $col-w ;
+            width: var(--col-w) ;
             > h2 {
               font-size: 20px ;
               line-height: 28px ;
@@ -808,12 +799,12 @@
           }
           > div.my-bio {
             padding: 0 30px 0 30px ;
-            width: $col-w ;
+            width: var(--col-w) ;
             > h2 {
-              font-family: $main-font ;
+              font-family: var(--main-font) ;
               font-size: 18px ;
               line-height: 24px ;
-              color: $yellow ;
+              color: var(--yellow) ;
               margin-bottom: 10px ;
             }
             > h4 {
@@ -848,12 +839,12 @@
         > div {
           padding: 10px 30px 50px 30px ;
           > div.my-bio {
-            width: $col-w ;
+            width: var(--col-w) ;
             > h2 {
               font-size: 28px ;
               line-height: 32px ;
               > span {
-                color: $yellow ;
+                color: var(--yellow) ;
               }
             }
           }
@@ -883,3 +874,4 @@
     }
   }
 }
+  */

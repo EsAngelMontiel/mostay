@@ -1,268 +1,148 @@
+@use 'mixins' as m;
+
 html {
+  box-sizing: border-box;
   position: absolute ;
   width: 100% ;
   height: 100% ;
   padding: 0 ;
   margin: 0 ;
-}
-body {
-  padding: $menu-h 0 0 0 ;
-  background-color: $darkgray ;
-  margin: 0 ;
-  height: 100% ;
-  display: block ;
-
-  // breadcrumb
-  .breadcrumb-espacio {
-    height: $bc-img-h ; width: 100% ;
-    background: url('../img/breadcrumb-bg.jpg') no-repeat cover ;
-    position: relative ;
-    overflow: hidden ;
-    margin-bottom: 10px ;
-    &.about {
-      height: $bc-img-h + 200 ;
-      .bc-img {
-        height: $bc-img-h + 200 ;
-        img {
-          min-height: $bc-img-h + 200 ;
-        }
-      }
-    }
-    .bc-img {
-      height: $bc-img-h ;
-      overflow: hidden ;
-      img {
-        width: 100% ; height: auto ;
-        object-fit: cover ;
-        object-position: center ;
-        min-height: $bc-img-h ;
-      }
-      .bc-gradient {
-        width: 100% ; height: 100% ;
-        position: absolute ;
-        top: 0 ; left: 0 ;
-        background-image: url('../img/gradient-bg.png');
-        background-repeat: repeat-x ;
-        background-position: bottom ;
-      }
-    }
-    > .container {
-      height: 100% ;
-      padding-top: 40px ;
-      position: relative ;
-      top: - $bc-img-h ;
-      > nav {
-        width: 100% ;
-        ol {
-          li {
-            font-family: $main-font ;
-            color: $white ;
-            display: inline-block ;
-            a {
-              font-size: 18px ;
-              line-height: 18px ;
-              font-family: $main-font ;
-              color: $white ;
-              @include transition(color .3s) ;
-              &:hover {
-                color: $red ;
-                text-decoration: none ;
-              }
-            }
-          }
-        }
-      }
-    }
-  } // breadcrumb @extend
-
-  // btn
-  div.btn-container {
-    text-align: center ;
-  }
-
-  // Paginación
-  nav.page-nav {
-    width: 100% ;
-    margin-bottom: 50px ;
-    ul {
-      width: 100% ;
-      text-align: center ;
-      li {
-        display: inline-block ;
-        margin-right: 10px ;
-        span.current {
-          height: 50px ;
-          font-family: $main-font ;
-          font-size: 16px ;
-          line-height: 50px ;
-          border: 1px solid $white ;
-          color: $darkgray ;
-          padding: 0 20px ;
-          display: block ;
-          background-color: $white ;
-        }
-        a {
-          height: 50px ;
-          font-family: $main-font ;
-          font-size: 16px ;
-          line-height: 50px ;
-          border: 1px solid $white ;
-          color: $white ;
-          padding: 0 20px ;
-          display: block ;
-          @include transition(background-color .3s);
-          &:hover {
-            text-decoration: none ;
-            background-color: $white ;
-            color: $darkgray ;
-          }
-        }
-        &:last-child {
-          margin: 0 ;
-        }
-      }
-    }
-  }
-
-  // Titulo de Pagina
-  .titulo {
-    margin-bottom: 30px ;
-    h1 {
-      font-family: $main-font ;
-      font-size: 40px ;
-      line-height: 40px ;
-      display: inline-block ;
-      margin: 0 10px 0 0 ;
-      color: $white ;
-      a {
-        color: $white ;
-        @include transition(color .3s);
-        &:hover {
-          color: $yellow ;
-          text-decoration: none ;
-        }
-      }
-    }
-    p {
-      width: 350px ;
-      font-family: $text-font ;
-      font-size: 14px ;
-      line-height: 16px ;
-      display: inline-block ;
-      color: $white ;
-      padding: 0 0 0 0 ;
-      position: relative ;
-      top: 2px ;
-      color: $gray ;
-    }
-  }
-
-}
-
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
-
-body {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-  }
-
-  /* ********************************* Small ***************************** */
-  @include media-breakpoint-down(sm) {
-    nav.page-nav {
-      width: 100% ;
-      margin-bottom: 0 ;
-      ul {
-        li {
-          display: inline-block ;
-          margin-right: 4px ;
-          a {
-            height: 40px ;
-            font-size: 16px ;
-            line-height: 38px ;
-            padding: 0 15px ;
-          }
-        }
-      }
-    }
-    // btn
-    div.btn-container {
-      text-align: center ;
-      a > span {
-        display: none ;
-      }
-    }
-  }
-
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-    .titulo {
-      margin-bottom: 30px ;
-      h1 {
-        width: 100% ;
-        font-size: 30px ;
-        line-height: 32px ;
-        margin: 0 0 5px 0 ;
-        display: block ;
-      }
-      p {
-        width: 100% ;
-        font-size: 12px ;
-        line-height: 16px ;
-      }
-    }
+  body {
+    //padding: var(--menu-h) 0 0 0 ;
+    background-color: var(--color-backgrounds) ;
+    margin: 0 ;
+    height: 100% ;
+    display: block ;
     .breadcrumb-espacio {
-      $bc-img-h: 50px ;
-      height: $bc-img-h ; width: 100% ;
+      height: var(--bc-img-h) ; 
+      width: 100% ;
+      background: url('../img/breadcrumb-bg.jpg') no-repeat;
+      background-size: cover;
+      position: relative ;
+      overflow: hidden ;
+      margin-bottom: .625rem ;
+      &.about {
+        height: calc(var(--bc-img-h) + 200) ;
+        .bc-img {
+          height: calc(var(--bc-img-h) + 200) ;
+          img {
+            min-height: calc(var(--bc-img-h) + 200) ;
+          }
+        }
+      }
       .bc-img {
-        height: $bc-img-h ;
+        height: var(--bc-img-h) ;
+        overflow: hidden ;
         img {
           width: 100% ; height: auto ;
-          min-height: $bc-img-h ;
+          object-fit: cover ;
+          object-position: center ;
+          min-height: var(--bc-img-h) ;
+        }
+        .bc-gradient {
+          width: 100% ; height: 100% ;
+          position: absolute ;
+          top: 0 ; left: 0 ;
+          background-image: url('../img/gradient-bg.png');
+          background-repeat: repeat-x ;
+          background-position: bottom ;
         }
       }
-
       > .container {
-        padding-top: 15px ;
-        top: - $bc-img-h ;
+        height: 100% ;
+        padding-top: 2.5rem ;
+        position: relative ;
+        top: calc(-1 * var(--bc-img-h)) ;
         > nav {
+          width: 100% ;
           ol {
             li {
-              color: $white ;
+              font-family: var(--main-font) ;
+              color: var(--white) ;
               display: inline-block ;
               a {
-                font-size: 14px ;
-                line-height: 16px ;
+                font-size: 18px ;
+                line-height: 18px ;
+                font-family: var(--main-font) ;
+                color: var(--white) ;
+                transition: color 0.3s ease;
+                &:hover {
+                  color: var(--red) ;
+                  text-decoration: none ;
+                }
               }
             }
           }
         }
       }
-    } // breadcrumb @extend
-    div.btn-container {
-      text-align: center ;
     }
-    nav.page-nav {
-      ul {
-        li {
-          margin-right: 3px ;
-          a {
-            height: 40px ;
-            font-size: 14px ;
-            line-height: 38px ;
-            padding: 0 14px ;
+    
+    --container-max-width: 90rem; 
+    --container-text-width: 55rem; 
+    --container-padding: 1rem;    
+
+    .container {
+      max-width: var(--container-max-width); 
+      width: 100%;                    
+      margin: 0 auto;                 
+      padding-left: var(--container-padding); 
+      padding-right: var(--container-padding);
+
+      @include m.breakpoint(md) {
+        padding-left: calc(var(--container-padding) / 2); 
+        padding-right: calc(var(--container-padding) / 2);
+      }
+      &.article-container {
+        max-width: var(--container-text-width); 
+      }
+    }
+
+    .btn-container {
+      @include m.flex(row, center, center, nowrap, var(--spacing-sm));
+      padding: 2rem var(--spacing-sm) 0 var(--spacing-sm);
+    }
+    // Titulo de Pagina
+    .titulo {
+      margin-bottom: 1.87rem ;
+      h1 {
+        font-family: var(--main-font) ;
+        font-size: 2.5rem ;
+        line-height: 2.5rem ;
+        display: inline-block ;
+        margin: 0 .625rem 0 0 ;
+        color: var(--darkgray) ;
+        a {
+          color: var(--white) ;
+          transition: color .3s ease ;
+          &:hover {
+            color: var(--yellow) ;
+            text-decoration: none ;
           }
         }
       }
+      p {
+        width: 30vw ;
+        font-family: var(--text-font) ;
+        font-size: .8rem ;
+        line-height: 1rem ;
+        display: inline-block ;
+        color: var(--green) ;
+        padding: 0 0 0 0 ;
+        position: relative ;
+        top: 2px ;
+      }
+    }
+    &.no-scroll {
+      overflow: hidden;
+      height: 100vh;
     }
   }
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+

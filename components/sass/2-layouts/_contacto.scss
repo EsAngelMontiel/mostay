@@ -2,147 +2,82 @@
 /* ************************ CONTACT ************************ */
 /* ******************************************************** */
 
+@use '../1-base/mixins' as m;
+
 .contacto {
-  $col-w: 600px ;
-  padding: 0 0 50px 0 ;
-  > article {
-    text-align: center ;
-    padding: 0 ;
-    > div.contenido {
-      display: inline-block ;
-      width: $col-w ;
-      overflow: hidden ;
-      padding: 0 14px ;
-      text-align: left ;
-      > span.categoria > a {
-        font-family: $main-font-regular ;
-        font-size: 14px ;
-        line-height: 22px ;
-        padding: 0 10px ;
-        margin: 0 0 10px 0 ;
-        background-color: $yellow ;
-        color: $darkgray ;
-        display: inline-block ;
-        @include transition(background-color .3s);
-        &:hover {
-          text-decoration: none ;
-          background-color: darken($yellow, 20%);
-        }
+  background-color: var(--color-backgrounds);
+  .cover {
+    position: relative;
+    height: 70vh; width: 100% ;
+    @include m.flex(column, center, center, nowrap);
+    background-color: var(--color-backgrounds) ;
+    padding-bottom: var(--spacing-lg);
+    > div {
+      width: calc(100% - calc(var(--spacing-lg)*2)) ;
+      height: 100% ;  
+      position: relative ;
+      overflow: hidden;
+      background-color: gray ;
+      border-radius: var(--radius-md);
+      img {
+        width: 100% ; height: 100% ;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 1;
       }
-      h1 {
-        font-family: $main-font ;
-        font-size: 36px ;
-        line-height: 40px ;
-        color: $white ;
+      @include m.breakpoint(lg) {
+        width: calc(100% - calc(var(--spacing-md)*2)) ;
       }
-      h2 {
-        @extend h1 ;
-        font-size: 28px ;
-        line-height: 32px ;
-        color: $yellow ;
-      }
-      h3, h4, h5 {
-        @extend h2 ;
-        font-size: 20px ;
-        line-height: 24px ;
-      }
-      > time {
-        font-family: $text-font ;
-        font-size: 14px ;
-        line-height: 22px ;
-        color: $yellow ;
-        margin: 0 ;
-        position: relative ;
-        top: -5px ;
-      }
-      p {
-        font-family: $text-font ;
-        font-size: 14px ;
-        line-height: 22px ;
-        margin: 0 0 20px 0 ;
-        color: $gray ;
-        > a {
-          color: $yellow ;
-        }
-        > strong {
-          font-weight: bold ;
-        }
-      }
-      > strong {
-        @extend p ;
-        font-weight: bold ;
-        margin-bottom: 20px ;
+      @include m.breakpoint(md) {
+        width: calc(100% - calc(var(--spacing-sm)*2)) ;
       }
     }
+    @include m.breakpoint(lg) {
+      height: 60vh;
+    }
+    @include m.breakpoint(md) {
+      height: 50vh;
+    }
+  }
+  > h1 {
+    margin-bottom: 1.5rem ;
+  }
+  background-color: var(--white);
+  padding: var(--pading-top-lg) 0 ;
+  p {
+    font-size: 1.2rem ;
+    line-height: 1.8rem ;
+    margin-bottom: 2rem ;
+    > a {
+      color: var(--green) ;
+    }
+    > strong {
+      font-weight: 500 ;
+    }
+  }
+  h1, h2, h3 {
+    font-weight: 600 ;
+    color: var(--green);
+    margin: 1.5rem 0 1rem ;
+  }
+
+  > strong {
+    @extend p ;
+    font-weight: 500 ;
+    margin-bottom: 1.25rem ;
+  }
+  @include m.breakpoint(lg) {
+    padding: var(--pading-top-md) var(--spacing-md) ;
+    .article-container {
+      padding: 0 var(--spacing-md) 0 ;
+    }
+    
+  }
+  @include m.breakpoint(md) {
+    padding: var(--pading-top-md) 0 ;
   }
 }
 
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
 
-.contacto {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-    $col-w: 100% ;
-    > article {
-      > div.contenido {
-        width: $col-w ;
-        h1 {
-          font-size: 30px ;
-          line-height: 34px ;
-        }
-        h2 {
-          @extend h1 ;
-          font-size: 28px ;
-          line-height: 32px ;
-        }
-        h3, h4, h5 {
-          @extend h2 ;
-          font-size: 20px ;
-          line-height: 24px ;
-        }
-      }
-      > div.tags {
-        width: $col-w ;
-        > strong {
-          margin: 0 0 0 0 ;
-        }
-      }
-      > div.autor {
-        width: $col-w ;
-        padding: 20px 10px ;
-        > img {
-          width: 35% ;
-        }
-        > span {
-          width: 65% ;
-          > p {
-            line-height: 18px ;
-          }
-          ul {
-            li {
-              margin-right: 8px ;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  /* ********************************* Small ***************************** */
-  @include media-breakpoint-down(sm) {
-  }
-
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-  }
-}

@@ -1,99 +1,111 @@
 <?php get_header(); ?>
-<section class="breadcrumb-espacio">
-  <?php if (have_posts()): while (have_posts()) : the_post();
-  $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
+
+<?php if (have_posts()): while (have_posts()) : the_post();
+  $main_img = get_the_post_thumbnail_url(get_the_ID(),'large');
   $my_date01 = get_the_date( 'j F, Y', '', '', false );
   $my_date02 = get_the_date( 'Y-m-d', '', '', false );
   ?>
-  <div class="bc-img">
-    <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-      <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
-    <?php endif; ?>
-    <span class="bc-gradient"></span>
-  </div>
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
-        <li>/</li>
-        <li class="breadcrumb-item active"><a href="<?php echo get_page_link(2); ?>">Blog</a></li>
-      </ol>
-    </nav>
-  </div>
-</section>
 
 <!-- ********************** resumen de posts ********************** -->
 <section class="single">
-  <article class="container">
-    <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-      <?php the_post_thumbnail('medium'); // Fullsize image for the single post ?>
-    <?php endif; ?>
-    <div class="contenido">
-      <span class="categoria"><?php the_category(', '); ?></span>
-      <h1><?php the_title(); ?></h1>
-      <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
-      <?php the_content(); ?>
+  <article>
+    <!-- Article Cover -->
+    <div class="cover">
+      <div>
+        <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+          <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
+        <?php endif; ?>
+      </div>
     </div>
-    <div class="tags">
-      <strong>Tags: </strong>
-      <?php the_tags( __( '', 'mostay' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+    <!-- End Article Cover -->
+    <!-- Article header -->
+    <div class="container article-container">
+      <div class="contenido">
+        <h1><?php the_title(); ?></h1>
+        <div class="datos">
+          <div>
+            <h4>Categoría</h4>
+            <?php the_category(', '); ?>
+          </div>
+          <div>
+            <h4>Publicado</h4>
+            <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
+          </div>
+          <div>
+            <h4>autor</h4>
+            <span class="author"><?php the_author_link(); ?></span>
+          </div>
+          <div>
+            <h4>Tiempo de lectura</h4>
+            <span class="reading-t"><?php echo do_shortcode('[rt_reading_time label="" postfix="minutos" postfix_singular="minuto."]'); ?></span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="autor">
-      <?php echo get_wp_user_avatar(get_the_author_meta('ID'), 'small'); ?>
-      <span>
-        <?php
-          $author_title = get_the_author_meta('title');
-          $author_youtube = get_the_author_meta('youtube');
-          $author_instagram = get_the_author_meta('instagram');
-          $author_facebook = get_the_author_meta('facebook');
-          $author_twitter = get_the_author_meta('twitter');
-          $author_behance = get_the_author_meta('behance');
-          $author_dribbble = get_the_author_meta('dribbble');
-          $author_linkedin = get_the_author_meta('linkedin');
-        ?>
-        <em>Autor</em>
-        <h2><a href="#"><?php the_author(); ?></a></h2>
-        <?php if ($author_title !== '') {?>
-          <strong><?php echo $author_title ; ?></strong>
-        <?php } else {} ?>
-        <p><?php the_author_description(); ?></p>
-        <ul class="autor-rs">
-          <?php if ($author_youtube !== '') {?>
-            <li><a href="<?php echo $author_youtube ; ?>" target="_blank"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
-          <?php } else {} ?>
-          <?php if ($author_instagram !== '') {?>
-            <li><a href="<?php echo $author_instagram ; ?>" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-          <?php } else {} ?>
-          <?php if ($author_twitter !== '') {?>
-            <li><a href="<?php echo $author_twitter ; ?>" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-          <?php } else {} ?>
-          <?php if ($author_behance !== '') {?>
-            <li><a href="<?php echo $author_behance ; ?>" target="_blank"><i class="fab fa-behance-square"></i><span>Behance</span></a></li>
-          <?php } else {} ?>
-          <?php if ($author_dribbble !== '') {?>
-            <li><a href="<?php echo $author_dribbble ; ?>" target="_blank"><i class="fas fa-basketball-ball"></i></i><span>Dribbble</span></a></li>
-          <?php } else {} ?>
-          <?php if ($author_linkedin !== '') {?>
-            <li><a href="<?php echo $author_linkedin ; ?>" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-          <?php } else {} ?>
-          <?php if ($author_facebook !== '') {?>
-            <li><a href="<?php echo $author_facebook ; ?>" target="_blank"><i class="fab fa-facebook"></i><span>LinkedIn</span></a></li>
-          <?php } else {} ?>
-        </ul>
-      </span>
+    <!-- End Article header -->
+    <!-- Article Content -->
+    <div class="article-content">
+      <div class="container article-container">
+        <?php the_content(); ?>
+        <div class="tags">
+          <strong>Tags: </strong>
+          <?php the_tags( __( '', 'mostay' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+        </div>
+        <div class="autor">
+          <?php
+            $author_id = get_the_author_meta( 'ID' );
+            $author_nicename = get_the_author_meta( 'display_name', $author_id );
+            $author_title = get_the_author_meta('title', $author_id);
+            $author_youtube = get_the_author_meta('youtube', $author_id);
+            $author_instagram = get_the_author_meta('instagram', $author_id);
+            $author_facebook = get_the_author_meta('facebook', $author_id);
+            $author_twitter = get_the_author_meta('twitter', $author_id);
+            $author_behance = get_the_author_meta('behance', $author_id);
+            $author_dribbble = get_the_author_meta('dribbble', $author_id);
+            $author_linkedin = get_the_author_meta('linkedin', $author_id);
+            $author_url = get_the_author_meta( 'url', $author_id );
+          ?>
+          <?php echo get_wp_user_avatar($author_id, 'thumb'); ?>
+          <span>
+            <em>Autor</em>
+            <h2><a href="<?php echo $author_url ; ?>"><?php echo $author_nicename ; ?></a></h2>
+            <?php if ($author_title !== '') {?>
+              <strong><?php echo $author_title ; ?></strong>
+            <?php } else {} ?>
+            <p><?php the_author_description(); ?></p>
+            <ul class="autor-rs">
+              <?php if ($author_youtube !== '') {?>
+                <li><a href="<?php echo $author_youtube ; ?>" target="_blank"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+              <?php } else {} ?>
+              <?php if ($author_instagram !== '') {?>
+                <li><a href="<?php echo $author_instagram ; ?>" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+              <?php } else {} ?>
+              <?php if ($author_twitter !== '') {?>
+                <li><a href="<?php echo $author_twitter ; ?>" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+              <?php } else {} ?>
+              <?php if ($author_behance !== '') {?>
+                <li><a href="<?php echo $author_behance ; ?>" target="_blank"><i class="fab fa-behance-square"></i><span>Behance</span></a></li>
+              <?php } else {} ?>
+              <?php if ($author_dribbble !== '') {?>
+                <li><a href="<?php echo $author_dribbble ; ?>" target="_blank"><i class="fas fa-basketball-ball"></i></i><span>Dribbble</span></a></li>
+              <?php } else {} ?>
+              <?php if ($author_linkedin !== '') {?>
+                <li><a href="<?php echo $author_linkedin ; ?>" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+              <?php } else {} ?>
+              <?php if ($author_facebook !== '') {?>
+                <li><a href="<?php echo $author_facebook ; ?>" target="_blank"><i class="fab fa-facebook"></i><span>LinkedIn</span></a></li>
+              <?php } else {} ?>
+            </ul>
+          </span>
+        </div>
+        <div class="btn-container">
+          <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Volver al Blog</a>
+        </div>
+      </div>
     </div>
-    <div class="comments">
-      <?php
-      if (comments_open()){
-          comments_template();
-      }
-      ?>
-    </div>
-
+    <!-- Article Content -->
   </article>
-  <div class="btn-container">
-    <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Volver al Blog</a>
-  </div>
+  
 
 <?php endwhile; ?>
   <?php else: ?>
@@ -107,57 +119,77 @@
 
 <!-- ********************** Featured ********************** -->
 <section class="blog featured-posts">
-  <div class="bar"></div>
-  <div class="container">
-    <div class="titulo">
-      <h1>Posts Relacionados.</h1>
-      <p>Gracias por leer este artículo, aqui te muestro 3 que te pueden interesar.</p>
-    </div>
-    <?php
-    $argo = array(
-      'post_type'      => 'post',
-      'posts_per_page' =>  3 ,
-      'order'          => 'DESC',
-    );
+  <div class="bar-orange"></div>
+  <div class="titulo">
+    <h1>Otros artículos que te
+    pueden interesar.</h1>
+  </div>
+  <?php
+  $argo = array(
+    'post_type'      => 'post',
+    'posts_per_page' =>  4 ,
+    'post__not_in'   => array(get_the_ID()),
+    'order'          => 'DESC',
+  );
 
-    $the_query = new WP_Query( $argo );
+  $the_query = new WP_Query( $argo );
 
-    if ($the_query->have_posts()){ ?>
-    <ul>
-      <?php while ( $the_query->have_posts() ) {
-        $the_query->the_post();
-        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
-        $url = $thumb['0'];
-        $my_date01 = get_the_date( 'j F, Y', '', '', false );
-        $my_date02 = get_the_date( 'Y-m-d', '', '', false );
+  if ($the_query->have_posts()){ ?>
+  <ul>
+    <?php while ( $the_query->have_posts() ) {
+      $the_query->the_post();
+      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumb' );
+      $url = $thumb['0'];
+      $my_date01 = get_the_date( 'j F, Y', '', '', false );
+      $my_date02 = get_the_date( 'Y-m-d', '', '', false );
 
-        ?>
-        <li>
-          <article class="blog-post">
-            <a href="<?php the_permalink(); ?>">
-              <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
-            </a>
-            <div>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
-              <?php the_excerpt(); ?>
-              <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
+      ?>
+      <li>
+        <article class="blog-post">
+          <a href="<?php the_permalink(); ?>">
+            <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
+          </a>
+          <div>
+          <div class="post-info">
+              <time datetime="<?php echo $my_date02 ; ?>"><i class="fas fa-calendar-alt"></i> <?php echo $my_date01 ; ?></time>
+              <span class="reading-t"><i class="fas fa-stopwatch"></i> <?php echo do_shortcode('[rt_reading_time label="Lectura:" postfix="minutos." postfix_singular="minuto."]'); ?></span>
             </div>
-          </article>
-        </li>
-      <?php } ?>
-    </ul>
-    <?php
-    } else { }
-    wp_reset_postdata();
-    wp_reset_query();
-    ?>
-    <div class="btn-container">
-      <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Ver Todos</a>
-    </div>
-
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <?php the_excerpt(); ?>
+            <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </article>
+      </li>
+    <?php } ?>
+  </ul>
+  <?php
+  } else { }
+  wp_reset_postdata();
+  wp_reset_query();
+  ?>
+  <div class="btn-container">
+    <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Ver Todos</a>
   </div>
 </section>
 <!-- /section -->
 <?php get_sidebar(); ?>
+
+<section class="cta-wrapper">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <img src="<?php echo get_template_directory_uri(); ?>/img/cta.gif" alt="¿Quieres saber si Mostay es lo que tu marca necesita?">
+      </div>
+      <div>
+        <h2>¿Quieres descubrir cómo Mostay puede transformar tu marca?</h2>
+        <p>Tu historia merece ser contada de forma única. Estamos aquí para darle vida juntos. <strong>Escríbenos a nuestro WhatsApp para agendar una llamada introductoria de 15 minutos y descubre cómo podemos darle vida a tu proyecto.</strong></p>
+        <a href="https://wa.me/34641747158" class="btn btn-whatsapp" target="_blank">
+        ¿Cómo te podemos ayudar?
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      </a>
+      </div>
+    </div>
+  </div>
+</section> 
+
 <?php get_footer(); ?>

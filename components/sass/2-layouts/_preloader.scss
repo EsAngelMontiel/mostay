@@ -2,124 +2,64 @@
 /* ************************ PRELOADER ************************ */
 /* ******************************************************** */
 
-body  {
-  > div#loader-wrapper  {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Estilo base */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--offwhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  .loader img {
+    width: 6.25rem ; 
+    animation: fadeIn 1.5s infinite alternate; /* Efecto de opacidad */
+  }
+}
+
+/* Animación del logo */
+
+
+/* Animación del texto */
+/*.loader p {
+  font-size: 16px;
+  color: #444; 
+  margin-top: 10px;
+  animation: typing 2s steps(20, end), blink .5s step-end infinite;
+}*/
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
     width: 100%;
-    height: 100%;
-    z-index: 1000;
-    background-color: $black ;
-    div#loader {
-      width: 290px;
-      height: 468px;
-      display: block;
-      position: absolute;
-      left: 0 ; right: 0 ;
-      top: 0 ; bottom: 0 ;
-      margin: auto ;
-      border-radius: 50%;
-      z-index: 1001;
-      > h1 {
-        width: 100% ;
-        margin: 110px 20px 5px  0px ;
-        padding-bottom: 30px ;
-        > a {
-          display: block;
-          width: 100% ;
-          height: 102px ;
-          background: url('../img/logo-negro.jpg') no-repeat left;
-          -webkit-background-size:cover;
-          -moz-background-size:cover;
-          -o-background-size:cover;
-          background-size:cover;
-          > span {
-            display: none;
-          }
-        }
-      }
-      > div {
-        width: 70px ; height: 70px ;
-        position: absolute;
-        z-index: 10;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        margin: auto;
-        > div.loader {
-          > img {
-            width: 100% ; height: auto;
-          }
-        }
-      }
-    }
   }
+}
 
-  .no-js {
-    #loader-wrapper {
-      display: none;
-      }
-    h1 {
-      color: #222222;
-      }
-    }
-  &.loaded {
-    #loader {
-      opacity: 0;
-      -webkit-transition: all 0.4s ease-out;
-              transition: all 0.4s ease-out;
-    }
-    #loader-wrapper {
-        visibility: hidden;
-
-        opacity: 0;
-
-        -webkit-transition: all 0.3s 0.5s ease-out;
-                transition: all 0.3s 0.5s ease-out;
-    }
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
   }
 }
 
 
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
 
-div#loader-wrapper {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-    > div#loader-wrapper  {
 
-    }
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-    > div#loader-wrapper  {
-
-    }
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-    > div#loader-wrapper  {
-
-    }
-  }
-
-  /* ********************************* Small ***************************** */
-  @include media-breakpoint-down(sm) {
-    > div#loader-wrapper  {
-
-    }
-  }
-
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-    > div#loader-wrapper  {
-
-    }
-  }
-}

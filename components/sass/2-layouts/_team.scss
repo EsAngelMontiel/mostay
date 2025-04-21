@@ -1,0 +1,129 @@
+@use '../1-base/mixins' as m;
+
+.team-wrapper {
+    background-color: var(--darkgray);
+    padding: calc(var(--pading-top-lg)*2) 0 ;
+    .team {
+        &__info {
+            display: grid;
+            grid-template-columns: 40% 60% ; 
+            grid-template-rows: auto;          
+            gap: var(--spacing-md); 
+            > div {
+                h2 {
+                    color: var(--yellow);
+                    font-weight: 500 ;
+                    margin-bottom: 1rem ;
+                }
+                p {
+                    color: var(--white);
+                }
+                &:last-child {
+                    padding-left: 3rem ;
+                    border-left: 1px solid var(--gray) ;
+                    margin-bottom: 3rem ;
+                }
+            }
+            @include m.breakpoint(lg) {
+                div:last-child {
+                    padding-right: 3rem ;
+                }
+            }
+            @include m.breakpoint(md) {
+                grid-template-columns: 30% 70% ; 
+            }
+            @include m.breakpoint(sm) {
+                grid-template-columns: 1fr ; 
+            }
+        }
+        &__fotos {
+            > ul {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: var(--spacing-md);
+                > li {
+                    article {
+                        .perfil {
+                            border-radius: var(--radius-md);
+                            overflow: hidden ;
+                            margin-bottom: 2rem ;
+                        }
+                        .perfil-texto {
+                            padding-left: 2rem ;
+                            border-left: 1px solid var(--gray);
+                            header {
+
+                                h3 {
+                                    color: var(--red);
+                                    margin-bottom: .4rem ;
+                                }
+                                > p {
+                                    font-family: var(--main-font);
+                                    color: var(--offwhite);
+                                    font-size: clamp(.8rem, 1.7vw, 1rem);
+                                    line-height: clamp(.8rem, 1.7vw, 1rem);
+                                    font-weight: 300 ;
+                                    margin-bottom: .4rem ;
+                                    display: inline-block ;
+                                    @include m.breakpoint(lg) {
+                                        font-size: clamp(.8rem, 1.7vw, 1rem);
+                                        line-height: clamp(.8rem, 1.7vw, 1rem);
+                                    }
+                                }
+                            }
+                            p {
+                                color: var(--offwhite);
+                                font-size: clamp(.8rem, 1.7vw, 1rem);
+                                line-height: clamp(.9rem, 1.7vw, 1.1rem);
+                                font-weight: 300 ;
+                            }
+                            > ul {
+                                @include m.flex(row, flex-start, flex-start, nowrap, .3rem );
+                                padding-top: 1rem ;
+                                > li {
+                                    margin-right: .4rem ;
+                                    a {
+                                        i {
+                                            font-size: 1.2rem ;
+                                            color: var(--green);
+                                            transition: color .3s ease ;
+                                        }
+                                        span {
+                                            display: none ;
+                                        }
+                                        &:hover > i {
+                                            color: var(--red) ;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @include m.breakpoint(md) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                @include m.breakpoint(sm) {
+                    grid-template-columns: repeat(1, 1fr);
+                    > li {
+                        display: grid;
+                        grid-template-columns: 45% 55% ;
+                        gap: 0 ;
+                        .perfil {
+                            border-radius: var(--radius-sm) ;
+                            margin: 0 ;
+                        }
+                        .perfil-texto {
+                            padding-left: 1rem ;
+                            padding-top: 1rem ;
+                            border-left: 0 ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include m.breakpoint(md) {
+        padding: var(--pading-top-md) var(--spacing-md) ;
+    }
+}

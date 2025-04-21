@@ -1,5 +1,6 @@
+@use '../1-base/mixins' as m;
+
 .basic {
-  $col-w: 600px ;
   > article {
     text-align: center ;
     > div.video-cover {
@@ -15,6 +16,15 @@
         height: 100% ;
       }
     }
+  }
+}
+
+/*
+.basic {
+  $col-w: 600px ;
+  > article {
+    
+    
     > div.contenido {
       display: inline-block ;
       width: $col-w ;
@@ -107,21 +117,15 @@
     padding: 40px 0 50px 0 ;
   }
 }
+*/
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */
 /* ************************************************************************* */
-
+/*
 .basic {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
+  
 
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-  }
-
-  /* ******************************** Medium ***************************** */
   @include media-breakpoint-down(md) {
     $col-w: 100% ;
     > article {
@@ -217,7 +221,6 @@
     }
   }
 
-  /* ********************************* Small ***************************** */
   @include media-breakpoint-down(sm) {
     $col-w: 100% ;
     > article {
@@ -270,7 +273,5 @@
     }
   }
 
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-  }
 }
+  */

@@ -1,36 +1,153 @@
-//breakpoints
-$xmall:   320px ;
-$small:		544px;
-$medium:	768px;
-$large:		1024px;
 
-// Define your breakpoints
-$xl: (
-  columns: 12,
-  gutter: 20px,
-  media: "(min-width: 1025px)",
-); // new-breakpoint(min-width $large+1 12);
 
-$lg: (
-  columns: 12,
-  gutter: 20px,
-  media: "(max-width: 1024px)",
-);  // new-breakpoint(max-width $large 12);
+// ********** BG Image ********** //
+/*@mixin backImage($image,
+  $height: 100vh,
+  $bgPos: center center
+  ) {
+  background: linear-gradient( to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,.6)),
+    url($image);
+  background-repeat: no-repeat;
+  background-position: $bgPos;
+  background-size: cover;
+  height: $height;
+}*/
 
-$md: (
-  columns: 12,
-  gutter: 20px,
-  media: "(max-width: 768px)",
-);  // new-breakpoint(max-width $medium 12);
+// ********** Box Grid ********** //
+/*@mixin boxGrid($qty, $margin) {
+  $w: ((100% - (($qty - 1) * $margin))/$qty);
+  width: $w ; //height: $w ;
+  &:nth-child(n) {
+    margin-right: $margin;
+    margin-bottom: $margin;
+  }
+  &:nth-child(#{$qty}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}*/
 
-$sm: (
-  columns: 6,
-  gutter: 20px,
-  media: "(max-width: 544px)",
-);  // new-breakpoint(max-width $small 6);
+// ********** Clearfix ********** //
+/*@mixin clearfix {
+  &:before, &:after {
+    content:'';
+    display: table ;
+  }
+  &:after {
+    clear: both ;
+  }
+}*/
 
-$xm:  (
-  columns: 4,
-  gutter: 20px,
-  media: "(max-width: 320px)",
-); // new-breakpoint(max-width $xmall 4);
+// ********** Linear Gradient ********** //
+/*@mixin linearGradient($top, $bottom, $color1, $color2 ) {
+  background: linear-gradient(to $bottom, $color1 0%, $color2 100%);
+}*/
+
+// ********** transition ********** //
+/*@mixin transition($properties...) {
+  transition: $properties;
+}*/
+
+
+//base
+
+/* ************************************************************************* */
+/* ***************************** Media queries ***************************** */
+/* ************************************************************************* */
+
+/*body {
+  /* ***************************** Extra Large ***************************** */
+  
+
+  /* ********************************* Small ***************************** */
+  /*@include media-breakpoint-down(sm) {
+    nav.page-nav {
+      width: 100% ;
+      margin-bottom: 0 ;
+      ul {
+        li {
+          display: inline-block ;
+          margin-right: 4px ;
+          a {
+            height: 40px ;
+            font-size: 16px ;
+            line-height: 38px ;
+            padding: 0 15px ;
+          }
+        }
+      }
+    }
+    // btn
+    div.btn-container {
+      text-align: center ;
+      a > span {
+        display: none ;
+      }
+    }
+  }*/
+
+  /* ******************************* Extra Small ***************************** */
+  /*@include media-breakpoint-down(xs) {
+    .titulo {
+      margin-bottom: 30px ;
+      h1 {
+        width: 100% ;
+        font-size: 30px ;
+        line-height: 32px ;
+        margin: 0 0 5px 0 ;
+        display: block ;
+      }
+      p {
+        width: 100% ;
+        font-size: 12px ;
+        line-height: 16px ;
+      }
+    }
+    .breadcrumb-espacio {
+      $bc-img-h: 50px ;
+      height: $bc-img-h ; width: 100% ;
+      .bc-img {
+        height: $bc-img-h ;
+        img {
+          width: 100% ; height: auto ;
+          min-height: $bc-img-h ;
+        }
+      }
+
+      > .container {
+        padding-top: 15px ;
+        top: - $bc-img-h ;
+        > nav {
+          ol {
+            li {
+              color: $white ;
+              display: inline-block ;
+              a {
+                font-size: 14px ;
+                line-height: 16px ;
+              }
+            }
+          }
+        }
+      }
+    } // breadcrumb @extend
+    div.btn-container {
+      text-align: center ;
+    }
+    nav.page-nav {
+      ul {
+        li {
+          margin-right: 3px ;
+          a {
+            height: 40px ;
+            font-size: 14px ;
+            line-height: 38px ;
+            padding: 0 14px ;
+          }
+        }
+      }
+    }
+  }
+}*/

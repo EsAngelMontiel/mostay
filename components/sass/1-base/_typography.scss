@@ -1,0 +1,62 @@
+@use '../1-base/mixins' as m;
+
+p {
+    font-family: var(--text-font);
+    color: var(--black);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.4rem ;
+    font-weight: 200 ;
+    @include m.breakpoint(lg) {
+        font-size: clamp(.8rem, 1.6vw, 1.2rem);
+        line-height: clamp(1rem, 1.8vw, 1.4rem);
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--main-font);
+}
+
+h1 {
+    font-size: clamp(2rem, 3.5vw, 4rem);
+    color: var(--red) ;
+    font-weight: 600 ;
+    line-height: clamp(2rem, 3.5vw, 4rem) ;
+    @include m.breakpoint(lg) {
+        font-size: clamp(1.9rem, 3.5vw, 2.25rem);
+        line-height: clamp(2.1rem, 3.5vw, 2.4rem);
+    }
+    @include m.breakpoint(md) {
+        font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+        line-height: clamp(1.9rem, 3.5vw, 2.4rem);
+    }
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: clamp(2.2rem, 3vw, 3.3rem);
+    font-weight: 400 ;
+    color: var(--darkgray) ;
+    strong {
+        font-weight: 600 ;
+    }
+    @include m.breakpoint(lg) {
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        line-height: clamp(1.5rem, 3vw, 1.9rem);
+    }
+    @include m.breakpoint(md) {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+        line-height: clamp(1.6rem, 3.5vw, 2.1rem);
+    }
+}
+h3 {
+    font-size: clamp(1rem, 1.7vw, 1.3rem);
+    line-height: clamp(1.1rem, 1.7vw, 1.4rem);
+    font-weight: 600 ;
+    @include m.breakpoint(lg) {
+        font-size: clamp(1rem, 1.7vw, 1.2rem);
+        line-height: clamp(1.1em, 1.7vw, 1.3rem);
+    }
+}
+
+
+

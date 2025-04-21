@@ -1,58 +1,38 @@
-.btn {
-  height: 50px ;
-  font-family: $main-font ;
-  font-size: 16px ;
-  line-height: 50px ;
-  border: 1px solid $white ;
-  padding: 0 30px ;
+@use '../1-base/mixins' as m;
+
+/*.btn {
+  height: 3.125rem ;
+  font-family: var(--main-font) ;
+  font-size: 1rem ;
+  line-height: 3.125rem ;
+  border: 1px solid var(--white) ;
+  padding: 0 1.875rem ;
   display: inline-block ;
-  color: $white ;
+  color: var(--white) ;
   margin: 0 auto ;
-  @include transition(background-color .3s);
+  transition: background-color .3s ease ;
   &:hover {
     text-decoration: none ;
-    background-color: $white ;
-    color: $darkgray ;
+    background-color: var(--white) ;
+    color: var(--darkgray) ;
+  }
+  @include m.breakpoint(md) {
+    height: 2.5rem ;
+    font-family: var(--main-font) ;
+    font-size: 1rem ;
+    line-height: 2.5rem ;
+    padding: 0 1.125rem ;
   }
 }
 
 .btn-verde {
   @extend .btn;
-  background-color: $blue ;
+  background-color: var(--blue) ;
   border: none ;
   &:hover {
-    background-color: darken($blue, 12%) ;
-    color: $white ;
+    background-color: var(--darkblue) ;
+    color: var(--white) ;
   }
-}
+}*/
 
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
 
-.btn {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-  }
-
-  /* ********************************* Small ***************************** */
-  @include media-breakpoint-down(sm) {
-  }
-
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-    height: 40px ;
-    font-family: $main-font ;
-    font-size: 16px ;
-    line-height: 40px ;
-    padding: 0 20px ;
-  }
-}

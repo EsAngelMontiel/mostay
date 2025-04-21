@@ -1,114 +1,34 @@
 <?php /* Template Name: Contact */
 get_header();
 if (have_posts()): while (have_posts()) : the_post();
-$main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
+$main_img = get_the_post_thumbnail_url(get_the_ID(),'large');
 $main_cover = get_the_post_thumbnail_url(get_the_ID(),'medium');
-
-// Redes
-$behance = get_field('behance', $post_id);
-$linkedin = get_field('linkedin', $post_id);
-$instagram = get_field('instagram', $post_id);
-$email = get_field('email', $post_id);
 ?>
 
-<section class="breadcrumb-espacio">
-  <div class="bc-img">
-    <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-      <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
-    <?php endif; ?>
-    <span class="bc-gradient"></span>
-  </div>
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
-        <li>/</li>
-        <li class="breadcrumb-item active"><?php the_title(); ?></li>
-      </ol>
-    </nav>
-  </div>
-</section>
+
 
 <!-- ********************** resumen de posts ********************** -->
-<section class="contacto">
-  <article class="container">
-    <div class="contenido">
+<section class="services">
+  <div class="cover">
+    <div>
+      <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+        <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <div class="container service-header">
+    <div></div>
+    <div>
       <h1><?php the_title(); ?></h1>
-      <?php the_content(); ?>
+      <p><?php the_content(); ?></p>
+      <a href="https://wa.me/34641747158" class="btn btn-whatsapp" target="_blank">
+        ¿Cómo te podemos ayudar?
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      </a>
     </div>
-  </article>
-  <div class="btn-container">
-    <?php if (!empty($behance)):?>
-      <a href="https://www.behance.net/<?php echo $behance ; ?>" class="btn btn-blanco" target="_blank"><i class="fab fa-behance-square"></i> <span> Behance</span></a>
-    <?php endif ; ?>
-    <?php if (!empty($linkedin)):?>
-      <a href="https://www.linkedin.com/in/<?php echo $linkedin ; ?>" class="btn btn-blanco" target="_blank"><i class="fab fa-linkedin-square"></i> <span> LinkedIn</span></a>
-    <?php endif ; ?>
-    <?php if (!empty($instagram)):?>
-      <a href="https://www.instagram.com/<?php echo $instagram ; ?>" class="btn btn-blanco" target="_blank"><i class="fab fa-instagram"></i><span> Instagram</span></a>
-    <?php endif ; ?>
-    <?php if (!empty($email)):?>
-      <SCRIPT TYPE="text/javascript">
-        emailE = 'mostay.co'
-        emailE = ('<?php echo $email ; ?>' + '@' + emailE)
-        document.write('<A class="btn btn-blanco" href="mailto:' + emailE + '"><i class="fas fa-envelope"></i><span> Email</span></a>')
-      </script>
-    <?php endif ; ?>
   </div>
-</section>
-
-<!-- ********************** Featured ********************** -->
-<section class="blog featured-posts">
-  <div class="bar"></div>
-  <div class="container">
-    <div class="titulo">
-      <h1>Posts Relacionados.</h1>
-      <p>También puedes ver el resto de los post al darle click a ver todos.</p>
-    </div>
-    <?php
-    $argo = array(
-      'post_type'      => 'post',
-      'posts_per_page' =>  3 ,
-      'order'          => 'DESC',
-    );
-
-    $the_query = new WP_Query( $argo );
-
-    if ($the_query->have_posts()){ ?>
-    <ul>
-      <?php while ( $the_query->have_posts() ) {
-        $the_query->the_post();
-        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
-        $url = $thumb['0'];
-        $my_date01 = get_the_date( 'j F, Y', '', '', false );
-        $my_date02 = get_the_date( 'Y-m-d', '', '', false );
-
-        ?>
-        <li>
-          <article class="blog-post">
-            <a href="<?php the_permalink(); ?>">
-              <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
-            </a>
-            <div>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
-              <?php the_excerpt(); ?>
-              <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </article>
-        </li>
-      <?php } ?>
-    </ul>
-    <?php
-    } else { }
-    wp_reset_postdata();
-    wp_reset_query();
-    ?>
-    <div class="btn-container">
-      <a href="<?php echo get_page_link(2); ?>" class="btn btn-blanco">Ver Todos</a>
-    </div>
-
-  </div>
+  
 </section>
 
 <?php endwhile; ?>
@@ -117,5 +37,7 @@ $email = get_field('email', $post_id);
        <h2></h2>
 </article>
 <?php endif; ?>
+
+
 
 <?php get_footer(); ?>

@@ -1,0 +1,27 @@
+$breakpoints-up: (
+      sm: 30rem,  // 480px
+      md: 43.75rem,  // 700px
+      lg: 64rem,     // 1024px
+      xl: 90rem,    // 1440px
+    );
+
+// ********** Breakpoints ********** //
+@mixin breakpoint ($size) {
+    @media (max-width: map-get($breakpoints-up, $size)) {
+      @content;
+    }
+};
+
+// ********** Flex ********** //
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  @if $gap != null {
+      gap: $gap;
+  }
+};
+
+

@@ -1,0 +1,17 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "build": "terser script.js -o ../../wp/wp-content/themes/mostay/js/script-min.js",
+    "watch": "chokidar 'script.js' -c 'npm run build'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "terser": "^5.37.0"
+  }
+}

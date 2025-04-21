@@ -2,112 +2,96 @@
 /* ************************ FOOTER ************************ */
 /* ******************************************************** */
 
+@use '../1-base/mixins' as m;
+
 footer {
-  height: $footer-h ;
-  background-color: $darkgray ;
+  height: var(--footer-h) ;
+  background-color: var(--darkgray) ;
   overflow: hidden ;
-  h1 {
-    width: 147px ; height: $footer-h ;
-    float: left ;
-    margin: 0 5px 0 0 !important ;
-    padding: 0 0 0 0 ;
-    > a {
-      width: 147px ; height: $footer-h ;
-      background: url("../img/mostay-logo-red.svg");
-      background-repeat: no-repeat ;
-      background-position: center ;
-      background-size: contain ;
-      display: block ;
-      @include transition(opacity .3s);
-      > span {
-        display: none ;
+  
+  > div {
+    @include m.flex(row, flex-start, center, nowrap, 1rem);
+    h1 {
+      width: 9rem ; height: var(--footer-h) ;
+      margin: 0 .3rem 0 0 !important ;
+      padding: 0 0 0 0 ;
+      > a {
+        width: 100% ; height: var(--footer-h) ;
+        background: url("../img/mostay-logo-red.svg");
+        background-repeat: no-repeat ;
+        background-position: center ;
+        background-size: contain ;
+        display: block ;
+        transition: opacity .3s ease ;
+        > span {
+          display: none ;
+        }
+        &:hover {
+          opacity: .5 ;
+        }
       }
-      &:hover {
-        opacity: .5 ;
+      @include m.breakpoint(md) {
+        width: 8rem ; 
       }
     }
-  }
-  small {
-    width: 140px ; height: $footer-h ;
-    font-family: $main-font ;
-    font-size: 14px ;
-    line-height: 14px ;
-    color: $gray ;
-    padding: 16px 0 0 0 ;
-    float: left ;
-  }
-  div.social-networks {
-    height: $footer-h ;
-    float: left ;
-    > ul {
-      height: $footer-h ;
-      padding: 15px 0 ;
-      li {
-        height: $nav-h ;
-        display: inline-block ;
-        margin-left: 5px ;
-        > a {
-          height: $nav-h - 8 ; width: $nav-h - 8 ;
-          display: block ;
-          border-radius: 50% ;
-          background-color: $gray ;
-          font-size: 13px ;
-          line-height: $nav-h - 8 ;
-          text-align: center ;
-          @include transition(background-color .3s);
-          > i {
-            color: $darkgray ;
+    small {
+      width: 12rem ; height: var(--footer-h) ;
+      font-family: var(--main-font) ;
+      font-size: .9rem ;
+      line-height: .9rem ;
+      color: var(--gray) ;
+      @include m.flex(row, flex-start, center, nowrap, 1rem);
+      @include m.breakpoint(md) {
+        width: 9rem ; 
+        font-size: .9rem ;
+        line-height: .9rem ;
+      }
+      @include m.breakpoint(md) {
+        display: none ;
+      }
+    }
+    div.social-networks {
+      height: var(--footer-h) ;
+      > ul {
+        height: var(--footer-h) ;
+        @include m.flex(row, space-between, center, nowrap, var(--spacing-sm));
+        padding-right: 0 ;
+        li {
+          height: 1.5rem ; width: 1.5rem ;
+          display: inline-block ;
+          margin-right: 0.5rem ;
+          > a {
+            height: 100% ; width: 100% ;
+            display: block ;
+            border-radius: 50% ;
+            background-color: var(--gray) ;
+            font-size: .8rem ;
+            transition: background-color .3s ease ;
+            @include m.flex(row, center, center, nowrap);
+            > i {
+              color: var(--darkgray) ;
+            }
+            span {
+              display: none ;
+            }
+            &:hover {
+              background-color: var(--white) ;
+            }
           }
-          span {
-            display: none ;
-          }
-          &:hover {
-            background-color: $white ;
+        }
+      }
+      @include m.breakpoint(md) {
+        > ul {
+          @include m.flex(row, space-between, center, nowrap, .1rem);
+          li {
+            margin: 0 0 0 0.5rem ;
           }
         }
       }
     }
-  }
-}
-
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
-
-footer {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-
-  }
-
-  /* ********************************* Small ***************************** */
-  @include media-breakpoint-down(sm) {
-    div.social-networks {
-      display: none ;
-    }
-  }
-
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-    h1 {
-      width: 120px ; height: $footer-h ;
-      > a {
-        width: 120px ; height: $footer-h ;
-      }
-    }
-    small {
-      width: 140px ; height: $footer-h ;
-      font-family: $main-font ;
-      font-size: 12px ;
-      line-height: 12px ;
+    @include m.breakpoint(md) {
+      @include m.flex(row, flex-start, center, nowrap, .5rem);
     }
   }
 }
+

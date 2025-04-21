@@ -103,3 +103,20 @@ Thumbs.db
 # add your own entries here
 !/wp/wp-content/themes/mostay
 prepros.config
+
+# -------------------------
+# MOSTAY CONFIG EXTRAS
+# -------------------------
+
+# Cache y carpetas de build
+.DS_Store
+/prepros.config
+/prepros-6.config
+
+# Archivos compilados
+/wp/wp-content/themes/mostay/css/*
+!/wp/wp-content/themes/mostay/css/.gitkeep
+
+# Archivos opcionales de entorno
+.env
+.env.*

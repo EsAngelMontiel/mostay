@@ -1,84 +1,175 @@
+@use '../1-base/mixins' as m;
+
 .single {
-  $col-w: 600px ;
-  > article {
-    text-align: center ;
-    padding: 0 ;
-    > img {
-      width: 100% ; height: auto ;
-      display: block ;
-      margin: 0 0 30px 0 ;
+  .cover {
+    position: relative;
+    height: 70vh; width: 100% ;
+    @include m.flex(column, center, center, nowrap);
+    background-color: var(--color-backgrounds) ;
+    padding-bottom: var(--spacing-lg);
+    > div {
+      width: calc(100% - calc(var(--spacing-lg)*2)) ;
+      height: 100% ;  
+      position: relative ;
+      overflow: hidden;
+      background-color: gray ;
+      border-radius: var(--radius-md);
+      img {
+        width: 100% ; height: 100% ;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 1;
+      }
+      @include m.breakpoint(lg) {
+        width: calc(100% - calc(var(--spacing-md)*2)) ;
+      }
+      @include m.breakpoint(md) {
+        width: calc(100% - calc(var(--spacing-sm)*2)) ;
+      }
     }
-    > div.contenido {
-      display: inline-block ;
-      width: $col-w ;
-      overflow: hidden ;
-      padding: 0 14px ;
-      text-align: left ;
-      > span.categoria > a {
-        font-family: $main-font-regular ;
-        font-size: 14px ;
-        line-height: 22px ;
-        padding: 0 10px ;
-        margin: 0 0 10px 0 ;
-        background-color: $yellow ;
-        color: $darkgray ;
-        display: inline-block ;
-        @include transition(background-color .3s);
-        &:hover {
-          text-decoration: none ;
-          background-color: darken($yellow, 20%);
+    @include m.breakpoint(lg) {
+      height: 60vh;
+    }
+    @include m.breakpoint(md) {
+      height: 50vh;
+    }
+  }
+  div.contenido {
+    padding: 2rem 0 var(--pading-top-lg) 0 ;
+    > h1 {
+      margin-bottom: 1.5rem ;
+    }
+    .datos {
+      @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-sm));
+      > div {
+        background-color: var(--white);
+        margin-right: calc(var(--spacing-sm)/2);
+        padding: var(--spacing-md);
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        box-shadow: 0 3px 6px var(--color-shadow);
+        > h4 {
+          font-size: .8rem ;
+          margin-bottom: .2rem ;
+        }
+        > a, span, time {
+          font-family: var(--main-font);
+          font-size: 1.1rem ;
+          color: var(--darkgray);
+        }
+        &:first-child {
+          border-radius: var(--radius-md) 0 var(--radius-md) var(--radius-md) ;
+        }
+        &:last-child {
+          border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md) ;
         }
       }
-      h1 {
-        font-family: $main-font ;
-        font-size: 36px ;
-        line-height: 40px ;
-        color: $white ;
-      }
-      h2 {
-        @extend h1 ;
-        font-size: 28px ;
-        line-height: 32px ;
-        color: $yellow ;
-      }
-      h3, h4, h5 {
-        @extend h2 ;
-        font-size: 20px ;
-        line-height: 24px ;
-      }
-      > time {
-        font-family: $text-font ;
-        font-size: 14px ;
-        line-height: 22px ;
-        color: $yellow ;
-        margin: 0 ;
-        position: relative ;
-        top: -5px ;
-      }
-      p {
-        font-family: $text-font ;
-        font-size: 14px ;
-        line-height: 22px ;
-        margin: 0 0 20px 0 ;
-        color: $gray ;
-        > a {
-          color: $yellow ;
+    }
+    @include m.breakpoint(lg) {
+      padding: 0 var(--spacing-md) var(--pading-top-md) ;
+      .datos {
+        @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-sm));
+        > div {
+          margin-right: calc(var(--spacing-sm)/4);
+          padding: calc(var(--spacing-md) / 1.5);
+          border-radius: 0 0 var(--radius-md) var(--radius-md);
+          box-shadow: 0 3px 6px var(--color-shadow);
+          > h4 {
+            font-size: .6rem ;
+            margin-bottom: .2rem ;
+          }
+          > a, span, time {
+            font-family: var(--main-font);
+            font-size: 1rem ;
+            color: var(--darkgray);
+          }
         }
-        > strong {
-          font-weight: bold ;
+      }
+    }
+    @include m.breakpoint(md) {
+      > h1 {
+        margin-bottom: 1rem ;
+      }
+      padding: 0 1rem 1rem ;
+      .datos {
+        @include m.flex(row, flex-start, flex-start, nowrap, .3rem);
+        > div {
+          margin-right: 0 ;
+          padding: 1rem .5rem ;
+          border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+          > h4 {
+            font-size: .6rem ;
+            margin-bottom: .2rem ;
+          }
+          > a, span, time {
+            font-size: .8rem ;
+            line-height: .8rem ;
+            margin: 0 ; padding: 0 ;
+            display: inline ;
+          }
+          &:first-child {
+            border-radius: var(--radius-sm) 0 var(--radius-sm) var(--radius-sm) ;
+          }
+          &:last-child {
+            border-radius: 0 var(--radius-sm) var(--radius-sm) var(--radius-sm) ;
+          }
         }
+      }
+    }
+  }
+  
+  
+  
+  .article-content {
+    background-color: var(--white);
+    padding: var(--pading-top-lg) 0 ;
+    p {
+      font-size: 1.2rem ;
+      line-height: 1.8rem ;
+      margin-bottom: 2rem ;
+      > a {
+        color: var(--green) ;
       }
       > strong {
+        font-weight: 500 ;
+      }
+    }
+    h1, h2, h3 {
+      font-weight: 600 ;
+      color: var(--green);
+      margin: 1.5rem 0 1rem ;
+    }
+
+    > strong {
+      @extend p ;
+      font-weight: 500 ;
+      margin-bottom: 1.25rem ;
+    }
+    
+    figure {
+      width: 100% ;
+      > img {
+        width: 100% ; height: auto ;
+        border-radius: var(--radius-md);
+        margin: 1.5rem 0 0 0 ;
+      }
+      > figcaption {
         @extend p ;
-        font-weight: bold ;
-        margin-bottom: 20px ;
+        font-size: 1rem ;
+        line-height: 1.2rem ;
+        padding: .2rem 1rem .1rem 1rem ;
+        color: var(--green) ;
+        > a {
+          display: inline ;
+        }
       }
       div.wp-block-embed__wrapper {
         position: relative !important;
         width: 100% !important;
         //padding-bottom: 56.25% ;
-        //height: 0 ;
-        margin-bottom: 20px;
+        height: fit-content ;
+        margin-bottom: 1.25rem;
         iframe {
           position: absolute ;
           top: 0 ; left: 0 ;
@@ -86,142 +177,141 @@
           height: 100% ;
         }
       }
-
-      figure {
-        width: 100% ;
-        > img {
-          width: 100% ; height: auto ;
-        }
-        > figcaption {
-          @extend p ;
-          font-size: 12px ;
-          padding: 5px 10px 0 ;
-          color: $blue ;
-        }
-      }
-      blockquote {
-        @extend p ;
-        background-color: lighten($darkgray, 5%);
-        border-radius: 4px ;
-        padding: 20px ;
-        > p {
-          padding: 0 ;
-          margin: 0 0 8px 0 ;
-        }
-        > footer {
-          height: auto ;
-          background-color: transparent ;
-          padding: 0 ; margin: 0 ;
-        }
-      }
-      ul, ol {
-        li {
-          list-style-type: disc ;
-          list-style-position: inside ;
-          @extend p ;
-          margin: 0 ;
-        }
-      }
-      ol {
-        li {
-          list-style-type: decimal ;
+      &.is-type-video {
+        div.wp-block-embed__wrapper {
+          padding-bottom: 56.25% ;
+          height: 0 ;
         }
       }
     }
-    > div.tags {
+    blockquote {
+      @extend p ;
+      background-color: var(--offwhite) ;
+      border-radius: var(--radius-md) ;
+      padding: var(--spacing-sm) var(--spacing-md);
+      > p {
+        padding: 0 ;
+        margin: 0 0 .5rem 0 ;
+        color: var(--darkgray);
+        font-weight: 500 ;
+      }
+      > footer {
+        height: auto ;
+        background-color: transparent ;
+        padding: 0 ; margin: 0 ;
+      }
+    }
+    ul, ol {
+      margin-bottom: 1rem ;
+      li {
+        font-family: var(--text-font);
+        list-style-type: disc ;
+        list-style-position: inside ;
+        @extend p ;
+        margin: 0 ;
+      }
+    }
+    ol {
+      li {
+        list-style-type: decimal ;
+      }
+    }
+    div.tags {
       display: inline-block ;
-      width: $col-w ;
-      text-align: left ;
-      padding: 0 14px 20px 14px ;
-      color: $gray ;
+      width: 100% ;
+      color: var(--gray) ;
       > strong {
-        font-family: $text-font ;
-        font-size: 14px ;
-        line-height: 22px ;
-        margin: 0 0 10px 0 ;
-        color: $gray ;
+        font-family: var(--text-font) ;
+        font-size: 1rem ;
+        line-height: 1.2rem ;
+        margin: 0 0 .625rem 0 ;
         display: inline-block ;
+        font-weight: 500 ;
       }
       > a {
-        font-family: $text-font ;
-        font-size: 14px ;
+        font-family: var(--text-font) ;
+        font-size: 1rem ;
         font-style: italic ;
-
-        line-height: 22px ;
-        margin: 0 0 10px 0 ;
-        color: $gray ;
-        @include transition(color .3s);
+  
+        line-height: 1.2rem ;
+        margin: 0 0 .625rem 0 ;
+        color: var(--orange) ;
+        transition: color .3s ease ;
         &:hover {
           text-decoration: none ;
-          color: $yellow ;
+          color: var(--yellow) ;
         }
       }
     }
-    > div.autor {
+    div.autor {
       display: inline-block ;
-      width: $col-w ;
-      border-top: 1px solid $white ;
-      border-bottom: 1px solid $white ;
-      padding: 30px 0 ;
-      overflow: auto ;
+      width: 100% ;
+      padding: var(--spacing-lg) ;
+      overflow: hidden ;
+      background-color: var(--color-backgrounds);
+      border-radius: var(--radius-md);
+      @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-md));
+      margin-top: var(--pading-top-lg);
       > img {
-        width: 30% ; height: auto ;
+        width: 15% ; height: auto ;
         display: block ;
         float: left ;
         border-radius: 50% ;
       }
       > span {
-        width: 70% ;
-        float: left ;
         display: block ;
         text-align: left ;
-        padding: 0 0 0 20px ;
         > em {
-          font-size: 14px ;
-          font-family: $main-font-regular ;
-          color: $blue ;
+          font-size: .8rem ;
+          line-height: .8rem ;
+          font-family: var(--main-font-regular) ;
+          color: var(--darkgray) ;
         }
         > h2 {
-          font-family: $main-font ;
-          font-size: 22px ;
-          line-height: 26px ;
+          font-family: var(--main-font) ;
+          font-size: 1.4rem ;
+          line-height: 1.62rem ;
           margin: 0 ;
           > a {
-            color: $yellow ;
+            color: var(--green) ;
             &:hover {
               text-decoration: none ;
-              color: darken($yellow, 20%);
+              color: var(--red);
             }
           }
         }
         > strong {
-          font-family: $main-font-regular ;
-          font-size: 14px ;
-          color: $white ;
+          font-family: var(--main-font-regular) ;
+          font-size: 1rem ;
+          color: var(--darkgray) ;
+          margin-bottom: .7rem ;
+          display: block ;
         }
         > p {
-          font-family: $text-font ;
-          font-size: 14px ;
-          line-height: 22px ;
-          margin: 0 0 10px 0 ;
-          color: $gray ;
+          font-family: var(--text-font) ;
+          font-size: 1rem ;
+          line-height: 1.2rem ;
+          margin: 0 0 .625rem 0 ;
+          color: var(--darkgray) ;
         }
         ul {
           width: 100% ;
           margin: 0 ;
           padding: 0 ;
           overflow: auto ;
+          list-style: none;
           li {
-            margin-right: 10px ;
+            margin-right: .625rem ;
             float: left ;
+            list-style-type: none ;
             a {
-              color: $gray ;
-              @include transition(color .3s);
+              color: var(--darkgray) ;
+              transition: color .3s ease ;
               span {
                 display: none ;
               }
               &:hover {
-                color: $red ;
+                color: var(--red) ;
               }
             }
           }
@@ -230,95 +320,39 @@
     }
     div.comments {
       display: inline-block ;
-      width: $col-w ;
+      width: var(--col-w) ;
       overflow: hidden ;
-      padding: 20px 14px ;
+      padding: 1.25rem 1rem ;
       text-align: left ;
       > div#respond {
         h3 {
-          font-family: $main-font ;
-          font-size: 30px ;
-          line-height: 34px ;
+          font-family: var(--main-font) ;
+          font-size: 1.87rem ;
+          line-height: 3.25rem ;
           width: 100% ;
-          color: $red ;
+          color: var(--red) ;
           text-align: center ;
           display: block ;
         }
       }
     }
-  }
-  div.btn-container {
-    padding: 20px 0 40px 0 ;
-    text-align: center ;
-  }
-}
-
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
-
-.single {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-    $col-w: 100% ;
-    > article {
-      > div.contenido {
-        width: $col-w ;
-        h1 {
-          font-size: 30px ;
-          line-height: 34px ;
-        }
-        h2 {
-          @extend h1 ;
-          font-size: 28px ;
-          line-height: 32px ;
-        }
-        h3, h4, h5 {
-          @extend h2 ;
-          font-size: 20px ;
-          line-height: 24px ;
-        }
+    @include m.breakpoint(lg) {
+      padding: var(--pading-top-md) var(--spacing-md) ;
+      .article-container {
+        padding: 0 var(--spacing-md) 0 ;
       }
-      > div.tags {
-        width: $col-w ;
-        > strong {
-          margin: 0 0 0 0 ;
-        }
-      }
-      > div.autor {
-        width: $col-w ;
-        padding: 20px 10px ;
-        > img {
-          width: 35% ;
-        }
-        > span {
-          width: 65% ;
-          > p {
-            line-height: 18px ;
-          }
-          ul {
-            li {
-              margin-right: 8px ;
-            }
-          }
-        }
-      }
+      
+    }
+    @include m.breakpoint(md) {
+      padding: var(--pading-top-md) 0 ;
     }
   }
-
-  /* ********************************* Small ***************************** */
-  @include media-breakpoint-down(sm) {
-  }
-
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-  }
 }
+div.btn-container {
+  padding: 1.25rem 0 2.5rem 0 ;
+  text-align: center ;
+}
+
+
+
+

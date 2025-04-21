@@ -18,41 +18,7 @@ $cat_description = category_description();
   </div>
 </section>
 
-<section class="blog">
-  <div class="container">
-    <div class="titulo">
-      <h1><?php single_cat_title(); ?></h1>
-      <?php if ($cat_description !== '') {?>
-        <?php echo $cat_description ; ?>
-      <?php } else {} ?>
-    </div>
-    <ul>
-      <?php
-      if (have_posts()): while (have_posts()) : the_post();
-      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
-      $url = $thumb['0'];
-      ?>
-        <li>
-          <article class="blog-post">
-            <a href="<?php the_permalink(); ?>">
-              <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
-            </a>
-            <div>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
-              <?php the_excerpt(); ?>
-              <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </article>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
-    </ul>
-    <nav class="page-nav" aria-label="Page navigation example">
-        <?php mostay_pagination(); ?>
-    </nav>
-  </div>
-</section>
+
 
 
 <section class="portafolio portafolio-destacado">

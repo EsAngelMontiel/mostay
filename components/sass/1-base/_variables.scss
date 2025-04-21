@@ -1,0 +1,76 @@
+
+:root {
+// Load Fonts
+--main-font: "indivisible", Helvetica, sans-serif;
+--main-font-regular: "indivisible", Helvetica, sans-serif;
+--text-font: "bree-serif", Georgia, "Times New Roman", Times, serif;
+
+// Colours
+
+--darkgray:    #333132;
+--black:       var(--darkgray);
+--gray:        #B1B3B6; //old
+--offwhite:    #ECE9E3;
+--lightgray:   #FAF9F6;
+--white:       #ffffff;
+
+--red:         #FF0024;
+--lightred:    #EFD0D4;
+--yellow:      #F4F279;
+--orange:      #FFA342;
+--lightorange: #F5DEC6;
+--green:       #2A8BA0;
+--blue:        var(--green); //old
+
+--darkred: color-mix(in srgb, var(--red), black 10%);
+--darkblue: hsl(186, 97%, 15%);
+--darkyellow: hsl(38, 90%, 24%);
+--darkGreen: #004757 ;
+
+--lightOrange: color-mix(in srgb, var(--orange), white 10%);
+
+--color-main: var(--red);
+--color-secondary: var(--green);
+--color-backgrounds: var(--lightgray);
+--color-light: var(--offwhite);
+--color-shadow: rgba(0, 0, 0, 0.1);
+
+
+// HEADER
+--menu-h: 60px ;
+--nav-h: calc(var(--menu-h) - 26) ;
+--nav-padding: 13px ;
+
+
+// Column
+--col-w: 37.5rem ;
+--head-height: 28.125rem ;
+
+// Spacing
+--spacing-sm: 0.62rem ; // 10px
+--spacing-md: 1.25rem ; // 20px
+--spacing-lg: 1.8rem ; // 30px
+--pading-top-lg: 3.125rem ;
+--pading-top-md: 2.5rem ;
+
+// Radius
+--radius-sm: 0.62rem ; // 10px
+--radius-md: 1.25rem ; // 20px
+--radius-lg: 1.8rem ; // 30px
+--button-radius: 3rem ; // 54px
+
+// Radious
+/*--m-radius: 0.62rem ;
+--l-radius: 1.25rem ;
+--xl-radius: 1.8rem ;*/
+
+// Button Sizes
+--button-h: 3.125rem ; // Button hight
+--button-r: 3rem ; // Button radius
+
+// FOOTER
+--footer-h: 60px ;
+
+// BC img
+--bc-img-h: 120px ;
+}

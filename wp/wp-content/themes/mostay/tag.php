@@ -29,7 +29,7 @@ $tag_description = tag_description();
     <ul>
       <?php
       if (have_posts()): while (have_posts()) : the_post();
-      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' );
+      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumb' );
       $url = $thumb['0'];
       ?>
         <li>

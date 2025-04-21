@@ -2,12 +2,12 @@
 /* ************************ RESOURCES ************************ */
 /* ******************************************************** */
 
+@use '../1-base/mixins' as m;
+
 .thanks {
   position: relative ;
-  $col-w: 600px ;
-  $head-height: 450px ;
   > div.resource-header {
-    width: 100% ; height: $head-height ;
+    width: 100% ; height: var(--head-height) ;
     overflow: hidden ;
     > img {
       display: block;
@@ -16,33 +16,33 @@
       object-fit: cover;
     }
     > div {
-      width: 100% ; height: $head-height ;
-      @include linearGradient(top, bottom, rgba(51,49,50,0), rgba(51,49,50,1));
+      width: 100% ; height: var(--head-height) ;
+      background: linear-gradient(to bottom, rgba(51,49,50,0), rgba(51,49,50,1));
       position: absolute ;
       top: 0 ; left: 0 ;
       > div.container {
-        height: $head-height ;
+        height: var(--head-height) ;
         position: relative;
         > div {
           width: 100% ;
           position: absolute ;
           bottom: 0 ;
-          padding: 0 0 80px 20px ;
+          padding: 0 0 5rem 1.25rem ;
           text-align: center ;
           > h1 {
             width: 100% ;
-            color: $yellow ;
-            font-family: $main-font ;
-            font-size: 40px ;
-            line-height: 42px ;
-            margin-bottom: 10px ;
+            color: var(--yellow) ;
+            font-family: var(--main-font) ;
+            font-size: 2.5rem ;
+            line-height: 2.6rem ;
+            margin-bottom: .625rem ;
           }
           > p {
             width: 50% ;
-            font-family: $text-font ;
-            font-size: 14px ;
-            line-height: 22px ;
-            color: $white ;
+            font-family: var(--text-font) ;
+            font-size: 1rem ;
+            line-height: 1.375rem ;
+            color: var(--white) ;
             margin: 0 auto ;
           }
         }
@@ -55,40 +55,40 @@
       width: 100% ; height: auto ;
     }
     > div.contenido {
-      padding: 30px 0 0 0 ;
+      padding: 1.875rem 0 0 0 ;
       display: inline-block ;
-      width: $col-w ;
-      margin: 30px 0 30px 0 ;
+      width: var(--col-w) ;
+      margin: 1.875rem 0 1.875rem 0 ;
       text-align: left ;
       h2 {
-        font-family: $main-font ;
-        font-size: 40px ;
-        line-height: 44px ;
-        margin: 0 0 20px 0 !important ;
-        color: $yellow ;
+        font-family: var(--main-font) ;
+        font-size: 2.5rem ;
+        line-height: 2.75rem ;
+        margin: 0 0 1.25rem 0 !important ;
+        color: var(--yellow) ;
       }
       > h3 {
         @extend h1 ;
-        font-size: 28px ;
-        line-height: 36px ;
-        margin: 0 0 10px 0 ;
-        color: $white ;
+        font-size: 1.75rem ;
+        line-height: 2.25rem ;
+        margin: 0 0 1.25rem 0 ;
+        color: var(--white) ;
       }
       > h4 {
         @extend h2 ;
-        font-size: 28px ;
-        line-height: 30px ;
-        color: $blue ;
-        margin: 0 0 10px 0 ;
+        font-size: 1.75rem ;
+        line-height: 1.875rem ;
+        color: var(--blue) ;
+        margin: 0 0 1.25rem 0 ;
       }
       p {
-        font-family: $text-font ;
-        font-size: 16px ;
-        line-height: 22px ;
-        margin: 0 0 20px 0 ;
-        color: $gray ;
+        font-family: var(--text-font) ;
+        font-size: 1rem ;
+        line-height: 1.37rem ;
+        margin: 0 0 1.25rem 0 ;
+        color: var(--gray) ;
         > a {
-          color: $yellow ;
+          color: var(--yellow) ;
           &:hover {
             cursor: pointer ;
           }
@@ -96,7 +96,7 @@
         > strong {
           font-weight: bold ;
           > a {
-            color: $yellow ;
+            color: var(--yellow) ;
             &:hover {
               cursor: pointer ;
             }
@@ -108,47 +108,47 @@
       }
       > div.relacionado {
         ul {
-          padding: 30px 0 0 0 ;
+          padding: 1.875rem 0 0 0 ;
           overflow: auto ;
           li {
-            @include boxGrid(2, 3%);
-            float: left ;
+            //@include boxGrid(2, 3%);
+            //float: left ;
             article {
               a:first-child {
                 text-decoration: none ;
                 img {
                   width: 100% ; height: auto ;
-                  margin-bottom: 10px ;
+                  margin-bottom: 1.25rem ;
                 }
                 h1 {
                   text-align: left ;
-                  font-family: $main-font ;
-                  font-size: 32px ;
-                  line-height: 34px ;
-                  margin: 0 0 10px 0 ;
-                  color: $yellow ;
+                  font-family: var(--main-font) ;
+                  font-size: 2rem ;
+                  line-height: 2.4rem ;
+                  margin: 0 0 1.25rem 0 ;
+                  color: var(--yellow) ;
                 }
                 &:hover {
                   > h1 {
-                    color: darken($yellow, 20%) ;
+                    color: var(--darkyellow) ;
                     cursor: pointer ;
                   }
                 }
               }
               > a:last-child {
-                font-family: $main-font-regular ;
-                font-size: 16px ;
-                color: $yellow ;
+                font-family: var(--main-font) ;
+                font-size: 1rem ;
+                color: var(--yellow) ;
                 display: block ;
                 &:hover {
                   text-decoration: none ;
-                  color: darken($yellow, 20%) ;
+                  color: var(--darkyellow) ;
                   cursor: pointer ;
                 }
               }
               > p {
-                font-size: 14px ;
-                line-height: 20px ;
+                font-size: 1rem ;
+                line-height: 1.25rem ;
                 text-align: left ;
               }
 
@@ -159,87 +159,65 @@
     }
   }
   div.opt-in {
-    background-color: $black ;
+    background-color: var(--black) ;
     > div.bar {
-      height: 40px ; width: 100% ;
-      background-color: $yellow ;
+      height: 2.5rem ; width: 100% ;
+      background-color: var(--yellow) ;
     }
     > div.container {
       padding: 90px 0 70px 0;
       > small {
-        font-family: $text-font ;
-        font-size: 14px ;
-        line-height: 14px !important ;
-        color: $gray ;
-        > a {
-
-        }
+        font-family: var(--text-font) ;
+        font-size: 1rem ;
+        line-height: 1.2rem !important ;
+        color: var(--gray) ;
       }
       div#mc_embed_signup {
-        margin-bottom: 30px ;
+        margin-bottom: 1.875rem ;
         form {
           div.indicates-required {
             text-align: right ;
-            font-family: $text-font ;
-            font-size: 12px ;
-            color: $gray ;
+            font-family: var(--text-font) ;
+            font-size: .75rem ;
+            color: var(--gray) ;
           }
           div.mc-field-group {
-            margin-bottom: 10px ;
+            margin-bottom: 1.25rem ;
             label {
-              font-family: $main-font ;
-              font-size: 16px ;
+              font-family: var(--main-font) ;
+              font-size: 1rem ;
               display: block ;
-              color: $yellow ;
+              color: var(--yellow) ;
             }
             input {
-              height: 40px ;
-              width: 400px ;
+              height: 2.5rem ;
+              width: 25rem ;
               border: none ;
-              padding: 5px 10px ;
+              padding: .3rem 1.25rem ;
               &[type="email"]{
-                width: 500px ;
+                width: 31.25rem ;
               }
             }
           }
           div.clear {
-            margin-top: 30px ;
+            margin-top: 1.87rem ;
           }
         }
       }
     }
   }
-}
-
-/* ************************************************************************* */
-/* ***************************** Media queries ***************************** */
-/* ************************************************************************* */
-
-.thanks {
-  /* ***************************** Extra Large ***************************** */
-  @include media-breakpoint-down(xl) {
-  }
-
-  /* ******************************** Large ***************************** */
-  @include media-breakpoint-down(lg) {
+  @include m.breakpoint(md) {
     > div.resource-header {
       > div {
         > div.container {
           > div {
-            width: 60% ;
-          }
-        }
-      }
-    }
-  }
-
-  /* ******************************** Medium ***************************** */
-  @include media-breakpoint-down(md) {
-    > div.resource-header {
-      > div {
-        > div.container {
-          > div {
-            width: 80% ;
+            width: 95% ;
+            padding: 0 ;
+            p {
+              width: 100% ;;
+              padding: 0 15% ;
+              margin: 0 ;
+            }
           }
         }
       }
@@ -256,11 +234,11 @@
           margin-bottom: 30px ;
           form {
             div.mc-field-group {
-              margin-bottom: 10px ;
+              margin-bottom: 1.25rem ;
               input {
-                height: 40px ;
+                height: 2.5rem ;
                 width: 100% ;
-                padding: 5px 10px ;
+                padding: 5px 1.25rem ;
                 &[type="email"]{
                   width: 100% ;
                 }
@@ -273,31 +251,54 @@
         }
         > small {
           font-size: 12px ;
-          line-height: 10px !important ;
+          line-height: 1.25rem !important ;
           > a {
-            line-height: 10px ;
+            line-height: 1.25rem ;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ************************************************************************* */
+/* ***************************** Media queries ***************************** */
+/* ************************************************************************* */
+/*
+.thanks {
+
+  @include media-breakpoint-down(lg) {
+    > div.resource-header {
+      > div {
+        > div.container {
+          > div {
+            width: 60% ;
           }
         }
       }
     }
   }
 
-  /* ********************************* Small ***************************** */
+  @include media-breakpoint-down(md) {
+    
+  }
+
   @include media-breakpoint-down(sm) {
     > div.resource-header {
-      $head-height: 350px ;
-      height: $head-height ;
+      var(--head-height): 350px ;
+      height: var(--head-height) ;
       > div {
-        height: $head-height ;
+        height: var(--head-height) ;
         > div.container {
-          height: $head-height ;
+          height: var(--head-height) ;
           > div {
             width: 90% ;
             bottom: 0 ; left: 0 ;
             padding: 0 0 60px 15px ;
             > h1 {
               font-size: 26px ;
-              line-height: 28px ;
+              line-height: 1.75rem ;
               margin-bottom: 25px ;
             }
             > p {
@@ -317,22 +318,22 @@
       }
       > div.contenido {
         padding: 0 0 0 0 ;
-        margin: 20px 0 30px 0 ;
+        margin: 1.25rem 0 30px 0 ;
         h2 {
           font-size: 26px ;
-          line-height: 28px ;
+          line-height: 1.75rem ;
           margin: 0 0 15px 0 !important ;
-          color: $yellow ;
+          color: var(--yellow) ;
         }
         > h3 {
           @extend h1 ;
-          font-size: 20px ;
+          font-size: 1.25rem ;
           line-height: 22px ;
-          margin: 0 0 10px 0 ;
+          margin: 0 0 1.25rem 0 ;
         }
         > h4 {
           @extend h2 ;
-          font-size: 20px ;
+          font-size: 1.25rem ;
           line-height: 22px ;
         }
         p {
@@ -340,7 +341,7 @@
           line-height: 16px ;
           margin: 0 0 15px 0 ;
           > a {
-            color: $yellow ;
+            color: var(--yellow) ;
             &:hover {
               cursor: pointer ;
             }
@@ -348,7 +349,7 @@
           > strong {
             font-weight: bold ;
             > a {
-              color: $yellow ;
+              color: var(--yellow) ;
               &:hover {
                 cursor: pointer ;
               }
@@ -366,7 +367,7 @@
                   text-decoration: none ;
                   img {
                     width: 100% ; height: auto ;
-                    margin-bottom: 10px ;
+                    margin-bottom: 1.25rem ;
                   }
                   h1 {
                     font-size: 22px ;
@@ -394,7 +395,4 @@
     }
   }
 
-  /* ******************************* Extra Small ***************************** */
-  @include media-breakpoint-down(xs) {
-  }
-}
+}*/
