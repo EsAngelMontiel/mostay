@@ -33,21 +33,6 @@
 		</footer>
     <!-- /footer -->
     <?php wp_footer(); ?>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56774363-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-56774363-1');
-    </script>
-    <script>
-      var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 1400
-      });
-    </script>
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/69f0ea2ee71f47064483eec66/854fac76c45eaf55bc3a82a34.js");</script>
     <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
 

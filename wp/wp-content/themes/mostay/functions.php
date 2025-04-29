@@ -20,6 +20,17 @@
     Theme Support
 \*------------------------------------*/
 
+// Image Size Constants
+define('MOSTAY_LARGE_THUMB_WIDTH', 1920);
+define('MOSTAY_LARGE_THUMB_HEIGHT', 9999);
+define('MOSTAY_MEDIUM_THUMB_WIDTH', 800);
+define('MOSTAY_MEDIUM_THUMB_HEIGHT', 9999);
+define('MOSTAY_SMALL_THUMB_WIDTH', 480);
+define('MOSTAY_SMALL_THUMB_HEIGHT', 9999);
+define('MOSTAY_COVER_PROJECT_WIDTH', 480);
+define('MOSTAY_COVER_SIZE_WIDTH', 480);
+define('MOSTAY_COVER_SIZE_HEIGHT', 280);
+
 if (!isset($content_width)) {
     $content_width = 1170;
 }
@@ -35,10 +46,10 @@ if (function_exists('add_theme_support')) {
     add_image_size('hero-md', 800, 800, true);
     add_image_size('hero-sm', 480, 480, true);
 
-    add_image_size('xlarge', 3840, 9999);
-    add_image_size('large', 1920, 9999);
-    add_image_size('medium', 800, 9999);
-    add_image_size('small', 480, 9999);
+    add_image_size('xlarge', MOSTAY_LARGE_THUMB_WIDTH * 2, MOSTAY_LARGE_THUMB_HEIGHT);
+    add_image_size('large', MOSTAY_LARGE_THUMB_WIDTH, MOSTAY_LARGE_THUMB_HEIGHT);
+    add_image_size('medium', MOSTAY_MEDIUM_THUMB_WIDTH, MOSTAY_MEDIUM_THUMB_HEIGHT);
+    add_image_size('small', MOSTAY_SMALL_THUMB_WIDTH, MOSTAY_SMALL_THUMB_HEIGHT);
 
     add_image_size('thumb', 480, 280, true);
 
@@ -162,55 +173,89 @@ function mostay_secondary_nav() {
 \*------------------------------------*/
 
 // Load mostay scripts (header.php)
-function mostay_header_scripts(){
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+function mostay_enqueue_header_assets()
+{
+    if (!is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
         wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.7.1', $in_footer = true); // jQuery
         wp_enqueue_script('jQuery'); // Enqueue it!
         wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', $in_footer = true); // fontawesome
         wp_enqueue_script('fontawesome'); // Enqueue it!
-        wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array(), '1.8.0', $in_footer = true); // slick
-        wp_enqueue_script('slick'); // Enqueue it!
-        wp_register_script('smoothscroll', get_template_directory_uri() . '/js/smooth-scroll.polyfills.min.js', array(), '1.0.0', $in_footer = true); // smoothscroll
-        wp_enqueue_script('smoothscroll'); // Enqueue it!
+        
+        // Only load Slick if it's needed
+        if (is_front_page() || is_page(13) || is_page(71) || is_archive()) {
+            wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array(), '1.8.0', true); // slick
+            wp_enqueue_script('slick'); // Enqueue it!
+        }
+
         wp_register_script('bodyScrollLock', get_template_directory_uri() . '/js/bodyScrollLock.min.js', array(), '1.0.0', $in_footer = true); // bodyScrollLock
         wp_enqueue_script('bodyScrollLock'); // Enqueue it!
         wp_register_script('mostayscripts', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', $in_footer = true); // Custom scripts
         wp_enqueue_script('mostayscripts'); // Enqueue it!
     }
 }
-
+/**
+ * Enqueue theme styles.
+ *
+ * Registers and enqueues the theme's stylesheets, including custom styles and third-party styles like Slick.
+ * It also ensures that Slick's stylesheet is only loaded if the Slick script is loaded.
+ */
 // Load mostay styles
-function mostay_styles(){
-  wp_register_style('slick', get_template_directory_uri() . '/slick/slick.css', array(), '1.0', 'all');
-  wp_enqueue_style('slick'); // Enqueue it!
-  wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Bree+Serif|Roboto+Slab|Roboto:300,400,700&display=swap', array(), '1.0', 'all');
-  wp_enqueue_style('googlefonts'); // Enqueue it!
-  wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
-  wp_enqueue_style('mostaystyles'); // Enqueue it!
+function mostay_enqueue_styles()
+{
+    // Only load Slick style if the script is loaded
+    if (is_front_page() || is_page(13) || is_page(71) || is_archive()) {
+        wp_register_style('slick', get_template_directory_uri() . '/slick/slick.css', array(), '1.0', 'all');
+        wp_enqueue_style('slick');
+    }
+    wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Bree+Serif|Roboto+Slab|Roboto:300,400,700&display=swap', array(), '1.0', 'all');
+    wp_enqueue_style('googlefonts'); // Enqueue it!
+    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+    wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
+
+/*------------------------------------*\
+    Custom Navigation Functions
+\*------------------------------------*/
 
 // Register mostay Navigations
-function register_mostay_menu(){
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'mostay'), // Main Navigation
-        'side-menu' => __('Sidebar Menu', 'mostay'), // Sidebar Navigation
-        // 'footer-menu' => __('Footer Menu', 'mostay') // Extra Navigation if needed (duplicate as many as you need!)
-    ));
+function register_mostay_menu()
+{
+    register_nav_menus(
+        array(
+            'header-menu' => __('Header Menu', 'mostay'), // Main Navigation
+            'side-menu' => __('Sidebar Menu', 'mostay'), // Sidebar Navigation
+            // 'footer-menu' => __('Footer Menu', 'mostay') // Extra Navigation if needed (duplicate as many as you need!)
+        )
+    );
 }
 
+// Register secondary menu
 function register_mostay_secondary_menus() {
     register_nav_menus([
         'secondary-menu' => __('Secondary Menu'),
     ]);
 }
 
-// Remove the <div> surrounding the dynamic navigation to cleanup markup
-// Revisar funcionamiento
-function my_wp_nav_menu_args($args = ''){
+/**
+ * Modifies the arguments for the wp_nav_menu function.
+ *
+ * This function removes the default container (div) that surrounds the dynamic navigation menu,
+ * resulting in cleaner markup.
+ *
+ * @param array $args An array of wp_nav_menu() arguments.
+ *
+ * @return array The modified array of arguments.
+ */
+function my_wp_nav_menu_args($args = '')
+{
     $args['container'] = false;
     return $args;
 }
+
+/*------------------------------------*\
+    Widget functions
+\*------------------------------------*/
 
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar')){
@@ -237,36 +282,40 @@ if (function_exists('register_sidebar')){
     ));
 }
 
+/*------------------------------------*\
+    Pagination
+\*------------------------------------*/
+
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function mostay_pagination(){
+function mostay_display_pagination() {
     global $wp_query;
-    $big = 999999999; // need an unlikely integer
-    $pages = paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format' => '?paged=%#%',
-        'current' => max( 1, get_query_var('paged') ),
-        'total' => $wp_query->max_num_pages,
-        'prev_next' => false,
-        'type'  => 'array',
-        'prev_next'   => TRUE,
-        'prev_text'    => __('Atrás'),
-        'next_text'    => __('Siguiente'),
-    ) );
-    if( is_array( $pages ) ) {
-        $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-        echo '<ul class="pagination">';
-        foreach ( $pages as $page ) {
+    // Check if there is more than one page
+    if ($wp_query->max_num_pages > 1) {
+        $big = 999999999; // need an unlikely integer
+        $pages = paginate_links(array(
+            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+            'format' => '?paged=%#%',
+            'current' => max(1, get_query_var('paged')),
+            'total' => $wp_query->max_num_pages,
+            'prev_next' => false,
+            'type' => 'array',
+            'prev_next' => true,
+            'prev_text' => __('Atrás'),
+            'next_text' => __('Siguiente'),
+        ));
+        if (is_array($pages)) {
+            echo '<ul class="pagination">';
+            foreach ($pages as $page) {
                 echo "<li>$page</li>";
+            }
+            echo '</ul>';
         }
-       echo '</ul>';
     }
 }
 
-// Remove Admin bar (Active if is necessary)
-/*function remove_admin_bar(){
-    return false;
-}*/
-
+/*------------------------------------*\
+    Custom functions
+\*------------------------------------*/
 
 /*------------------------------------*\
     Actions + Filters + ShortCodes
@@ -274,28 +323,17 @@ function mostay_pagination(){
 
 // Add Actions
 add_action('init', 'mostay_header_scripts'); // Add Custom Scripts to wp_head
+add_action('init', 'mostay_enqueue_header_assets'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'mostay_styles'); // Add Theme Stylesheet
+add_action('wp_enqueue_scripts', 'mostay_enqueue_styles'); // Add Theme Stylesheet
 add_action('init', 'register_mostay_menu'); // Add mostay Menu
 add_action('init', 'register_mostay_secondary_menus'); // Add secondary Menu
-add_action('init', 'mostay_pagination'); // Add our mostay Pagination
+add_action('init', 'mostay_display_pagination'); // Add our mostay Pagination
 add_action('init', 'my_custom_posttypes' ); //Mostay Custon Posttypes
 add_action('init', 'my_custom_taxonomies' ); //Mostay Custon Taxonomies
-// add_action( 'init', 'change_post_object_label' ); //Change post Name
-// add_action( 'admin_menu', 'change_post_menu_label' ); //Change post Name
-// Remove Actions
-remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
-remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
-remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
-remove_action('wp_head', 'index_rel_link'); // Index link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
+
+// Remove unnecessary actions
 remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action('wp_head', 'start_post_rel_link', 10, 0);
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-remove_action('wp_head', 'rel_canonical');
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
 // Add Filters
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
