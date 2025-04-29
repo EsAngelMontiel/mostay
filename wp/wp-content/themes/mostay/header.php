@@ -48,8 +48,6 @@
 /></noscript>
 <!-- End Facebook Pixel Code -->
     <?php wp_head(); ?>
-    <?php add_action('init', 'mostay_enqueue_header_assets'); ?>
-    <?php add_action('wp_enqueue_scripts', 'mostay_enqueue_styles'); ?>
 </head>
 <body>
   <!-- Preloader -->

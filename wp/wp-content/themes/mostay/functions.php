@@ -179,12 +179,12 @@ function mostay_secondary_nav() {
 function mostay_enqueue_header_assets()
 {
     if (!is_admin()) {
-        wp_deregister_script('jquery'); // Deregister WordPress jQuery
+        //wp_deregister_script('jquery'); // Deregister WordPress jQuery
         wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.7.1', $in_footer = true); // jQuery
         wp_enqueue_script('jQuery'); // Enqueue it!
         wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', $in_footer = true); // fontawesome
         wp_enqueue_script('fontawesome'); // Enqueue it!
-        
+
         // Only load Slick if it's needed
         if (is_front_page() || is_page(13) || is_page(71) || is_archive()) {
             wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array(), '1.8.0', true); // slick
@@ -300,11 +300,9 @@ function mostay_display_pagination() {
             'format' => '?paged=%#%',
             'current' => max(1, get_query_var('paged')),
             'total' => $wp_query->max_num_pages,
-            'prev_next' => false,
-            'type' => 'array',
-            'prev_next' => true,
             'prev_text' => __('Atrás'),
             'next_text' => __('Siguiente'),
+            'type' => 'array',
         ));
         if (is_array($pages)) {
             echo '<ul class="pagination">';
@@ -384,16 +382,14 @@ function my_custom_posttypes() {
         'menu_position'      => 5,
         'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
     );
-    register_post_type('proyectos', $args );
-    flush_rewrite_rules();
-
+    register_post_type('proyectos', $args);
 }
 
 function my_rewrite_flush() {
     my_custom_posttypes();
     flush_rewrite_rules();
 }
-register_activation_hook( __FILE__, 'my_rewrite_flush' );
+register_activation_hook(__FILE__, 'my_rewrite_flush');
 
 //Changing Admin Menu Labels
 function change_post_menu_label() {
@@ -490,31 +486,31 @@ class new_general_setting {
   }
   function fields_html() {
       $value = get_option( 'company_phone', '' );
-      echo '<input type="text" id="company_phone" name="company_phone" value="' . $value . '" />';
+      echo '<input type="text" id="company_phone" name="company_phone" value="' . esc_attr($value) . '" />';
   }
   function fields_html1() {
       $value = get_option( 'company_email', '' );
-      echo '<input type="text" id="company_email" name="company_email" value="' . $value . '" />';
+      echo '<input type="text" id="company_email" name="company_email" value="' . esc_attr($value) . '" />';
   }
   function fields_html2() {
       $value2 = get_option( 'facebook', '' );
-      echo '<input type="text" id="facebook" name="facebook" value="' . $value2 . '" />';
+      echo '<input type="text" id="facebook" name="facebook" value="' . esc_attr($valu2) . '" />';
   }
   function fields_html3() {
       $value3 = get_option( 'instagram', '' );
-      echo '<input type="text" id="instagram" name="instagram" value="' . $value3 . '" />';
+      echo '<input type="text" id="instagram" name="instagram" value="' . esc_attr($value3) . '" />';
   }
   function fields_html4() {
       $value4 = get_option( 'youtube', '' );
-      echo '<input type="text" id="youtube" name="youtube" value="' . $value4 . '" />';
+      echo '<input type="text" id="youtube" name="youtube" value="' . esc_attr($value4) . '" />';
   }
   function fields_html5() {
       $value5 = get_option( 'linkedin', '' );
-      echo '<input type="text" id="linkedin" name="linkedin" value="' . $value5 . '" />';
+      echo '<input type="text" id="linkedin" name="linkedin" value="' . esc_attr($value5) . '" />';
   }
   function fields_html6() {
       $value6 = get_option( 'twitter', '' );
-      echo '<input type="text" id="twitter" name="twitter" value="' . $value6 . '" />';
+      echo '<input type="text" id="twitter" name="twitter" value="' . esc_attr($value6) . '" />';
   }
 }
 
@@ -577,7 +573,7 @@ function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_image
                   (max-width: 1440px) 1920px, 
                   3840px";
     } else {
-        $imagen = get_field($acf_campo, $post_id);
+        $imagen = function_exists('get_field') ? get_field($acf_campo, $post_id) : null;
         $imagen_id = $imagen ? $imagen['ID'] : null;
         $size_default = 'large';
         $size_srcset = 'xlarge';
@@ -587,10 +583,15 @@ function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_image
                   3840px";
     }
 
-    if (!$imagen_id) return; 
+    if (!$imagen_id) return;
 
-    echo '<img src="' . esc_url(wp_get_attachment_image_url($imagen_id, $size_default)) . '" 
-                srcset="' . esc_attr(wp_get_attachment_image_srcset($imagen_id, $size_srcset)) . '" 
-                sizes="' . esc_attr($sizes) . '" 
-                alt="' . esc_attr(get_the_title($post_id)) . '">';
+    $image_url = wp_get_attachment_image_url($imagen_id, $size_default);
+    $image_srcset = wp_get_attachment_image_srcset($imagen_id, $size_srcset);
+
+    if ($image_url && $image_srcset) {
+        echo '<img src="' . esc_url($image_url) . '" 
+                    srcset="' . esc_attr($image_srcset) . '" 
+                    sizes="' . esc_attr($sizes) . '" 
+                    alt="' . esc_attr(get_the_title($post_id)) . '">';
+    }
 } ?>
