@@ -57,7 +57,10 @@ if (function_exists('add_theme_support')) {
     add_theme_support('automatic-feed-links');
 
     // Localisation Support
-    load_theme_textdomain('mostay', get_template_directory() . '/languages');
+    function mostay_load_theme_textdomain() {
+        load_theme_textdomain('mostay', get_template_directory() . '/languages');
+    }
+    
 }
 
 /*------------------------------------*\
@@ -322,15 +325,14 @@ function mostay_display_pagination() {
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'mostay_header_scripts'); // Add Custom Scripts to wp_head
 add_action('init', 'mostay_enqueue_header_assets'); // Add Custom Scripts to wp_head
-add_action('wp_enqueue_scripts', 'mostay_styles'); // Add Theme Stylesheet
 add_action('wp_enqueue_scripts', 'mostay_enqueue_styles'); // Add Theme Stylesheet
 add_action('init', 'register_mostay_menu'); // Add mostay Menu
 add_action('init', 'register_mostay_secondary_menus'); // Add secondary Menu
 add_action('init', 'mostay_display_pagination'); // Add our mostay Pagination
 add_action('init', 'my_custom_posttypes' ); //Mostay Custon Posttypes
 add_action('init', 'my_custom_taxonomies' ); //Mostay Custon Taxonomies
+add_action( 'init', 'mostay_load_theme_textdomain' );
 
 // Remove unnecessary actions
 remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
@@ -591,9 +593,4 @@ function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_image
                 srcset="' . esc_attr(wp_get_attachment_image_srcset($imagen_id, $size_srcset)) . '" 
                 sizes="' . esc_attr($sizes) . '" 
                 alt="' . esc_attr(get_the_title($post_id)) . '">';
-}
-
-
-
-
-?>
+} ?>

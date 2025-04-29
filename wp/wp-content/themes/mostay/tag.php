@@ -22,100 +22,38 @@ $tag_description = tag_description();
   <div class="container">
     <div class="titulo">
       <h1><?php single_tag_title(''); ?></h1>
-      <?php if ($tag_description !== '') {?>
-        <?php echo $tag_description ; ?>
-      <?php } else {} ?>
+      <?php if ($tag_description !== '') { ?>
+        <?php echo $tag_description; ?>
+      <?php } ?>
     </div>
-    <ul>
-      <?php
-      if (have_posts()): while (have_posts()) : the_post();
-      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumb' );
-      $url = $thumb['0'];
-      ?>
-        <li>
-          <article class="blog-post">
-            <a href="<?php the_permalink(); ?>">
-              <img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
-            </a>
-            <div>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <time datetime="<?php echo $my_date02 ; ?>"><?php echo $my_date01 ; ?></time>
-              <?php the_excerpt(); ?>
-              <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </article>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
-    </ul>
-    <nav class="page-nav" aria-label="Page navigation example">
-        <?php mostay_pagination(); ?>
-    </nav>
+    <?php if (have_posts()): ?>
+      <ul>
+        <?php while (have_posts()): the_post(); ?>
+          <?php
+          $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumb');
+          $url = is_array($thumb) ? $thumb[0] : '';
+          ?>
+          <li>
+            <article class="blog-post">
+              <a href="<?php the_permalink(); ?>">
+                <img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
+              </a>
+              <div>
+                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                <time datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+                  <?php echo esc_html(get_the_date()); ?>
+                </time>
+                <?php the_excerpt(); ?>
+                <a href="<?php the_permalink(); ?>">Leer más <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </article>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    <?php else: ?>
+      <p>No se encontraron publicaciones.</p>
+    <?php endif; ?>
   </div>
-</section>
-
-
-<section class="portafolio portafolio-destacado">
-  <div class="bar"></div>
-  <div class="container">
-    <div class="titulo">
-      <h1>Los Casos de Estudio</h1>
-      <p>Ve todo lo que implica el desarrollo de cada proyecto que hacemos en mostay.</p>
-    </div>
-    <ul id="primero" class="casos">
-      <li>
-        <article class="casos-lista">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-            <span>
-              <span>
-                <h2>Branding</h2>
-                <h1>Nombre del curso</h1>
-                <p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
-                <i class="fas fa-arrow-circle-right"></i>
-              </span>
-            </span>
-          </a>
-        </article>
-      </li>
-
-      <li>
-        <article class="casos-lista">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-            <span>
-              <span>
-                <h2>Branding</h2>
-                <h1>Nombre del curso</h1>
-                <p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
-                <i class="fas fa-arrow-circle-right"></i>
-              </span>
-            </span>
-          </a>
-        </article>
-      </li>
-      <li>
-        <article class="casos-lista">
-          <a href="#">
-            <img src="https://dummyimage.com/300x300/b1b3b6/000000.jpg" alt="imagen del articulo">
-            <span>
-              <span>
-                <h2>Branding</h2>
-                <h1>Nombre del curso</h1>
-                <p>Una pequeña descripción del proyecto, de unas dos lineas.</p>
-                <i class="fas fa-arrow-circle-right"></i>
-              </span>
-            </span>
-          </a>
-        </article>
-      </li>
-    </ul>
-    <div class="btn-container">
-      <a href="#" class="btn btn-blanco">Ver Todos</a>
-    </div>
-
-  </div>
-
 </section>
 
 <?php get_footer(); ?>

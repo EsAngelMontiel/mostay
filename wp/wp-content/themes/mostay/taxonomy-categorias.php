@@ -2,6 +2,8 @@
 if (have_posts()): while (have_posts()) : the_post();
 ?>
 
+<?php if ($cat_description !== '') {?>
+  
 <?php
 $args = array(
     'post_type'      => 'proyectos',
@@ -15,7 +17,7 @@ $project_query = new WP_Query($args);
 <section class="portafolio">
     <div class="titulo">
       <h1><?php single_cat_title(); ?></h1>
-      <?php if ($cat_description !== '') {?>
+      <?php if (isset($cat_description) && $cat_description !== '') { ?>
         <?php echo $cat_description ; ?>
       <?php } else {} ?>
     </div>
@@ -38,8 +40,8 @@ $project_query = new WP_Query($args);
                                 <span>
                                     <?php
                                     $terms = wp_get_post_terms($postid2, 'categorias');
-                                    if ($terms) {
-                                        echo '<h2>' . esc_html($terms[0]->name) . '</h2>'; 
+                                    if (!empty($terms) && is_array($terms)) {
+                                      echo '<h2>' . esc_html($terms[0]->name) . '</h2>'; 
                                     }
                                     ?>
                                     <h1><?php the_title(); ?></h1>
@@ -52,7 +54,8 @@ $project_query = new WP_Query($args);
                         </a>
                     </article>
                 </li>
-            <?php endwhile; ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
         <?php else: ?>
             <li><p>No se encontraron proyectos.</p></li>
         <?php endif; ?>
