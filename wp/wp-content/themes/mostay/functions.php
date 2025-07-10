@@ -594,4 +594,14 @@ function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_image
                     sizes="' . esc_attr($sizes) . '" 
                     alt="' . esc_attr(get_the_title($post_id)) . '">';
     }
+    /**
+     * Remove shortlink from head and HTTP header.
+     */
+    add_action('after_setup_theme', 'remove_shortlink');
+    function remove_shortlink() {
+        // remove HTML meta tag
+        remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+        // remove HTTP header
+        remove_action( 'template_redirect', 'wp_shortlink_header', 11);
+    }
 } ?>

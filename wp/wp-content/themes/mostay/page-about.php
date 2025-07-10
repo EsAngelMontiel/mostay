@@ -3,6 +3,8 @@ get_header();
 if (have_posts()): while (have_posts()) : the_post();
 $main_img = get_the_post_thumbnail_url(get_the_ID(),'cover-size');
 $postid = $post->ID ;
+$attachment_id = 687;
+$image_url = wp_get_attachment_image_url( $attachment_id, 'full' );
 
 // Redes
 $videoCover = get_field('vCover', $postid);
@@ -19,7 +21,7 @@ $email = get_field('email', $postid);
        <!-- ******* Hero Cover ********* -->
        <div class="cover">
          <div class="hero__video">
-           <video src="<?php echo $videoLogo ; ?>" playsinline autoplay muted loop poster="posterimage.jpg"></video>
+           <video src="<?php echo $videoLogo ; ?>" playsinline autoplay muted loop poster="<?php echo $image_url ; ?>"></video>
          </div>
        </div>
        <!-- ******* End Hero Cover ********* -->

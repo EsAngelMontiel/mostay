@@ -62,6 +62,8 @@ $project_query = new WP_Query($args);
     </ul>
 </section>
 
+<?php } ?> 
+
 <section class="cta-wrapper">
   <div class="container">
     <div class="cta">
@@ -81,3 +83,4 @@ $project_query = new WP_Query($args);
 </section> 
 
 <?php get_footer(); ?>
+

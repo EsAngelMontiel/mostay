@@ -57,6 +57,13 @@
     @include m.breakpoint(md) {
       height: 50vh;
     }
+    &--half {
+      @extend .cover ;
+      height: 30vh ;
+    }
+  }
+  .header-404 {
+    padding: var(--pading-top-lg) var(--spacing-lg);
   }
   .service-header {
     display: grid;
@@ -74,6 +81,18 @@
       strong {
         font-weight: 500 ;;
       }
+    }
+  }
+  .frase {
+    width: 100% ;
+    padding: 0 22% ;
+    @include m.breakpoint(lg) {
+        padding: 0 10% ;
+    }
+    h2 {
+        strong {
+            color: var(--green);
+        }
     }
   }
   .scroll-section {
@@ -123,5 +142,4 @@
       padding: var(--spacing-lg) 0 ;
     }
   }
-
 }

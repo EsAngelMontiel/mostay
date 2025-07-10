@@ -10,6 +10,11 @@ p {
         font-size: clamp(.8rem, 1.6vw, 1.2rem);
         line-height: clamp(1rem, 1.8vw, 1.4rem);
     }
+    
+}
+.p--big {
+    font-size: clamp(1.3rem, 1.6vw, 1.5rem); ;
+    line-height: 1.8rem ;
 }
 
 h1, h2, h3, h4 {
