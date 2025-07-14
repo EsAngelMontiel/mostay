@@ -64,12 +64,12 @@
   <!-- header -->
   <header class="topnav">
     <!-- logo -->
-    <h1 class="topnav__logo">
+    <div class="topnav__logo">
       <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>">
         <span><?php bloginfo('name'); ?></span>
         <img src="<?php echo get_template_directory_uri(); ?>/img/mostay.svg" alt="Mostay">
       </a>
-    </h1>
+  </div>
     <!-- /logo -->
     <!--  main nav -->
     <nav class="topnav__navigation" role="navigation">

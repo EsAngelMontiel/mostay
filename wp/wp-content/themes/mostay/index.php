@@ -10,7 +10,7 @@
 
   <div class="hero__text">
       <h1>Nuestra misión es darle vida a tu marca.</h1>
-      <h2><strong>Enfocados en el crecimiento de nuestros clientes:</strong> Creemos que el diseño debe ser tanto funcional como estético; debe tener un propósito claro y estar al servicio de las necesidades de nuestros clientes y sus consumidores.</h2>
+      <h2><strong>Un estudio de diseño de marca enfocado en el crecimiento de nuestros clientes:</strong> Creo que el diseño debe ser tanto funcional como estético; debe tener un propósito claro y estar al servicio de las necesidades de nuestros clientes y sus consumidores.</h2>
     </div>
 </section>
 
@@ -41,9 +41,9 @@
                             <span>
                                 <span>
                                     <?php if ($terms): ?>
-                                        <h2><?php echo esc_html($terms[0]->name); ?></h2> <!-- Mostrar solo el primer término -->
+                                        <h4><?php echo esc_html($terms[0]->name); ?></h4> <!-- Mostrar solo el primer término -->
                                     <?php endif; ?>
-                                    <h1><?php the_title(); ?></h1>
+                                    <h3><?php the_title(); ?></h3>
                                     <p><?php echo esc_html(get_field('frase_descriptiva')); ?></p> <!-- Campo ACF para descripción corta -->
                                     <i class="fas fa-arrow-circle-right"></i>
                                 </span>

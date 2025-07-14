@@ -121,8 +121,8 @@
 <section class="blog featured-posts">
   <div class="bar-orange"></div>
   <div class="titulo">
-    <h1>Otros artículos que te
-    pueden interesar.</h1>
+    <h2>Otros artículos que te
+    pueden interesar.</h2>
   </div>
   <?php
   $argo = array(

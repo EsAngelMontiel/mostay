@@ -1,7 +1,11 @@
     <!-- footer -->
     <footer>
       <div class="container">
-        <h1><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><span><?php bloginfo( 'name' ); ?> // <?php bloginfo( 'description' ); ?></span></a></h1>
+        <div class="container__logo">
+          <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+            <span><?php bloginfo( 'name' ); ?> // <?php bloginfo( 'description' ); ?></span>
+          </a>
+        </div>
         <small>© 2025 Mostay. Damos vida a tu marca desde 2015. </small>
   			<div class="social-networks footer">
           <?php

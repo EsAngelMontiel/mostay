@@ -133,6 +133,27 @@ textarea {
     outline-offset: 2px;
 }
 
+// Estilos básicos para el botón "Cargar más"
+.mostay-button {
+    background-color: var(--color-primary, #6c757d); // Asumo que tienes --color-accent
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; // Transición suave al pasar el ratón
+
+    &:hover {
+        background-color: darken(var(--color-secondary, #6c757d), 10%); // Oscurece al pasar el ratón
+    }
+
+    &:disabled {
+        opacity: 0.6; // Menos opaco cuando está deshabilitado
+        cursor: not-allowed; // Cursor de "prohibido"
+    }
+}
+
 
 /* ************************************************************************* */
 /* ***************************** Media queries ***************************** */

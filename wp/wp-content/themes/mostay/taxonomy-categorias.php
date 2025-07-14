@@ -1,15 +1,24 @@
 <?php get_header();
-if (have_posts()): while (have_posts()) : the_post();
-?>
 
-<?php if ($cat_description !== '') {?>
-  
-<?php
+// Get current term object to get the description
+$term = get_queried_object();
+$cat_description = term_description();
+
+// WP_Query arguments to get projects from the current category
 $args = array(
     'post_type'      => 'proyectos',
     'posts_per_page' => -1,
-    'order'          => 'DESC'
+    'order'          => 'DESC',
+    'tax_query'      => array(
+        array(
+            'taxonomy' => $term->taxonomy,
+            'field'    => 'slug',
+            'terms'    => $term->slug,
+        ),
+    ),
 );
+
+// The Query
 $project_query = new WP_Query($args);
 ?>
 
@@ -17,19 +26,22 @@ $project_query = new WP_Query($args);
 <section class="portafolio">
     <div class="titulo">
       <h1><?php single_cat_title(); ?></h1>
-      <?php if (isset($cat_description) && $cat_description !== '') { ?>
-        <?php echo $cat_description ; ?>
-      <?php } else {} ?>
+      <?php 
+      if (!empty($cat_description)) {
+        echo '<div class="taxonomy-description">' . $cat_description . '</div>';
+      }
+      ?>
     </div>
-    <ul class="casos">
-        <?php
-        if ($project_query->have_posts()) :
+    
+    <?php if ($project_query->have_posts()) : ?>
+        <ul class="casos">
+            <?php
             while ($project_query->have_posts()) : $project_query->the_post();
                 $postid2 = get_the_ID();
                 $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($postid2), 'hero-md');
                 $url = $thumb ? $thumb[0] : ''; 
                 $frase_descriptiva = get_field('frase_descriptiva', $postid2);
-                ?>
+            ?>
                 <li>
                     <article class="trabajos-lista">
                         <a href="<?php the_permalink(); ?>">
@@ -54,15 +66,15 @@ $project_query = new WP_Query($args);
                         </a>
                     </article>
                 </li>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-        <?php else: ?>
-            <li><p>No se encontraron proyectos.</p></li>
-        <?php endif; ?>
-    </ul>
+            <?php endwhile; ?>
+        </ul>
+        <?php wp_reset_postdata(); ?>
+    <?php else: ?>
+        <div class="container">
+            <p>No se encontraron proyectos en esta categoría.</p>
+        </div>
+    <?php endif; ?>
 </section>
-
-<?php } ?> 
 
 <section class="cta-wrapper">
   <div class="container">
@@ -83,4 +95,3 @@ $project_query = new WP_Query($args);
 </section> 
 
 <?php get_footer(); ?>
-

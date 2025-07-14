@@ -217,6 +217,155 @@ function mostay_enqueue_styles()
     wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
 
+
+/**
+ * Encola los scripts necesarios para el botón "Cargar más" y pasa datos a JavaScript.
+ */
+function mostay_enqueue_load_more_scripts() {
+    if ( is_page_template( 'page-blog.php' ) || is_post_type_archive( 'proyectos' ) || is_tax( 'categorias' ) || is_category() || is_tag() ) {
+
+        wp_enqueue_script(
+            'mostay-load-more', 
+            get_template_directory_uri() . '/js/mostay-ajax.js', 
+            array( 'jQuery' ), 
+            filemtime( get_template_directory() . '/js/mostay-ajax.js' ), 
+            true 
+        );
+
+        wp_localize_script(
+            'mostay-load-more', 
+            'mostay_ajax_params', 
+            array(
+                'ajax_url' => admin_url( 'admin-ajax.php' ), 
+                'nonce'    => wp_create_nonce( 'mostay_load_more_nonce' ), 
+                'posts_per_page' => 8, 
+            )
+        );
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'mostay_enqueue_load_more_scripts' );
+
+/*------------------------------------*\
+    AJAX Functions
+\*------------------------------------*/
+
+// functions.php
+
+/**
+ * Función de callback de AJAX para cargar más posts o proyectos.
+ * Esta función se ejecuta cuando JavaScript hace una petición a admin-ajax.php.
+ */
+function mostay_load_more_posts() {
+    error_log('AJAX DEBUG: mostay_load_more_posts function started.'); // AÑADIR
+    //check_ajax_referer( 'mostay_load_more_nonce', 'nonce' ); // COMENTA ESTA LÍNEA TEMPORALMENTE
+
+    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
+    $posts_per_page = isset($_POST['posts_per_page']) ? intval($_POST['posts_per_page']) : get_option( 'posts_per_page' );
+    $post_type = isset($_POST['post_type']) ? sanitize_text_field($_POST['post_type']) : 'post';
+
+    // NUEVO: Variables para taxonomía, si se envían desde el frontend (ver Paso 3.B)
+    $tax_query = array();
+    if ( isset($_POST['taxonomy']) && !empty($_POST['taxonomy']) && isset($_POST['taxonomy_id']) && !empty($_POST['taxonomy_id']) ) {
+        $tax_query[] = array(
+            'taxonomy' => sanitize_text_field($_POST['taxonomy']),
+            'field'    => 'term_id',
+            'terms'    => intval($_POST['taxonomy_id']),
+        );
+    }
+
+    $args = array(
+        'post_type'      => $post_type,
+        'posts_per_page' => $posts_per_page,
+        'paged'          => $paged,
+        'post_status'    => 'publish',
+        'order'          => 'DESC', // Asegurarse del orden si no viene de la query original
+        'tax_query'      => $tax_query, // Incluye la tax_query
+    );
+
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) :
+        while ( $query->have_posts() ) : $query->the_post();
+
+            // ***** INICIO DE LA LÓGICA CONDICIONAL DE HTML *****
+            if ( 'proyectos' === $post_type ) {
+                // HTML para PROYECTOS (copiado de tu snippet de 'portafolio')
+                $postid2 = get_the_ID();
+                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($postid2), 'hero-md');
+                $url = $thumb ? esc_url($thumb[0]) : ''; 
+                $frase_descriptiva = function_exists('get_field') ? get_field('frase_descriptiva', $postid2) : ''; // Usar get_field con comprobación
+                ?>
+                <li>
+                    <article class="trabajos-lista">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php if ($url): ?>
+                                <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
+                            <?php endif; ?>
+                            <span>
+                                <span>
+                                    <?php
+                                    $terms = wp_get_post_terms($postid2, 'categorias');
+                                    if ($terms && !is_wp_error($terms)) { // Añadir comprobación de error
+                                        echo '<h4>' . esc_html($terms[0]->name) . '</h4>'; 
+                                    }
+                                    ?>
+                                    <h3><?php the_title(); ?></h3>
+                                    <?php if ($frase_descriptiva): ?>
+                                        <p><?php echo esc_html($frase_descriptiva); ?></p>
+                                    <?php endif; ?>
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </span>
+                            </span>
+                        </a>
+                    </article>
+                </li>
+                <?php
+            } else { // HTML para POSTS (blog), si no es 'proyectos'
+                $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'thumb' );
+                $url = $thumb ? esc_url($thumb[0]) : ''; // Asegura que $url no sea nulo
+                $my_date01 = get_the_date( 'j F, Y', '', '', false );
+                $my_date02 = get_the_date( 'Y-m-d', '', '', false );
+                ?>
+                <li>
+                    <article class="blog-post">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php if ($url): ?>
+                                <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
+                            <?php endif; ?>
+                        </a>
+                        <div>
+                            <div class="post-info">
+                                <time datetime="<?php echo esc_attr($my_date02) ; ?>"><i class="fas fa-calendar-alt"></i> <?php echo esc_html($my_date01) ; ?></time>
+                                <span class="reading-t"><i class="fas fa-stopwatch"></i> <?php echo do_shortcode('[rt_reading_time label="Lectura:" postfix="minutos." postfix_singular="minuto."]'); ?></span>
+                            </div>
+                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <?php the_excerpt(); ?>
+                            <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </article>
+                </li>
+                <?php
+            }
+            // ***** FIN DE LA LÓGICA CONDICIONAL DE HTML *****
+
+        endwhile;
+    endif;
+
+    wp_reset_postdata();
+
+    if ( $paged + 1 >= $query->max_num_pages ) {
+        echo ''; 
+    }
+    wp_die();
+}
+// ... el resto de tu functions.php ...
+// Asocia la función de callback con las acciones AJAX de WordPress:
+// 'wp_ajax_mostay_load_more' es para usuarios logueados.
+// 'wp_ajax_nopriv_mostay_load_more' es para usuarios NO logueados (CRÍTICO para sitios públicos).
+add_action( 'wp_ajax_mostay_load_more', 'mostay_load_more_posts' );
+add_action( 'wp_ajax_nopriv_mostay_load_more', 'mostay_load_more_posts' );
+
 /*------------------------------------*\
     Custom Navigation Functions
 \*------------------------------------*/
@@ -327,7 +476,7 @@ add_action('init', 'mostay_enqueue_header_assets'); // Add Custom Scripts to wp_
 add_action('wp_enqueue_scripts', 'mostay_enqueue_styles'); // Add Theme Stylesheet
 add_action('init', 'register_mostay_menu'); // Add mostay Menu
 add_action('init', 'register_mostay_secondary_menus'); // Add secondary Menu
-add_action('init', 'mostay_display_pagination'); // Add our mostay Pagination
+// add_action('init', 'mostay_display_pagination'); // Add our mostay Pagination
 add_action('init', 'my_custom_posttypes' ); //Mostay Custon Posttypes
 add_action('init', 'my_custom_taxonomies' ); //Mostay Custon Taxonomies
 add_action( 'init', 'mostay_load_theme_textdomain' );

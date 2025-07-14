@@ -35,6 +35,9 @@ h1 {
         line-height: clamp(1.9rem, 3.5vw, 2.4rem);
     }
 }
+h1.titulo-oculto {
+    display: none ;
+}
 
 h2 {
     font-size: clamp(1.8rem, 3vw, 3rem);

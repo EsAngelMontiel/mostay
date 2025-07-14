@@ -8814,6 +8814,10 @@ h1 {
   }
 }
 
+h1.titulo-oculto {
+  display: none;
+}
+
 h2 {
   font-size: clamp(1.8rem, 3vw, 3rem);
   line-height: clamp(2.2rem, 3vw, 3.3rem);
@@ -9196,6 +9200,25 @@ html body.no-scroll {
   }
   50% {
     border-color: black;
+  }
+}
+.mostay-preloader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid var(--color-primary, #007bff);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /*.btn {
@@ -9665,13 +9688,13 @@ footer > div {
   flex-wrap: nowrap;
   gap: 1rem;
 }
-footer > div h1 {
+footer > div .container__logo {
   width: 9rem;
   height: var(--footer-h);
   margin: 0 0.3rem 0 0 !important;
   padding: 0 0 0 0;
 }
-footer > div h1 > a {
+footer > div .container__logo > a {
   width: 100%;
   height: var(--footer-h);
   background: url("../img/mostay-logo-red.svg");
@@ -9681,14 +9704,14 @@ footer > div h1 > a {
   display: block;
   transition: opacity 0.3s ease;
 }
-footer > div h1 > a > span {
+footer > div .container__logo > a > span {
   display: none;
 }
-footer > div h1 > a:hover {
+footer > div .container__logo > a:hover {
   opacity: 0.5;
 }
 @media (max-width: 43.75rem) {
-  footer > div h1 {
+  footer > div .container__logo {
     width: 8rem;
   }
 }
@@ -9959,14 +9982,14 @@ footer > div div.social-networks > ul li > a:hover {
   display: block;
   padding: 0 2.8125rem 2.8125rem;
 }
-.portafolio ul.casos li article.trabajos-lista a > span > span > h2 {
+.portafolio ul.casos li article.trabajos-lista a > span > span > h4 {
   font-family: var(--main-font-regular);
   font-size: 1.125rem;
   color: var(--red);
   margin: 0;
   padding: 0;
 }
-.portafolio ul.casos li article.trabajos-lista a > span > span > h1 {
+.portafolio ul.casos li article.trabajos-lista a > span > span > h3 {
   font-family: var(--main-font);
   font-size: 1.75rem;
   line-height: 1.87rem;

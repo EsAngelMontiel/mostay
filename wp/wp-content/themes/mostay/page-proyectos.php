@@ -14,6 +14,7 @@ $project_query = new WP_Query($args);
 
 <!-- ********************** resumen de posts ********************** -->
 <section class="portafolio">
+    <h1 class="titulo-oculto">Portafolio</h1>
     <ul class="casos">
         <?php
         if ($project_query->have_posts()) :
@@ -34,10 +35,10 @@ $project_query = new WP_Query($args);
                                     <?php
                                     $terms = wp_get_post_terms($postid2, 'categorias');
                                     if ($terms) {
-                                        echo '<h2>' . esc_html($terms[0]->name) . '</h2>'; 
+                                        echo '<h4>' . esc_html($terms[0]->name) . '</h4>'; 
                                     }
                                     ?>
-                                    <h1><?php the_title(); ?></h1>
+                                    <h3><?php the_title(); ?></h3>
                                     <?php if ($frase_descriptiva): ?>
                                         <p><?php echo esc_html($frase_descriptiva); ?></p>
                                     <?php endif; ?>
