@@ -4,14 +4,10 @@
 
 /* Variables CSS para el preloader */
 :root {
-    --preloader-bg: #ffffff;
-    --preloader-overlay: rgba(0, 0, 0, 0.1);
-    --preloader-primary: #007C89;
-    --preloader-secondary: #FFA000;
+    --preloader-bg: #f8f8f8;
+    --preloader-primary: var(--green);
     --preloader-text: #333132;
-    --preloader-text-light: #666666;
-    --preloader-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    --preloader-border-radius: 12px;
+    --preloader-rail: #e0e0e0;
     --preloader-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -29,8 +25,6 @@
     z-index: 9999;
     opacity: 1;
     transition: var(--preloader-transition);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 /* Contenido del preloader */
@@ -40,372 +34,125 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 400px;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: var(--preloader-border-radius);
-    box-shadow: var(--preloader-shadow);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 2rem;
 }
 
 /* Logo del preloader */
-.preloader-logo {
-    margin-bottom: 2rem;
-}
-
 .logo-container {
     position: relative;
-    display: inline-block;
-}
-
-.logo-image {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    animation: logoPulse 2s ease-in-out infinite;
-}
-
-.logo-animation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--preloader-primary);
-    border-radius: 50%;
-    animation: logoRing 2s ease-in-out infinite;
-}
-
-/* Barra de progreso */
-.preloader-progress {
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(0, 124, 137, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--preloader-primary), var(--preloader-secondary));
-    border-radius: 3px;
-    width: 0%;
-    transition: width 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        animation: progressShine 1.5s ease-in-out infinite;
-    }
-}
-
-.progress-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: var(--preloader-text);
-    font-weight: 500;
-    margin: 0;
-    transition: var(--preloader-transition);
-}
-
-/* Estado del preloader */
-.preloader-status {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    background: rgba(0, 124, 137, 0.05);
-    border-radius: 20px;
-    border: 1px solid rgba(0, 124, 137, 0.1);
 }
 
-.status-icon {
-    font-size: 16px;
-    animation: statusPulse 1.5s ease-in-out infinite;
+.progress-ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
 }
 
-.status-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    color: var(--preloader-text-light);
-    font-weight: 400;
-}
-
-/* Fondo animado */
-.preloader-background {
-    position: absolute;
-    top: 0;
-    left: 0;
+.progress-ring-svg {
+    transform: rotate(-90deg);
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: -1;
 }
 
-.background-animation {
+.progress-ring-rail {
+    fill: none;
+    stroke: var(--preloader-rail);
+    stroke-width: 4;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: var(--preloader-primary);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.logo-svg-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    border: 1px solid rgba(0, 124, 137, 0.1);
-    border-radius: 50%;
-    animation: backgroundPulse 3s ease-in-out infinite;
-    
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        animation: backgroundRing 3s ease-in-out infinite;
-    }
-    
-    &::before {
-        width: 150px;
-        height: 150px;
-        border: 1px solid rgba(255, 160, 0, 0.1);
-        animation-delay: -1s;
-    }
-    
-    &::after {
-        width: 100px;
-        height: 100px;
-        border: 1px solid rgba(0, 124, 137, 0.1);
-        animation-delay: -2s;
-    }
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Texto del preloader */
+.progress-text {
+    font-family: 'Bree Serif', serif;
+    font-size: 16px;
+    color: var(--preloader-primary);
+    font-weight: 400;
+    margin: 0;
+    transition: var(--preloader-transition);
+    text-align: center;
+}
+
+
 
 /* Animaciones */
-@keyframes logoPulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
-}
-
-@keyframes logoRing {
+@keyframes fadeIn {
     0% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
-    }
-}
-
-@keyframes progressShine {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-@keyframes statusPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes backgroundPulse {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.3;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 0.6;
-    }
-}
-
-@keyframes backgroundRing {
-    0% {
-        transform: translate(-50%, -50%) scale(0.8);
         opacity: 0.5;
     }
     100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
+        opacity: 1;
     }
 }
 
-/* Estados de carga */
-.preloader {
-    &.loading-slow .status-icon {
-        animation: statusWarning 1s ease-in-out infinite;
-    }
-    
-    &.loading-fast .status-icon {
-        animation: statusSuccess 1s ease-in-out infinite;
-    }
-    
-    &.error .status-icon {
-        color: #f44336;
-        animation: statusError 1s ease-in-out infinite;
-    }
-    
-    &.slow-connection .status-text {
-        color: #FFA000;
-    }
-    
-    &.fast-connection .status-text {
-        color: #4CAF50;
-    }
-}
 
-@keyframes statusWarning {
-    0%, 100% {
-        transform: scale(1);
-        color: #FFA000;
-    }
-    50% {
-        transform: scale(1.2);
-        color: #FF6B35;
-    }
-}
-
-@keyframes statusSuccess {
-    0%, 100% {
-        transform: scale(1);
-        color: #4CAF50;
-    }
-    50% {
-        transform: scale(1.1);
-        color: #2E7D32;
-    }
-}
-
-@keyframes statusError {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-}
 
 /* Responsive */
 @media (max-width: 768px) {
-    .preloader-content {
-        max-width: 300px;
-        padding: 1.5rem;
+    .progress-ring {
+        width: 100px;
+        height: 100px;
     }
     
-    .logo-image {
-        width: 60px;
-        height: 60px;
+    .logo-svg-container {
+        width: 70px;
+        height: 70px;
     }
     
-    .logo-animation {
+    .progress-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-ring {
         width: 80px;
         height: 80px;
+    }
+    
+    .logo-svg-container {
+        width: 60px;
+        height: 60px;
     }
     
     .progress-text {
         font-size: 13px;
     }
-    
-    .status-text {
-        font-size: 11px;
-    }
-}
-
-@media (max-width: 480px) {
-    .preloader-content {
-        max-width: 280px;
-        padding: 1rem;
-    }
-    
-    .logo-image {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .logo-animation {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .background-animation {
-        width: 150px;
-        height: 150px;
-        
-        &::before {
-            width: 120px;
-            height: 120px;
-        }
-        
-        &::after {
-            width: 80px;
-            height: 80px;
-        }
-    }
-}
-
-/* Modo oscuro */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --preloader-bg: #1a1a1a;
-        --preloader-overlay: rgba(255, 255, 255, 0.1);
-        --preloader-text: #ffffff;
-        --preloader-text-light: #cccccc;
-    }
-    
-    .preloader-content {
-        background: rgba(26, 26, 26, 0.95);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .preloader-status {
-        background: rgba(0, 124, 137, 0.1);
-        border: 1px solid rgba(0, 124, 137, 0.2);
-    }
 }
 
 /* Reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
-    .logo-image,
-    .logo-animation,
-    .progress-fill::after,
-    .status-icon,
-    .background-animation,
-    .background-animation::before,
-    .background-animation::after {
-        animation: none;
-    }
-    
-    .progress-fill {
-        transition: width 0.5s ease;
+    .progress-ring-fill {
+        transition: none;
     }
 }
 
@@ -414,12 +161,8 @@
     will-change: opacity, transform;
 }
 
-.preloader-content {
-    will-change: transform;
-}
-
-.progress-fill {
-    will-change: width;
+.progress-ring-fill {
+    will-change: stroke-dashoffset;
 }
 
 /* Compatibilidad con WordPress - Preloader existente */

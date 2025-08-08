@@ -29,25 +29,18 @@ class MostayPreloader {
             const preloaderHTML = `
                 <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Cargando página">
                     <div class="preloader-content">
-                        <div class="preloader-logo">
-                            <div class="logo-container">
-                                <img src="${mostayThemeUrl}/img/mostay-logo.svg" alt="Mostay" class="logo-image" loading="eager">
-                                <div class="logo-animation"></div>
+                        <div class="logo-container">
+                            <div class="progress-ring">
+                                <svg class="progress-ring-svg" viewBox="0 0 120 120">
+                                    <circle class="progress-ring-rail" cx="60" cy="60" r="54" stroke-width="4"/>
+                                    <circle class="progress-ring-fill" cx="60" cy="60" r="54" stroke-width="4" id="progress-fill"/>
+                                </svg>
+                                <div class="logo-svg-container">
+                                    <img src="${mostayThemeUrl}/img/Mostay-Preloader.svg" alt="Mostay" class="logo-svg" loading="eager">
+                                </div>
                             </div>
                         </div>
-                        <div class="preloader-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="progress-fill"></div>
-                            </div>
-                            <div class="progress-text" id="progress-text">Inicializando...</div>
-                        </div>
-                        <div class="preloader-status" id="preloader-status">
-                            <span class="status-icon">⚡</span>
-                            <span class="status-text">Optimizando rendimiento...</span>
-                        </div>
-                    </div>
-                    <div class="preloader-background">
-                        <div class="background-animation"></div>
+                        <div class="progress-text" id="progress-text">Inicializando...</div>
                     </div>
                 </div>
             `;
@@ -60,7 +53,6 @@ class MostayPreloader {
         this.preloader = document.getElementById('preloader');
         this.progressBar = document.getElementById('progress-fill');
         this.progressText = document.getElementById('progress-text');
-        this.statusElement = document.getElementById('preloader-status');
     }
 
     updateExistingPreloader() {
@@ -69,25 +61,18 @@ class MostayPreloader {
             // Reemplazar contenido del preloader existente
             existingPreloader.innerHTML = `
                 <div class="preloader-content">
-                    <div class="preloader-logo">
-                        <div class="logo-container">
-                            <img src="${mostayThemeUrl}/img/mostay-logo.svg" alt="Mostay" class="logo-image" loading="eager">
-                            <div class="logo-animation"></div>
+                    <div class="logo-container">
+                        <div class="progress-ring">
+                            <svg class="progress-ring-svg" viewBox="0 0 120 120">
+                                <circle class="progress-ring-rail" cx="60" cy="60" r="54" stroke-width="4"/>
+                                <circle class="progress-ring-fill" cx="60" cy="60" r="54" stroke-width="4" id="progress-fill"/>
+                            </svg>
+                            <div class="logo-svg-container">
+                                <img src="${mostayThemeUrl}/img/Mostay-Preloader.svg" alt="Mostay" class="logo-svg" loading="eager">
+                            </div>
                         </div>
                     </div>
-                    <div class="preloader-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                        <div class="progress-text" id="progress-text">Inicializando...</div>
-                    </div>
-                    <div class="preloader-status" id="preloader-status">
-                        <span class="status-icon">⚡</span>
-                        <span class="status-text">Optimizando rendimiento...</span>
-                    </div>
-                </div>
-                <div class="preloader-background">
-                    <div class="background-animation"></div>
+                    <div class="progress-text" id="progress-text">Inicializando...</div>
                 </div>
             `;
         }
@@ -141,9 +126,14 @@ class MostayPreloader {
     updateProgress(percentage, message) {
         if (!this.isLoading) return;
 
-        // Actualizar barra de progreso
+        // Actualizar barra de progreso circular
         if (this.progressBar) {
-            this.progressBar.style.width = `${percentage}%`;
+            const radius = 54;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percentage / 100) * circumference;
+            
+            this.progressBar.style.strokeDasharray = circumference;
+            this.progressBar.style.strokeDashoffset = offset;
         }
 
         // Actualizar texto
