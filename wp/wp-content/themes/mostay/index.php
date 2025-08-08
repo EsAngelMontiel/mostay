@@ -8,9 +8,9 @@
     </video>
   </div>
 
-  <div class="hero__text">
-      <h1>Nuestra misión es darle vida a tu marca.</h1>
-      <h2><strong>Un estudio de diseño de marca enfocado en el crecimiento de nuestros clientes:</strong> Creo que el diseño debe ser tanto funcional como estético; debe tener un propósito claro y estar al servicio de las necesidades de nuestros clientes y sus consumidores.</h2>
+  <div class="hero__text" data-animate="slide-up">
+      <h1 data-animate="typing">Nuestra misión es darle vida a tu marca.</h1>
+      <h2 data-animate="fade-in"><strong>Un estudio de diseño de marca enfocado en el crecimiento de nuestros clientes:</strong> Creo que el diseño debe ser tanto funcional como estético; debe tener un propósito claro y estar al servicio de las necesidades de nuestros clientes y sus consumidores.</h2>
     </div>
 </section>
 
@@ -26,13 +26,13 @@
     $the_query = new WP_Query($argo);
 
     if ($the_query->have_posts()) : ?>
-        <ul id="ultimo" class="casos">
+        <ul id="ultimo" class="casos" data-animate="stagger">
             <?php while ($the_query->have_posts()) : $the_query->the_post();
                 $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'hero-md');
                 $url = $thumb ? esc_url($thumb[0]) : ''; // Verificación de la imagen
                 $terms = wp_get_post_terms(get_the_ID(), 'categorias');
                 ?>
-                <li>
+                <li data-stagger-item>
                     <article class="trabajos-lista">
                         <a href="<?php the_permalink(); ?>">
                             <?php if ($url): ?>
@@ -53,7 +53,7 @@
                 </li>
             <?php endwhile; ?>
 
-            <li class="portafolio-cta">
+            <li class="portafolio-cta" data-stagger-item>
                 <h3>Este no es nuestro <br>primer ruedo</h3>
                 <p>Tenemos décadas de experiencia combinada desarrollando proyectos de diseño a nivel internacional.</p>
                 <a href="<?php echo esc_url(get_page_link(71)); ?>" class="btn">Ver Todos</a>
@@ -66,7 +66,7 @@
     ?>
 </section>
 
-<section class="cta-wrapper">
+<section class="cta-wrapper" data-animate="fade-in">
   <div class="container">
     <div class="cta">
       <div>
@@ -85,7 +85,7 @@
 </section> 
 
 
-<section class="newsletter">
+<section class="newsletter" data-animate="fade-in">
   <div class="container">
     <div class="newsletter-logo">
     </div>

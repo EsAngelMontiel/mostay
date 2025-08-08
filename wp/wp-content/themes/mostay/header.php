@@ -49,12 +49,13 @@
 <!-- End Facebook Pixel Code -->
     <?php wp_head(); ?>
     
-    <!-- Preloader Script -->
-    <script>
-        // Variable global para la URL del theme
-        var mostayThemeUrl = '<?php echo get_template_directory_uri(); ?>';
-    </script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/preloader.js" defer></script>
+                    <!-- Preloader Script -->
+                <script>
+                    // Variable global para la URL del theme
+                    var mostayThemeUrl = '<?php echo get_template_directory_uri(); ?>';
+                </script>
+                <script src="<?php echo get_template_directory_uri(); ?>/js/preloader.js" defer></script>
+                <script src="<?php echo get_template_directory_uri(); ?>/js/scroll-animations.js" defer></script>
 </head>
 <body>
   <!-- Preloader -->
