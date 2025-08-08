@@ -123,34 +123,34 @@
                 /* Responsive */
                 @media (max-width: 768px) {
                     .progress-ring {
-                        width: 120px; // 20% larger than 100px
-                        height: 120px;
+                        width: 156px; // 30% larger than 120px
+                        height: 156px;
                     }
                     
                     .logo-svg-container {
-                        width: 70px;
-                        height: 70px;
+                        width: 91px; // 30% larger than 70px
+                        height: 91px;
                     }
                     
                     .progress-text {
-                        font-size: 14px;
+                        font-size: 14px; // Mantener tamaño del texto
                         padding: 10px 16px;
                     }
                 }
                 
                 @media (max-width: 480px) {
                     .progress-ring {
-                        width: 96px; // 20% larger than 80px
-                        height: 96px;
+                        width: 125px; // 30% larger than 96px
+                        height: 125px;
                     }
                     
                     .logo-svg-container {
-                        width: 60px;
-                        height: 60px;
+                        width: 78px; // 30% larger than 60px
+                        height: 78px;
                     }
                     
                     .progress-text {
-                        font-size: 13px;
+                        font-size: 13px; // Mantener tamaño del texto
                         padding: 8px 14px;
                     }
                 }
