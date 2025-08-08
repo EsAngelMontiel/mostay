@@ -11,7 +11,7 @@ define( 'WP_POST_REVISIONS', 5 );
 define( 'AUTOSAVE_INTERVAL', 300 );
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'WP_MEMORY_LIMIT', '256M' );
-```
+// Zona horaria configurada para España (Europe/Madrid)
 
 ### **2. Protección .htaccess**
 - ✅ Bloqueo de archivos sensibles

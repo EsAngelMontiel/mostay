@@ -104,8 +104,8 @@ define( 'WP_MEMORY_LIMIT', '256M' );
 // Configurar límites de tiempo de ejecución
 set_time_limit( 300 );
 
-// Configurar zona horaria
-date_default_timezone_set( 'America/Mexico_City' );
+// Configurar zona horaria para España (Andalucía)
+date_default_timezone_set( 'Europe/Madrid' );
 
 /* That's all, stop editing! Happy publishing. */
 
