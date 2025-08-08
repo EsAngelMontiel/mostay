@@ -71,6 +71,21 @@ class MostayApp {
         if (typeof PerformanceBudget !== 'undefined') {
             this.modules.performanceBudget = new PerformanceBudget();
         }
+        
+        // I18n module
+        if (typeof I18n !== 'undefined') {
+            this.modules.i18n = new I18n();
+        }
+        
+        // SEO module
+        if (typeof SEO !== 'undefined') {
+            this.modules.seo = new SEO();
+        }
+        
+        // Testing module
+        if (typeof Testing !== 'undefined') {
+            this.modules.testing = new Testing();
+        }
     }
     
     waitForDependencies(dependencies, callback) {
