@@ -31,9 +31,9 @@ class MostayPreloader {
                     <div class="preloader-content">
                         <div class="logo-container">
                             <div class="progress-ring">
-                                <svg class="progress-ring-svg" viewBox="0 0 120 120">
-                                    <circle class="progress-ring-rail" cx="60" cy="60" r="54" stroke-width="4"/>
-                                    <circle class="progress-ring-fill" cx="60" cy="60" r="54" stroke-width="4" id="progress-fill"/>
+                                <svg class="progress-ring-svg" viewBox="0 0 144 144">
+                                    <circle class="progress-ring-rail" cx="72" cy="72" r="64.8" stroke-width="10"/>
+                                    <circle class="progress-ring-fill" cx="72" cy="72" r="64.8" stroke-width="10" id="progress-fill"/>
                                 </svg>
                                 <div class="logo-svg-container">
                                     <img src="${mostayThemeUrl}/img/Mostay-Preloader.svg" alt="Mostay" class="logo-svg" loading="eager">
@@ -128,7 +128,7 @@ class MostayPreloader {
 
         // Actualizar barra de progreso circular
         if (this.progressBar) {
-            const radius = 54;
+            const radius = 64.8; // 20% larger radius
             const circumference = 2 * Math.PI * radius;
             const offset = circumference - (percentage / 100) * circumference;
             
