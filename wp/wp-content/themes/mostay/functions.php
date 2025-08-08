@@ -5,6 +5,135 @@
  *  Custom functions, support, custom post types and more.
  */
 
+// ** CRÍTICO: Protección contra SQL Injection y XSS **
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+// Sanitizar todas las entradas de usuario
+function mostay_sanitize_input($input) {
+    if (is_array($input)) {
+        return array_map('mostay_sanitize_input', $input);
+    }
+    return sanitize_text_field($input);
+}
+
+// Validar y sanitizar datos AJAX
+function mostay_validate_ajax_data($data) {
+    $sanitized = array();
+    
+    foreach ($data as $key => $value) {
+        switch ($key) {
+            case 'paged':
+            case 'posts_per_page':
+            case 'taxonomy_id':
+                $sanitized[$key] = absint($value);
+                break;
+            case 'taxonomy':
+                $sanitized[$key] = sanitize_text_field($value);
+                // Verificar que la taxonomía existe
+                if (!taxonomy_exists($sanitized[$key])) {
+                    return false;
+                }
+                break;
+            case 'nonce':
+                $sanitized[$key] = sanitize_text_field($value);
+                break;
+            default:
+                $sanitized[$key] = sanitize_text_field($value);
+        }
+    }
+    
+    return $sanitized;
+}
+
+// Protección contra ataques de fuerza bruta
+function mostay_limit_login_attempts() {
+    if (!is_admin()) {
+        return;
+    }
+    
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $attempts = get_transient('login_attempts_' . $ip);
+    
+    if ($attempts && $attempts > 5) {
+        wp_die('Demasiados intentos de login. Intenta de nuevo en 15 minutos.');
+    }
+}
+add_action('wp_login_failed', 'mostay_limit_login_attempts');
+
+// Bloquear acceso a archivos sensibles
+function mostay_block_sensitive_files() {
+    $request_uri = $_SERVER['REQUEST_URI'];
+    $blocked_files = array(
+        'wp-config.php',
+        '.htaccess',
+        'readme.html',
+        'license.txt',
+        'wp-config-sample.php'
+    );
+    
+    foreach ($blocked_files as $file) {
+        if (strpos($request_uri, $file) !== false) {
+            mostay_log_security_event('Sensitive file access attempt', array(
+                'file' => $file,
+                'ip' => $_SERVER['REMOTE_ADDR'],
+                'user_agent' => $_SERVER['HTTP_USER_AGENT']
+            ));
+            wp_die('Acceso denegado');
+        }
+    }
+}
+add_action('init', 'mostay_block_sensitive_files');
+
+// Log de eventos de seguridad
+function mostay_log_security_event($event, $data = array()) {
+    $log_entry = array(
+        'timestamp' => current_time('mysql'),
+        'event' => $event,
+        'ip' => $_SERVER['REMOTE_ADDR'],
+        'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+        'data' => $data
+    );
+    
+    $log_file = WP_CONTENT_DIR . '/security.log';
+    $log_line = json_encode($log_entry) . "\n";
+    
+    error_log($log_line, 3, $log_file);
+}
+
+// Protección contra ataques de enumeración de usuarios
+function mostay_prevent_user_enumeration() {
+    if (isset($_GET['author'])) {
+        mostay_log_security_event('User enumeration attempt');
+        wp_die('User enumeration not allowed');
+    }
+}
+add_action('template_redirect', 'mostay_prevent_user_enumeration');
+
+// Protección contra inyección de código en contenido
+function mostay_sanitize_content($content) {
+    // Remover scripts potencialmente peligrosos
+    $content = preg_replace('/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/mi', '', $content);
+    
+    // Remover atributos peligrosos
+    $content = preg_replace('/on\w+\s*=\s*["\'][^"\']*["\']/i', '', $content);
+    $content = preg_replace('/javascript:/i', '', $content);
+    
+    return $content;
+}
+add_filter('the_content', 'mostay_sanitize_content');
+add_filter('comment_text', 'mostay_sanitize_content');
+
+// Protección contra ataques de timing
+function mostay_prevent_timing_attacks() {
+    if (is_admin() && !current_user_can('administrator')) {
+        // Agregar delay aleatorio para prevenir timing attacks
+        usleep(rand(100000, 500000)); // 0.1 a 0.5 segundos
+    }
+}
+add_action('wp_authenticate', 'mostay_prevent_timing_attacks');
+
 /*--------------------------------------------------------------*\
 
      _/     _/_/ _/_/_/_/  _/_/_/_/  _/_/_/_/_/  _/_/    _/     _/
@@ -297,14 +426,20 @@ function mostay_load_more_posts() {
         wp_die('Security check failed');
     }
 
-    $paged = isset($_POST['paged']) ? absint($_POST['paged']) : 1;
-    $posts_per_page = isset($_POST['posts_per_page']) ? absint($_POST['posts_per_page']) : get_option( 'posts_per_page' );
+    // Validar y sanitizar todos los datos de entrada
+    $sanitized_data = mostay_validate_ajax_data($_POST);
+    if ($sanitized_data === false) {
+        wp_die('Invalid data provided');
+    }
+
+    $paged = isset($sanitized_data['paged']) ? $sanitized_data['paged'] : 1;
+    $posts_per_page = isset($sanitized_data['posts_per_page']) ? $sanitized_data['posts_per_page'] : get_option( 'posts_per_page' );
 
     // Variables para taxonomía (categorías o etiquetas)
     $tax_query = array();
-    if ( isset($_POST['taxonomy']) && !empty($_POST['taxonomy']) && isset($_POST['taxonomy_id']) && !empty($_POST['taxonomy_id']) ) {
-        $taxonomy = sanitize_text_field($_POST['taxonomy']);
-        $taxonomy_id = absint($_POST['taxonomy_id']);
+    if ( isset($sanitized_data['taxonomy']) && !empty($sanitized_data['taxonomy']) && isset($sanitized_data['taxonomy_id']) && !empty($sanitized_data['taxonomy_id']) ) {
+        $taxonomy = $sanitized_data['taxonomy'];
+        $taxonomy_id = $sanitized_data['taxonomy_id'];
         
         // Verificar que la taxonomía existe
         if (taxonomy_exists($taxonomy)) {
