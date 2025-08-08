@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 2rem;
+    gap: 1.6rem; /* Reducido 20% de 2rem */
 }
 
 /* Logo del preloader */
@@ -47,8 +47,8 @@
 
 .progress-ring {
     position: relative;
-    width: 144px; // 20% larger than 120px
-    height: 144px;
+    width: 250px; 
+    height: 250px;
 }
 
 .progress-ring-svg {
@@ -60,13 +60,13 @@
 .progress-ring-rail {
     fill: none;
     stroke: var(--preloader-rail);
-    stroke-width: 10;
+    stroke-width: 6;
 }
 
 .progress-ring-fill {
     fill: none;
     stroke: var(--preloader-primary);
-    stroke-width: 10;
+    stroke-width: 6;
     stroke-linecap: round;
     stroke-dasharray: 407.15; // Circumference for r=64.8 (20% larger)
     stroke-dashoffset: 407.15;
@@ -76,10 +76,10 @@
 .logo-svg-container {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 52%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,20 +91,20 @@
     object-fit: contain;
 }
 
-                /* Texto del preloader */
-                .progress-text {
-                    font-family: 'Bree Serif', serif;
-                    font-size: 16px;
-                    color: var(--preloader-primary);
-                    font-weight: 400;
-                    margin: 0;
-                    transition: var(--preloader-transition);
-                    text-align: center;
-                    background: var(--preloader-rail);
-                    padding: 12px 20px;
-                    border-radius: 25px;
-                    display: inline-block;
-                }
+/* Texto del preloader */
+.progress-text {
+    font-family: var(--text-font);
+    font-size: 1rem ;
+    color: var(--preloader-primary);
+    font-weight: 400;
+    margin: 0;
+    transition: var(--preloader-transition);
+    text-align: center;
+    background: var(--preloader-rail);
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: inline-block;
+}
 
 
 
