@@ -380,6 +380,12 @@ function mostay_enqueue_styles()
     wp_enqueue_style('googlefonts'); // Enqueue it!
     wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.min.css', array(), mostay_asset_version('css/main.min.css'), 'all');
     wp_enqueue_style('mostaystyles'); // Enqueue it!
+    
+    // Preloader CSS - Solo cargar en páginas que lo necesiten
+    if (is_front_page() || is_page() || is_single() || is_archive()) {
+        wp_register_style('mostay-preloader', get_template_directory_uri() . '/css/preloader.css', array(), mostay_asset_version('css/preloader.css'), 'all');
+        wp_enqueue_style('mostay-preloader');
+    }
 }
 
 
