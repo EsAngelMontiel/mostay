@@ -56,6 +56,21 @@ class MostayApp {
         if (typeof Performance !== 'undefined') {
             this.modules.performance = new Performance();
         }
+        
+        // PWA module
+        if (typeof PWA !== 'undefined') {
+            this.modules.pwa = new PWA();
+        }
+        
+        // Analytics module
+        if (typeof Analytics !== 'undefined') {
+            this.modules.analytics = new Analytics();
+        }
+        
+        // Performance Budget module
+        if (typeof PerformanceBudget !== 'undefined') {
+            this.modules.performanceBudget = new PerformanceBudget();
+        }
     }
     
     waitForDependencies(dependencies, callback) {
