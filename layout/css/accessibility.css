@@ -1,0 +1,102 @@
+/* ==========================================
+   ACCESIBILIDAD CSS - MOSTAY
+   ========================================== */
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Focus styles for better keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #007bff !important;
+    outline-offset: 2px !important;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    * {
+        border-color: currentColor !important;
+    }
+    
+    a {
+        text-decoration: underline !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Better focus for interactive elements */
+.nav-main a:focus,
+.social-networks a:focus {
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Improved button focus */
+.navbutton:focus {
+    background-color: rgba(0, 123, 255, 0.1);
+    border: 2px solid #007bff;
+}
+
+/* Better contrast for text */
+@media (prefers-contrast: high) {
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    a {
+        color: #0000EE !important;
+    }
+}
+
+/* Focus visible for modern browsers */
+:focus-visible {
+    outline: 2px solid #007bff !important;
+    outline-offset: 2px !important;
+}
+
+/* Remove focus outline for mouse users but keep for keyboard */
+:focus:not(:focus-visible) {
+    outline: none !important;
+}
