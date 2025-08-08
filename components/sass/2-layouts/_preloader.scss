@@ -121,7 +121,7 @@
 
 
                 /* Responsive */
-                @media (max-width: 768px) {
+                @media (max-width: 43.75rem) { // md: 43.75rem (700px)
                     .progress-ring {
                         width: 156px; // 30% larger than 120px
                         height: 156px;
@@ -138,7 +138,7 @@
                     }
                 }
                 
-                @media (max-width: 480px) {
+                @media (max-width: 30rem) { // sm: 30rem (480px)
                     .progress-ring {
                         width: 125px; // 30% larger than 96px
                         height: 125px;
