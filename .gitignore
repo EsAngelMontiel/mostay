@@ -103,3 +103,17 @@ logs
 # wp/wp-content/themes/mostay/css/main.min.css
 # wp/wp-content/themes/mostay/css/main.min.css.map
 # wp/wp-content/themes/mostay/js/script-bundle.min.js
+
+# WordPress backups
+wp/wp-content/ai1wm-backups/
+wp/wp-content/uploads/
+wp/wp-content/cache/
+wp/wp-content/backup-db/
+wp/wp-content/backups/
+
+# Large files
+*.wpress
+*.sql
+*.zip
+*.tar.gz
+*.backup

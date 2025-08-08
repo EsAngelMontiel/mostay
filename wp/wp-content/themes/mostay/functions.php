@@ -179,23 +179,34 @@ function mostay_secondary_nav() {
 function mostay_enqueue_header_assets()
 {
     if (!is_admin()) {
-        // Unregister WordPress jQuery and register a newer version from a CDN
+        // Unregister WordPress jQuery and register a newer version from a CDN with fallback
         wp_deregister_script('jquery');
         wp_register_script('jQuery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), '3.7.1', true);
         wp_enqueue_script('jQuery');
+        
+        // Agregar fallback para jQuery
+        wp_add_inline_script('jQuery', '
+            if (typeof jQuery === "undefined") {
+                document.write(\'<script src="' . get_template_directory_uri() . '/js/jquery.min.js"><\/script>\');
+            }
+        ');
 
-        // Enqueue FontAwesome
-        wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', true);
-        wp_enqueue_script('fontawesome');
+        // FontAwesome se carga desde header.php para mejor rendimiento
 
         // Enqueue Slick only where needed
         if (is_front_page() || is_page(13) || is_page(71) || is_archive()) {
             wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array('jQuery'), '1.8.0', true);
             wp_enqueue_script('slick');
         }
+        
+        // Precargar recursos críticos
+        add_action('wp_head', function() {
+            echo '<link rel="preload" href="' . get_template_directory_uri() . '/css/main.min.css" as="style">';
+            echo '<link rel="preload" href="' . get_template_directory_uri() . '/js/script-bundle.min.js" as="script">';
+        });
 
         // Enqueue the new unified and minified script bundle
-        wp_register_script('mostay-bundle', get_template_directory_uri() . '/js/script-bundle.min.js', array('jQuery'), '1.0.0', true);
+        wp_register_script('mostay-bundle', get_template_directory_uri() . '/js/script-bundle.min.js', array('jQuery'), mostay_asset_version('js/script-bundle.min.js'), true);
         wp_enqueue_script('mostay-bundle');
     }
 }
@@ -238,7 +249,7 @@ function mostay_enqueue_styles()
     }
     wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Bree+Serif|Roboto+Slab|Roboto:300,400,700&display=swap', array(), '1.0', 'all');
     wp_enqueue_style('googlefonts'); // Enqueue it!
-    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.min.css', array(), '1.0', 'all');
+    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.min.css', array(), mostay_asset_version('css/main.min.css'), 'all');
     wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
 
@@ -281,19 +292,28 @@ add_action( 'wp_enqueue_scripts', 'mostay_enqueue_load_more_scripts' );
  * Esta función se ejecuta cuando JavaScript hace una petición a admin-ajax.php.
  */
 function mostay_load_more_posts() {
-    //check_ajax_referer( 'mostay_load_more_nonce', 'nonce' );
+    // Verificar nonce para seguridad
+    if (!wp_verify_nonce($_POST['nonce'], 'mostay_load_more_nonce')) {
+        wp_die('Security check failed');
+    }
 
-    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
-    $posts_per_page = isset($_POST['posts_per_page']) ? intval($_POST['posts_per_page']) : get_option( 'posts_per_page' );
+    $paged = isset($_POST['paged']) ? absint($_POST['paged']) : 1;
+    $posts_per_page = isset($_POST['posts_per_page']) ? absint($_POST['posts_per_page']) : get_option( 'posts_per_page' );
 
     // Variables para taxonomía (categorías o etiquetas)
     $tax_query = array();
     if ( isset($_POST['taxonomy']) && !empty($_POST['taxonomy']) && isset($_POST['taxonomy_id']) && !empty($_POST['taxonomy_id']) ) {
-        $tax_query[] = array(
-            'taxonomy' => sanitize_text_field($_POST['taxonomy']),
-            'field'    => 'term_id',
-            'terms'    => intval($_POST['taxonomy_id']),
-        );
+        $taxonomy = sanitize_text_field($_POST['taxonomy']);
+        $taxonomy_id = absint($_POST['taxonomy_id']);
+        
+        // Verificar que la taxonomía existe
+        if (taxonomy_exists($taxonomy)) {
+            $tax_query[] = array(
+                'taxonomy' => $taxonomy,
+                'field'    => 'term_id',
+                'terms'    => $taxonomy_id,
+            );
+        }
     }
 
     $args = array(
@@ -686,7 +706,14 @@ remove_filter('template_redirect', 'redirect_canonical');
 function add_security_headers() {
     header( 'X-Content-Type-Options: nosniff' );
     header( 'X-Frame-Options: SAMEORIGIN' );
-    header( 'Strict-Transport-Security: max-age=10886400' );
+    header( 'X-XSS-Protection: 1; mode=block' );
+    header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+    header( 'Permissions-Policy: geolocation=(), microphone=(), camera=()' );
+    
+    // Solo agregar HSTS en HTTPS
+    if (is_ssl()) {
+        header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload' );
+    }
 }
 add_action( 'send_headers', 'add_security_headers' );
 
@@ -728,7 +755,9 @@ function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_image
         echo '<img src="' . esc_url($image_url) . '" 
                     srcset="' . esc_attr($image_srcset) . '" 
                     sizes="' . esc_attr($sizes) . '" 
-                    alt="' . esc_attr(get_the_title($post_id)) . '">';
+                    alt="' . esc_attr(get_the_title($post_id)) . '"
+                    loading="lazy"
+                    decoding="async">';
     }
     /**
      * Remove shortlink from head and HTTP header.
@@ -740,4 +769,28 @@ function mostay_imagen($tipo = 'normal', $post_id = null, $acf_campo = 'mi_image
         // remove HTTP header
         remove_action( 'template_redirect', 'wp_shortlink_header', 11);
     }
-} ?>
+}
+
+// Limpiar cache de assets cuando se actualicen
+function mostay_clear_asset_cache() {
+    // Limpiar cache de CSS y JS
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+    
+    // Limpiar cache de transients
+    delete_transient('mostay_css_version');
+    delete_transient('mostay_js_version');
+}
+add_action('after_switch_theme', 'mostay_clear_asset_cache');
+add_action('upgrader_process_complete', 'mostay_clear_asset_cache');
+
+// Agregar versión dinámica a assets para cache busting
+function mostay_asset_version($file) {
+    $file_path = get_template_directory() . '/' . $file;
+    if (file_exists($file_path)) {
+        return filemtime($file_path);
+    }
+    return '1.0.0';
+}
+?>
