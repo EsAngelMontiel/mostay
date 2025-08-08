@@ -86,6 +86,11 @@ class MostayApp {
         if (typeof Testing !== 'undefined') {
             this.modules.testing = new Testing();
         }
+        
+        // Preloader module
+        if (typeof Preloader !== 'undefined') {
+            this.modules.preloader = new Preloader();
+        }
     }
     
     waitForDependencies(dependencies, callback) {
