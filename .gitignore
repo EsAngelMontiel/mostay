@@ -1,122 +1,105 @@
-# -----------------------------------------------------------------
-# .gitignore for WordPress @salcode
-# ver 20160309
-#
-# From the root of your project run
-# curl -O https://gist.githubusercontent.com/salcode/b515f520d3f8207ecd04/raw/.gitignore
-# to download this file
-#
-# By default all files are ignored.  You'll need to whitelist
-# any mu-plugins, plugins, or themes you want to include in the repo.
-#
-# To ignore uncommitted changes in a file that is already tracked, use 
-# git update-index --assume-unchanged
-#
-# To stop tracking a file that is currently tracked, use 
-# git rm --cached
-#
-# Change Log:
-# 20160309 Added favicon files as whitelisted files
-# 20150302 Added composer.json as a whitelisted file
-# 20150227 Created as fork of https://gist.github.com/salcode/9940509,
-#   this version ignores all files by default
-# -----------------------------------------------------------------
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# ignore everything in the root except the "wp-content" directory.
-/wp/*
-!/wp/wp-content/
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# ignore everything in the "wp-content" directory, except:
-# themes directories
-/wp/wp-content/*
-!/wp/wp-content/themes/
+# Coverage directory used by tools like istanbul
+coverage/
 
-# ignore all mu-plugins, plugins, and themes
-# unless explicitly whitelisted at the end of this file
-/wp/wp-content/mu-plugins/*
-/wp/wp-content/plugins/*
-/wp/wp-content/themes/*
+# nyc test coverage
+.nyc_output
 
+# Grunt intermediate storage
+.grunt
 
-# ignore all files starting with . or ~
-.*
-~*
+# Bower dependency directory
+bower_components
 
-# ignore node dependency directories (used by grunt)
-/wp/node_modules/
+# node-waf configuration
+.lock-wscript
 
-# ignore OS generated files
-ehthumbs.db
-Thumbs.db
+# Compiled binary addons
+build/Release
 
-# ignore Editor files
-*.sublime-project
-*.sublime-workspace
-*.komodoproject
+# Dependency directories
+jspm_packages/
 
-# ignore log files and databases
-*.log
-*.sql
-*.sqlite
+# Optional npm cache directory
+.npm
 
-# ignore compiled files
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+# Optional REPL history
+.node_repl_history
 
-# ignore packaged files
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-*.codekit3
+# Output of 'npm pack'
+*.tgz
 
-# -------------------------
-# BEGIN Whitelisted Files
-# -------------------------
+# Yarn Integrity file
+.yarn-integrity
 
-# track these files, if they exist
-!.gitignore
-!.editorconfig
-!README.md
-!CHANGELOG.md
-!composer.json
-
-# track favicon files, if they exist
-!android-chrome-*.png
-!apple-touch-icon*.png
-!browserconfig.xml
-!favicon*.png
-!favicon*.ico
-!manifest.json
-!mstile-*.png
-!safari-pinned-tab.svg
-
-# track these themes
-# add your own entries here
-!/wp/wp-content/themes/mostay
-prepros.config
-
-# -------------------------
-# MOSTAY CONFIG EXTRAS
-# -------------------------
-
-# Cache y carpetas de build
-.DS_Store
-/prepros.config
-/prepros-6.config
-
-# Archivos compilados
-/wp/wp-content/themes/mostay/css/*
-!/wp/wp-content/themes/mostay/css/.gitkeep
-
-# Archivos opcionales de entorno
+# dotenv environment variables file
 .env
-.env.*
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+
+# Sass cache
+.sass-cache/
+
+# Compiled CSS and JS (opcional - puedes decidir si incluirlos o no)
+# wp/wp-content/themes/mostay/css/main.min.css
+# wp/wp-content/themes/mostay/css/main.min.css.map
+# wp/wp-content/themes/mostay/js/script-bundle.min.js

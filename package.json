@@ -7,8 +7,19 @@
     "url": "?.git"
   },
   "author": "Mostay",
+  "scripts": {
+    "sass:build": "sass components/sass/main.scss:wp/wp-content/themes/mostay/css/main.min.css --style=compressed --source-map --quiet-deps",
+    "sass:watch": "sass components/sass/main.scss:wp/wp-content/themes/mostay/css/main.min.css --style=compressed --source-map --quiet-deps --watch",
+    "js:build": "terser components/scripts/script.js -o wp/wp-content/themes/mostay/js/script-bundle.min.js --compress --mangle",
+    "js:watch": "chokidar 'components/scripts/script.js' -c 'npm run js:build'",
+    "build": "npm run sass:build && npm run js:build",
+    "watch": "concurrently \"npm run sass:watch\" \"npm run js:watch\"",
+    "dev": "npm run watch"
+  },
   "devDependencies": {
-    "Bootstrap": "^4.4.1",
-    "Sass": "^3.4"
+    "sass": "^1.69.0",
+    "terser": "^5.37.0",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^8.2.2"
   }
 }

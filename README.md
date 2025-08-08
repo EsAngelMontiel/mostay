@@ -9,9 +9,29 @@ Sitio Web de Mostay.
 
 ### How do I get set up? ###
 
-* Bootstrap
-* Sass
-* Codekit
+#### Instalación
+```bash
+npm install
+```
+
+#### Desarrollo
+```bash
+# Modo desarrollo (watch)
+npm run dev
+# o
+./dev.sh start
+
+# Compilación manual
+npm run build
+# o
+./dev.sh build
+```
+
+#### Tecnologías
+* Bootstrap 4.4.1
+* Sass (Dart Sass)
+* Terser (JavaScript minification)
+* Chokidar (File watching)
 
 ### Contribution guidelines ###
 
