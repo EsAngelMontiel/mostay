@@ -13,6 +13,7 @@ class MostayPreloader {
         this.minDisplayTime = 800; // Tiempo mínimo de visualización
         this.maxDisplayTime = 3000; // Tiempo máximo de visualización
         this.startTime = null;
+        this.maxProgressReached = 0; // Rastrear el progreso máximo alcanzado
         
         this.init();
     }
@@ -114,6 +115,7 @@ class MostayPreloader {
     startLoading() {
         this.startTime = Date.now();
         this.isLoading = true;
+        this.maxProgressReached = 0; // Resetear progreso máximo
         this.updateProgress(10, 'Inicializando...');
         
         // Simular progreso inicial
@@ -125,6 +127,14 @@ class MostayPreloader {
 
     updateProgress(percentage, message) {
         if (!this.isLoading) return;
+
+        // Solo avanzar si el nuevo porcentaje es mayor al máximo alcanzado
+        if (percentage > this.maxProgressReached) {
+            this.maxProgressReached = percentage;
+        } else {
+            // Si el porcentaje es menor, usar el máximo alcanzado
+            percentage = this.maxProgressReached;
+        }
 
         // Actualizar barra de progreso circular
         if (this.progressBar) {
@@ -327,6 +337,16 @@ class MostayPreloader {
 
     setStatus(icon, message) {
         this.updateStatus(icon, message);
+    }
+
+    // Método para obtener el progreso máximo alcanzado
+    getMaxProgress() {
+        return this.maxProgressReached;
+    }
+
+    // Método para resetear el progreso máximo (útil para reinicios)
+    resetProgress() {
+        this.maxProgressReached = 0;
     }
 }
 
