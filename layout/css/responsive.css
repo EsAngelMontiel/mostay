@@ -1,0 +1,288 @@
+/* ==========================================
+   RESPONSIVE DESIGN - MOSTAY
+   ========================================== */
+
+/* Mobile First Approach */
+:root {
+  --container-padding: 1rem;
+  --section-spacing: 2rem;
+  --header-height: 60px;
+  --footer-height: 80px;
+}
+
+/* Extra Small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+  
+  /* Header optimizations */
+  header {
+    padding: 0.5rem 0;
+  }
+  
+  .nav-main {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: rgba(0, 0, 0, 0.95);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav-main.active {
+    left: 0;
+  }
+  
+  /* Slider optimizations */
+  .mostay-cartelera {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .mostay-cartelera .slick-slide img {
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  /* Content optimizations */
+  .content-section {
+    padding: var(--section-spacing) 0;
+  }
+  
+  /* Typography adjustments */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  /* Button optimizations */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer optimizations */
+  footer {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .social-networks ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  .mostay-cartelera {
+    height: 60vh;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .nav-main {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+  }
+  
+  .nav-main ul {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav-main li {
+    margin: 0 1rem;
+  }
+  
+  .mostay-cartelera {
+    height: 70vh;
+  }
+  
+  /* Grid optimizations */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .mostay-cartelera {
+    height: 80vh;
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Navigation improvements */
+  .nav-main ul {
+    gap: 2rem;
+  }
+  
+  .nav-main a {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-main a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-main a:hover::after {
+    width: 100%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .mostay-cartelera {
+    height: 90vh;
+  }
+  
+  /* Enhanced typography */
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+  
+  /* Improved spacing */
+  .content-section {
+    padding: 4rem 0;
+  }
+  
+  /* Advanced grid layouts */
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Ultra wide screens (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .mostay-cartelera {
+    height: 100vh;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mostay-cartelera img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+  .nav-main,
+  .social-networks,
+  .btn {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #ffffff;
+    --bg-color: #1a1a1a;
+    --border-color: #333333;
+  }
+  
+  body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+  
+  .nav-main {
+    background: rgba(26, 26, 26, 0.95);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .mostay-cartelera {
+    height: 100vh;
+  }
+  
+  header {
+    padding: 0.25rem 0;
+  }
+  
+  .content-section {
+    padding: 1rem 0;
+  }
+}
