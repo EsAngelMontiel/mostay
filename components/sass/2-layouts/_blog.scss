@@ -166,7 +166,10 @@
     background-color: var(--offwhite);
     padding: var(--pading-top-lg) var(--spacing-lg) var(--pading-top-lg)  ;
   }
-  
+  .load-more-wrapper {
+    width: 100% ;
+    @include m.flex(row, center, center, nowrap );
+  }
     
 }
 

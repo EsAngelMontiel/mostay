@@ -139,6 +139,20 @@
   .galeria {
     background-color: var(--white);
     padding: var(--spacing-lg) ;
+    .mCol-1 {
+      width: 100%;
+      margin-bottom: var(--spacing-md);
+      border-radius: var(--radius-md);
+      overflow: hidden ;
+      img {
+        width: 100% ; height: auto ;
+        display: block ;
+        object-fit: cover;
+      }
+    }
+    .mText {
+            padding: 4rem 0 4rem ;
+          }
     .media {
       border-radius: var(--radius-md);
       margin-bottom: var(--spacing-md);
@@ -152,6 +166,53 @@
     }
     @include m.breakpoint(md) {
       padding: var(--spacing-sm) ;
+    }
+    .wp-block-columns {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md); 
+      border-radius: var(--radius-md);
+      overflow: hidden ;
+      @include m.breakpoint(md) {
+        border-radius: 0 ;
+        .wp-block-column {
+          &.mCol-2 {
+            figure {
+              border-radius: var(--radius-md);
+              overflow: hidden ;
+            }
+          }
+        }
+      }
+      .wp-block-column {
+        flex-grow: 1; 
+        flex-basis: auto; 
+        &.mCol-2 {
+          width: calc(50% - (var(--spacing-md) / 2)); 
+          margin-bottom: var(--spacing-md);
+          @include m.breakpoint(md) {
+            figure {
+              border-radius: var(--radius-md);
+              overflow: hidden ;
+            }
+          }
+        }
+
+        &.mCol-3 {
+          width: calc(33.33% - ((var(--spacing-md) / 3) * 2)); 
+          margin-bottom: var(--spacing-md);
+          border-radius: var(--radius-md);
+          overflow: hidden ;
+        }
+        &.mCol-4 {
+          width: calc(25% - ((var(--spacing-md) / 4) * 3)); 
+          margin-bottom: var(--spacing-md);
+          border-radius: var(--radius-md);
+          overflow: hidden ;
+        }
+      }
+      
     }
   }
   > div.btn-container {

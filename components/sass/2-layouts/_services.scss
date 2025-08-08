@@ -96,7 +96,7 @@
     }
   }
   .scroll-section {
-    padding: calc(var(--pading-top-lg)*2) 0 ;
+    padding: calc(var(--pading-top-lg)*2) 0 ; 
     background-color: var(--white);
     > div {
       display: grid;
@@ -129,7 +129,6 @@
         }
       }
       @include m.breakpoint(lg) {
-        padding: 0 var(--spacing-md) ;
         grid-template-columns: 60% 35% ; 
       }
       @include m.breakpoint(md) {

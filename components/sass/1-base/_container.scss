@@ -1,0 +1,25 @@
+@use 'mixins' as m;
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding-sm);
+    padding-right: var(--container-padding-sm);
+
+    @include m.breakpoint(md) {
+        padding-left: var(--container-padding-md);
+        padding-right: var(--container-padding-md);
+    }
+
+    @include m.breakpoint(lg) {
+        padding-left: var(--container-padding-lg);
+        padding-right: var(--container-padding-lg);
+    }
+
+    @include m.breakpoint(xl) {
+        padding-left: var(--container-padding-xl);
+        padding-right: var(--container-padding-xl);
+    }
+}

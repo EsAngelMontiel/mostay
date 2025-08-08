@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "build": "terser script.js -o ../../wp/wp-content/themes/mostay/js/script-min.js",
+    "build": "terser main.js -o ../../wp/wp-content/themes/mostay/js/script-bundle.min.js",
     "watch": "chokidar 'script.js' -c 'npm run build'"
   },
   "keywords": [],

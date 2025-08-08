@@ -179,24 +179,49 @@ function mostay_secondary_nav() {
 function mostay_enqueue_header_assets()
 {
     if (!is_admin()) {
-        //wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.7.1', $in_footer = true); // jQuery
-        wp_enqueue_script('jQuery'); // Enqueue it!
-        wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', $in_footer = true); // fontawesome
-        wp_enqueue_script('fontawesome'); // Enqueue it!
+        // Unregister WordPress jQuery and register a newer version from a CDN
+        wp_deregister_script('jquery');
+        wp_register_script('jQuery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), '3.7.1', true);
+        wp_enqueue_script('jQuery');
 
-        // Only load Slick if it's needed
+        // Enqueue FontAwesome
+        wp_register_script('fontawesome', 'https://use.fontawesome.com/fe56756232.js', array(), '5.10.2', true);
+        wp_enqueue_script('fontawesome');
+
+        // Enqueue Slick only where needed
         if (is_front_page() || is_page(13) || is_page(71) || is_archive()) {
-            wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array(), '1.8.0', true); // slick
-            wp_enqueue_script('slick'); // Enqueue it!
+            wp_register_script('slick', get_template_directory_uri() . '/slick/slick.min.js', array('jQuery'), '1.8.0', true);
+            wp_enqueue_script('slick');
         }
 
-        wp_register_script('bodyScrollLock', get_template_directory_uri() . '/js/bodyScrollLock.min.js', array(), '1.0.0', $in_footer = true); // bodyScrollLock
-        wp_enqueue_script('bodyScrollLock'); // Enqueue it!
-        wp_register_script('mostayscripts', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', $in_footer = true); // Custom scripts
-        wp_enqueue_script('mostayscripts'); // Enqueue it!
+        // Enqueue the new unified and minified script bundle
+        wp_register_script('mostay-bundle', get_template_directory_uri() . '/js/script-bundle.min.js', array('jQuery'), '1.0.0', true);
+        wp_enqueue_script('mostay-bundle');
     }
 }
+
+/**
+ * Add defer attribute to enqueued scripts.
+ *
+ * This function hooks into the 'script_loader_tag' filter to add the defer attribute
+ * to specified script tags, improving page load performance.
+ */
+function mostay_add_defer_attribute($tag, $handle) {
+    // List of script handles to defer
+    $scripts_to_defer = array(
+        'jQuery',
+        'fontawesome',
+        'slick',
+        'mostay-bundle'
+    );
+
+    if (in_array($handle, $scripts_to_defer)) {
+        return str_replace(' src', ' defer="defer" src', $tag);
+    }
+
+    return $tag;
+}
+add_filter('script_loader_tag', 'mostay_add_defer_attribute', 10, 2);
 /**
  * Enqueue theme styles.
  *
@@ -213,7 +238,7 @@ function mostay_enqueue_styles()
     }
     wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Bree+Serif|Roboto+Slab|Roboto:300,400,700&display=swap', array(), '1.0', 'all');
     wp_enqueue_style('googlefonts'); // Enqueue it!
-    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+    wp_register_style('mostaystyles', get_template_directory_uri() . '/css/main.min.css', array(), '1.0', 'all');
     wp_enqueue_style('mostaystyles'); // Enqueue it!
 }
 
@@ -222,7 +247,8 @@ function mostay_enqueue_styles()
  * Encola los scripts necesarios para el botón "Cargar más" y pasa datos a JavaScript.
  */
 function mostay_enqueue_load_more_scripts() {
-    if ( is_page_template( 'page-blog.php' ) || is_post_type_archive( 'proyectos' ) || is_tax( 'categorias' ) || is_category() || is_tag() ) {
+    // Cargar el script solo en la página del blog, categorías y etiquetas.
+    if ( is_page_template( 'page-blog.php' ) || is_category() || is_tag() ) {
 
         wp_enqueue_script(
             'mostay-load-more', 
@@ -238,7 +264,7 @@ function mostay_enqueue_load_more_scripts() {
             array(
                 'ajax_url' => admin_url( 'admin-ajax.php' ), 
                 'nonce'    => wp_create_nonce( 'mostay_load_more_nonce' ), 
-                'posts_per_page' => 8, 
+                'posts_per_page' => 8, // Se cargarán 8 posts por llamada
             )
         );
     }
@@ -250,21 +276,17 @@ add_action( 'wp_enqueue_scripts', 'mostay_enqueue_load_more_scripts' );
     AJAX Functions
 \*------------------------------------*/
 
-// functions.php
-
 /**
- * Función de callback de AJAX para cargar más posts o proyectos.
+ * Función de callback de AJAX para cargar más posts del blog.
  * Esta función se ejecuta cuando JavaScript hace una petición a admin-ajax.php.
  */
 function mostay_load_more_posts() {
-    error_log('AJAX DEBUG: mostay_load_more_posts function started.'); // AÑADIR
-    //check_ajax_referer( 'mostay_load_more_nonce', 'nonce' ); // COMENTA ESTA LÍNEA TEMPORALMENTE
+    //check_ajax_referer( 'mostay_load_more_nonce', 'nonce' );
 
     $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
     $posts_per_page = isset($_POST['posts_per_page']) ? intval($_POST['posts_per_page']) : get_option( 'posts_per_page' );
-    $post_type = isset($_POST['post_type']) ? sanitize_text_field($_POST['post_type']) : 'post';
 
-    // NUEVO: Variables para taxonomía, si se envían desde el frontend (ver Paso 3.B)
+    // Variables para taxonomía (categorías o etiquetas)
     $tax_query = array();
     if ( isset($_POST['taxonomy']) && !empty($_POST['taxonomy']) && isset($_POST['taxonomy_id']) && !empty($_POST['taxonomy_id']) ) {
         $tax_query[] = array(
@@ -275,87 +297,51 @@ function mostay_load_more_posts() {
     }
 
     $args = array(
-        'post_type'      => $post_type,
+        'post_type'      => 'post', // Forzar a que siempre sea 'post'
         'posts_per_page' => $posts_per_page,
         'paged'          => $paged,
         'post_status'    => 'publish',
-        'order'          => 'DESC', // Asegurarse del orden si no viene de la query original
-        'tax_query'      => $tax_query, // Incluye la tax_query
+        'order'          => 'DESC',
+        'tax_query'      => $tax_query,
     );
 
     $query = new WP_Query( $args );
 
     if ( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post();
-
-            // ***** INICIO DE LA LÓGICA CONDICIONAL DE HTML *****
-            if ( 'proyectos' === $post_type ) {
-                // HTML para PROYECTOS (copiado de tu snippet de 'portafolio')
-                $postid2 = get_the_ID();
-                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($postid2), 'hero-md');
-                $url = $thumb ? esc_url($thumb[0]) : ''; 
-                $frase_descriptiva = function_exists('get_field') ? get_field('frase_descriptiva', $postid2) : ''; // Usar get_field con comprobación
-                ?>
-                <li>
-                    <article class="trabajos-lista">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php if ($url): ?>
-                                <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
-                            <?php endif; ?>
-                            <span>
-                                <span>
-                                    <?php
-                                    $terms = wp_get_post_terms($postid2, 'categorias');
-                                    if ($terms && !is_wp_error($terms)) { // Añadir comprobación de error
-                                        echo '<h4>' . esc_html($terms[0]->name) . '</h4>'; 
-                                    }
-                                    ?>
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php if ($frase_descriptiva): ?>
-                                        <p><?php echo esc_html($frase_descriptiva); ?></p>
-                                    <?php endif; ?>
-                                    <i class="fas fa-arrow-circle-right"></i>
-                                </span>
-                            </span>
-                        </a>
-                    </article>
-                </li>
-                <?php
-            } else { // HTML para POSTS (blog), si no es 'proyectos'
-                $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'thumb' );
-                $url = $thumb ? esc_url($thumb[0]) : ''; // Asegura que $url no sea nulo
-                $my_date01 = get_the_date( 'j F, Y', '', '', false );
-                $my_date02 = get_the_date( 'Y-m-d', '', '', false );
-                ?>
-                <li>
-                    <article class="blog-post">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php if ($url): ?>
-                                <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
-                            <?php endif; ?>
-                        </a>
-                        <div>
-                            <div class="post-info">
-                                <time datetime="<?php echo esc_attr($my_date02) ; ?>"><i class="fas fa-calendar-alt"></i> <?php echo esc_html($my_date01) ; ?></time>
-                                <span class="reading-t"><i class="fas fa-stopwatch"></i> <?php echo do_shortcode('[rt_reading_time label="Lectura:" postfix="minutos." postfix_singular="minuto."]'); ?></span>
-                            </div>
-                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <?php the_excerpt(); ?>
-                            <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
+            // Template para los posts del blog
+            $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'thumb' );
+            $url = $thumb ? esc_url($thumb[0]) : '';
+            $my_date01 = get_the_date( 'j F, Y' );
+            $my_date02 = get_the_date( 'Y-m-d' );
+            ?>
+            <li>
+                <article class="blog-post">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php if ($url): ?>
+                            <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
+                        <?php endif; ?>
+                    </a>
+                    <div>
+                        <div class="post-info">
+                            <time datetime="<?php echo esc_attr($my_date02) ; ?>"><i class="fas fa-calendar-alt"></i> <?php echo esc_html($my_date01) ; ?></time>
+                            <span class="reading-t"><i class="fas fa-stopwatch"></i> <?php echo do_shortcode('[rt_reading_time label="Lectura:" postfix="minutos." postfix_singular="minuto."]'); ?></span>
                         </div>
-                    </article>
-                </li>
-                <?php
-            }
-            // ***** FIN DE LA LÓGICA CONDICIONAL DE HTML *****
-
+                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>">Leer mas <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </article>
+            </li>
+            <?php
         endwhile;
     endif;
 
     wp_reset_postdata();
 
-    if ( $paged + 1 >= $query->max_num_pages ) {
-        echo ''; 
+    // Si la página actual es la última, no se envía nada. El JS lo interpretará como el final.
+    if ( $paged >= $query->max_num_pages ) {
+        echo '';
     }
     wp_die();
 }
@@ -528,6 +514,7 @@ function my_custom_posttypes() {
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
+        'show_in_rest'        => true,
         'menu_position'      => 5,
         'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
     );

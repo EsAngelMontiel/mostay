@@ -9,7 +9,6 @@
   "author": "Mostay",
   "devDependencies": {
     "Bootstrap": "^4.4.1",
-    "Sass": "^3.4",
-    "Codekit": "^3"
+    "Sass": "^3.4"
   }
 }

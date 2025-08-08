@@ -31,6 +31,7 @@ $email = get_field('email', $postid);
          <div>
            <h1><?php the_title(); ?></h1>
            <?php the_content(); ?>
+           <p  class="p__bigger">En <strong>Mostay</strong>, entendemos que una marca es más que un logo, es una experiencia completa que debe conectar con tu audiencia de manera auténtica.</p>
          </div>
        </div>
        <!-- ******* End Service Header ********* -->
@@ -42,14 +43,12 @@ $email = get_field('email', $postid);
            </div>
            <div class="text-container">
              <h3>El camino es la recompensa</h3>
-             <p>Nuestra historia comienza en 2015, cuando Mostay nace con el objetivo de ayudar a emprendedores a darle vida a sus marcas a través del diseño. Fundada por un equipo diverso de profesionales creativos. Mostay comenzó su viaje en Venezuela, destacando por su compromiso con la calidad, la innovación y una atención al detalle.<br><br>
-             En 2016, se establece a la Ciudad de México en busca de nuevos mercados, lo que significó una reinvención de la agencia, adaptándose a nuevas culturas y entornos de negocios.<br><br>
-             En 2023, abrimos un nuevo capítulo al establecernos en Andalucía, España. Con un enfoque renovado y la incorporación de nuevo talento, con el firme objetivo de establecernos como un referente del diseño en Andalucía. Aunque Mostay tiene raíces en diferentes partes del mundo, su compromiso con la excelencia es universal.</p>
+             <p>Esta historia comienza en 2015, cuando Mostay comenzó su viaje como un estudio de branding con el objetivo de ayudar a emprendedores a darle vida a sus marcas a través del diseño. Fundada por un equipo diverso de profesionales creativos. Mostay comenzó su viaje en Venezuela, destacando por su compromiso con la calidad, la innovación y una atención al detalle.<br><br>En 2016, se establece a la Ciudad de México en busca de nuevos mercados, lo que significó una reinvención de la agencia, adaptándose a nuevas culturas y entornos de negocios.<br><br>En 2023, abrimos un nuevo capítulo al establecernos en Andalucía, España. Con un enfoque renovado y con más experiencia, con el firme objetivo de establecernos como un referente del diseño de marcas en Andalucía.</p>
              <h3>Enfocados en el crecimiento de nuestros clientes</h3>
-             <p>Nuestra misión es y seguirá siendo impulsar el crecimiento de nuestros clientes a través de un diseño innovador y estratégico, conectando emprendimientos con su audiencia ideal. Creando nichos donde las marcas se conviertan en símbolos significativos para sus audiencias, promoviendo un sentido de pertenencia y comunidad.</p>
+             <p>Nuestra misión es y seguirá siendo impulsar el crecimiento de nuestros clientes a través de un diseño innovador y estratégico, conectando emprendimientos con su audiencia ideal. Creando nichos donde las marcas se conviertan en símbolos significativos para sus consumidores, promoviendo un sentido de pertenencia y comunidad.</p>
              <h3>La diferencia está en los detalles</h3>
-             <p>Los valores de Mostay incluyen la calidad sobre la cantidad, la innovación constante, la personalización, y una atención meticulosa al detalle. Estos valores guían todas las decisiones estratégicas y tácticas de la agencia, asegurando que cada proyecto no solo cumpla, sino que supere las expectativas de nuestros clientes.<br><br>
-             Somos una agencia con experiencia global con el pulso en lo local, capaz de adaptarse a diversos entornos y culturas. Con una historia de resiliencia y crecimiento, Mostay sigue comprometida con la excelencia en el diseño y la creación de marcas poderosas que conectan profundamente con sus audiencias. La combinación de experiencia internacional y un enfoque personalizado nos permite ofrecer soluciones únicas y efectivas en cualquier mercado.</p>
+             <p>Está en nuestro ADN anteponer la calidad a la cantidad, perseguir la innovación constante y una atención meticulosa al detalle. Estos valores guían todas las decisiones estratégicas y tácticas del estudio, asegurando que cada proyecto no solo cumpla, sino que supere las expectativas de nuestros clientes.<br><br>
+             Mostay es un estudio de diseño con un espiritu artesanal y experiencia global, capaz de adaptarse a diversos entornos y culturas. Con una historia de resiliencia y crecimiento, el diseño nos ha dado la oportunidad de construir proyectos que nos obligan seguir explorando nuevos límites, tu proyecto no será la excepción.</p>
            </div>
          </div>
        </div>
@@ -69,81 +68,105 @@ $email = get_field('email', $postid);
 </article>
 <?php endif; ?>
 
+<section class="process">
+  <div class="frase">
+    <h2><strong>Creemos que el diseño debe ser funcional y estético,</strong> tener un propósito claro y estar al servicio de las necesidades tanto de nuestros clientes como de sus consumidores.</h2>
+    <p class="p__bigger">Somos creyentes de la estrategia está al servicio del diseño.</p>
+  </div>
+  <ol class="pasos">
+    <li>
+      <article>
+        <div>
+          <span>1</span>
+        </div>
+        <div>
+          <header>
+            <h3>Descubrimiento</h3>
+          </header>
+          <p><strong>Comenzamos escuchándote. Profundizamos en tu historia, tu mercado y tus objetivos para encontrar la chispa que hace única a tu empresa.</strong> Esa visión compartida se convierte en la brújula que guiará todo el proyecto.</p> 
+        </div>
+      </article>
+    </li>
+    <li>
+      <article>
+        <div>
+          <span>2</span>
+        </div>
+        <div>
+          <header>
+            <h3>Estrategia</h3>
+          </header>
+          <p><strong>Con los hallazgos sobre la mesa destilamos el ADN de tu marca: propósito, personalidad y posicionamiento.</strong> Definimos la narrativa y el plan de acción para que cada decisión futura hable el mismo idioma y conecte con tu audiencia ideal.</p> 
+        </div>
+      </article>
+    </li>
+    <li>
+      <article>
+        <div>
+          <span>3</span>
+        </div>
+        <div>
+          <header>
+            <h3>Diseño</h3>
+          </header>
+          <p><strong>Transformamos la estrategia en forma y color.</strong> Exploramos conceptos, refinamos detalles y entregamos un sistema visual coherente — logotipo, estilo gráfico y guías de uso — listo para crecer contigo y mantener la consistencia en cada punto de contacto.</p> 
+        </div>
+      </article>
+    </li>
+  </ol>
+  <div class="frase">
+    <p class="p__bigger"><strong>Para conocer más sobre nuestro proceso,</strong> visita nuestra página de <a href="<?php echo esc_url(get_page_link(71));?>">Creación de Marcas</a>.</p>
+  </div>
+</section>
+
 <section class="team-wrapper">
   <div class="container team">
     <div class="team__info">
-      <div></div>
       <div>
-        <h2>Más de 40 años de experiencia combinada.</h2>
-        <p>Nuestra experiencia nos permite abordar cada proyecto con un enfoque estratégico. Cada miembro del equipo aporta una visión única, pero compartimos el mismo objetivo: dar vida a las marcas de nuestros clientes de manera que conecten profundamente con su audiencia.</p>
+        <?php $video_id = 470; $video_url = wp_get_attachment_url( $video_id ); $mime = get_post_mime_type( $video_id ); ?> 
+          <video autoplay loop muted playsinline poster="<?php echo esc_url( get_template_directory_uri() . '/img/poster.jpg' ); ?>"> <source src="<?php echo esc_url( $video_url ); ?>" type="<?php echo esc_attr( $mime ); ?>"> Tu navegador no soporta la etiqueta de vídeo. </video>
       </div>
-    </div>
-    <div class="team__fotos">
-      <ul>
-        <li>
-          <article>
-            <div class="perfil">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/Foto-Luis.jpg" alt="Luis Montiel">
-            </div>
-            <div class="perfil-texto">
-              <header>
-                <h3>Luis Montiel</h3>
-                <p>Diseñador Senior</p>
-              </header>
-              <p>Diseño para Medios Digitales, Web, UX/UI Design.</p>
-              <!-- <ul>
-                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
-                <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i><span>X (Twitter)</span></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-              </ul> -->
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <div class="perfil">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/Foto-Angel.jpg" alt="Luis Montiel">
-            </div>
-            <div class="perfil-texto">
-              <header>
-                <h3>Ángel Montiel</h3>
-                <p>Director de Arte</p>
-              </header>
-              <p>Branding, Marketing Digital y Motion graphics.</p>
-              <ul>
-                <li><a href="https://www.instagram.com/esangelmontiel" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                <!-- <li><a href="#" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li> -->
-                <li><a href="https://x.com/esangelmontiel" target="_blank"><i class="fa-brands fa-x-twitter"></i><span>X (Twitter)</span></a></li>
-                <li><a href="https://www.linkedin.com/in/angelmontiel/#" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <div class="perfil">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/Foto-Daniken.jpg" alt="Luis Montiel">
-            </div>
-            <div class="perfil-texto">
-              <header>
-                <h3>Daniken Espinoza</h3>
-                <p>Senior Web Developer</p>
-              </header>
-              <p>Web and App development.</p>
-              <ul>
-                <!-- <li><a href="#" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
-                <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i><span>X (Twitter)</span></a></li> -->
-                <li><a href="https://www.linkedin.com/in/daniken-espinoza/" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        
-        <li>
-        </li>
-      </ul>
+      <div>
+        <h2>Más de 18 años de Experiencia en Branding.</h2>
+        <p class="p__big"><strong>Mi nombre es Ángel Montiel y soy el Director de Arte detrás de Mostay, Ya con casi 2 décadas de dedicarme a esto, descubrí que detrás de cada logo exitoso existe una historia de estrategia, storytelling y creatividad</strong>. Como director de este estudio, he desarrollado proyectos para Venezuela, Estados Unidos, Colombia, Francia, Italia, México y España, siempre con la misma obsesión: crear identidades auténticas que impulsen negocios reales.</p>
+        <h3>Red de Especialistas</h3>
+        <p>Cada proyecto que llega a Mostay cuenta con el respaldo de una red de profesionales con mucha experiencia—diseñadores, desarrolladores y estrategas—que se suman de acuerdo al alcance del proyecto. Cada colaborador suma por su dominio específico y por compartir nuestro compromiso con la excelencia. Así, formamos equipos a medida que amplían la visión del estudio y garantizan resultados de alto impacto sin sacrificar la cercanía.</p>
+        <div class="team__fotos">
+          <ul>
+            <li>
+              <article>
+                <div class="perfil">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/Foto-Luis.jpg" alt="Luis Montiel">
+                </div>
+                <div class="perfil-texto">
+                  <header>
+                    <h3>Luis Montiel</h3>
+                    <p>Diseñador Senior</p>
+                  </header>
+                  <p>Diseño para Medios Digitales, Web, UX/UI Design.</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article>
+                <div class="perfil">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/Foto-Daniken.jpg" alt="Luis Montiel">
+                </div>
+                <div class="perfil-texto">
+                  <header>
+                    <h3>Daniken Espinoza</h3>
+                    <p>Senior Web Developer</p>
+                  </header>
+                  <p>Web and App development.</p>
+                </div>
+              </article>
+            </li>
+            
+            <li>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section> 

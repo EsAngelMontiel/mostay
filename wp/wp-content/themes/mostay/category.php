@@ -82,7 +82,7 @@ get_header();
     ?>
         <div class="load-more-wrapper" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
             <button id="load-more-button"
-                    class="mostay-button"
+                    class="btn"
                     data-paged="<?php echo esc_attr( $paged ); ?>"
                     data-max-pages="<?php echo esc_attr( $main_query->max_num_pages ); ?>"
                     data-post-type="<?php echo esc_attr( $query_post_type ); ?>"

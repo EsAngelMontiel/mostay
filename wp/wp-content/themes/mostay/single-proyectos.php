@@ -67,47 +67,13 @@ $behance = get_field('behance', $post_id);
             
           </div>
           <div class="right-column">
-            <?php echo wpautop(get_the_content()); ?>
+            <?php the_field('introduccion'); ?>
           </div>
         </div>
       </div>
 
       <div class="galeria">
-
-      <?php for ($i = 1; $i <= 10; $i++) : ?>
-    <?php 
-    $grupo = get_field('imagenes_' . $i, $post_id);
-    if ($grupo) {
-        $imagen = isset($grupo['img_' . $i]) ? $grupo['img_' . $i] : null;
-        $video = isset($grupo['vid_' . $i]) ? $grupo['vid_' . $i] : null;
-        $tiene_video = is_array($video) && !empty($video['url']);
-        $tiene_imagen = is_array($imagen) && !empty($imagen['sizes']['large']);
-
-        if ($tiene_video || $tiene_imagen): ?>
-            <div class="media">
-                <?php if ($tiene_video): ?>
-                    <video autoplay loop muted playsinline>
-                        <source src="<?php echo esc_url($video['url']); ?>" type="<?php echo esc_attr($video['mime_type']); ?>">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                <?php elseif ($tiene_imagen): ?>
-                    <img 
-                        src="<?php echo esc_url($imagen['sizes']['large']); ?>" 
-                        srcset="
-                            <?php echo esc_url($imagen['sizes']['medium']); ?> 768w, 
-                            <?php echo esc_url($imagen['sizes']['large']); ?> 1024w, 
-                            <?php echo isset($imagen['sizes']['xlarge']) ? esc_url($imagen['sizes']['xlarge']) . ' 1920w' : ''; ?>" 
-                        sizes="(max-width: 768px) 768w, 
-                               (max-width: 1024px) 1024w, 
-                               1920w"
-                        alt="<?php echo esc_attr($imagen['alt']); ?>">
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-    <?php } ?>
-<?php endfor; ?>
-
-
+        <?php the_content(); ?>
       </div>
 
     </article>
