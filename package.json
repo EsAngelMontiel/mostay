@@ -14,12 +14,30 @@
     "js:watch": "chokidar 'components/scripts/script.js' -c 'npm run js:build'",
     "build": "npm run sass:build && npm run js:build",
     "watch": "concurrently \"npm run sass:watch\" \"npm run js:watch\"",
-    "dev": "npm run watch"
+    "dev": "npm run watch",
+    "lint": "stylelint 'components/sass/**/*.scss'",
+    "lint:fix": "stylelint 'components/sass/**/*.scss' --fix",
+    "test:visual": "node scripts/visual-test.js",
+    "test:accessibility": "pa11y-ci",
+    "test:lighthouse": "lighthouse http://localhost/Mostay/wp/ --output html --output-path ./reports/lighthouse --config-path ./lighthouse.config.js",
+    "test:all": "npm run lint && npm run test:visual && npm run test:accessibility && npm run test:lighthouse",
+    "test:report": "echo 'Generando reportes...' && open ./reports",
+    "clean": "rm -rf screenshots/ reports/ wp/wp-content/themes/mostay/css/*.min.css wp/wp-content/themes/mostay/css/*.map wp/wp-content/themes/mostay/js/*.min.js",
+    "build:prod": "npm run lint && npm run build",
+    "build:staging": "npm run build",
+    "deploy": "npm run test:all && npm run build:prod"
   },
   "devDependencies": {
-    "sass": "^1.69.0",
-    "terser": "^5.37.0",
     "chokidar-cli": "^3.0.0",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "lighthouse": "^12.8.1",
+    "pa11y": "^9.0.0",
+    "postcss-scss": "^4.0.9",
+    "puppeteer": "^24.16.1",
+    "sass": "^1.69.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-order": "^6.0.4",
+    "terser": "^5.37.0"
   }
 }

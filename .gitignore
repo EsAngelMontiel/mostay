@@ -92,6 +92,12 @@ Desktop.ini
 *.swp
 *.swo
 
+# Testing and reports
+screenshots/
+reports/
+coverage/
+.nyc_output/
+
 # Logs
 logs
 *.log
@@ -99,10 +105,19 @@ logs
 # Sass cache
 .sass-cache/
 
-# Compiled CSS and JS (opcional - puedes decidir si incluirlos o no)
-# wp/wp-content/themes/mostay/css/main.min.css
-# wp/wp-content/themes/mostay/css/main.min.css.map
-# wp/wp-content/themes/mostay/js/script-bundle.min.js
+# Compiled CSS and JS
+wp/wp-content/themes/mostay/css/main.min.css
+wp/wp-content/themes/mostay/css/main.min.css.map
+wp/wp-content/themes/mostay/js/script-bundle.min.js
+wp/wp-content/themes/mostay/css/preloader.css
+wp/wp-content/themes/mostay/css/preloader.css.map
+
+# Build artifacts
+dist/
+build/
+*.min.js
+*.min.css
+*.map
 
 # WordPress backups
 wp/wp-content/ai1wm-backups/

@@ -1,0 +1,43 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 2000,
+    "standard": "WCAG2AA",
+    "hideElements": [
+      "#wpadminbar",
+      ".screen-reader-text",
+      ".sr-only"
+    ],
+    "ignore": [
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3",
+      "WCAG2AA.Principle2.Guideline2_4.2_4_2"
+    ]
+  },
+  "urls": [
+    {
+      "url": "http://localhost/Mostay/wp/",
+      "title": "Homepage - Mostay",
+      "description": "Página principal del sitio"
+    },
+    {
+      "url": "http://localhost/Mostay/wp/about/",
+      "title": "About - Mostay",
+      "description": "Página sobre nosotros"
+    },
+    {
+      "url": "http://localhost/Mostay/wp/proyectos/",
+      "title": "Proyectos - Mostay",
+      "description": "Portafolio de proyectos"
+    },
+    {
+      "url": "http://localhost/Mostay/wp/blog/",
+      "title": "Blog - Mostay",
+      "description": "Blog y artículos"
+    },
+    {
+      "url": "http://localhost/Mostay/wp/contacto/",
+      "title": "Contacto - Mostay",
+      "description": "Página de contacto"
+    }
+  ]
+}
