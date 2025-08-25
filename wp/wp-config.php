@@ -86,8 +86,8 @@ define( 'SCRIPT_DEBUG', true );
 // Deshabilitar edición de archivos desde el admin
 define( 'DISALLOW_FILE_EDIT', true );
 
-// Forzar HTTPS en admin
-define( 'FORCE_SSL_ADMIN', true );
+// Forzar HTTPS en admin (deshabilitado para desarrollo local)
+define( 'FORCE_SSL_ADMIN', false );
 
 // Limitar revisiones de posts
 define( 'WP_POST_REVISIONS', 5 );

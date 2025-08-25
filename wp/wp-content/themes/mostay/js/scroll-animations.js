@@ -71,6 +71,11 @@ class ScrollAnimations {
         
         // Manejar redimensionamiento de ventana
         window.addEventListener('resize', () => this.handleResize());
+        
+        // Manejar cambio de orientación en móviles
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => this.handleResize(), 100);
+        });
     }
 
     observeElements() {
@@ -177,9 +182,18 @@ class ScrollAnimations {
         const fullHeight = tempElement.offsetHeight;
         document.body.removeChild(tempElement);
         
-        // Establecer el ancho fijo del elemento original
-        element.style.width = fullWidth + 'px';
-        element.style.height = fullHeight + 'px';
+        // Establecer el ancho del elemento original (responsive)
+        if (window.innerWidth <= 700) {
+            // En móvil, usar 90% del ancho del contenedor para dejar aire
+            element.style.width = '90%';
+            element.style.maxWidth = '90%';
+        } else {
+            // En desktop, usar el ancho calculado
+            element.style.width = fullWidth + 'px';
+        }
+        // NO fijar altura - dejar que se ajuste al contenido naturalmente
+        // element.style.height = fullHeight + 'px'; // ❌ Comentado para permitir altura natural
+        // Esto permite que el h1 mantenga su margin-bottom natural y empuje el texto hacia abajo
         element.style.overflow = 'hidden';
         element.style.whiteSpace = 'nowrap';
         
@@ -215,6 +229,38 @@ class ScrollAnimations {
         this.observer.disconnect();
         this.animatedElements.clear();
         this.observeElements();
+        
+        // Ajustar elementos typing existentes al nuevo tamaño de ventana
+        this.adjustTypingElements();
+    }
+    
+    adjustTypingElements() {
+        // Ajustar elementos typing existentes al nuevo tamaño de ventana
+        document.querySelectorAll('[data-animate="typing"]').forEach(el => {
+            if (el.style.width && el.style.width !== '90%') {
+                if (window.innerWidth <= 700) {
+                    el.style.width = '90%';
+                    el.style.maxWidth = '90%';
+                } else {
+                    // Recalcular el ancho en desktop
+                    const text = el.getAttribute('data-original-text') || el.textContent;
+                    const tempElement = document.createElement(el.tagName);
+                    tempElement.style.position = 'absolute';
+                    tempElement.style.visibility = 'hidden';
+                    tempElement.style.width = 'auto';
+                    tempElement.style.height = 'auto';
+                    tempElement.style.whiteSpace = 'nowrap';
+                    tempElement.textContent = text;
+                    tempElement.className = el.className;
+                    
+                    document.body.appendChild(tempElement);
+                    const fullWidth = tempElement.offsetWidth;
+                    document.body.removeChild(tempElement);
+                    
+                    el.style.width = fullWidth + 'px';
+                }
+            }
+        });
     }
 
     // Método público para animar elementos manualmente

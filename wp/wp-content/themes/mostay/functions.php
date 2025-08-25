@@ -337,6 +337,10 @@ function mostay_enqueue_header_assets()
         // Enqueue the new unified and minified script bundle
         wp_register_script('mostay-bundle', get_template_directory_uri() . '/js/script-bundle.min.js', array('jQuery'), mostay_asset_version('js/script-bundle.min.js'), true);
         wp_enqueue_script('mostay-bundle');
+        
+        // Enqueue scroll animations script
+        wp_register_script('mostay-scroll-animations', get_template_directory_uri() . '/js/scroll-animations.js', array('jQuery'), mostay_asset_version('js/scroll-animations.js'), true);
+        wp_enqueue_script('mostay-scroll-animations');
     }
 }
 
@@ -352,7 +356,8 @@ function mostay_add_defer_attribute($tag, $handle) {
         'jQuery',
         'fontawesome',
         'slick',
-        'mostay-bundle'
+        'mostay-bundle',
+        'mostay-scroll-animations'
     );
 
     if (in_array($handle, $scripts_to_defer)) {

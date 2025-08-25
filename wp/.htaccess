@@ -1,7 +1,8 @@
 
 # BEGIN WordPress
-# The following lines are needed for the "pretty permalink" feature to work.  Please note that using multiple mod_rewrite rules in the same .htaccess file can cause server errors if not managed correctly. Please proceed with care and make sure to backup your existing .htaccess file before making changes.
-
+# Las directivas (líneas) entre «BEGIN WordPress» y «END WordPress» son
+# generadas dinámicamente y solo deberían ser modificadas mediante filtros de WordPress.
+# Cualquier cambio en las directivas que hay entre esos marcadores serán sobrescritas.
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
