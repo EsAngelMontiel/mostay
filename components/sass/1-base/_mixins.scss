@@ -10,18 +10,17 @@ $breakpoints-up: (
     @media (max-width: map-get($breakpoints-up, $size)) {
       @content;
     }
-};
+}
 
 // ********** Flex ********** //
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: null) {
   display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
+  flex-flow: $direction $wrap;
   align-items: $align;
-  flex-wrap: $wrap;
+  justify-content: $justify;
   @if $gap != null {
       gap: $gap;
   }
-};
+}
 
 

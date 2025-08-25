@@ -1,36 +1,38 @@
 /* ******************************************************** */
 /* ************************ HOME ************************ */
 /* ******************************************************** */
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .hero {
   position: relative;
   width: 100% ;
-  @include m.flex(column, center, center, nowrap);
-  background-color: var(--color-backgrounds) ;
   padding-bottom: var(--spacing-md);
+  background-color: var(--color-backgrounds) ;
+  @include m.flex(column, center, center, nowrap);
 
   &__video {
-    width: calc(100% - calc(var(--spacing-lg)*2)) ;
-    height: 70vh; 
     position: relative ;
     overflow: hidden;
-    background-color: gray ;
+    width: calc(100% - calc(var(--spacing-lg)*2)) ;
+    height: 70vh;
     border-radius: var(--radius-md);
+    background-color: gray ;
+
     video {
-      width: 100% ; height: 100% ;
       position: absolute;
       top: 0;
       left: 0;
-      object-fit: cover;
       z-index: 1;
+      width: 100% ;
+ height: 100% ;
+      object-fit: cover;
     }
     @include m.breakpoint(lg) {
       width: calc(100% - calc(var(--spacing-md)*2)) ;
     }
     @include m.breakpoint(md) {
-      height: 40vh; 
       width: calc(100% - calc(var(--spacing-sm)*2)) ;
+      height: 40vh;
     }
   }
 
@@ -38,19 +40,23 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
   }
+
   &__text {
     padding: calc(var(--spacing-lg) + var(--spacing-md)) calc(var(--spacing-lg) + var(--spacing-md)) var(--pading-top-lg);
+
     h1 {
       width: 50% ;
       margin-bottom: 4rem ;
     }
+
     h2 {
       width: 75% ;
+
       > strong {
         color: var(--green);
       }
@@ -60,16 +66,19 @@
         width: 60% ;
         margin-bottom: 3rem ;
       }
+
       h2 {
         width: 80% ;
       }
     }
     @include m.breakpoint(sm) {
       padding: var(--spacing-md);
+
       h1 {
         width: 75% ;
         margin-bottom: 2rem ;
       }
+
       h2 {
         width: 90% ;
       }
@@ -78,15 +87,15 @@
 
   &__content {
     position: relative;
-    z-index: 3; 
-    max-width: 50rem ; 
+    z-index: 3;
+    max-width: 50rem ;
     padding: 0 1.25rem ;
     color: var(--white);
     text-align: center;
 
     h1 {
-      font-size: 3rem; /* Ajusta el tamaño del título */
       margin-bottom: 1rem;
+      font-size: 3rem; /* Ajusta el tamaño del título */
     }
 
     p {
@@ -98,90 +107,90 @@
 // Estilos para la sección de misión
 .mision-section {
   padding: var(--spacing-lg) var(--spacing-md);
-  text-align: center;
   background-color: var(--white);
-  
+  text-align: center;
+
   // Asegurar que no se salga del viewport en móvil
   @include m.breakpoint(sm) {
-    padding: var(--spacing-md) var(--spacing-sm);
     overflow: hidden;
     max-width: 100%;
+    padding: var(--spacing-md) var(--spacing-sm);
   }
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    
+
     @include m.breakpoint(lg) {
+      overflow: hidden;
+      max-width: 100%;
       padding: 0 calc(var(--spacing-md) / 2);
-      max-width: 100%;
-      overflow: hidden;
     }
-    
+
     @include m.breakpoint(md) {
-      padding: 0 var(--spacing-sm);
-      max-width: 100%;
       overflow: hidden;
+      max-width: 100%;
+      padding: 0 var(--spacing-sm);
     }
-    
+
     @include m.breakpoint(sm) {
-      padding: 0 var(--spacing-sm);
-      max-width: 100%;
       overflow: hidden;
+      max-width: 100%;
+      padding: 0 var(--spacing-sm);
     }
   }
-  
+
   h1 {
+    margin-bottom: var(--spacing-md);
     color: var(--red);
     font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: var(--spacing-md);
+    font-weight: 700;
     line-height: 1.2;
-    
+
     @include m.breakpoint(lg) {
+      margin-bottom: calc(var(--spacing-md) / 2);
       font-size: 2.2rem;
-      margin-bottom: calc(var(--spacing-md) / 2);
     }
-    
+
     @include m.breakpoint(md) {
-      font-size: 2rem;
       margin-bottom: calc(var(--spacing-md) / 2);
+      font-size: 2rem;
     }
-    
+
     @include m.breakpoint(sm) {
-      font-size: 1.8rem;
       margin-bottom: calc(var(--spacing-md) / 2);
       padding: 0 var(--spacing-sm);
+      font-size: 1.8rem;
     }
   }
-  
+
   p {
+    max-width: 800px;
+    margin: 0 auto;
     color: var(--dark);
     font-size: 1.1rem;
     line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    
+
     @include m.breakpoint(lg) {
-      font-size: 1rem;
       max-width: 700px;
-    }
-    
-    @include m.breakpoint(md) {
       font-size: 1rem;
-      max-width: 600px;
     }
-    
+
+    @include m.breakpoint(md) {
+      max-width: 600px;
+      font-size: 1rem;
+    }
+
     @include m.breakpoint(sm) {
-      font-size: 0.95rem;
       max-width: 100%;
       padding: 0 var(--spacing-sm);
+      font-size: 0.95rem;
     }
-    
+
     strong {
       color: var(--teal);
-      font-weight: bold;
+      font-weight: 700;
     }
   }
 }
@@ -190,143 +199,143 @@
 .proyectos-section {
   padding: var(--spacing-lg) 0;
   background-color: var(--light);
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    
+
     @include m.breakpoint(lg) {
-      padding: 0 calc(var(--spacing-md) / 2);
       max-width: 100%;
+      padding: 0 calc(var(--spacing-md) / 2);
     }
-    
+
     @include m.breakpoint(md) {
       padding: 0 var(--spacing-sm);
     }
-    
+
     @include m.breakpoint(sm) {
       padding: 0 calc(var(--spacing-sm) / 2);
     }
   }
-  
+
   .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
-    
+
     @include m.breakpoint(lg) {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-md) / 2);
     }
-    
+
     @include m.breakpoint(md) {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: calc(var(--spacing-md) / 2);
     }
-    
+
     @include m.breakpoint(sm) {
       grid-template-columns: 1fr;
       gap: var(--spacing-sm);
     }
   }
-  
+
   .proyecto-card {
-    background: var(--white);
-    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     }
-    
+
     img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
-    
+
     .proyecto-content {
       padding: var(--spacing-md);
-      
+
       @include m.breakpoint(lg) {
         padding: calc(var(--spacing-md) / 2);
       }
-      
+
       @include m.breakpoint(md) {
         padding: calc(var(--spacing-md) / 2);
       }
-      
+
       @include m.breakpoint(sm) {
         padding: var(--spacing-sm);
       }
     }
-    
+
     h2 {
+      margin-bottom: 0.5rem;
       color: var(--teal);
       font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     h1 {
+      margin-bottom: var(--spacing-sm);
       color: var(--dark);
       font-size: 1.3rem;
-      font-weight: bold;
-      margin-bottom: var(--spacing-sm);
+      font-weight: 700;
       line-height: 1.3;
-      
+
       @include m.breakpoint(lg) {
         font-size: 1.2rem;
       }
-      
+
       @include m.breakpoint(md) {
         font-size: 1.1rem;
       }
-      
+
       @include m.breakpoint(sm) {
         font-size: 1.1rem;
       }
     }
-    
+
     p {
+      margin-bottom: var(--spacing-sm);
       color: var(--gray);
       font-size: 0.9rem;
       line-height: 1.5;
-      margin-bottom: var(--spacing-sm);
-      
+
       @include m.breakpoint(lg) {
         font-size: 0.85rem;
       }
-      
+
       @include m.breakpoint(md) {
         font-size: 0.85rem;
       }
-      
+
       @include m.breakpoint(sm) {
         font-size: 0.85rem;
       }
     }
-    
+
     a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
       transition: color 0.3s ease;
-      
+      color: var(--blue);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      gap: 0.5rem;
+
       &:hover {
         color: var(--dark);
       }
-      
+
       i {
         font-size: 0.8rem;
       }
@@ -336,48 +345,48 @@
 
 // Estilos para el botón de "Ver Todos"
 .btn-container {
-  text-align: center;
   margin-top: var(--spacing-lg);
-  
+  text-align: center;
+
   @include m.breakpoint(lg) {
     margin-top: calc(var(--spacing-lg) / 2);
   }
-  
+
   @include m.breakpoint(md) {
     margin-top: calc(var(--spacing-lg) / 2);
   }
-  
+
   @include m.breakpoint(sm) {
     margin-top: var(--spacing-md);
   }
-  
+
   .btn {
     display: inline-block;
+    transition: all 0.3s ease;
     padding: 1rem 2rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
     background-color: var(--white);
     color: var(--dark);
+    font-weight: 700;
     text-decoration: none;
-    border-radius: var(--radius-md);
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    
+
     &:hover {
+      border-color: var(--dark);
       background-color: var(--dark);
       color: var(--white);
-      border-color: var(--dark);
     }
-    
+
     @include m.breakpoint(lg) {
       padding: 0.8rem 1.5rem;
       font-size: 0.9rem;
     }
-    
+
     @include m.breakpoint(md) {
       padding: 0.8rem 1.5rem;
       font-size: 0.9rem;
     }
-    
+
     @include m.breakpoint(sm) {
       padding: 0.7rem 1.2rem;
       font-size: 0.85rem;

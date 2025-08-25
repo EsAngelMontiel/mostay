@@ -1,101 +1,113 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .process {
-    background-color: var(--yellow);
-    padding: 8rem var(--pading-top-lg) 8rem ;
     overflow: hidden ;
+    padding: 8rem var(--pading-top-lg) 8rem ;
+    background-color: var(--yellow);
     @include m.breakpoint(lg) {
         padding: 4rem 0 ;
     }
     @include m.breakpoint(md) {
         padding: 4rem 0 1rem ;
     }
+
     .frase {
         padding: 0 22% ;
         @include m.breakpoint(lg) {
             padding: 0 10% ;
         }
+
         h2 {
             strong {
                 color: var(--green);
             }
         }
     }
+
     .pasos {
-        width: 100% ;
-        @include m.flex(row, space-evenly, flex-start, nowrap, var(--spacing-md));
-        padding: 8rem var(--spacing-md) 4rem ;
         align-items: stretch;
+        width: 100% ;
+        padding: 8rem var(--spacing-md) 4rem ;
+        @include m.flex(row, space-evenly, flex-start, nowrap, var(--spacing-md));
         @include m.breakpoint(lg) {
             padding: 4rem var(--spacing-md) 4rem ;
             gap: var(--spacing-sm);
         }
         @include m.breakpoint(md) {
-            padding: 4rem 8% ;
             flex-direction: column ;
+            padding: 4rem 8% ;
         }
         @include m.breakpoint(sm) {
             padding: 2rem ;
         }
+
         li {
-            background-color: var(--white);
-            border-radius: var(--radius-md);
-            box-shadow: 0 5px 8px rgba(0, 0, 0, .15);
             flex: 1 ;
+            border-radius: var(--radius-md);
+            background-color: var(--white);
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
             @include m.breakpoint(md) {
                 margin-bottom: 2rem ;
             }
+
             article {
                 p {
                     margin-bottom: 1rem ;
                 }
-                padding: 3rem 3rem 2rem ;
                 position: relative ;
+                padding: 3rem 3rem 2rem ;
                 @include m.breakpoint(lg) {
                     padding: 2rem 1.5rem 1.5rem ;
                 }
                 @include m.breakpoint(md) {
                     padding: 2rem ;
                 }
+
                 div:first-child {
-                    width: 100% ;
                     position: absolute ;
-                    top: -2rem ; left: 0 ;
+                    top: -2rem ;
+ left: 0 ;
+                    width: 100% ;
                     @include m.flex(row, center, center, nowrap);
+
                     span {
-                        width: 4rem ; height: 4rem ;
-                        background-color: var(--darkgray);
-                        color: var(--white);
-                        border-radius: 4rem ;
                         display: inline-block ;
-                        @include m.flex(row, center, center, nowrap);
-                        font-size: 1.2rem ;
+                        width: 4rem ;
+ height: 4rem ;
+                        border-radius: 4rem ;
+                        background-color: var(--darkgray);
+                        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+                        color: var(--white);
                         font-family: var(--main-font);
-                        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-                        
+                        font-size: 1.2rem ;
+                        @include m.flex(row, center, center, nowrap);
+
                     }
                     @include m.breakpoint(lg) {
                         span {
-                            width: 3rem ; height: 3rem ;
+                            width: 3rem ;
+ height: 3rem ;
                             border-radius: 3rem ;
                         }
                         top: -1.5rem ;
                     }
                 }
+
                 div:last-child {
                     header {
                         h3 {
+                            color: var(--green);
                             font-family: var(--main-font);
                             font-size: 2rem ;
-                            line-height: 2.1rem ;
-                            color: var(--green);
                             font-weight: 600 ;
+                            line-height: 2.1rem ;
                             @include m.breakpoint(lg) {
                                 font-size: 1.5rem ;
                                 line-height: 1.6rem ;
                             }
                         }
                     }
+
                     p {
                         strong {
                             font-weight: 500 ;

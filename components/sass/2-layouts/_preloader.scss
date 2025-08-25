@@ -16,15 +16,15 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--preloader-transition);
+    opacity: 1;
     width: 100%;
     height: 100%;
     background: var(--preloader-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: var(--preloader-transition);
 }
 
 /* Contenido del preloader */
@@ -47,7 +47,7 @@
 
 .progress-ring {
     position: relative;
-    width: 250px; 
+    width: 250px;
     height: 250px;
 }
 
@@ -64,25 +64,25 @@
 }
 
 .progress-ring-fill {
+    transition: stroke-dashoffset 0.3s ease;
     fill: none;
     stroke: var(--preloader-primary);
     stroke-width: 6;
     stroke-linecap: round;
     stroke-dasharray: 407.15; // Circumference for r=64.8 (20% larger)
     stroke-dashoffset: 407.15;
-    transition: stroke-dashoffset 0.3s ease;
 }
 
 .logo-svg-container {
     position: absolute;
     top: 50%;
     left: 52%;
-    transform: translate(-50%, -50%);
-    width: 140px;
-    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
 }
 
 .logo-svg {
@@ -93,17 +93,17 @@
 
 /* Texto del preloader */
 .progress-text {
-    font-family: var(--text-font);
-    font-size: 1rem ;
-    color: var(--preloader-primary);
-    font-weight: 400;
-    margin: 0;
+    display: inline-block;
     transition: var(--preloader-transition);
-    text-align: center;
-    background: var(--preloader-rail);
+    margin: 0;
     padding: 12px 20px;
     border-radius: 25px;
-    display: inline-block;
+    background: var(--preloader-rail);
+    color: var(--preloader-primary);
+    font-family: var(--text-font);
+    font-size: 1rem ;
+    font-weight: 400;
+    text-align: center;
 }
 
 
@@ -113,6 +113,7 @@
     0% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -126,34 +127,34 @@
                         width: 156px; // 30% larger than 120px
                         height: 156px;
                     }
-                    
+
                     .logo-svg-container {
+                        left: 54.6%; // 5% more to the right (52% + 2.6%)
                         width: 82px; // 10% smaller than 91px
                         height: 82px;
-                        left: 54.6%; // 5% more to the right (52% + 2.6%)
                     }
-                    
+
                     .progress-text {
-                        font-size: 14px; // Mantener tamaño del texto
                         padding: 10px 16px;
+                        font-size: 14px; // Mantener tamaño del texto
                     }
                 }
-                
+
                 @media (max-width: 30rem) { // sm: 30rem (480px)
                     .progress-ring {
                         width: 125px; // 30% larger than 96px
                         height: 125px;
                     }
-                    
+
                     .logo-svg-container {
+                        left: 54.6%; // 5% more to the right (52% + 2.6%)
                         width: 70px; // 10% smaller than 78px
                         height: 70px;
-                        left: 54.6%; // 5% more to the right (52% + 2.6%)
                     }
-                    
+
                     .progress-text {
-                        font-size: 13px; // Mantener tamaño del texto
                         padding: 8px 14px;
+                        font-size: 13px; // Mantener tamaño del texto
                     }
                 }
 
@@ -178,19 +179,19 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
     width: 100%;
     height: 100%;
     background-color: var(--offwhite);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    
+
     .loader {
         img {
-            width: 6.25rem;
             animation: fadeIn 1.5s infinite alternate;
+            width: 6.25rem;
         }
     }
 }
@@ -199,6 +200,7 @@
     0% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -206,22 +208,23 @@
 
 /* Load More Preloader - Para AJAX */
 .mostay-preloader {
+    display: none;
+    animation: spin 1s linear infinite;
     width: 50px;
     height: 50px;
+    margin: 20px auto;
     border: 5px solid rgba(255, 255, 255, 0.3);
     border-top: 5px solid var(--color-primary, #007bff);
     border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 20px auto;
-    display: none;
 }
 
 @keyframes spin {
-    0% { 
-        transform: rotate(0deg); 
+    0% {
+        transform: rotate(0deg);
     }
-    100% { 
-        transform: rotate(360deg); 
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 

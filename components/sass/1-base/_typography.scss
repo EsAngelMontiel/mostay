@@ -1,26 +1,28 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 p {
-    font-family: var(--text-font);
     color: var(--black);
+    font-family: var(--text-font);
     font-size: clamp(1rem, 1.6vw, 1.2rem);
-    line-height: 1.6rem ;
     font-weight: 200 ;
+    line-height: 1.6rem ;
     @include m.breakpoint(lg) {
-        font-size: clamp(.8rem, 1.6vw, 1.2rem);
+        font-size: clamp(0.8rem, 1.6vw, 1.2rem);
         line-height: clamp(1rem, 1.8vw, 1.4rem);
     }
-    
+
 }
+
 .p__big {
-    font-size: clamp(1.3rem, 1.6vw, 1.5rem); ;
-    line-height: 2rem ;
     margin-bottom: 2rem ;
+    font-size: clamp(1.3rem, 1.6vw, 1.5rem);
+    line-height: 2rem ;
 }
+
 .p__bigger {
-    font-size: clamp(1.5rem, 3vw, 2.5rem); ;
-    line-height: clamp(2rem, 3.5vw, 4rem) ;
     margin-bottom: 3rem ;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: clamp(2rem, 3.5vw, 4rem) ;
 }
 
 h1, h2, h3, h4 {
@@ -28,8 +30,8 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: clamp(2rem, 3.5vw, 4rem);
     color: var(--red) ;
+    font-size: clamp(2rem, 3.5vw, 4rem);
     font-weight: 600 ;
     line-height: clamp(2rem, 3.5vw, 4rem) ;
     @include m.breakpoint(lg) {
@@ -41,15 +43,17 @@ h1 {
         line-height: clamp(1.9rem, 3.5vw, 2.4rem);
     }
 }
+
 h1.titulo-oculto {
     display: none ;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 3vw, 3rem);
-    line-height: clamp(2.2rem, 3vw, 3.3rem);
-    font-weight: 400 ;
     color: var(--darkgray) ;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 400 ;
+    line-height: clamp(2.2rem, 3vw, 3.3rem);
+
     strong {
         font-weight: 600 ;
     }
@@ -62,15 +66,17 @@ h2 {
         line-height: clamp(1.6rem, 3.5vw, 2.1rem);
     }
 }
+
 h3 {
     font-size: clamp(1rem, 1.7vw, 1.3rem);
-    line-height: clamp(1.1rem, 1.7vw, 1.4rem);
     font-weight: 600 ;
+    line-height: clamp(1.1rem, 1.7vw, 1.4rem);
     @include m.breakpoint(lg) {
         font-size: clamp(1rem, 1.7vw, 1.2rem);
         line-height: clamp(1.1em, 1.7vw, 1.3rem);
     }
 }
+
 strong {
     font-weight: 600 ;
 }

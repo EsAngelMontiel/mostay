@@ -13,102 +13,102 @@
 
 /* Estados iniciales de las animaciones */
 [data-animate] {
-    opacity: 0;
-    transform: translateY(var(--slide-distance));
     transition: none;
+    transform: translateY(var(--slide-distance));
+    opacity: 0;
 }
 
 /* Fade In Animation */
 [data-animate="fade-in"] {
-    opacity: 0;
-    transform: translateY(20px);
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 .animate-fade-in {
-    opacity: 1 !important;
     transform: translateY(0) !important;
+    opacity: 1 !important;
 }
 
 /* Slide Up Animation */
 [data-animate="slide-up"] {
-    opacity: 0;
-    transform: translateY(40px);
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: translateY(40px);
+    opacity: 0;
 }
 
 .animate-slide-up {
-    opacity: 1 !important;
     transform: translateY(0) !important;
+    opacity: 1 !important;
 }
 
 /* Slide Left Animation */
 [data-animate="slide-left"] {
-    opacity: 0;
-    transform: translateX(40px);
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: translateX(40px);
+    opacity: 0;
 }
 
 .animate-slide-left {
-    opacity: 1 !important;
     transform: translateX(0) !important;
+    opacity: 1 !important;
 }
 
 /* Slide Right Animation */
 [data-animate="slide-right"] {
-    opacity: 0;
-    transform: translateX(-40px);
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: translateX(-40px);
+    opacity: 0;
 }
 
 .animate-slide-right {
-    opacity: 1 !important;
     transform: translateX(0) !important;
+    opacity: 1 !important;
 }
 
 /* Scale In Animation */
 [data-animate="scale-in"] {
-    opacity: 0;
-    transform: scale(var(--scale-factor));
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: scale(var(--scale-factor));
+    opacity: 0;
 }
 
 .animate-scale-in {
-    opacity: 1 !important;
     transform: scale(1) !important;
+    opacity: 1 !important;
 }
 
 /* Stagger Animation para listas */
 [data-animate="stagger"] {
-    opacity: 1;
     transform: none;
+    opacity: 1;
 }
 
 [data-animate="stagger"] [data-stagger-item] {
-    opacity: 0;
-    transform: translateY(20px);
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 [data-animate="stagger"] [data-stagger-item].animate-fade-in {
-    opacity: 1 !important;
     transform: translateY(0) !important;
+    opacity: 1 !important;
 }
 
 /* Typing Animation */
 [data-animate="typing"] {
+    position: relative;
+    display: block;
+    transform: none;
     visibility: hidden;
     opacity: 1;
-    transform: none;
     min-height: 1.2em; /* Mantener altura mínima */
-    display: block;
-    position: relative;
 }
 
 .animate-typing {
@@ -117,96 +117,99 @@
 
 /* Asegurar que los textos del hero mantengan su posición */
 .hero__text {
+    overflow: hidden;
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
 .hero__text h1[data-animate="typing"] {
-    min-height: 1.2em;
-    width: 50%;
-    margin-bottom: 4rem;
     position: relative;
-    text-align: left;
     display: block;
     box-sizing: border-box;
+    width: 50%;
     max-width: 100%;
-    overflow-wrap: break-word;
+    min-height: 1.2em;
+    margin-bottom: 4rem;
+    text-align: left;
     word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero__text h2[data-animate="fade-in"] {
-    min-height: 1.2em;
-    width: 75%;
     position: relative;
-    text-align: left;
     display: block;
+    width: 75%;
+    min-height: 1.2em;
+    text-align: left;
 }
 
 /* Estados durante la animación de typing */
 .hero__text h1[data-animate="typing"] {
     position: relative;
-    text-align: left;
     display: block;
+    text-align: left;
 }
 
 /* Responsive para los textos con typing */
 @media (max-width: 64rem) {
     .hero__text h1[data-animate="typing"] {
-        width: 60%;
-        margin-bottom: 3rem;
-        max-width: 100%;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
         box-sizing: border-box;
+        width: 60%;
+        max-width: 100%;
+        margin-bottom: 3rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
+
     .hero__text h2[data-animate="typing"] {
+        box-sizing: border-box;
         width: 80%;
         max-width: 100%;
-        overflow-wrap: break-word;
         word-wrap: break-word;
-        box-sizing: border-box;
+        overflow-wrap: break-word;
     }
 }
 
 @media (max-width: 43.75rem) {
     .hero__text h1[data-animate="typing"] {
+        box-sizing: border-box;
         width: 100% !important;
         max-width: 100% !important;
         margin-bottom: 2rem;
         padding: 0 var(--spacing-sm);
-        overflow-wrap: break-word;
         word-wrap: break-word;
-        box-sizing: border-box;
+        overflow-wrap: break-word;
     }
+
     .hero__text h2[data-animate="typing"] {
+        box-sizing: border-box;
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 var(--spacing-sm);
-        overflow-wrap: break-word;
         word-wrap: break-word;
-        box-sizing: border-box;
+        overflow-wrap: break-word;
     }
 }
 
 @media (max-width: 30rem) {
     .hero__text h1[data-animate="typing"] {
+        box-sizing: border-box;
         width: 100% !important;
         max-width: 100% !important;
         margin-bottom: 2rem;
         padding: 0 calc(var(--spacing-sm) / 2);
-        overflow-wrap: break-word;
         word-wrap: break-word;
-        box-sizing: border-box;
+        overflow-wrap: break-word;
     }
+
     .hero__text h2[data-animate="typing"] {
+        box-sizing: border-box;
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 calc(var(--spacing-sm) / 2);
-        overflow-wrap: break-word;
         word-wrap: break-word;
-        box-sizing: border-box;
+        overflow-wrap: break-word;
     }
 }
 
@@ -219,15 +222,15 @@
 
 /* Portafolio Items - Stagger */
 .portafolio-home .casos[data-animate="stagger"] li {
-    opacity: 0;
-    transform: translateY(30px);
     transition: opacity var(--animation-duration) var(--animation-easing),
                 transform var(--animation-duration) var(--animation-easing);
+    transform: translateY(30px);
+    opacity: 0;
 }
 
 .portafolio-home .casos[data-animate="stagger"] li.animate-fade-in {
-    opacity: 1 !important;
     transform: translateY(0) !important;
+    opacity: 1 !important;
 }
 
 /* CTA Section - Scale In */
@@ -243,14 +246,14 @@
 /* Responsive adjustments */
 @media (max-width: 64rem) {
     .hero__text {
-        max-width: 100%;
         overflow: hidden;
+        max-width: 100%;
     }
-    
+
     .hero__text h1[data-animate="typing"],
     .hero__text h2[data-animate="typing"] {
-        max-width: 100%;
         overflow: hidden;
+        max-width: 100%;
     }
 }
 
@@ -259,17 +262,17 @@
         --slide-distance: 20px;
         --animation-duration: 0.5s;
     }
-    
+
     .hero__text {
-        max-width: 100%;
         overflow: hidden;
+        max-width: 100%;
         padding: 0 var(--spacing-sm);
     }
-    
+
     [data-animate="slide-up"] {
         transform: translateY(30px);
     }
-    
+
     [data-animate="slide-left"],
     [data-animate="slide-right"] {
         transform: translateX(30px);
@@ -291,18 +294,18 @@
 /* Reducción de movimiento para usuarios que lo prefieren */
 @media (prefers-reduced-motion: reduce) {
     [data-animate] {
-        opacity: 1 !important;
-        transform: none !important;
         transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
     }
-    
+
     .animate-fade-in,
     .animate-slide-up,
     .animate-slide-left,
     .animate-slide-right,
     .animate-scale-in {
-        opacity: 1 !important;
         transform: none !important;
+        opacity: 1 !important;
     }
 }
 
@@ -312,8 +315,8 @@
 .animate-slide-left:hover,
 .animate-slide-right:hover,
 .animate-scale-in:hover {
-    transform: translateY(-2px);
     transition: transform 0.3s ease;
+    transform: translateY(-2px);
 }
 
 /* Excepciones para elementos que no deben tener hover */

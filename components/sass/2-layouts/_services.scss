@@ -1,26 +1,30 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .services {
   .cover {
     position: relative;
-    height: 70vh; width: 100% ;
-    @include m.flex(column, center, center, nowrap);
-    background-color: var(--color-backgrounds) ;
+ width: 100% ;
+    height: 70vh;
     padding-bottom: var(--spacing-lg);
+    background-color: var(--color-backgrounds) ;
+    @include m.flex(column, center, center, nowrap);
+
     &__video {
-      width: calc(100% - calc(var(--spacing-lg)*2)) ;
-      height: 100% ;  
       position: relative ;
       overflow: hidden;
-      background-color: gray ;
+      width: calc(100% - calc(var(--spacing-lg)*2)) ;
+      height: 100% ;
       border-radius: var(--radius-md);
+      background-color: gray ;
+
       video {
-        width: 100% ; height: 100% ;
         position: absolute;
         top: 0;
         left: 0;
-        object-fit: cover;
         z-index: 1;
+        width: 100% ;
+ height: 100% ;
+        object-fit: cover;
       }
       @include m.breakpoint(lg) {
         width: calc(100% - calc(var(--spacing-md)*2)) ;
@@ -29,20 +33,23 @@
         width: calc(100% - calc(var(--spacing-sm)*2)) ;
       }
     }
+
     > div {
-      width: calc(100% - calc(var(--spacing-lg)*2)) ;
-      height: 100% ;  
       position: relative ;
       overflow: hidden;
-      background-color: gray ;
+      width: calc(100% - calc(var(--spacing-lg)*2)) ;
+      height: 100% ;
       border-radius: var(--radius-md);
+      background-color: gray ;
+
       img {
-        width: 100% ; height: 100% ;
         position: absolute;
         top: 0;
         left: 0;
-        object-fit: cover;
         z-index: 1;
+        width: 100% ;
+ height: 100% ;
+        object-fit: cover;
       }
       @include m.breakpoint(lg) {
         width: calc(100% - calc(var(--spacing-md)*2)) ;
@@ -57,57 +64,67 @@
     @include m.breakpoint(md) {
       height: 50vh;
     }
+
     &--half {
       @extend .cover ;
       height: 30vh ;
     }
   }
+
   .header-404 {
     padding: var(--pading-top-lg) var(--spacing-lg);
   }
+
   .service-header {
     display: grid;
-    grid-template-columns: 40% 60% ; 
-    gap: 0 ; 
+    grid-template-columns: 40% 60% ;
+    gap: 0 ;
     padding: var(--pading-top-lg) var(--spacing-md);
+
     h1, h2, p {
       margin-bottom: 1rem ;
     }
     @include m.breakpoint(md) {
+      grid-template-columns: 1fr ;
       padding: 0 var(--spacing-md) var(--spacing-lg);
-      grid-template-columns: 1fr ; 
     }
+
     p {
       strong {
-        font-weight: 500 ;;
+        font-weight: 500 ;
       }
     }
   }
+
   .frase {
     width: 100% ;
     padding: 0 22% ;
     @include m.breakpoint(lg) {
         padding: 0 10% ;
     }
+
     h2 {
         strong {
             color: var(--green);
         }
     }
   }
+
   .scroll-section {
-    padding: calc(var(--pading-top-lg)*2) 0 ; 
+    padding: calc(var(--pading-top-lg)*2) 0 ;
     background-color: var(--white);
+
     > div {
       display: grid;
       grid-template-columns: 60% 35% ; /* 40% para la imagen y 60% para el texto */
       gap: 2rem;
+
       .image-container {
         position: relative; /* Para limitar el sticky al contenedor */
         img {
-          width: 100%; /* Ajusta el ancho de la imagen */
           position: sticky;
           top: 1rem; /* Fija la imagen al hacer scroll */
+          width: 100%; /* Ajusta el ancho de la imagen */
           border-radius: var(--radius-md);
         }
         @include m.breakpoint(md) {
@@ -115,12 +132,15 @@
           top: auto; /* Resetea el offset */
         }
       }
+
       .text-container {
         overflow: hidden;
+
         h3, h2 {
           margin-bottom: 1rem ;
           color: var(--green);
         }
+
         p {
           margin-bottom: 2rem;
         }
@@ -129,11 +149,11 @@
         }
       }
       @include m.breakpoint(lg) {
-        grid-template-columns: 60% 35% ; 
+        grid-template-columns: 60% 35% ;
       }
       @include m.breakpoint(md) {
-        grid-template-columns: 1fr; 
-        gap: 1rem; 
+        grid-template-columns: 1fr;
+        gap: 1rem;
         padding: 0 var(--spacing-sm) ;
       }
     }

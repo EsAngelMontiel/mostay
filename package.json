@@ -19,7 +19,7 @@
     "lint:fix": "stylelint 'components/sass/**/*.scss' --fix",
     "test:visual": "node scripts/visual-test.js",
     "test:accessibility": "pa11y-ci",
-    "test:lighthouse": "lighthouse http://localhost/Mostay/wp/ --output html --output-path ./reports/lighthouse --config-path ./lighthouse.config.js",
+    "test:lighthouse": "lighthouse http://localhost:8888/Mostay/wp/ --output html --output-path ./reports/lighthouse --config-path ./lighthouse.config.js",
     "test:all": "npm run lint && npm run test:visual && npm run test:accessibility && npm run test:lighthouse",
     "test:report": "echo 'Generando reportes...' && open ./reports",
     "clean": "rm -rf screenshots/ reports/ wp/wp-content/themes/mostay/css/*.min.css wp/wp-content/themes/mostay/css/*.map wp/wp-content/themes/mostay/js/*.min.js",

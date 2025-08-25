@@ -158,16 +158,16 @@ $border-radius: (
   &::-webkit-scrollbar {
     width: $width;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: $track-color;
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: $thumb-color;
     border-radius: $width / 2;
+    background: $thumb-color;
   }
-  
+
   &::-webkit-scrollbar-thumb:hover {
     background: darken($thumb-color, 10%);
   }
@@ -179,8 +179,8 @@ $border-radius: (
     background: $background;
     color: $color;
   }
-  
-  &::-moz-selection {
+
+  &::selection {
     background: $background;
     color: $color;
   }

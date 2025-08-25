@@ -2,102 +2,121 @@
 /* ************************ HEADER ************************ */
 /* ******************************************************** */
 
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .topnav {
-  padding: calc(var(--spacing-lg)/2) calc(var(--spacing-lg) + var(--spacing-md)) ;
   display: block ;
+  padding: calc(var(--spacing-lg)/2) calc(var(--spacing-lg) + var(--spacing-md)) ;
   background-color: var(--color-backgrounds) ;
   @include m.flex(row, space-between, center, nowrap);
+
   &__logo {
     position: inherit ;
+
     a {
       span {
         display: none ;
         color: var(--red) ;
       }
+
       img {
         width: 10.5rem ;
       }
     }
   }
+
   &__navigation {
     @include m.flex(row, space-between, center, nowrap, var(--spacing-sm));
     position: inherit ;
+
     a, button {
       svg {
-        height: 1.3rem !important ;
         display: block ;
+        height: 1.3rem !important ;
       }
-    }    
+    }
+
     &__open {
       background-color: var(--white) ;
+      box-shadow: 0 0.25rem 0.5rem #0000000e ;
       fill: var(--green) ;
       color: var(--color-secondary) ;
-      box-shadow: 0 0.25rem 0.5rem #0000000e ;
+
       &:hover,
       &:focus {
         background-color: var(--lightOrange);
-        text-decoration: none ;
-        color: var(--black) ;
         fill: var(--black)  ;
+        color: var(--black) ;
+        text-decoration: none ;
       }
     }
-    &__open[aria-expanded='true']{
+
+    &__open[aria-expanded="true"]{
       + .topnav__navigation__menu {
         opacity: 1 ;
       }
     }
+
     &__menu {
-      width: 100vw ; height: 100vh ;
       position: fixed ;
+      top: 0 ;
+ left: 0 ;
       z-index: 9999 ;
-      top: 0 ; left: 0 ;
-      background-color: rgba(236, 233, 227, 0.8) ;   
-      backdrop-filter: blur(10px);
-      opacity: 0 ;
       transition: opacity 0.3s ease-in-out ;
+      opacity: 0 ;
+      width: 100vw ;
+ height: 100vh ;
+      background-color: rgba(236, 233, 227, 0.8) ;
+      backdrop-filter: blur(10px);
       @include m.flex(row, center, center, nowrap );
       //display: none ;
       > div {
-        width: calc(100vw - 3rem) ;
-        height: calc(100vh - 3rem) ;
-        background-color: var(--orange) ;
-        border-radius: var(--radius-md) ;
-        padding: 2.5rem ;
         //@include m.flex(row, center, top, nowrap );
         display: grid ;
-        grid-template-columns: 1fr;
         grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        width: calc(100vw - 3rem) ;
+        height: calc(100vh - 3rem) ;
+        padding: 2.5rem ;
+        border-radius: var(--radius-md) ;
+        background-color: var(--orange) ;
         gap: 20px ;
         @include m.breakpoint(lg) {
-          grid-template-columns: 1fr ;
           grid-template-rows: auto auto ;
+          grid-template-columns: 1fr ;
         }
+
         div {
           //width: 20% ;
           height: 100% ;
+
           .menuLogo {
             > span {
               display: none ;
             }
           }
         }
+
         .menuWrapper01 {
           @include m.flex(row, space-between, flex-start, nowrap );
+
           button {
-            width: 3rem ; height: 3rem ;
-            border: 1px solid var(--black) ;
-            background-color: var(--orange) ;
-            border-radius: var(--radius-sm) ;
-            @include m.flex(row, center, center, nowrap );
+            width: 3rem ;
+ height: 3rem ;
             padding: 0 ;
+            border: 1px solid var(--black) ;
+            border-radius: var(--radius-sm) ;
+            background-color: var(--orange) ;
+            @include m.flex(row, center, center, nowrap );
+
             svg {
-              width: 1.5rem ; height: 1.5rem ;
+              width: 1.5rem ;
+ height: 1.5rem ;
               fill: var(--black) ;
             }
           }
         }
+
         .menuWrapper02 {
           width: 100% ;
           padding: 0 20% ;
@@ -105,98 +124,117 @@
           @include m.breakpoint(md) {
             padding: 0 15vw ;
           }
+
           ul {
             width: 100% ;
+
             li {
               @include m.flex(row, flex-start, flex-start, nowrap);
               font-family: var(--main-font) ;
+
               a {
                 &:hover {
                   text-decoration: none ;
                 }
+
                 span {
                   display: none ;
                 }
               }
             }
           }
+
           .mainMenu {
             &__item {
               border-bottom: 1px solid var(--yellow) ;
+
               > a {
-                font-weight: bold ;
-                color: var(--black) ;
                 display: inline-block ;
-                font-size: 4.5rem ;
-                line-height: 6.5rem ;
-                width: 100% ;
                 transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+                width: 100% ;
+                color: var(--black) ;
+                font-size: 4.5rem ;
+                font-weight: 700 ;
+                line-height: 6.5rem ;
                 /*@include m.breakpoint(lg) {
                     font-size: 2.5rem ;
                     line-height: 3.5rem ;
                 }*/
               }
+
               > span {
+                padding-top: 1rem ;
                 color: var(--yellow) ;
                 font-family: var(--main-font) ;
-                font-size: .7rem ;
+                font-size: 0.7rem;
                 line-height: 1rem ;
-                padding-top: 1rem ;
               }
+
               &:hover a {
                 position: relative ;
                 transform: translateX(50px);
-                color: #FF0024; 
+                color: #FF0024;
               }
             }
           }
+
           .secondaryMenu {
             @include m.flex(row, flex-start, flex-start, nowrap );
             padding-top: 1.5rem ;
+
             &__item {
               margin-right: 2rem ;
+
               > a {
-                font-weight: 300 ;
-                color: var(--yellow) ;
                 display: inline-block ;
+                color: var(--yellow) ;
                 font-size: 1.5rem ;
+                font-weight: 300 ;
                 line-height: 2rem;
               }
+
               > span {
+                margin-left: 0.1rem;
+                padding-top: 0.2rem;
                 color: var(--yellow) ;
                 font-family: var(--main-font) ;
-                font-size: .4rem ;
-                line-height: .4rem ;
-                padding-top: .2rem ;
-                margin-left: .1rem ;
+                font-size: 0.4rem;
+                line-height: 0.4rem;
               }
+
               &:hover a {
                 position: relative ;
-                transform: translateX(0); 
+                transform: translateX(0);
                 color: var(--red) ;
               }
             }
+
             .snLink {
-              width: 2rem ; height: 2rem ;
-              margin-right: .7rem ;
-              background-color: var(--yellow) ;
-              border-radius: 1rem ;
               transition: background-color 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+              width: 2rem ;
+ height: 2rem ;
+              margin-right: 0.7rem;
+              border-radius: 1rem ;
+              background-color: var(--yellow) ;
+
               a {
-                width: 100% ; height: 100% ;
-                color: var(--yellow) ; 
-                transition: color 0.3s ease; 
                 display: block ;
+                transition: color 0.3s ease;
+                width: 100% ;
+ height: 100% ;
+                color: var(--yellow) ;
                 @include m.flex(row, center, center, nowrap );
+
                 > svg {
-                  fill: var(--yellow) ;
-                  transition: fill 0.3s ease; 
-                  height: 1.1rem !important ; width: auto ;
                   display: block ;
+                  transition: fill 0.3s ease;
+ width: auto ;
+                  height: 1.1rem !important ;
                   fill: var(--orange) ;
                   //padding: .5rem 0 ;
                 }
               }
+
               &:hover {
                 background-color: var(--red) ;
               }
@@ -208,77 +246,92 @@
         > div {
           width: calc(100vw - 2rem) ;
           height: calc(100vh - 2rem) ;
+
           .menuWrapper02 {
             padding: 0 10% ;
+
             .mainMenu {
               &__item {
+                margin-bottom: 0.3rem;
                 border-bottom: none ;
-                background-color: var(--black);
-                margin-bottom: .3rem ;
                 border-radius: var(--radius-sm);
+                background-color: var(--black);
+
                 > a {
+                  padding: 1.5rem ;
                   color: var(--orange) ;
                   font-size: 2rem ;
-                  line-height: 2rem ;
-                  padding: 1.5rem ;
                   font-weight: 600;
+                  line-height: 2rem ;
                 }
+
                 > span {
-                  color: var(--orange) ;
-                  font-size: .7rem ;
-                  line-height: 1rem ;
                   padding: 1rem 1rem 0 0 ;
+                  color: var(--orange) ;
+                  font-size: 0.7rem;
+                  line-height: 1rem ;
                 }
+
                 &:hover a {
                   transform: translateX(0);
-                  color: #FF0024; 
+                  color: #FF0024;
                 }
               }
             }
+
             .secondaryMenu {
               padding-top: 0 ;
               @include m.flex(row, flex-start, flex-start, wrap, 1% );
+
               &__item {
-                margin-right: 0 ;
-                background-color: var(--black);
-                margin-bottom: .3rem ;
-                border-radius: var(--radius-sm);
                 width: 49.5% ;
+                margin-right: 0 ;
+                margin-bottom: 0.3rem;
+                border-radius: var(--radius-sm);
+                background-color: var(--black);
+
                 > a {
                   width: 100% ;
+                  padding: 1.5rem ;
                   color: var(--orange) ;
                   font-size: 1.3rem ;
-                  line-height: 2rem ;
-                  padding: 1.5rem ;
                   font-weight: 400;
+                  line-height: 2rem ;
                 }
+
                 > span {
-                  color: var(--orange) ;
-                  font-size: .7rem ;
-                  line-height: 1rem ;
                   padding: 1rem 1rem 0 0 ;
+                  color: var(--orange) ;
+                  font-size: 0.7rem;
+                  line-height: 1rem ;
                 }
+
                 &:hover a {
                   position: relative ;
-                  transform: translateX(0); 
+                  transform: translateX(0);
                   color: var(--red) ;
                 }
               }
+
               .snLink {
-                width: 24% ; height: auto ;
+                width: 24% ;
+ height: auto ;
                 margin-right: 0 ;
-                background-color: var(--black);
                 border-radius: var(--radius-sm);
+                background-color: var(--black);
+
                 a {
-                  color: var(--orange) ; 
+                  padding: 1.7rem ;
+                  color: var(--orange) ;
                   font-size: 1.3rem ;
                   line-height: 2rem ;
-                  padding: 1.7rem ;
-                  > svg {
+
+                  > svg { width: auto ;
+                    height: 1.5rem !important ;
                     fill: var(--orange) ;
-                    height: 1.5rem !important ; width: auto ;
                   }
                 }
+
                 &:hover {
                   background-color: var(--red) ;
                 }
@@ -292,70 +345,86 @@
           width: calc(100vw - 1.8rem) ;
           height: calc(100vh - 1.8rem) ;
           padding: 1.5rem ;
+
           .menuWrapper01 {
             .menuLogo {
-              padding-top: .3rem ;
+              padding-top: 0.3rem;
+
               img {
                 width: 8rem ;
               }
             }
+
             button {
-              width: 2rem ; height: 2rem ;
-              background-color: var(--orange) ;
-              border: none ;
+              width: 2rem ;
+ height: 2rem ;
               padding: 0 ;
+              border: none ;
+              background-color: var(--orange) ;
+
               svg {
-                width: 2rem ; height: 2rem ;
+                width: 2rem ;
+ height: 2rem ;
                 fill: var(--black) ;
               }
             }
           }
-          
+
           .menuWrapper02 {
-            padding: 0 0 ;
+            padding: 0;
+
             .mainMenu {
               &__item {
-                margin-bottom: .2rem ;
+                margin-bottom: 0.2rem;
                 border-radius: calc(var(--radius-sm)/1.5);
+
                 > a {
-                  font-size: 1.2rem ;
-                  line-height: 1.2rem ;
                   padding: 1.2rem ;
+                  font-size: 1.2rem ;
                   font-weight: 600;
+                  line-height: 1.2rem ;
                 }
+
                 > span {
-                  font-size: .5rem ;
-                  line-height: .5rem ;
-                  padding: .8rem .8rem 0 0 ;
+                  padding: 0.8rem 0.8rem 0 0;
+                  font-size: 0.5rem;
+                  line-height: 0.5rem;
                 }
               }
             }
+
             .secondaryMenu {
               &__item {
-                margin-bottom: .1rem ;
+                margin-bottom: 0.1rem;
                 border-radius: calc(var(--radius-sm)/1.5);
+
                 > a {
-                  font-size: 1rem ;
-                  line-height: 1.2rem ;
                   padding: 1.2rem ;
+                  font-size: 1rem ;
                   font-weight: 400;
+                  line-height: 1.2rem ;
                 }
+
                 > span {
-                  font-size: .5rem ;
-                  line-height: .5rem ;
-                  padding: .8rem .8rem 0 0 ;
+                  padding: 0.8rem 0.8rem 0 0;
+                  font-size: 0.5rem;
+                  line-height: 0.5rem;
                 }
               }
+
               .snLink {
                 border-radius: calc(var(--radius-sm)/1.5);
+
                 a {
+                  padding: 1.2rem ;
                   font-size: 1.2rem ;
                   line-height: 1.2rem ;
-                  padding: 1.2rem ;
-                  > svg {
-                    height: 1.2rem !important ; width: auto ;
+
+                  > svg { width: auto ;
+                    height: 1.2rem !important ;
                   }
                 }
+
                 &:hover {
                   background-color: var(--red) ;
                 }
@@ -364,7 +433,7 @@
           }
         }
       }
-    } 
+    }
   }
   @include m.breakpoint(lg) {
     padding: calc(var(--spacing-md)/1.5) ;
@@ -373,6 +442,7 @@
     &__navigation {
       @include m.flex(row, space-between, center, nowrap, calc(var(--spacing-sm)/2));
     }
+
     &__logo {
       a {
         img {

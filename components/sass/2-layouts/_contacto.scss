@@ -2,30 +2,36 @@
 /* ************************ CONTACT ************************ */
 /* ******************************************************** */
 
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .contacto {
-  background-color: var(--color-backgrounds);
+  padding: var(--pading-top-lg) 0 ;
+  background-color: var(--white);
+
   .cover {
     position: relative;
-    height: 70vh; width: 100% ;
-    @include m.flex(column, center, center, nowrap);
-    background-color: var(--color-backgrounds) ;
+ width: 100% ;
+    height: 70vh;
     padding-bottom: var(--spacing-lg);
+    background-color: var(--color-backgrounds) ;
+    @include m.flex(column, center, center, nowrap);
+
     > div {
-      width: calc(100% - calc(var(--spacing-lg)*2)) ;
-      height: 100% ;  
       position: relative ;
       overflow: hidden;
-      background-color: gray ;
+      width: calc(100% - calc(var(--spacing-lg)*2)) ;
+      height: 100% ;
       border-radius: var(--radius-md);
+      background-color: gray ;
+
       img {
-        width: 100% ; height: 100% ;
         position: absolute;
         top: 0;
         left: 0;
-        object-fit: cover;
         z-index: 1;
+        width: 100% ;
+ height: 100% ;
+        object-fit: cover;
       }
       @include m.breakpoint(lg) {
         width: calc(100% - calc(var(--spacing-md)*2)) ;
@@ -41,39 +47,43 @@
       height: 50vh;
     }
   }
+
   > h1 {
     margin-bottom: 1.5rem ;
   }
-  background-color: var(--white);
-  padding: var(--pading-top-lg) 0 ;
+
   p {
+    margin-bottom: 2rem ;
     font-size: 1.2rem ;
     line-height: 1.8rem ;
-    margin-bottom: 2rem ;
+
     > a {
       color: var(--green) ;
     }
+
     > strong {
       font-weight: 500 ;
     }
   }
+
   h1, h2, h3 {
-    font-weight: 600 ;
-    color: var(--green);
     margin: 1.5rem 0 1rem ;
+    color: var(--green);
+    font-weight: 600 ;
   }
 
   > strong {
     @extend p ;
-    font-weight: 500 ;
     margin-bottom: 1.25rem ;
+    font-weight: 500 ;
   }
   @include m.breakpoint(lg) {
     padding: var(--pading-top-md) var(--spacing-md) ;
+
     .article-container {
       padding: 0 var(--spacing-md) 0 ;
     }
-    
+
   }
   @include m.breakpoint(md) {
     padding: var(--pading-top-md) 0 ;

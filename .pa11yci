@@ -15,27 +15,27 @@
   },
   "urls": [
     {
-      "url": "http://localhost/Mostay/wp/",
+      "url": "http://localhost:8888/Mostay/wp/",
       "title": "Homepage - Mostay",
       "description": "Página principal del sitio"
     },
     {
-      "url": "http://localhost/Mostay/wp/about/",
+      "url": "http://localhost:8888/Mostay/wp/about/",
       "title": "About - Mostay",
       "description": "Página sobre nosotros"
     },
     {
-      "url": "http://localhost/Mostay/wp/proyectos/",
+      "url": "http://localhost:8888/Mostay/wp/proyectos/",
       "title": "Proyectos - Mostay",
       "description": "Portafolio de proyectos"
     },
     {
-      "url": "http://localhost/Mostay/wp/blog/",
+      "url": "http://localhost:8888/Mostay/wp/blog/",
       "title": "Blog - Mostay",
       "description": "Blog y artículos"
     },
     {
-      "url": "http://localhost/Mostay/wp/contacto/",
+      "url": "http://localhost:8888/Mostay/wp/contacto/",
       "title": "Contacto - Mostay",
       "description": "Página de contacto"
     }

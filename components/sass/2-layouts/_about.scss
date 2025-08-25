@@ -1,209 +1,256 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .about {
   > article {
     > .about-header {
-      height: 94vh ; width: 100% ;
       position: relative ;
       overflow: hidden;
+ width: 100% ;
+      height: 94vh ;
+
       > div.video {
-        width: 100% ; height: 100% ;
+        width: 100% ;
+ height: 100% ;
+
         > video {
-          min-width: 100%;
-          min-height: 100%;
-
-          width: auto;
-          height: auto;
-
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%,-50%);
+          width: auto;
+          min-width: 100%;
+          height: auto;
+          min-height: 100%;
         }
       }
     }
+
     div.about-title {
-      width: 100% ; height: 100% ;
-      background: linear-gradient(to bottom, rgba(51,49,50,0), rgba(51,49,50,1));
       position: absolute ;
-      top: 0 ; left: 0 ;
+      top: 0 ;
+ left: 0 ;
+      width: 100% ;
+ height: 100% ;
+      background: linear-gradient(to bottom, rgba(51,49,50,0), rgba(51,49,50,1));
+
       > div {
-        height: 100% ;
         position: relative;
+        height: 100% ;
+
         > div {
-          width: 100% ;
-          text-align: center ;
           position: absolute;
           top: 50%;
-          -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 100% ;
+          text-align: center ;
+
           > h1 {
+            display: inline-block;
             width: var(--col-w) ;
+            color: var(--yellow) ;
             font-family: var(--main-font) ;
             font-size: 45px ;
             line-height: 45px ;
-            color: var(--yellow) ;
-            display: inline-block;
           }
         }
+
         > a {
-          width: 30px ; height: 30px ;
-          font-size: 30px ;
           position: absolute ;
           bottom: 60px ;
           left: 50% ;
           display: block ;
-          color: var(--gray) ;
+          width: 30px ;
+ height: 30px ;
           margin: 0 0 0 -15px ;
+          color: var(--gray) ;
+          font-size: 30px ;
+
           &:hover {
-            color: var(--yellow) ;
             cursor: pointer ;
+            color: var(--yellow) ;
           }
         }
       }
     }
+
     > div.contenido {
-      padding: 6.25rem 0 11.25rem 0 ;
       overflow: auto ;
+      padding: 6.25rem 0 11.25rem;
+
       > div {
         //@include boxGrid(2, 3%);
         //float: left ;
         overflow: hidden ;
+
         > video {
-          width: 100% ; height: auto ;
+          width: 100% ;
+ height: auto ;
         }
+
         &:last-child {
           padding: 70px 50px ;
         }
+
         > h2 {
+          margin-bottom: 15px ;
+          color: var(--yellow) ;
           font-family: var(--main-font) ;
           font-size: 40px ;
           line-height: 42px ;
-          color: var(--yellow) ;
-          margin-bottom: 15px ;
         }
+
         > h4 {
+          margin-bottom: 15px ;
+          color: var(--white) ;
           font-family: var(--text-font) ;
           font-size: 20px ;
           line-height: 28px ;
-          color: var(--white) ;
-          margin-bottom: 15px ;
         }
+
         > p {
+          color: var(--gray) ;
           font-family: var(--text-font) ;
           font-size: 14px ;
           line-height: 26px ;
-          color: var(--gray) ;
         }
       }
     }
+
     > div.about-me {
-      background-color: var(--blue) ;
       position: relative ;
+      background-color: var(--blue) ;
+
       > div {
         padding: 160px 0 380px  ;
+
         > div.my-photo {
-          --photo-h: 220px ; 
+          --photo-h: 220px ;
           $photo-p: calc(var(--photo-h) / 2) ;
           --negative-p: calc(-1 * var(--photo-p)) ;
-          width: var(--photo-h) ; height: var(--photo-h) ;
-          background-color: var(--red) ;
-          border-radius: 50% ;
           position: absolute ;
-          top: var(--negative-p) ; left: 50% ;
-          margin: 0 0 0 var(--negative-p) ;
+          top: var(--negative-p) ;
+ left: 50% ;
           overflow: hidden ;
+          width: var(--photo-h) ;
+ height: var(--photo-h) ;
+          margin: 0 0 0 var(--negative-p) ;
+          border-radius: 50% ;
+          background-color: var(--red) ;
+
           > img {
-            width: 100% ; height: auto ;
+            width: 100% ;
+ height: auto ;
           }
         }
+
         > div.my-bio {
           width: 420px ;
           margin: 0 auto ;
+
           > h2 {
+            margin-bottom: 20px ;
+            color: var(--white) ;
             font-family: var(--main-font) ;
             font-size: 32px ;
             line-height: 34px ;
-            color: var(--white) ;
-            margin-bottom: 20px ;
+
             > span {
               color: var(--yellow) ;
             }
           }
+
           > p {
+            color: var(--white) ;
             font-family: var(--text-font) ;
             font-size: 15px ;
             line-height: 22px ;
-            color: var(--white) ;
+
             > a {
-              font-weight: bold ;
               color: var(--yellow) ;
+              font-weight: 700 ;
             }
           }
         }
       }
     }
+
     > div.cta {
       > div {
         position: relative ;
-          padding: 420px 0 60px 0 ;
+          padding: 420px 0 60px;
+
         > div.my-video {
-          width: 100% ;
           position: absolute;
           top: -300px ;
           overflow: hidden ;
+          width: 100% ;
+
           > video {
-            width: 100% ; height: auto ;
+            width: 100% ;
+ height: auto ;
           }
         }
+
         > div.my-bio {
           width: var(--col-w) ;
           margin: 0 auto ;
+
           > h2 {
+            margin-bottom: 20px ;
+            color: var(--yellow) ;
             font-family: var(--main-font) ;
             font-size: 32px ;
             line-height: 40px ;
-            color: var(--yellow) ;
-            margin-bottom: 20px ;
           }
+
           > h4 {
+            margin-bottom: 15px ;
+            color: var(--gray) ;
             font-family: var(--text-font) ;
             font-size: 20px ;
             line-height: 28px ;
-            color: var(--gray) ;
-            margin-bottom: 15px ;
           }
         }
       }
     }
+
     > div.testimonials {
       > div {
         ul {
           overflow: auto ;
+
           li {
             //@include boxGrid(4, 3%);
             //float: left ;
             overflow: hidden ;
+
             div {
-              width: 100% ; height: auto ;
-              border-radius: 50% ;
               overflow: hidden ;
+              width: 100% ;
+ height: auto ;
               margin-bottom: 20px ;
+              border-radius: 50% ;
+
               > img {
-                width: 100% ; height: auto ;
+                width: 100% ;
+ height: auto ;
               }
             }
+
             strong {
+              color: var(--yellow) ;
               font-family: var(--main-font) ;
               font-size: 26px ;
-              color: var(--yellow) ;
             }
+
             p {
+              color: var(--white) ;
               font-family: var(--text-font) ;
               font-size: 15px ;
               line-height: 22px ;
-              color: var(--white) ;
             }
+
             a {
               color: var(--yellow) ;
             }
@@ -211,114 +258,139 @@
         }
       }
     }
+
     > div.cta-2 {
       > div {
         position: relative ;
-        padding: 60px 0 60px 0 ;
+        padding: 60px 0;
+
         > div.my-bio {
           width: var(--col-w) ;
           margin: 0 auto ;
+
           > h2 {
+            margin-bottom: 20px ;
+            color: var(--white) ;
             font-family: var(--main-font) ;
             font-size: 32px ;
             line-height: 40px ;
-            color: var(--white) ;
-            margin-bottom: 20px ;
+
             > span {
               color: var(--yellow) ;
             }
           }
+
           > h4 {
+            margin-bottom: 15px ;
+            color: var(--gray) ;
             font-family: var(--text-font) ;
             font-size: 20px ;
             line-height: 28px ;
-            color: var(--gray) ;
-            margin-bottom: 15px ;
           }
         }
       }
     }
+
     div.opt-in {
       background-color: var(--black) ;
-      > div.bar {
-        height: 40px ; width: 100% ;
+
+      > div.bar { width: 100% ;
+        height: 40px ;
         background-color: var(--yellow) ;
       }
+
       > div.container {
-        padding: 90px 0 70px 0;
+        padding: 90px 0 70px;
+
         > small {
+          color: var(--gray) ;
           font-family: var(--text-font) ;
           font-size: 14px ;
           line-height: 14px !important ;
-          color: var(--gray) ;
         }
+
         div#mc_embed_signup {
           margin-bottom: 30px ;
+
           form {
             div.indicates-required {
-              text-align: right ;
+              color: var(--gray) ;
               font-family: var(--text-font) ;
               font-size: 12px ;
-              color: var(--gray) ;
+              text-align: right ;
+
               > span {
                 color: var(--red) ;
               }
             }
+
             div.mc-field-group {
               margin-bottom: 30px ;
+
               label {
-                font-family: var(--main-font) ;
-                font-size: 16px ;
                 display: block ;
                 color: var(--yellow) ;
+                font-family: var(--main-font) ;
+                font-size: 16px ;
+
                 > span {
                   color: var(--red) ;
                 }
               }
+
               input {
-                height: 50px ;
                 width: 400px ;
-                border: none ;
+                height: 50px ;
                 padding: 5px 10px ;
+                border: none ;
+
                 &[type="email"]{
                   width: 500px ;
                 }
               }
             }
+
             div.two-columns {
-              width: 40% ;
               display: inline-block ;
+              width: 40% ;
+
               > input {
                 width: 95% ;
               }
             }
+
             div.clear {
               margin-top: 40px ;
             }
           }
         }
+
         div#mergeRow-gdpr {
           p {
             color: var(--gray) ;
+
             > a {
               color: var(--yellow) ;
             }
           }
+
           > div.content__gdpr {
             fieldset {
               label {
                 input {
-                  width: 30px ; height: 30px ;
+                  display: inline-block ;
+                  width: 30px ;
+ height: 30px ;
                   margin-right: 15px ;
-                  display: inline-block ;
                 }
+
                 span {
-                  font-family: var(--text-font) ;
-                  color: var(--white) ;
-                  line-height: 30px ;
-                  display: inline-block ;
                   position: relative ;
                   top: -8px ;
+                  display: inline-block ;
+                  color: var(--white) ;
+                  font-family: var(--text-font) ;
+                  line-height: 30px ;
                 }
               }
             }

@@ -2,78 +2,95 @@
 /* ************************ FOOTER ************************ */
 /* ******************************************************** */
 
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 footer {
+  overflow: hidden ;
   height: var(--footer-h) ;
   background-color: var(--darkgray) ;
-  overflow: hidden ;
-  
+
   > div {
     @include m.flex(row, flex-start, center, nowrap, 1rem);
+
     .container__logo {
-      width: 9rem ; height: var(--footer-h) ;
-      margin: 0 .3rem 0 0 !important ;
-      padding: 0 0 0 0 ;
+      width: 9rem ;
+ height: var(--footer-h) ;
+      margin: 0 0.3rem 0 0 !important ;
+      padding: 0;
+
       > a {
-        width: 100% ; height: var(--footer-h) ;
+        display: block ;
+        transition: opacity 0.3s ease;
+        width: 100% ;
+ height: var(--footer-h) ;
         background: url("../img/mostay-logo-red.svg");
         background-repeat: no-repeat ;
         background-position: center ;
         background-size: contain ;
-        display: block ;
-        transition: opacity .3s ease ;
+
         > span {
           display: none ;
         }
+
         &:hover {
-          opacity: .5 ;
+          opacity: 0.5;
         }
       }
       @include m.breakpoint(md) {
-        width: 8rem ; 
+        width: 8rem ;
       }
     }
+
     small {
-      width: 12rem ; height: var(--footer-h) ;
-      font-family: var(--main-font) ;
-      font-size: .9rem ;
-      line-height: .9rem ;
+      width: 12rem ;
+ height: var(--footer-h) ;
       color: var(--gray) ;
+      font-family: var(--main-font) ;
+      font-size: 0.9rem;
+      line-height: 0.9rem;
       @include m.flex(row, flex-start, center, nowrap, 1rem);
       @include m.breakpoint(md) {
-        width: 9rem ; 
-        font-size: .9rem ;
-        line-height: .9rem ;
+        width: 9rem ;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
       }
       @include m.breakpoint(md) {
         display: none ;
       }
     }
+
     div.social-networks {
       height: var(--footer-h) ;
+
       > ul {
         height: var(--footer-h) ;
         @include m.flex(row, space-between, center, nowrap, var(--spacing-sm));
         padding-right: 0 ;
+
         li {
-          height: 1.5rem ; width: 1.5rem ;
           display: inline-block ;
+ width: 1.5rem ;
+          height: 1.5rem ;
           margin-right: 0.5rem ;
+
           > a {
-            height: 100% ; width: 100% ;
             display: block ;
+            transition: background-color 0.3s ease;
+ width: 100% ;
+            height: 100% ;
             border-radius: 50% ;
             background-color: var(--gray) ;
-            font-size: .8rem ;
-            transition: background-color .3s ease ;
+            font-size: 0.8rem;
             @include m.flex(row, center, center, nowrap);
+
             > i {
               color: var(--darkgray) ;
             }
+
             span {
               display: none ;
             }
+
             &:hover {
               background-color: var(--white) ;
             }
@@ -82,7 +99,8 @@ footer {
       }
       @include m.breakpoint(md) {
         > ul {
-          @include m.flex(row, space-between, center, nowrap, .1rem);
+          @include m.flex(row, space-between, center, nowrap, 0.1rem);
+
           li {
             margin: 0 0 0 0.5rem ;
           }
@@ -90,7 +108,7 @@ footer {
       }
     }
     @include m.breakpoint(md) {
-      @include m.flex(row, flex-start, center, nowrap, .5rem);
+      @include m.flex(row, flex-start, center, nowrap, 0.5rem);
     }
   }
 }

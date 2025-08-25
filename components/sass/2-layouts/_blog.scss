@@ -2,140 +2,167 @@
 /* ************************ BLOG ************************ */
 /* ******************************************************** */
 
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .blog {
   padding: 0 var(--spacing-lg) 3rem  ;
   background-color: var(--color-backgrounds);
+
   > ul {
     display: grid;
     gap: var(--spacing-lg);
     grid-template-columns: repeat(4, 1fr);
-    
+
     > li {
-      width: 100% ; height: fit-content ;
+      overflow: hidden ;
+      width: 100% ;
+ height: fit-content ;
+      border-radius: var(--radius-md);
       background-color: var(--white);
       box-shadow: 0 3px 6px var(--color-shadow);
-      border-radius: var(--radius-md);
-      overflow: hidden ;
+
       article {
         > a:first-child {
-          width: 100% ;
           display: block ;
+          width: 100% ;
           aspect-ratio: 16 / 9;
+
           img {
-            width: 100% ; height: auto ;
             display: block ;
+            width: 100% ;
+ height: auto ;
             object-fit: cover;
           }
         }
+
         > div {
           padding: var(--spacing-md) var(--spacing-lg) calc(var(--spacing-md) + 1rem);
+
           h3 {
-            margin-bottom: .6rem ;
+            margin-bottom: 0.6rem;
+
             a {
+              transition: color 0.3s ease;
               color: var(--green);
-              transition: color .3s ease ;
+
               &:hover {
-                text-decoration: none ;
-                color: var(--red) ;
                 cursor: pointer ;
+                color: var(--red) ;
+                text-decoration: none ;
               }
             }
           }
+
           div.post-info {
             margin: 0 ;
-            padding: 0 0 .5rem 0 ;
+            padding: 0 0 0.5rem;
+
             time, span.author, span.reading-t {
-              font-family: var(--text-font) ;
-              font-size: .8rem ;
-              line-height: 1rem ;
-              color: var(--orange) ;
               margin: 0 8px 0 0 ;
+              color: var(--orange) ;
+              font-family: var(--text-font) ;
+              font-size: 0.8rem;
+              line-height: 1rem ;
             }
+
             span.author {
               > a {
                 color: var(--green) ;
               }
             }
           }
+
           p {
-            font-size: .9rem ;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
             line-height: 1.1rem ;
-            margin-bottom: .6rem ;
           }
+
           > a:last-child {
-            font-family: var(--text-font) ;
-            font-size: .8rem ;
-            color: var(--orange) ;
             display: block ;
+            color: var(--orange) ;
+            font-family: var(--text-font) ;
+            font-size: 0.8rem;
+
             &:hover {
-              text-decoration: none ;
-              color: var(--red) ;
               cursor: pointer ;
+              color: var(--red) ;
+              text-decoration: none ;
             }
           }
         }
       }
     }
   }
+
   .page-nav {
     @include m.flex(row, center, center, nowrap);
     padding: 2rem 0 ;
+
     > ul {
       @include m.flex(row, center, center, nowrap, var(--spacing-sm));
+
       > li {
-        border: 1px solid var(--green);
         overflow: hidden ;
+        border: 1px solid var(--green);
+
         span, a {
+          display: block ;
+          transition: color 0.3s ease;
+          width: 100% ;
+ height: 100% ;
+          padding: 1rem ;
+          color: var(--green);
           font-family: var(--main-font);
           font-size: 1rem ;
           line-height: 1rem ;
-          color: var(--green);
-          display: block ;
-          width: 100% ; height: 100% ;
-          padding: 1rem ;
-          transition: color .3s ease ;
         }
+
         span {
-          color: var(--lightgray);
           background-color: var(--green);
+          color: var(--lightgray);
         }
+
         a:hover {
           background-color: var(--green);
           color: var(--lightgray);
           text-decoration: none ;
         }
+
         &:first-child {
           border-radius: var(--radius-md) 0 0 var(--radius-md) ;
         }
+
         &:last-child {
           border-radius: 0 var(--radius-md) var(--radius-md) 0  ;
         }
       }
     }
   }
+
   &.featured-posts {
-    background-color: var(--color-backgrounds) ;
-    padding: var(--pading-top-lg) var(--spacing-lg) 3rem  ;
     position: relative ;
+    padding: var(--pading-top-lg) var(--spacing-lg) 3rem  ;
+    background-color: var(--color-backgrounds) ;
+
     .bar-orange {
-      width: 100% ;
-      height: 1rem ;
-      background-color: var(--orange);
-      margin-bottom: var(--pading-top-lg);
       position: absolute ;
       top: 0 ;
       left: 0 ;
+      width: 100% ;
+      height: 1rem ;
+      margin-bottom: var(--pading-top-lg);
+      background-color: var(--orange);
     }
   }
   @include m.breakpoint(lg) {
     > ul {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-md);
+
       > li > article > div {
         h3 {
-          margin-bottom: .5rem ;
+          margin-bottom: 0.5rem;
         }
       }
 
@@ -143,12 +170,14 @@
   }
   @include m.breakpoint(md) {
     padding: 0 var(--spacing-md) 2rem  ;
+
     > ul {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-md);
+
       > li > article > div {
         h3 {
-          margin-bottom: .5rem ;
+          margin-bottom: 0.5rem;
         }
       }
 
@@ -156,21 +185,24 @@
   }
   @include m.breakpoint(sm) {
     padding: 0 var(--spacing-sm) 2rem  ;
+
     > ul {
       grid-template-columns: repeat(1, 1fr);
       gap: var(--spacing-sm);
 
     }
   }
+
   &__home {
-    background-color: var(--offwhite);
     padding: var(--pading-top-lg) var(--spacing-lg) var(--pading-top-lg)  ;
+    background-color: var(--offwhite);
   }
+
   .load-more-wrapper {
     width: 100% ;
     @include m.flex(row, center, center, nowrap );
   }
-    
+
 }
 
 

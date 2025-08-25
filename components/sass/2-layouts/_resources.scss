@@ -6,146 +6,181 @@
   position: relative ;
   $col-w: 600px ;
   $head-height: 450px ;
+
   > div.resource-header {
-    width: 100% ; height: $head-height ;
     overflow: hidden ;
+    width: 100% ;
+ height: $head-height ;
+
     > img {
       display: block;
       width: 100vw;
       height: 100%;
       object-fit: cover;
     }
+
     > div {
-      width: 100% ; height: $head-height ;
-      @include linearGradient(top, bottom, rgba(51,49,50,0), rgba(51,49,50,1));
       position: absolute ;
-      top: 0 ; left: 0 ;
+      top: 0 ;
+ left: 0 ;
+      width: 100% ;
+ height: $head-height ;
+      @include linearGradient(top, bottom, rgba(51,49,50,0), rgba(51,49,50,1));
+
       > div.container {
-        height: $head-height ;
         position: relative;
+        height: $head-height ;
+
         > div {
-          width: 50% ;
           position: absolute ;
-          bottom: 0 ; left: 0 ;
+          bottom: 0 ;
+ left: 0 ;
+          width: 50% ;
           padding: 0 0 80px 20px ;
+
           > h1 {
+            margin-bottom: 30px ;
             color: $white ;
             font-family: $main-font ;
             font-size: 40px ;
             line-height: 42px ;
-            margin-bottom: 30px ;
           }
+
           > p {
+            position: relative ;
+            top: -20px ;
+            margin: 0 ;
+            margin-bottom: 10px ;
+            color: $gray ;
             font-family: $text-font ;
             font-size: 14px ;
             line-height: 22px ;
-            color: $gray ;
-            margin: 0 ;
-            margin-bottom: 10px ;
-            position: relative ;
-            top: -20px ;
           }
         }
       }
     }
   }
+
   > article {
     text-align: center ;
+
     > img {
-      width: 100% ; height: auto ;
+      width: 100% ;
+ height: auto ;
     }
+
     > div.contenido {
-      padding: 30px 0 0 0 ;
       display: inline-block ;
       width: $col-w ;
-      margin: 30px 0 30px 0 ;
+      margin: 30px 0;
+      padding: 30px 0 0;
       text-align: left ;
+
       h2 {
+        margin: 0 0 20px !important ;
+        color: $yellow ;
         font-family: $main-font ;
         font-size: 40px ;
         line-height: 44px ;
-        margin: 0 0 20px 0 !important ;
-        color: $yellow ;
       }
+
       > h3 {
         @extend h1 ;
+        margin: 0 0 10px;
+        color: $white ;
         font-size: 28px ;
         line-height: 36px ;
-        margin: 0 0 10px 0 ;
-        color: $white ;
       }
+
       > h4 {
         @extend h2 ;
+        margin: 0 0 10px;
+        color: $blue ;
         font-size: 28px ;
         line-height: 30px ;
-        color: $blue ;
-        margin: 0 0 10px 0 ;
       }
+
       p {
+        margin: 0 0 20px;
+        color: $gray ;
         font-family: $text-font ;
         font-size: 16px ;
         line-height: 22px ;
-        margin: 0 0 20px 0 ;
-        color: $gray ;
+
         > a {
           color: $yellow ;
+
           &:hover {
             cursor: pointer ;
           }
         }
+
         > strong {
-          font-weight: bold ;
+          font-weight: 700 ;
+
           > a {
             color: $yellow ;
+
             &:hover {
               cursor: pointer ;
             }
           }
         }
+
         > em {
           font-style: italic ;
         }
       }
+
       > div.relacionado {
         ul {
-          padding: 30px 0 0 0 ;
           overflow: auto ;
+          padding: 30px 0 0;
+
           li {
             @include boxGrid(2, 3%);
             float: left ;
+
             article {
               a:first-child {
                 text-decoration: none ;
+
                 img {
-                  width: 100% ; height: auto ;
+                  width: 100% ;
+ height: auto ;
                   margin-bottom: 10px ;
                 }
+
                 h1 {
-                  text-align: left ;
+                  margin: 0 0 10px;
+                  color: $yellow ;
                   font-family: $main-font ;
                   font-size: 32px ;
                   line-height: 34px ;
-                  margin: 0 0 10px 0 ;
-                  color: $yellow ;
+                  text-align: left ;
                 }
+
                 &:hover {
                   > h1 {
-                    color: darken($yellow, 20%) ;
                     cursor: pointer ;
+                    color: darken($yellow, 20%) ;
                   }
                 }
               }
+
               > a:last-child {
+                display: block ;
+                color: $yellow ;
                 font-family: $main-font-regular ;
                 font-size: 16px ;
-                color: $yellow ;
-                display: block ;
+
                 &:hover {
-                  text-decoration: none ;
-                  color: darken($yellow, 20%) ;
                   cursor: pointer ;
+                  color: darken($yellow, 20%) ;
+                  text-decoration: none ;
                 }
               }
+
               > p {
                 font-size: 14px ;
                 line-height: 20px ;
@@ -158,90 +193,111 @@
       }
     }
   }
+
   div.opt-in {
     background-color: $black ;
-    > div.bar {
-      height: 40px ; width: 100% ;
+
+    > div.bar { width: 100% ;
+      height: 40px ;
       background-color: $yellow ;
     }
+
     > div.container {
-      padding: 90px 0 70px 0;
+      padding: 90px 0 70px;
+
       > small {
+        color: $gray ;
         font-family: $text-font ;
         font-size: 14px ;
         line-height: 14px !important ;
-        color: $gray ;
+
         > a {
 
         }
       }
+
       div#mc_embed_signup {
         margin-bottom: 30px ;
+
         form {
           div.indicates-required {
-            text-align: right ;
+            color: $gray ;
             font-family: $text-font ;
             font-size: 12px ;
-            color: $gray ;
+            text-align: right ;
+
             > span {
               color: $red ;
             }
           }
+
           div.mc-field-group {
             margin-bottom: 30px ;
+
             label {
-              font-family: $main-font ;
-              font-size: 16px ;
               display: block ;
               color: $yellow ;
+              font-family: $main-font ;
+              font-size: 16px ;
+
               > span {
                 color: $red ;
               }
             }
+
             input {
-              height: 50px ;
               width: 400px ;
-              border: none ;
+              height: 50px ;
               padding: 5px 10px ;
+              border: none ;
+
               &[type="email"]{
                 width: 500px ;
               }
             }
           }
+
           div.two-columns {
-            width: 40% ;
             display: inline-block ;
+            width: 40% ;
+
             > input {
               width: 95% ;
             }
           }
+
           div.clear {
             margin-top: 40px ;
           }
         }
       }
+
       div#mergeRow-gdpr {
         p {
           color: $gray ;
+
           > a {
             color: $yellow ;
           }
         }
+
         > div.content__gdpr {
           fieldset {
             label {
               input {
-                width: 30px ; height: 30px ;
+                display: inline-block ;
+                width: 30px ;
+ height: 30px ;
                 margin-right: 15px ;
-                display: inline-block ;
               }
+
               span {
-                font-family: $text-font ;
-                color: $white ;
-                line-height: 30px ;
-                display: inline-block ;
                 position: relative ;
                 top: -8px ;
+                display: inline-block ;
+                color: $white ;
+                font-family: $text-font ;
+                line-height: 30px ;
               }
             }
           }
@@ -284,42 +340,53 @@
         }
       }
     }
+
     > article {
       > div.contenido {
         width: 100% ;
       }
     }
+
     div.opt-in {
       > div.container {
         padding: 30px 15px ;
+
         div#mc_embed_signup {
           margin-bottom: 30px ;
+
           form {
             div.mc-field-group {
               margin-bottom: 10px ;
+
               input {
-                height: 40px ;
                 width: 100% ;
+                height: 40px ;
                 padding: 5px 10px ;
+
                 &[type="email"]{
                   width: 100% ;
                 }
               }
             }
+
             div.two-columns {
               width: 49% ;
+
               > input {
                 width: 95% ;
               }
             }
+
             div.clear {
               margin-top: 30px ;
             }
           }
         }
+
         > small {
           font-size: 12px ;
           line-height: 10px !important ;
+
           > a {
             line-height: 10px ;
           }
@@ -333,101 +400,128 @@
     > div.resource-header {
       $head-height: 350px ;
       height: $head-height ;
+
       > div {
         height: $head-height ;
+
         > div.container {
           height: $head-height ;
+
           > div {
+            bottom: 0 ;
+ left: 0 ;
             width: 90% ;
-            bottom: 0 ; left: 0 ;
             padding: 0 0 60px 15px ;
+
             > h1 {
+              margin-bottom: 25px ;
               font-size: 26px ;
               line-height: 28px ;
-              margin-bottom: 25px ;
             }
+
             > p {
+              top: -15px ;
+              margin-bottom: 0 ;
               font-size: 13px ;
               line-height: 16px ;
-              margin-bottom: 0 ;
-              top: -15px ;
             }
           }
         }
       }
     }
+
     > article {
       text-align: center ;
+
       > img {
-        width: 100% ; height: auto ;
+        width: 100% ;
+ height: auto ;
       }
+
       > div.contenido {
-        padding: 0 0 0 0 ;
-        margin: 20px 0 30px 0 ;
+        margin: 20px 0 30px;
+        padding: 0;
+
         h2 {
+          margin: 0 0 15px !important ;
+          color: $yellow ;
           font-size: 26px ;
           line-height: 28px ;
-          margin: 0 0 15px 0 !important ;
-          color: $yellow ;
         }
+
         > h3 {
           @extend h1 ;
+          margin: 0 0 10px;
           font-size: 20px ;
           line-height: 22px ;
-          margin: 0 0 10px 0 ;
         }
+
         > h4 {
           @extend h2 ;
           font-size: 20px ;
           line-height: 22px ;
         }
+
         p {
+          margin: 0 0 15px;
           font-size: 13px ;
           line-height: 16px ;
-          margin: 0 0 15px 0 ;
+
           > a {
             color: $yellow ;
+
             &:hover {
               cursor: pointer ;
             }
           }
+
           > strong {
-            font-weight: bold ;
+            font-weight: 700 ;
+
             > a {
               color: $yellow ;
+
               &:hover {
                 cursor: pointer ;
               }
             }
           }
+
           > em {
             font-style: italic ;
           }
         }
+
         > div.relacionado {
           ul {
             li {
               article {
                 a:first-child {
                   text-decoration: none ;
+
                   img {
-                    width: 100% ; height: auto ;
+                    width: 100% ;
+ height: auto ;
                     margin-bottom: 10px ;
                   }
+
                   h1 {
                     font-size: 22px ;
                     line-height: 24px ;
                   }
+
                   &:hover {
                     > h1 {
-                      color: darken($yellow, 20%) ;
                       cursor: pointer ;
+                      color: darken($yellow, 20%) ;
                     }
                   }
                 }
+
                 > a:last-child {
                   font-size: 13px ;
                 }
+
                 > p {
                   font-size: 13px ;
                   line-height: 16px ;
@@ -438,18 +532,21 @@
         }
       }
     }
+
     div.opt-in {
       > div.container {
         div#mc_embed_signup {
           form {
             div.mc-field-group {
               input {
-                height: 50px ;
                 width: 100% ;
+                height: 50px ;
               }
             }
+
             div.two-columns {
               width: 100% ;
+
               > input {
                 width: 100% ;
               }

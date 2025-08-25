@@ -1,26 +1,26 @@
 
 :root {
 // Load Fonts
---main-font: "indivisible", Helvetica, sans-serif;
---main-font-regular: "indivisible", Helvetica, sans-serif;
---text-font: "bree-serif", Georgia, "Times New Roman", Times, serif;
+--main-font: "indivisible", helvetica, sans-serif;
+--main-font-regular: "indivisible", helvetica, sans-serif;
+--text-font: "bree-serif", georgia, "Times New Roman", times, serif;
 
 // Colours
 
---darkgray:    #333132;
---black:       var(--darkgray);
---gray:        #B1B3B6; //old
---offwhite:    #ECE9E3;
---lightgray:   #FAF9F6;
---white:       #ffffff;
+--darkgray: #333132;
+--black: var(--darkgray);
+--gray: #B1B3B6; //old
+--offwhite: #ECE9E3;
+--lightgray: #FAF9F6;
+--white: #ffffff;
 
---red:         #FF0024;
---lightred:    #EFD0D4;
---yellow:      #F4F279;
---orange:      #FFA342;
+--red: #FF0024;
+--lightred: #EFD0D4;
+--yellow: #F4F279;
+--orange: #FFA342;
 --lightorange: #F5DEC6;
---green:       #2A8BA0;
---blue:        var(--green); //old
+--green: #2A8BA0;
+--blue: var(--green); //old
 
 --darkred: color-mix(in srgb, var(--red), black 10%);
 --darkblue: hsl(186, 97%, 15%);

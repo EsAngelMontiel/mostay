@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Project Mobile - Mostay</title>
+    <link rel="stylesheet" href="wp/wp-content/themes/mostay/css/main.min.css">
+    <style>
+        /* Estilos de prueba para simular el tema WordPress */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Simular header y footer */
+        .test-header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .test-footer {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* Contenedor de prueba */
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Indicador de breakpoint */
+        .breakpoint-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+        
+        /* Botón de cambio de viewport */
+        .viewport-toggle {
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            background: #4ecdc4;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .viewport-toggle:hover {
+            background: #45b7aa;
+        }
+    </style>
+</head>
+<body>
+    <div class="breakpoint-indicator" id="breakpoint-indicator">Desktop</div>
+    <button class="viewport-toggle" onclick="toggleViewport()">Toggle Mobile</button>
+    
+    <div class="test-header">
+        <h1>Test Header - Simulación del tema Mostay</h1>
+    </div>
+    
+    <div class="test-container">
+        <h2>Test de Responsive Design para .project</h2>
+        <p>Esta página simula la vista de un proyecto individual para probar los estilos responsivos.</p>
+        
+        <!-- Simulación de la estructura .project -->
+        <section class="project" data-animate="fade-in">
+            <article>
+                <div class="cover" data-animate="slide-up">
+                    <div>
+                        <img src="https://via.placeholder.com/800x400/2A8BA0/ffffff?text=Imagen+del+Proyecto" alt="Imagen del proyecto">
+                    </div>
+                </div>
+
+                <div class="container" data-animate="fade-in">
+                    <div class="contenido">
+                        <div class="left-column" data-animate="slide-left">
+                            <h1 data-animate="typing">Nombre del Proyecto</h1>
+                        </div>
+                        <div class="right-column">
+                        </div>
+                    </div>
+                    <div class="contenido">
+                        <div class="left-column" data-animate="slide-left">
+                            <h2 data-animate="fade-in">Descripción del proyecto con texto largo para probar el responsive design en dispositivos móviles</h2>
+                            <div class="datos" data-animate="stagger">
+                                <div class="categoria" data-stagger-item>
+                                    <h4>Servicio</h4>
+                                    <a class="categoria" href="#">Branding</a>
+                                </div>
+                                <div class="rubro" data-stagger-item>
+                                    <h4>Industria</h4>
+                                    <p>Tech Startup</p>
+                                </div>
+                                <div class="year" data-stagger-item>
+                                    <h4>Año</h4>
+                                    <p>2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-column" data-animate="slide-right">
+                            <div data-animate="fade-in">
+                                <p>Esta es la introducción del proyecto que debería ser visible en todos los dispositivos, incluyendo móviles como el iPhone 15 Pro Max. El texto debe ser legible y el layout debe adaptarse correctamente.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="galeria" data-animate="fade-in">
+                    <div data-animate="fade-in">
+                        <div class="wp-block-columns mCol-2">
+                            <div class="wp-block-column">
+                                <figure>
+                                    <img src="https://via.placeholder.com/400x300/FF0024/ffffff?text=Imagen+1" alt="Imagen 1">
+                                </figure>
+                            </div>
+                            <div class="wp-block-column">
+                                <figure>
+                                    <img src="https://via.placeholder.com/400x300/2A8BA0/ffffff?text=Imagen+2" alt="Imagen 2">
+                                </figure>
+                            </div>
+                        </div>
+                        
+                        <div class="wp-block-columns mCol-3">
+                            <div class="wp-block-column">
+                                <figure>
+                                    <img src="https://via.placeholder.com/300x200/FFA342/ffffff?text=Imagen+3" alt="Imagen 3">
+                                </figure>
+                            </div>
+                            <div class="wp-block-column">
+                                <figure>
+                                    <img src="https://via.placeholder.com/300x200/F4F279/000000?text=Imagen+4" alt="Imagen 4">
+                                </figure>
+                            </div>
+                            <div class="wp-block-column">
+                                <figure>
+                                    <img src="https://via.placeholder.com/300x200/B1B3B6/ffffff?text=Imagen+5" alt="Imagen 5">
+                                </figure>
+                            </div>
+                        </div>
+                        
+                        <div class="wp-block-columns mCol-1">
+                            <figure>
+                                <img src="https://via.placeholder.com/800x400/ECE9E3/000000?text=Imagen+Grande" alt="Imagen Grande">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    
+    <div class="test-footer">
+        <p>Test Footer - Simulación del tema Mostay</p>
+    </div>
+
+    <script>
+        // Función para detectar el breakpoint actual
+        function updateBreakpointIndicator() {
+            const width = window.innerWidth;
+            let breakpoint = 'Desktop';
+            
+            if (width <= 480) {
+                breakpoint = 'SM (≤480px) - iPhone/Móvil';
+            } else if (width <= 700) {
+                breakpoint = 'MD (≤700px) - Tablet';
+            } else if (width <= 1024) {
+                breakpoint = 'LG (≤1024px) - Laptop';
+            }
+            
+            document.getElementById('breakpoint-indicator').textContent = breakpoint;
+        }
+        
+        // Función para cambiar el viewport
+        function toggleViewport() {
+            const viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport.content.includes('width=480')) {
+                viewport.content = 'width=device-width, initial-scale=1.0';
+                document.body.style.width = '100%';
+                document.body.style.maxWidth = 'none';
+            } else {
+                viewport.content = 'width=480, initial-scale=1.0';
+                document.body.style.width = '480px';
+                document.body.style.maxWidth = '480px';
+            }
+            updateBreakpointIndicator();
+        }
+        
+        // Actualizar indicador al cargar y al cambiar tamaño
+        window.addEventListener('load', updateBreakpointIndicator);
+        window.addEventListener('resize', updateBreakpointIndicator);
+        
+        // Simular animaciones
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.querySelectorAll('[data-animate]').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

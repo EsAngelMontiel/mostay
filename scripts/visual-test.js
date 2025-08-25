@@ -14,11 +14,11 @@ const config = require('../project.config.js');
 
 // URLs a testear (ajustar según tu entorno local)
 const TEST_URLS = [
-  'http://localhost/Mostay/wp/',
-  'http://localhost/Mostay/wp/about/',
-  'http://localhost/Mostay/wp/proyectos/',
-  'http://localhost/Mostay/wp/blog/',
-  'http://localhost/Mostay/wp/contacto/'
+  'http://localhost:8888/Mostay/wp/',
+  'http://localhost:8888/Mostay/wp/about/',
+  'http://localhost:8888/Mostay/wp/proyectos/',
+  'http://localhost:8888/Mostay/wp/blog/',
+  'http://localhost:8888/Mostay/wp/contacto/'
 ];
 
 // Viewports a testear

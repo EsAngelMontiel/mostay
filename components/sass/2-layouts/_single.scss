@@ -1,26 +1,30 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .single {
   .cover {
     position: relative;
-    height: 70vh; width: 100% ;
-    @include m.flex(column, center, center, nowrap);
-    background-color: var(--color-backgrounds) ;
+ width: 100% ;
+    height: 70vh;
     padding-bottom: var(--spacing-lg);
+    background-color: var(--color-backgrounds) ;
+    @include m.flex(column, center, center, nowrap);
+
     > div {
-      width: calc(100% - calc(var(--spacing-lg)*2)) ;
-      height: 100% ;  
       position: relative ;
       overflow: hidden;
-      background-color: gray ;
+      width: calc(100% - calc(var(--spacing-lg)*2)) ;
+      height: 100% ;
       border-radius: var(--radius-md);
+      background-color: gray ;
+
       img {
-        width: 100% ; height: 100% ;
         position: absolute;
         top: 0;
         left: 0;
-        object-fit: cover;
         z-index: 1;
+        width: 100% ;
+ height: 100% ;
+        object-fit: cover;
       }
       @include m.breakpoint(lg) {
         width: calc(100% - calc(var(--spacing-md)*2)) ;
@@ -36,31 +40,39 @@
       height: 50vh;
     }
   }
+
   div.contenido {
     padding: 2rem 0 var(--pading-top-lg) 0 ;
+
     > h1 {
       margin-bottom: 1.5rem ;
     }
+
     .datos {
       @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-sm));
+
       > div {
-        background-color: var(--white);
         margin-right: calc(var(--spacing-sm)/2);
         padding: var(--spacing-md);
         border-radius: 0 0 var(--radius-md) var(--radius-md);
+        background-color: var(--white);
         box-shadow: 0 3px 6px var(--color-shadow);
+
         > h4 {
-          font-size: .8rem ;
-          margin-bottom: .2rem ;
+          margin-bottom: 0.2rem;
+          font-size: 0.8rem;
         }
+
         > a, span, time {
+          color: var(--darkgray);
           font-family: var(--main-font);
           font-size: 1.1rem ;
-          color: var(--darkgray);
         }
+
         &:first-child {
           border-radius: var(--radius-md) 0 var(--radius-md) var(--radius-md) ;
         }
+
         &:last-child {
           border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md) ;
         }
@@ -68,21 +80,25 @@
     }
     @include m.breakpoint(lg) {
       padding: 0 var(--spacing-md) var(--pading-top-md) ;
+
       .datos {
         @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-sm));
+
         > div {
           margin-right: calc(var(--spacing-sm)/4);
           padding: calc(var(--spacing-md) / 1.5);
           border-radius: 0 0 var(--radius-md) var(--radius-md);
           box-shadow: 0 3px 6px var(--color-shadow);
+
           > h4 {
-            font-size: .6rem ;
-            margin-bottom: .2rem ;
+            margin-bottom: 0.2rem;
+            font-size: 0.6rem;
           }
+
           > a, span, time {
+            color: var(--darkgray);
             font-family: var(--main-font);
             font-size: 1rem ;
-            color: var(--darkgray);
           }
         }
       }
@@ -92,25 +108,32 @@
         margin-bottom: 1rem ;
       }
       padding: 0 1rem 1rem ;
+
       .datos {
-        @include m.flex(row, flex-start, flex-start, nowrap, .3rem);
+        @include m.flex(row, flex-start, flex-start, nowrap, 0.3rem);
+
         > div {
           margin-right: 0 ;
-          padding: 1rem .5rem ;
+          padding: 1rem 0.5rem;
           border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+
           > h4 {
-            font-size: .6rem ;
-            margin-bottom: .2rem ;
+            margin-bottom: 0.2rem;
+            font-size: 0.6rem;
           }
+
           > a, span, time {
-            font-size: .8rem ;
-            line-height: .8rem ;
-            margin: 0 ; padding: 0 ;
             display: inline ;
+            margin: 0 ;
+ padding: 0 ;
+            font-size: 0.8rem;
+            line-height: 0.8rem;
           }
+
           &:first-child {
             border-radius: var(--radius-sm) 0 var(--radius-sm) var(--radius-sm) ;
           }
+
           &:last-child {
             border-radius: 0 var(--radius-sm) var(--radius-sm) var(--radius-sm) ;
           }
@@ -118,198 +141,235 @@
       }
     }
   }
-  
-  
-  
+
+
+
   .article-content {
-    background-color: var(--white);
     padding: var(--pading-top-lg) 0 ;
+    background-color: var(--white);
+
     p {
+      margin-bottom: 2rem ;
       font-size: 1.2rem ;
       line-height: 1.8rem ;
-      margin-bottom: 2rem ;
+
       > a {
         color: var(--green) ;
       }
+
       > strong {
         font-weight: 500 ;
       }
     }
+
     h1, h2, h3 {
-      font-weight: 600 ;
-      color: var(--green);
       margin: 1.5rem 0 1rem ;
+      color: var(--green);
+      font-weight: 600 ;
     }
 
     > strong {
       @extend p ;
-      font-weight: 500 ;
       margin-bottom: 1.25rem ;
+      font-weight: 500 ;
     }
-    
+
     figure {
       width: 100% ;
+
       > img {
-        width: 100% ; height: auto ;
+        width: 100% ;
+ height: auto ;
+        margin: 1.5rem 0 0;
         border-radius: var(--radius-md);
-        margin: 1.5rem 0 0 0 ;
       }
+
       > figcaption {
         @extend p ;
+        padding: 0.2rem 1rem 0.1rem;
+        color: var(--green) ;
         font-size: 1rem ;
         line-height: 1.2rem ;
-        padding: .2rem 1rem .1rem 1rem ;
-        color: var(--green) ;
+
         > a {
           display: inline ;
         }
       }
+
       div.wp-block-embed__wrapper {
         position: relative !important;
         width: 100% !important;
         //padding-bottom: 56.25% ;
         height: fit-content ;
         margin-bottom: 1.25rem;
+
         iframe {
           position: absolute ;
-          top: 0 ; left: 0 ;
+          top: 0 ;
+ left: 0 ;
           width: 100% ;
           height: 100% ;
         }
       }
+
       &.is-type-video {
         div.wp-block-embed__wrapper {
-          padding-bottom: 56.25% ;
           height: 0 ;
+          padding-bottom: 56.25% ;
         }
       }
     }
+
     blockquote {
       @extend p ;
-      background-color: var(--offwhite) ;
-      border-radius: var(--radius-md) ;
       padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius-md) ;
+      background-color: var(--offwhite) ;
+
       > p {
+        margin: 0 0 0.5rem;
         padding: 0 ;
-        margin: 0 0 .5rem 0 ;
         color: var(--darkgray);
         font-weight: 500 ;
       }
+
       > footer {
         height: auto ;
+ margin: 0 ;
+        padding: 0 ;
         background-color: transparent ;
-        padding: 0 ; margin: 0 ;
       }
     }
+
     ul, ol {
       margin-bottom: 1rem ;
+
       li {
+        margin: 0 ;
         font-family: var(--text-font);
         list-style-type: disc ;
         list-style-position: inside ;
         @extend p ;
-        margin: 0 ;
       }
     }
+
     ol {
       li {
         list-style-type: decimal ;
       }
     }
+
     div.tags {
       display: inline-block ;
       width: 100% ;
       color: var(--gray) ;
+
       > strong {
+        display: inline-block ;
+        margin: 0 0 0.625rem;
         font-family: var(--text-font) ;
         font-size: 1rem ;
-        line-height: 1.2rem ;
-        margin: 0 0 .625rem 0 ;
-        display: inline-block ;
         font-weight: 500 ;
+        line-height: 1.2rem ;
       }
+
       > a {
+        transition: color 0.3s ease;
+        margin: 0 0 0.625rem;
+        color: var(--orange) ;
         font-family: var(--text-font) ;
         font-size: 1rem ;
         font-style: italic ;
-  
         line-height: 1.2rem ;
-        margin: 0 0 .625rem 0 ;
-        color: var(--orange) ;
-        transition: color .3s ease ;
+
         &:hover {
-          text-decoration: none ;
           color: var(--yellow) ;
+          text-decoration: none ;
         }
       }
     }
+
     div.autor {
       display: inline-block ;
-      width: 100% ;
-      padding: var(--spacing-lg) ;
       overflow: hidden ;
-      background-color: var(--color-backgrounds);
-      border-radius: var(--radius-md);
-      @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-md));
+      width: 100% ;
       margin-top: var(--pading-top-lg);
+      padding: var(--spacing-lg) ;
+      border-radius: var(--radius-md);
+      background-color: var(--color-backgrounds);
+      @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-md));
+
       > img {
-        width: 15% ; height: auto ;
         display: block ;
         float: left ;
+        width: 15% ;
+ height: auto ;
         border-radius: 50% ;
       }
+
       > span {
         display: block ;
         text-align: left ;
+
         > em {
-          font-size: .8rem ;
-          line-height: .8rem ;
-          font-family: var(--main-font-regular) ;
           color: var(--darkgray) ;
+          font-family: var(--main-font-regular) ;
+          font-size: 0.8rem;
+          line-height: 0.8rem;
         }
+
         > h2 {
+          margin: 0 ;
           font-family: var(--main-font) ;
           font-size: 1.4rem ;
           line-height: 1.62rem ;
-          margin: 0 ;
+
           > a {
             color: var(--green) ;
+
             &:hover {
-              text-decoration: none ;
               color: var(--red);
+              text-decoration: none ;
             }
           }
         }
+
         > strong {
+          display: block ;
+          margin-bottom: 0.7rem;
+          color: var(--darkgray) ;
           font-family: var(--main-font-regular) ;
           font-size: 1rem ;
-          color: var(--darkgray) ;
-          margin-bottom: .7rem ;
-          display: block ;
         }
+
         > p {
+          margin: 0 0 0.625rem;
+          color: var(--darkgray) ;
           font-family: var(--text-font) ;
           font-size: 1rem ;
           line-height: 1.2rem ;
-          margin: 0 0 .625rem 0 ;
-          color: var(--darkgray) ;
         }
+
         ul {
+          overflow: auto ;
           width: 100% ;
           margin: 0 ;
           padding: 0 ;
-          overflow: auto ;
           list-style: none;
+
           li {
-            margin-right: .625rem ;
             float: left ;
+            margin-right: 0.625rem;
             list-style-type: none ;
+
             a {
+              transition: color 0.3s ease;
               color: var(--darkgray) ;
-              transition: color .3s ease ;
+
               span {
                 display: none ;
               }
+
               &:hover {
                 color: var(--red) ;
               }
@@ -318,38 +378,42 @@
         }
       }
     }
+
     div.comments {
       display: inline-block ;
-      width: var(--col-w) ;
       overflow: hidden ;
+      width: var(--col-w) ;
       padding: 1.25rem 1rem ;
       text-align: left ;
+
       > div#respond {
         h3 {
+          display: block ;
+          width: 100% ;
+          color: var(--red) ;
           font-family: var(--main-font) ;
           font-size: 1.87rem ;
           line-height: 3.25rem ;
-          width: 100% ;
-          color: var(--red) ;
           text-align: center ;
-          display: block ;
         }
       }
     }
     @include m.breakpoint(lg) {
       padding: var(--pading-top-md) var(--spacing-md) ;
+
       .article-container {
         padding: 0 var(--spacing-md) 0 ;
       }
-      
+
     }
     @include m.breakpoint(md) {
       padding: var(--pading-top-md) 0 ;
     }
   }
 }
+
 div.btn-container {
-  padding: 1.25rem 0 2.5rem 0 ;
+  padding: 1.25rem 0 2.5rem;
   text-align: center ;
 }
 

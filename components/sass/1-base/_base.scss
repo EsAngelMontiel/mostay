@@ -1,71 +1,87 @@
-@use 'mixins' as m;
+@use "mixins" as m;
 
 html {
-  box-sizing: border-box;
   position: absolute ;
+  box-sizing: border-box;
   width: 100% ;
   height: 100% ;
-  padding: 0 ;
   margin: 0 ;
+  padding: 0 ;
+
   body {
+    display: block ;
+    height: 100% ;
+    margin: 0 ;
     //padding: var(--menu-h) 0 0 0 ;
     background-color: var(--color-backgrounds) ;
-    margin: 0 ;
-    height: 100% ;
-    display: block ;
+
     .breadcrumb-espacio {
-      height: var(--bc-img-h) ; 
-      width: 100% ;
-      background: url('../img/breadcrumb-bg.jpg') no-repeat;
-      background-size: cover;
       position: relative ;
       overflow: hidden ;
-      margin-bottom: .625rem ;
+      width: 100% ;
+      height: var(--bc-img-h) ;
+      margin-bottom: 0.625rem;
+      background: url("../img/breadcrumb-bg.jpg") no-repeat;
+      background-size: cover;
+
       &.about {
         height: calc(var(--bc-img-h) + 200) ;
+
         .bc-img {
           height: calc(var(--bc-img-h) + 200) ;
+
           img {
             min-height: calc(var(--bc-img-h) + 200) ;
           }
         }
       }
+
       .bc-img {
-        height: var(--bc-img-h) ;
         overflow: hidden ;
+        height: var(--bc-img-h) ;
+
         img {
-          width: 100% ; height: auto ;
+          width: 100% ;
+ height: auto ;
           object-fit: cover ;
           object-position: center ;
           min-height: var(--bc-img-h) ;
         }
+
         .bc-gradient {
-          width: 100% ; height: 100% ;
           position: absolute ;
-          top: 0 ; left: 0 ;
-          background-image: url('../img/gradient-bg.png');
+          top: 0 ;
+ left: 0 ;
+          width: 100% ;
+ height: 100% ;
+          background-image: url("../img/gradient-bg.png");
           background-repeat: repeat-x ;
           background-position: bottom ;
         }
       }
+
       > .container {
-        height: 100% ;
-        padding-top: 2.5rem ;
         position: relative ;
         top: calc(-1 * var(--bc-img-h)) ;
+        height: 100% ;
+        padding-top: 2.5rem ;
+
         > nav {
           width: 100% ;
+
           ol {
             li {
-              font-family: var(--main-font) ;
-              color: var(--white) ;
               display: inline-block ;
+              color: var(--white) ;
+              font-family: var(--main-font) ;
+
               a {
+                transition: color 0.3s ease;
+                color: var(--white) ;
+                font-family: var(--main-font) ;
                 font-size: 18px ;
                 line-height: 18px ;
-                font-family: var(--main-font) ;
-                color: var(--white) ;
-                transition: color 0.3s ease;
+
                 &:hover {
                   color: var(--red) ;
                   text-decoration: none ;
@@ -76,8 +92,8 @@ html {
         }
       }
     }
-    
-    
+
+
 
     .btn-container {
       @include m.flex(row, center, center, nowrap, var(--spacing-sm));
@@ -86,34 +102,39 @@ html {
     // Titulo de Pagina
     .titulo {
       margin-bottom: 1.87rem ;
+
       h1 {
+        display: inline-block ;
+        margin: 0 0.625rem 0 0;
+        color: var(--darkgray) ;
         font-family: var(--main-font) ;
         font-size: 2.5rem ;
         line-height: 2.5rem ;
-        display: inline-block ;
-        margin: 0 .625rem 0 0 ;
-        color: var(--darkgray) ;
+
         a {
+          transition: color 0.3s ease;
           color: var(--white) ;
-          transition: color .3s ease ;
+
           &:hover {
             color: var(--yellow) ;
             text-decoration: none ;
           }
         }
       }
+
       p {
-        width: 30vw ;
-        font-family: var(--text-font) ;
-        font-size: .8rem ;
-        line-height: 1rem ;
-        display: inline-block ;
-        color: var(--green) ;
-        padding: 0 0 0 0 ;
         position: relative ;
         top: 2px ;
+        display: inline-block ;
+        width: 30vw ;
+        padding: 0;
+        color: var(--green) ;
+        font-family: var(--text-font) ;
+        font-size: 0.8rem;
+        line-height: 1rem ;
       }
     }
+
     &.no-scroll {
       overflow: hidden;
       height: 100vh;

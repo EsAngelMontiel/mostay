@@ -1,51 +1,57 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .newsletter {
     background-color: var(--green);
-    
+
     .container {
         display: grid;
+        grid-template-columns: 50% 50% ;
         min-height: 350px; // o el alto que desees
-        grid-template-columns: 50% 50% ; 
         div {
             height: 100% ;
             @include m.flex(column, center, flex-start);
+
             h2 {
+                margin-bottom: 0.5rem;
                 color: var(--yellow);
-                margin-bottom: .5rem ;
                 font-weight: 500 ;
             }
+
             p {
-                color: var(--white);
                 margin-bottom: 1rem ;
+                color: var(--white);
+
                 strong {
                     color: var(--yellow);
                     font-weight: 500 ;
                 }
             }
         }
+
         .newsletter-logo{
-            background: url("../img/el-contenedor-logo.svg") ;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
             height: auto;
             min-height: 100%;
+            background: url("../img/el-contenedor-logo.svg") ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         }
         @include m.breakpoint(md) {
             grid-template-columns: 40% 60% ;
         }
         @include m.breakpoint(sm) {
+            grid-template-columns: 1fr ;
             height: 30rem ;
-            grid-template-columns: 1fr ; 
+
             div {
                 height: 15rem ;
                 padding: 0 2rem 3rem ;
             }
+
             .newsletter-logo{
-                background-size: fill;
                 min-height: 15rem;
                 padding: 0 ;
+                background-size: fill;
             }
         }
     }
@@ -58,57 +64,62 @@
             width: 100% ;
             margin-top: 1rem ;
         }
+
         &:last-child {
-            padding: 0 0 3rem 0;
+            padding: 0 0 3rem;
         }
+
         h3 {
             margin-bottom: 1rem ;
         }
+
         p {
             line-height: 1.5rem ;
         }
+
         ol {
             counter-reset: item;
-            list-style: none;
-            padding-left: 0;
             margin: 0;
+            padding-left: 0;
+            list-style: none;
+
             li {
+                position: relative;
                 display: flex;
                 align-items: flex-start;
                 margin-bottom: 2rem;
-                position: relative;
                 padding-left: 3rem;
                 line-height: 2rem ;
-            
+
                 &::before {
-                  counter-increment: item;
-                  content: counter(item);
                   position: absolute;
-                  left: 0;
                   top: 0;
-                  font-size: 1rem;
-                  font-weight: bold;
-                  background: var(--green); // ajusta según tu paleta
-                  color: var(--offwhite);
-                  width: 2.2rem;
-                  height: 2.2rem;
+                  left: 0;
                   display: flex;
                   align-items: center;
                   justify-content: center;
+                  content: counter(item);
+                  counter-increment: item;
+                  width: 2.2rem;
+                  height: 2.2rem;
                   border-radius: 50%;
+                  background: var(--green); // ajusta según tu paleta
+                  color: var(--offwhite);
                   font-family: var(--text-font);
+                  font-size: 1rem;
+                  font-weight: 700;
                 }
-            
+
                 h3 {
-                  margin: 0 0 0.5rem 0;
-                  font-size: 1.2rem;
+                  margin: 0 0 0.5rem;
                   color: var(--text-color);
+                  font-size: 1.2rem;
                 }
-            
+
                 p {
                   margin: 0;
-                  line-height: 1.6;
                   color: var(--gray-dark);
+                  line-height: 1.6;
                 }
               }
         }

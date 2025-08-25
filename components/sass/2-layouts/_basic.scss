@@ -1,17 +1,20 @@
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .basic {
   > article {
     text-align: center ;
+
     > div.video-cover {
       position: relative !important;
       width: 100% !important;
-      padding-bottom: 56.25% ;
       height: 0 ;
       margin-bottom: 20px;
+      padding-bottom: 56.25% ;
+
       iframe {
         position: absolute ;
-        top: 0 ; left: 0 ;
+        top: 0 ;
+ left: 0 ;
         width: 100% ;
         height: 100% ;
       }
@@ -23,8 +26,8 @@
 .basic {
   $col-w: 600px ;
   > article {
-    
-    
+
+
     > div.contenido {
       display: inline-block ;
       width: $col-w ;
@@ -124,7 +127,7 @@
 /* ************************************************************************* */
 /*
 .basic {
-  
+
 
   @include media-breakpoint-down(md) {
     $col-w: 100% ;

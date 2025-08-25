@@ -2,150 +2,183 @@
 /* ************************ RESOURCES ************************ */
 /* ******************************************************** */
 
-@use '../1-base/mixins' as m;
+@use "../1-base/mixins" as m;
 
 .thanks {
   position: relative ;
+
   > div.resource-header {
-    width: 100% ; height: var(--head-height) ;
     overflow: hidden ;
+    width: 100% ;
+ height: var(--head-height) ;
+
     > img {
       display: block;
       width: 100vw;
       height: 100%;
       object-fit: cover;
     }
+
     > div {
-      width: 100% ; height: var(--head-height) ;
-      background: linear-gradient(to bottom, rgba(51,49,50,0), rgba(51,49,50,1));
       position: absolute ;
-      top: 0 ; left: 0 ;
+      top: 0 ;
+ left: 0 ;
+      width: 100% ;
+ height: var(--head-height) ;
+      background: linear-gradient(to bottom, rgba(51,49,50,0), rgba(51,49,50,1));
+
       > div.container {
-        height: var(--head-height) ;
         position: relative;
+        height: var(--head-height) ;
+
         > div {
-          width: 100% ;
           position: absolute ;
           bottom: 0 ;
+          width: 100% ;
           padding: 0 0 5rem 1.25rem ;
           text-align: center ;
+
           > h1 {
             width: 100% ;
+            margin-bottom: 0.625rem;
             color: var(--yellow) ;
             font-family: var(--main-font) ;
             font-size: 2.5rem ;
             line-height: 2.6rem ;
-            margin-bottom: .625rem ;
           }
+
           > p {
             width: 50% ;
+            margin: 0 auto ;
+            color: var(--white) ;
             font-family: var(--text-font) ;
             font-size: 1rem ;
             line-height: 1.375rem ;
-            color: var(--white) ;
-            margin: 0 auto ;
           }
         }
       }
     }
   }
+
   > article {
     text-align: center ;
+
     > img {
-      width: 100% ; height: auto ;
+      width: 100% ;
+ height: auto ;
     }
+
     > div.contenido {
-      padding: 1.875rem 0 0 0 ;
       display: inline-block ;
       width: var(--col-w) ;
-      margin: 1.875rem 0 1.875rem 0 ;
+      margin: 1.875rem 0;
+      padding: 1.875rem 0 0;
       text-align: left ;
+
       h2 {
+        margin: 0 0 1.25rem !important ;
+        color: var(--yellow) ;
         font-family: var(--main-font) ;
         font-size: 2.5rem ;
         line-height: 2.75rem ;
-        margin: 0 0 1.25rem 0 !important ;
-        color: var(--yellow) ;
       }
+
       > h3 {
         @extend h1 ;
+        margin: 0 0 1.25rem;
+        color: var(--white) ;
         font-size: 1.75rem ;
         line-height: 2.25rem ;
-        margin: 0 0 1.25rem 0 ;
-        color: var(--white) ;
       }
+
       > h4 {
         @extend h2 ;
+        margin: 0 0 1.25rem;
+        color: var(--blue) ;
         font-size: 1.75rem ;
         line-height: 1.875rem ;
-        color: var(--blue) ;
-        margin: 0 0 1.25rem 0 ;
       }
+
       p {
+        margin: 0 0 1.25rem;
+        color: var(--gray) ;
         font-family: var(--text-font) ;
         font-size: 1rem ;
         line-height: 1.37rem ;
-        margin: 0 0 1.25rem 0 ;
-        color: var(--gray) ;
+
         > a {
           color: var(--yellow) ;
+
           &:hover {
             cursor: pointer ;
           }
         }
+
         > strong {
-          font-weight: bold ;
+          font-weight: 700 ;
+
           > a {
             color: var(--yellow) ;
+
             &:hover {
               cursor: pointer ;
             }
           }
         }
+
         > em {
           font-style: italic ;
         }
       }
+
       > div.relacionado {
         ul {
-          padding: 1.875rem 0 0 0 ;
           overflow: auto ;
+          padding: 1.875rem 0 0;
+
           li {
             //@include boxGrid(2, 3%);
             //float: left ;
             article {
               a:first-child {
                 text-decoration: none ;
+
                 img {
-                  width: 100% ; height: auto ;
+                  width: 100% ;
+ height: auto ;
                   margin-bottom: 1.25rem ;
                 }
+
                 h1 {
-                  text-align: left ;
+                  margin: 0 0 1.25rem;
+                  color: var(--yellow) ;
                   font-family: var(--main-font) ;
                   font-size: 2rem ;
                   line-height: 2.4rem ;
-                  margin: 0 0 1.25rem 0 ;
-                  color: var(--yellow) ;
+                  text-align: left ;
                 }
+
                 &:hover {
                   > h1 {
-                    color: var(--darkyellow) ;
                     cursor: pointer ;
+                    color: var(--darkyellow) ;
                   }
                 }
               }
+
               > a:last-child {
+                display: block ;
+                color: var(--yellow) ;
                 font-family: var(--main-font) ;
                 font-size: 1rem ;
-                color: var(--yellow) ;
-                display: block ;
+
                 &:hover {
-                  text-decoration: none ;
-                  color: var(--darkyellow) ;
                   cursor: pointer ;
+                  color: var(--darkyellow) ;
+                  text-decoration: none ;
                 }
               }
+
               > p {
                 font-size: 1rem ;
                 line-height: 1.25rem ;
@@ -158,47 +191,58 @@
       }
     }
   }
+
   div.opt-in {
     background-color: var(--black) ;
-    > div.bar {
-      height: 2.5rem ; width: 100% ;
+
+    > div.bar { width: 100% ;
+      height: 2.5rem ;
       background-color: var(--yellow) ;
     }
+
     > div.container {
-      padding: 90px 0 70px 0;
+      padding: 90px 0 70px;
+
       > small {
+        color: var(--gray) ;
         font-family: var(--text-font) ;
         font-size: 1rem ;
         line-height: 1.2rem !important ;
-        color: var(--gray) ;
       }
+
       div#mc_embed_signup {
         margin-bottom: 1.875rem ;
+
         form {
           div.indicates-required {
-            text-align: right ;
-            font-family: var(--text-font) ;
-            font-size: .75rem ;
             color: var(--gray) ;
+            font-family: var(--text-font) ;
+            font-size: 0.75rem;
+            text-align: right ;
           }
+
           div.mc-field-group {
             margin-bottom: 1.25rem ;
+
             label {
-              font-family: var(--main-font) ;
-              font-size: 1rem ;
               display: block ;
               color: var(--yellow) ;
+              font-family: var(--main-font) ;
+              font-size: 1rem ;
             }
+
             input {
-              height: 2.5rem ;
               width: 25rem ;
+              height: 2.5rem ;
+              padding: 0.3rem 1.25rem;
               border: none ;
-              padding: .3rem 1.25rem ;
+
               &[type="email"]{
                 width: 31.25rem ;
               }
             }
           }
+
           div.clear {
             margin-top: 1.87rem ;
           }
@@ -213,45 +257,55 @@
           > div {
             width: 95% ;
             padding: 0 ;
+
             p {
-              width: 100% ;;
-              padding: 0 15% ;
+              width: 100% ;
               margin: 0 ;
+              padding: 0 15% ;
             }
           }
         }
       }
     }
+
     > article {
       > div.contenido {
         width: 100% ;
       }
     }
+
     div.opt-in {
       > div.container {
         padding: 30px 15px ;
+
         div#mc_embed_signup {
           margin-bottom: 30px ;
+
           form {
             div.mc-field-group {
               margin-bottom: 1.25rem ;
+
               input {
-                height: 2.5rem ;
                 width: 100% ;
+                height: 2.5rem ;
                 padding: 5px 1.25rem ;
+
                 &[type="email"]{
                   width: 100% ;
                 }
               }
             }
+
             div.clear {
               margin-top: 30px ;
             }
           }
         }
+
         > small {
           font-size: 12px ;
           line-height: 1.25rem !important ;
+
           > a {
             line-height: 1.25rem ;
           }
@@ -281,7 +335,7 @@
   }
 
   @include media-breakpoint-down(md) {
-    
+
   }
 
   @include media-breakpoint-down(sm) {

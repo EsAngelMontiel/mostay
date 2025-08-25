@@ -41,14 +41,14 @@ Options -Indexes
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-# Bloquear bots maliciosos
-<IfModule mod_rewrite.c>
-    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
-    RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget) [NC,OR]
-    RewriteCond %{HTTP_USER_AGENT} ^.*(libwww-perl|curl|wget|python|nikto|scan) [NC,OR]
-    RewriteCond %{HTTP_USER_AGENT} ^.*(winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC]
-    RewriteRule .* - [F,L]
-</IfModule>
+# Bloquear bots maliciosos (TEMPORALMENTE DESHABILITADO PARA TESTING)
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+#     RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget) [NC,OR]
+#     RewriteCond %{HTTP_USER_AGENT} ^.*(libwww-perl|curl|wget|python|nikto|scan) [NC,OR]
+#     RewriteCond %{HTTP_USER_AGENT} ^.*(winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC]
+#     RewriteRule .* - [F,L]
+# </IfModule>
 
 # Limitar métodos HTTP
 <LimitExcept GET POST>
