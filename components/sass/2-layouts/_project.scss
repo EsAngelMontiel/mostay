@@ -272,12 +272,52 @@ html, body {
           }
         }
       }
+      
+      // En md, todas las imágenes y videos tienen esquinas redondeadas completas
+      // ya que se muestran solas en fila
+      figure {
+        border-radius: var(--radius-md) !important;
+        
+        > img,
+        > video {
+          border-radius: var(--radius-md) !important;
+        }
+      }
+      
+      video,
+      .wp-block-video {
+        border-radius: var(--radius-md) !important;
+      }
+      
+      .wp-block-embed .wp-block-embed__wrapper {
+        border-radius: var(--radius-md) !important;
+      }
     }
 
     @include m.breakpoint(sm) {
       overflow-x: hidden;
       max-width: 100%;
       padding: 0 var(--spacing-sm);
+      
+      // En sm, todas las imágenes y videos tienen esquinas redondeadas completas
+      // ya que se muestran solas en fila
+      figure {
+        border-radius: var(--radius-md) !important;
+        
+        > img,
+        > video {
+          border-radius: var(--radius-md) !important;
+        }
+      }
+      
+      video,
+      .wp-block-video {
+        border-radius: var(--radius-md) !important;
+      }
+      
+      .wp-block-embed .wp-block-embed__wrapper {
+        border-radius: var(--radius-md) !important;
+      }
     }
 
       .wp-block-column {
