@@ -54,27 +54,112 @@ class ScrollAnimations {
         } else {
             this.setupAnimations();
         }
+        
+        // Fallback para móviles: forzar animaciones críticas después de un delay
+        this.setupMobileFallback();
     }
 
     setupAnimations() {
-        // Configurar Intersection Observer
-        this.observer = new IntersectionObserver(
-            (entries) => this.handleIntersection(entries),
-            {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            }
-        );
+        try {
+            // Configurar Intersection Observer
+            this.observer = new IntersectionObserver(
+                (entries) => this.handleIntersection(entries),
+                {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                }
+            );
 
-        // Observar elementos con animaciones
-        this.observeElements();
+            // Observar elementos con animaciones
+            this.observeElements();
+            
+            // Manejar redimensionamiento de ventana
+            window.addEventListener('resize', () => this.handleResize());
+            
+            // Manejar cambio de orientación en móviles
+            window.addEventListener('orientationchange', () => {
+                setTimeout(() => this.handleResize(), 100);
+            });
+            
+            // Debug: log de elementos encontrados
+            if (window.innerWidth <= 700) {
+                this.debugMobileAnimations();
+            }
+        } catch (error) {
+            console.warn('Error en setupAnimations:', error);
+            // Fallback: forzar todas las animaciones
+            this.forceAllAnimations();
+        }
+    }
+
+    debugMobileAnimations() {
+        const animatedElements = document.querySelectorAll('[data-animate]');
+        console.log(`📱 Móvil detectado: ${animatedElements.length} elementos con animación encontrados`);
         
-        // Manejar redimensionamiento de ventana
-        window.addEventListener('resize', () => this.handleResize());
+        animatedElements.forEach((el, index) => {
+            console.log(`  ${index + 1}. ${el.tagName} - ${el.dataset.animate} - Visible: ${el.offsetParent !== null}`);
+        });
+    }
+
+    forceAllAnimations() {
+        console.log('🔄 Forzando todas las animaciones (fallback)');
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            if (!this.animatedElements.has(el)) {
+                this.animateElement(el, el.dataset.animate);
+                this.animatedElements.add(el);
+            }
+        });
+    }
+
+    setupMobileFallback() {
+        // En móviles, forzar las animaciones críticas después de 1 segundo
+        // Esto asegura que el contenido sea visible incluso si el Intersection Observer falla
+        setTimeout(() => {
+            if (window.innerWidth <= 700) {
+                this.forceCriticalAnimations();
+            }
+        }, 1000);
         
-        // Manejar cambio de orientación en móviles
+        // También forzar en cambio de orientación
         window.addEventListener('orientationchange', () => {
-            setTimeout(() => this.handleResize(), 100);
+            setTimeout(() => {
+                if (window.innerWidth <= 700) {
+                    this.forceCriticalAnimations();
+                }
+            }, 500);
+        });
+    }
+
+    forceCriticalAnimations() {
+        // Forzar animaciones de elementos críticos que deben ser visibles
+        const criticalSelectors = [
+            '[data-animate="fade-in"]',
+            '[data-animate="slide-up"]',
+            '[data-animate="slide-left"]',
+            '[data-animate="slide-right"]',
+            '[data-animate="stagger"]'
+        ];
+        
+        criticalSelectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => {
+                if (!this.animatedElements.has(el)) {
+                    this.animateElement(el, el.dataset.animate);
+                    this.animatedElements.add(el);
+                }
+            });
+        });
+        
+        // Para elementos typing, asegurar que sean visibles
+        document.querySelectorAll('[data-animate="typing"]').forEach(el => {
+            if (!this.animatedElements.has(el)) {
+                // En móviles, hacer el texto visible inmediatamente si no se ha animado
+                if (window.innerWidth <= 700) {
+                    el.style.visibility = 'visible';
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    this.animatedElements.add(el);
+                }
+            }
         });
     }
 
