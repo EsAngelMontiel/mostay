@@ -204,6 +204,18 @@ html, body {
  height: auto ;
         object-fit: cover;
       }
+      // En md, asegurar alineación exacta con el resto (sin margen lateral adicional)
+      @include m.breakpoint(md) {
+        figure,
+        img,
+        .wp-block-image {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          border-radius: var(--radius-md);
+        }
+      }
     }
 
           .mText {
