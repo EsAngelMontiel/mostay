@@ -167,6 +167,11 @@ html, body {
       gap: 0;
       padding: 0 2rem ;
 
+      // En el primer bloque de contenido (con el h1), ocultar la right-column
+      &:first-of-type {
+        > .right-column { display: none !important; }
+      }
+
       &:last-child > div {
         padding-bottom: 1rem ;
       }
@@ -1018,6 +1023,11 @@ html, body {
         width: 100% ;
         display: block;
         padding: 0 1rem ;
+
+        // En el primer bloque de contenido (con el h1), ocultar la right-column
+        &:first-of-type {
+          > .right-column { display: none !important; }
+        }
 
         > a.categoria {
           font-size: 1rem ;
