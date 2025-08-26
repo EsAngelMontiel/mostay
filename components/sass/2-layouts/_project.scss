@@ -178,6 +178,13 @@ html, body {
         padding: 0 ;
       }
 
+      // Título del proyecto: fluido entre 700px (3rem) y 481px (2.5rem)
+      .left-column {
+        h1 {
+          font-size: clamp(2.5rem, calc(1.402rem + 0.228vw), 3rem);
+        }
+      }
+
       h2 {
         margin-bottom: 1rem ;
       }
@@ -962,7 +969,8 @@ html, body {
         }
 
         h1 {
-          font-size: 2rem ;
+          // Título del proyecto en md: fluido entre 700px (3rem) y 481px (2.5rem)
+          font-size: clamp(2.5rem, calc(1.402rem + 0.228vw), 3rem);
           line-height: 2.1rem ;
         }
 
@@ -1013,7 +1021,8 @@ html, body {
         }
 
         h1 {
-          font-size: 1.75rem ;
+          // Título del proyecto en sm: fluido entre 480px (2.5rem) y 375px (2rem)
+          font-size: clamp(2rem, calc(0.214rem + 0.476vw), 2.5rem);
           line-height: 1.8rem ;
         }
 
