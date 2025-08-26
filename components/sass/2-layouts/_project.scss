@@ -162,8 +162,9 @@ html, body {
       }
     }
     @include m.breakpoint(md) {
-      grid-template-columns: repeat(1, 1fr);
-      gap: var(--spacing-sm);
+      // A partir de 700px hacia abajo, no usar grid: apilar en una sola columna
+      display: block;
+      gap: 0;
       padding: 0 2rem ;
 
       &:last-child > div {
@@ -1015,6 +1016,7 @@ html, body {
 
       > div.contenido {
         width: 100% ;
+        display: block;
         padding: 0 1rem ;
 
         > a.categoria {
