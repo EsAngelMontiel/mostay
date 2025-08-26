@@ -165,7 +165,7 @@ html, body {
       // A partir de 700px hacia abajo, no usar grid: apilar en una sola columna
       display: block;
       gap: 0;
-      padding: 0 2rem ;
+      padding: 0 ;
 
       // En el primer bloque de contenido (con el h1), ocultar la right-column
       &:first-of-type {
@@ -520,6 +520,21 @@ html, body {
 
             h3 {
               font-weight: 2rem !important;
+            }
+          }
+          // Ajustes tipográficos para textos en md y sm
+          @include m.breakpoint(md) {
+            text-align: left !important;
+            &.mText-left {
+              padding: 3rem 2rem 1rem 2rem !important;
+              h3 { text-align: left !important; }
+            }
+          }
+          @include m.breakpoint(sm) {
+            text-align: left !important;
+            &.mText-left {
+              padding: 3rem 2rem 1rem 2rem !important;
+              h3 { text-align: left !important; }
             }
           }
         }
