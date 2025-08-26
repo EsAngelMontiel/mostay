@@ -5,55 +5,42 @@ html, body {
   overflow-x: hidden;
   box-sizing: border-box;
   max-width: 100%;
-
-  @include m.breakpoint(lg) {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
-  @include m.breakpoint(md) {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
-  @include m.breakpoint(sm) {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
 }
 
 .project {
   .cover {
     position: relative;
- width: 100% ;
+    width: 100%;
     height: 70vh;
-    background-color: var(--color-backgrounds) ;
+    background-color: var(--color-backgrounds);
     @include m.flex(column, center, center, nowrap);
 
     > div {
-      position: relative ;
+      position: relative;
       overflow: hidden;
-      width: calc(100% - calc(var(--spacing-lg)*2)) ;
-      height: 100% ;
+      width: calc(100% - calc(var(--spacing-lg)*2));
+      height: 100%;
       border-radius: var(--radius-md);
-      background-color: gray ;
+      background-color: gray;
 
       img {
         position: absolute;
         top: 0;
         left: 0;
         z-index: 1;
-        width: 100% ;
- height: 100% ;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
+
       @include m.breakpoint(lg) {
-        width: calc(100% - calc(var(--spacing-md)*2)) ;
+        width: calc(100% - calc(var(--spacing-md)*2));
       }
       @include m.breakpoint(md) {
-        width: calc(100% - calc(var(--spacing-sm)*2)) ;
+        width: calc(100% - calc(var(--spacing-sm)*2));
       }
     }
+
     @include m.breakpoint(lg) {
       height: 60vh;
     }
@@ -68,23 +55,23 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
 
     p {
-      padding-right: 2rem ;
+      padding-right: 2rem;
       color: var(--green);
     }
 
     h2 {
-      margin-bottom: 3rem ;
+      margin-bottom: 3rem;
     }
 
     strong {
-      font-weight: 600 ;
+      font-weight: 600;
     }
 
     .datos {
       @include m.flex(row, flex-start, flex-start, nowrap, var(--spacing-sm));
 
       > div {
-        margin-right: 0 ;
+        margin-right: 0;
         padding: var(--spacing-md);
         border-radius: 0 0 var(--radius-md) var(--radius-md);
         background-color: var(--white);
@@ -96,50 +83,50 @@ html, body {
         }
 
         > a, p {
-          padding: 0 ;
+          padding: 0;
           color: var(--darkgray);
           font-family: var(--main-font);
-          font-size: 1.1rem ;
-          font-weight: 500 ;
-          line-height: 1.1rem ;
+          font-size: 1.1rem;
+          font-weight: 500;
+          line-height: 1.1rem;
         }
 
         &:first-child {
-          border-radius: var(--radius-md) 0 var(--radius-md) var(--radius-md) ;
+          border-radius: var(--radius-md) 0 var(--radius-md) var(--radius-md);
         }
 
         &:last-child {
-          border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md) ;
+          border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
         }
       }
     }
 
     &:first-child > div {
-      padding-top: var(--pading-top-lg) ;
+      padding-top: var(--pading-top-lg);
 
       h1 {
-        width: 100% !important ;
+        width: 100%;
       }
     }
 
     &:last-child > div {
       padding-top: var(--spacing-md);
-      padding-bottom: var(--pading-top-lg) ;
+      padding-bottom: var(--pading-top-lg);
     }
 
     .right-column {
       p {
-        margin-bottom: 1.5rem ;
+        margin-bottom: 1.5rem;
       }
     }
+
     @include m.breakpoint(lg) {
-      //grid-template-columns: repeat(1, 1fr);
       gap: var(--spacing-md);
       grid-template-columns: 55% 45%;
-      padding: var(--spacing-sm) ;
+      padding: var(--spacing-sm);
 
       .left-column, .right-column {
-        padding: 0 ;
+        padding: 0;
       }
 
       .datos {
@@ -161,39 +148,36 @@ html, body {
         }
       }
     }
+
     @include m.breakpoint(md) {
-      // A partir de 700px hacia abajo, no usar grid: apilar en una sola columna
       display: block;
       gap: 0;
-      padding: 0 ;
+      padding: 0;
 
-      // En el primer bloque de contenido (con el h1), ocultar la right-column
       &:first-of-type {
-        > .right-column { display: none !important; }
-      }
-
-      &:last-child > div {
-        padding-bottom: 1rem ;
-      }
-
-      &:last-child > div:last-child {
-        padding-bottom: 3rem ;
-      }
-
-      .left-column, .right-column {
-        padding: 0 ;
-      }
-
-      // Título del proyecto: fluido entre 700px (3rem/48px) y 481px (2.5rem/40px)
-      // f(w) = clamp(40px, 22.43px + 3.653vw, 48px)
-      .left-column {
-        h1 {
-          font-size: clamp(2.5rem, calc(22.43px + 3.653vw), 3rem);
+        > .right-column { 
+          display: none; 
         }
       }
 
+      &:last-child > div {
+        padding-bottom: 1rem;
+      }
+
+      &:last-child > div:last-child {
+        padding-bottom: 3rem;
+      }
+
+      .left-column, .right-column {
+        padding: 0;
+      }
+
+      .left-column h1 {
+        font-size: clamp(2.5rem, calc(22.43px + 3.653vw), 3rem);
+      }
+
       h2 {
-        margin-bottom: 1rem ;
+        margin-bottom: 1rem;
       }
 
       .datos {
@@ -203,208 +187,211 @@ html, body {
   }
 
   .galeria {
-    padding: var(--spacing-lg) ;
+    padding: var(--spacing-lg);
     background-color: var(--white);
 
     .mCol-1 {
-      overflow: hidden ;
+      overflow: hidden;
       width: 100%;
       margin-bottom: var(--spacing-md);
       border-radius: var(--radius-md);
 
       img {
-        display: block ;
-        width: 100% ;
- height: auto ;
+        display: block;
+        width: 100%;
+        height: auto;
         object-fit: cover;
       }
-      // En md, asegurar alineación exacta con el resto (sin margen lateral adicional)
+
       @include m.breakpoint(md) {
         figure,
         img,
         .wp-block-image {
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 !important;
-          padding: 0 !important;
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
           border-radius: var(--radius-md);
         }
       }
     }
 
-          .mText {
-        padding: 4rem 0 !important ;
+    .mText {
+      padding: 3rem 0;
 
-        &.mText-right {
-          padding-right: 15% !important;
-        }
+      &.mText-right {
+        padding-right: 15%;
+      }
 
-        &.mText-left {
-          padding: 4rem 2rem 4rem 15% !important;
+      &.mText-left {
+        padding: 3rem 2rem 3rem 15%;
 
-          h3 {
-            font-weight: 2rem !important ;
-          }
+        h3 {
+          font-size: 1.5rem;
         }
       }
 
+      @include m.breakpoint(md) {
+        &.mText-left {
+          text-align: left;
+          padding: 3rem var(--container-padding-xl) 1rem var(--container-padding-xl);
+          
+          h3 { 
+            font-size: 1.3rem; 
+          }
+        }
+        
+        &.mText-right {
+          text-align: left;
+          padding: 0 var(--container-padding-xl) 3rem var(--container-padding-xl);
+        }
+      }
+
+      @include m.breakpoint(sm) {
+        &.mText-left {
+          text-align: left;
+          padding: 3rem var(--container-padding-xl) 1rem var(--container-padding-xl);
+          
+          h3 { 
+            font-size: 1.3rem; 
+          }
+        }
+        
+        &.mText-right {
+          text-align: left;
+          padding: 0 var(--container-padding-xl) 3rem var(--container-padding-xl);
+        }
+      }
+    }
+
     .media {
-      overflow: hidden ;
+      overflow: hidden;
       margin-bottom: var(--spacing-md);
       border-radius: var(--radius-md);
     }
-    /*@include m.breakpoint(lg) {
-      display: none ;
-    }*/
-    @include m.breakpoint(lg) {
-      padding: var(--spacing-md) ;
-    }
-    @include m.breakpoint(md) {
-      padding: var(--spacing-sm) ;
-    }
-
-      .wp-block-columns {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    box-sizing: border-box;
-    // Asegurar que no haya desbordamiento horizontal
-    max-width: 100%;
-    margin-bottom: var(--spacing-md);
-    border-radius: var(--radius-md);
-    gap: var(--spacing-md);
 
     @include m.breakpoint(lg) {
-      overflow-x: hidden;
-      // Asegurar que no se salgan del viewport
-      max-width: 100%;
-      margin-bottom: calc(var(--spacing-md) / 2);
-      padding: 0 calc(var(--spacing-md) / 2);
-      // Reducir espaciado en pantallas medianas
-      gap: calc(var(--spacing-md) / 2);
+      padding: var(--spacing-md);
+    }
+    @include m.breakpoint(md) {
+      padding: var(--spacing-sm);
     }
 
-    @include m.breakpoint(md) {
-      overflow-x: hidden;
+    .wp-block-columns {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      box-sizing: border-box;
       max-width: 100%;
-      padding: 0 ;
-      border-radius: 0 ;
+      margin-bottom: var(--spacing-md);
+      border-radius: var(--radius-md);
+      gap: var(--spacing-md);
 
-      .wp-block-column {
-        &.mCol-2 {
-          figure {
-            overflow: hidden ;
+      @include m.breakpoint(lg) {
+        overflow-x: hidden;
+        max-width: 100%;
+        margin-bottom: calc(var(--spacing-md) / 2);
+        padding: 0 calc(var(--spacing-md) / 2);
+        gap: calc(var(--spacing-md) / 2);
+      }
+
+      @include m.breakpoint(md) {
+        overflow-x: hidden;
+        max-width: 100%;
+        padding: 0;
+        border-radius: 0;
+
+        .wp-block-column {
+          &.mCol-2 {
+            figure {
+              overflow: hidden;
+              border-radius: var(--radius-md);
+            }
+          }
+        }
+        
+        figure {
+          border-radius: var(--radius-md);
+          width: 100%;
+          margin: 0;
+          
+          > img,
+          > video {
             border-radius: var(--radius-md);
           }
         }
-      }
-      
-      // En md, todas las imágenes y videos tienen esquinas redondeadas completas
-      // ya que se muestran solas en fila
-      figure {
-        border-radius: var(--radius-md) !important;
-        // En md solo usamos el padding del contenedor (como el hero)
-        width: 100% !important;
-        margin: 0 !important;
         
-        > img,
-        > video {
-          border-radius: var(--radius-md) !important;
+        video,
+        .wp-block-video {
+          border-radius: var(--radius-md);
+          width: 100%;
+          margin: 0;
+        }
+        
+        .wp-block-embed .wp-block-embed__wrapper {
+          border-radius: var(--radius-md);
+          width: 100%;
+          margin: 0;
         }
       }
-      
-      video,
-      .wp-block-video {
-        border-radius: var(--radius-md) !important;
-        // En md solo usamos el padding del contenedor (como el hero)
-        width: 100% !important;
-        margin: 0 !important;
-      }
-      
-      .wp-block-embed .wp-block-embed__wrapper {
-        border-radius: var(--radius-md) !important;
-        // En md solo usamos el padding del contenedor (como el hero)
-        width: 100% !important;
-        margin: 0 !important;
-      }
-    }
 
-    @include m.breakpoint(sm) {
-      overflow-x: hidden;
-      max-width: 100%;
-      padding: 0 var(--spacing-sm);
-      
-      // En sm, todas las imágenes y videos tienen esquinas redondeadas completas
-      // ya que se muestran solas en fila
-      figure {
-        border-radius: var(--radius-md) !important;
-        // Aplicar fórmula del hero para estandarizar ancho
-        width: calc(100% - var(--spacing-sm) * 2) !important;
-        margin: 0 auto !important;
+      @include m.breakpoint(sm) {
+        overflow-x: hidden;
+        max-width: 100%;
+        padding: 0;
         
-        > img,
-        > video {
-          border-radius: var(--radius-md) !important;
+        figure {
+          border-radius: var(--radius-md);
+          width: 100%;
+          margin: 0;
+          
+          > img,
+          > video {
+            border-radius: var(--radius-md);
+          }
+        }
+        
+        video,
+        .wp-block-video {
+          border-radius: var(--radius-md);
+          width: 100%;
+          margin: 0;
+        }
+        
+        .wp-block-embed .wp-block-embed__wrapper {
+          border-radius: var(--radius-md);
+          width: 100%;
+          margin: 0;
         }
       }
-      
-      video,
-      .wp-block-video {
-        border-radius: var(--radius-md) !important;
-        // Aplicar fórmula del hero para estandarizar ancho
-        width: 100% !important;
-        margin: 0 !important;
-      }
-      
-      .wp-block-embed .wp-block-embed__wrapper {
-        border-radius: var(--radius-md) !important;
-        // Aplicar fórmula del hero para estandarizar ancho
-        width: 100% !important;
-        margin: 0 !important;
-      }
-    }
 
       .wp-block-column {
         flex-basis: auto;
         flex-grow: 1;
-
-        // Asegurar que no se desborde en ningún breakpoint
-        @include m.breakpoint(lg) {
-          overflow: hidden;
-          max-width: 100%;
-        }
-
-        @include m.breakpoint(md) {
-          overflow: hidden;
-          max-width: 100%;
-        }
-
-        @include m.breakpoint(sm) {
-          overflow: hidden;
-          max-width: 100%;
-        }
+        overflow: hidden;
+        max-width: 100%;
 
         // Estilos base para todas las columnas
         figure {
           overflow: hidden;
-          width: 100% !important;
-          height: 100% !important;
-          margin: 0 !important;
-          padding: 0 !important;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
           border-radius: var(--radius-md);
 
           > img,
           > video {
             display: block;
-            width: 100% !important;
-            min-width: 100% !important;
-            max-width: 100% !important;
-            height: 100% !important;
-            min-height: 100% !important;
-            max-height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
             object-fit: cover;
           }
 
@@ -414,64 +401,37 @@ html, body {
             font-size: 0.875rem;
             text-align: center;
           }
-          
-          // Breakpoints específicos para md y sm
-          // En md mantener 100% para alinear con bordes del navegador
-          @include m.breakpoint(md) {
-            width: 100% !important;
-            margin: 0 !important;
-          }
-          
-          @include m.breakpoint(sm) {
-            width: calc(100% - var(--spacing-sm) * 2) !important;
-            margin: 0 auto !important;
-          }
         }
 
         // Estilos específicos para videos
         video,
         .wp-block-video {
-          display: block !important;
-          width: 100% !important;
-          min-width: 100% !important;
-          max-width: 100% !important;
-          height: 100% !important;
-          min-height: 100% !important;
-          max-height: 100% !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          border: none !important;
+          display: block;
+          width: 100%;
+          min-width: 100%;
+          max-width: 100%;
+          height: 100%;
+          min-height: 100%;
+          max-height: 100%;
+          margin: 0;
+          padding: 0;
+          border: none;
           object-fit: cover;
-          
-          // Breakpoints específicos para md y sm
-          @include m.breakpoint(md) {
-            width: calc(100% - var(--spacing-sm) * 2) !important;
-            min-width: calc(100% - var(--spacing-sm) * 2) !important;
-            max-width: calc(100% - var(--spacing-sm) * 2) !important;
-            margin: 0 auto !important;
-          }
-          
-          @include m.breakpoint(sm) {
-            width: calc(100% - var(--spacing-sm) * 2) !important;
-            min-width: calc(100% - var(--spacing-sm) * 2) !important;
-            max-width: calc(100% - var(--spacing-sm) * 2) !important;
-            margin: 0 auto !important;
-          }
         }
 
         // Estilos para videos embebidos
         .wp-block-embed {
-          width: 100% !important;
-          height: 100% !important;
-          margin: 0 !important;
-          padding: 0 !important;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
 
           .wp-block-embed__wrapper {
             position: relative;
             overflow: hidden;
-            width: 100% !important;
-            height: 100% !important;
-            padding: 0 !important;
+            width: 100%;
+            height: 100%;
+            padding: 0;
             border-radius: var(--radius-md);
 
             iframe,
@@ -479,176 +439,186 @@ html, body {
               position: absolute;
               top: 0;
               left: 0;
-              width: 100% !important;
-              height: 100% !important;
-              margin: 0 !important;
-              padding: 0 !important;
-              border: none !important;
-            }
-          }
-          
-          // Breakpoints específicos para md y sm
-          @include m.breakpoint(md) {
-            width: 100% !important;
-            margin: 0 !important;
-            
-            .wp-block-embed__wrapper {
-              width: 100% !important;
-            }
-          }
-          
-          @include m.breakpoint(sm) {
-            width: calc(100% - var(--spacing-sm) * 2) !important;
-            margin: 0 auto !important;
-            
-            .wp-block-embed__wrapper {
-              width: calc(100% - var(--spacing-sm) * 2) !important;
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              border: none;
             }
           }
         }
 
-        // Estilos específicos para clases de texto con mayor especificidad
+        // Estilos específicos para clases de texto
         &.mText {
-          padding: 4rem 0 !important;
+          padding: 3rem 0;
 
           &.mText-right {
-            padding-right: 15% !important;
+            padding-right: 15%;
           }
 
           &.mText-left {
-            padding: 4rem 2rem 4rem 15% !important;
+            padding: 3rem 2rem 3rem 15%;
 
             h3 {
-              font-weight: 2rem !important;
-            }
-          }
-          // Ajustes tipográficos para textos en md y sm
-          @include m.breakpoint(md) {
-            text-align: left !important;
-            &.mText-left {
-              padding: 3rem 2rem 1rem 2rem !important;
-              h3 { text-align: left !important; }
-            }
-          }
-          @include m.breakpoint(sm) {
-            text-align: left !important;
-            &.mText-left {
-              padding: 3rem 2rem 1rem 2rem !important;
-              h3 { text-align: left !important; }
+              font-size: 1.5rem;
             }
           }
         }
       }
 
-      // Clases aplicadas al contenedor de columnas (no a las columnas individuales)
-              &.mCol-2 {
-          .wp-block-column {
-            width: calc(50% - (var(--spacing-md) / 2)) !important;
-            margin-bottom: var(--spacing-md);
-            padding: 0 !important;
-            border-radius: 0; // Reset border-radius
-
-            // Asegurar que las imágenes y videos ocupen todo el espacio
-            figure,
-            video,
-            .wp-block-video,
-            .wp-block-embed {
-              width: 100% !important;
-              height: 100% !important;
-              margin: 0 !important;
-              padding: 0 !important;
-              border: none !important;
-              border-radius: 0; // Reset border-radius
-            }
-
-            // Solo esquinas exteriores redondeadas
-            &:first-child {
-              border-radius: var(--radius-md) 0 0 var(--radius-md);
-
-              figure,
-              video,
-              .wp-block-video,
-              .wp-block-embed {
-                border-radius: var(--radius-md) 0 0 var(--radius-md);
-              }
-            }
-
-            &:last-child {
-              border-radius: 0 var(--radius-md) var(--radius-md) 0;
-
-              figure,
-              video,
-              .wp-block-video,
-              .wp-block-embed {
-                border-radius: 0 var(--radius-md) var(--radius-md) 0;
-              }
-            }
-
-            // Estilos específicos para clases de texto dentro de mCol-2
-            &.mText {
-              padding: 4rem 0 !important;
-
-              &.mText-right {
-                padding-right: 15% !important;
-              }
-
-              &.mText-left {
-                padding: 4rem 2rem 4rem 15% !important;
-
-                h3 {
-                  font-weight: 2rem !important;
-                }
-              }
-            }
-
-            @include m.breakpoint(lg) {
-              // Ajustar espaciado en pantallas medianas
-              width: calc(50% - (var(--spacing-md) / 4)) !important;
-              margin-bottom: calc(var(--spacing-md) / 2);
-            }
-
-            @include m.breakpoint(lg) {
-              // Ajustar espaciado en pantallas medianas
-              width: calc(33.33% - (var(--spacing-md) / 6)) !important;
-              margin-bottom: calc(var(--spacing-md) / 2);
-            }
-
-            @include m.breakpoint(md) {
-              width: calc(100% - var(--spacing-md)) !important;
-              border-radius: var(--radius-md); // En móvil todas las esquinas redondeadas
-
-              figure,
-              video,
-              .wp-block-video,
-              .wp-block-embed {
-                border-radius: var(--radius-md);
-                // Aplicar fórmula del hero para estandarizar ancho
-                width: calc(100% - var(--spacing-sm) * 2) !important;
-                margin: 0 auto !important;
-              }
-            }
-          }
-        }
-
-      &.mCol-3 {
+      // Clases aplicadas al contenedor de columnas
+      &.mCol-2 {
         .wp-block-column {
-          overflow: hidden;
-          width: calc(33.33% - ((var(--spacing-md) / 3) * 2)) !important;
+          width: calc(50% - (var(--spacing-md) / 2));
           margin-bottom: var(--spacing-md);
-          padding: 0 !important;
-          border-radius: 0; // Reset border-radius
+          padding: 0;
+          border-radius: 0;
 
-          // Asegurar que las imágenes y videos ocupen todo el espacio
           figure,
           video,
           .wp-block-video,
           .wp-block-embed {
-            width: 100% !important;
-            height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-            border-radius: 0; // Reset border-radius
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+          }
+
+          // Solo esquinas exteriores redondeadas
+          &:first-child {
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+
+            figure,
+            video,
+            .wp-block-video,
+            .wp-block-embed {
+              border-radius: var(--radius-md) 0 0 var(--radius-md);
+            }
+          }
+
+          &:last-child {
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+            figure,
+            video,
+            .wp-block-video,
+            .wp-block-embed {
+              border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            }
+          }
+
+          // Estilos específicos para clases de texto dentro de mCol-2
+          &.mText {
+            padding: 3rem 0;
+
+            &.mText-left {
+              text-align: right;
+              padding: 3rem 2rem 3rem 15%;
+              
+              h3 { 
+                font-size: 1.5rem; 
+              }
+            }
+
+            &.mText-right {
+              text-align: left;
+              padding: 3rem 15% 3rem 2rem;
+            }
+          }
+
+          @include m.breakpoint(lg) {
+            width: calc(50% - (var(--spacing-md) / 4));
+            margin-bottom: calc(var(--spacing-md) / 2);
+          }
+
+          @include m.breakpoint(md) {
+            width: 100%;
+            border-radius: var(--radius-md);
+
+            figure,
+            video,
+            .wp-block-video,
+            .wp-block-embed {
+              border-radius: var(--radius-md);
+              width: 100%;
+              margin: 0;
+            }
+
+            // Ajustar textos en md
+            &.mText {
+              &.mText-left {
+                text-align: left;
+                padding: 3rem var(--container-padding-xl) 1rem var(--container-padding-xl);
+                
+                h3 { 
+                  text-align: left;
+                  font-size: 1.3rem;
+                  margin-bottom: 0.5rem;
+                }
+              }
+              
+              &.mText-right {
+                text-align: left;
+                padding: 0 var(--container-padding-xl) 3rem var(--container-padding-xl);
+              }
+            }
+          }
+
+          @include m.breakpoint(sm) {
+            width: 100%;
+            border-radius: var(--radius-md);
+
+            figure,
+            video,
+            .wp-block-video,
+            .wp-block-embed {
+              border-radius: var(--radius-md);
+              width: 100%;
+              margin: 0;
+            }
+
+            // Ajustar textos en sm
+            &.mText {
+              &.mText-left {
+                text-align: left;
+                padding: 3rem var(--container-padding-xl) 1rem var(--container-padding-xl);
+                
+                h3 { 
+                  text-align: left;
+                  font-size: 1.3rem;
+                  margin-bottom: 0.5rem;
+                }
+              }
+              
+              &.mText-right {
+                text-align: left;
+                padding: 0 var(--container-padding-xl) 3rem var(--container-padding-xl);
+              }
+            }
+          }
+        }
+      }
+
+      &.mCol-3 {
+        .wp-block-column {
+          overflow: hidden;
+          width: calc(33.33% - ((var(--spacing-md) / 3) * 2));
+          margin-bottom: var(--spacing-md);
+          padding: 0;
+          border-radius: 0;
+
+          figure,
+          video,
+          .wp-block-video,
+          .wp-block-embed {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 0;
           }
 
           // Solo esquinas exteriores redondeadas
@@ -676,85 +646,80 @@ html, body {
 
           // Estilos específicos para clases de texto dentro de mCol-3
           &.mText {
-            padding: 4rem 0 !important;
+            padding: 4rem 0;
 
             &.mText-right {
-              padding-right: 15% !important;
+              padding-right: 15%;
             }
 
             &.mText-left {
-              padding: 4rem 2rem 4rem 15% !important;
+              padding: 4rem 2rem 4rem 15%;
 
               h3 {
-                font-weight: 2rem !important;
+                font-size: 1.5rem;
               }
             }
           }
 
           @include m.breakpoint(md) {
-            width: calc(100% - var(--spacing-md)) !important;
-            border-radius: var(--radius-md); // En móvil todas las esquinas redondeadas
+            width: 100%;
+            border-radius: var(--radius-md);
 
             figure,
             video,
             .wp-block-video,
             .wp-block-embed {
               border-radius: var(--radius-md);
-              // Aplicar fórmula del hero para estandarizar ancho
-              width: calc(100% - var(--spacing-sm) * 2) !important;
-              margin: 0 auto !important;
+              width: 100%;
+              margin: 0;
             }
           }
         }
       }
 
       &.mCol-3B {
-        // Asegurar que el contenedor tenga el espaciado correcto
         gap: var(--spacing-md);
 
         .wp-block-column {
           &:nth-child(1),
           &:nth-child(2) {
             overflow: hidden;
-            width: calc(25% - (var(--spacing-md) / 4)) !important;
-            margin-right: calc(var(--spacing-md) / 2) !important;
-            padding: 0 !important;
-            //margin-bottom: var(--spacing-md);
-            border-radius: 0; // Reset border-radius
+            width: calc(25% - (var(--spacing-md) / 4));
+            margin-right: calc(var(--spacing-md) / 2);
+            padding: 0;
+            border-radius: 0;
 
-            // Asegurar que las imágenes y videos ocupen todo el espacio
             figure,
             video,
             .wp-block-video,
             .wp-block-embed {
-              width: 100% !important;
-              height: 100% !important;
-              margin: 0 !important;
-              padding: 0 !important;
-              border: none !important;
-              border-radius: 0; // Reset border-radius
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              border: none;
+              border-radius: 0;
             }
           }
 
           &:nth-child(3) {
             overflow: hidden;
-            width: calc(50% - (var(--spacing-md) / 2)) !important;
+            width: calc(50% - (var(--spacing-md) / 2));
             margin-bottom: var(--spacing-md);
-            margin-left: 0 !important;
-            padding: 0 !important;
-            border-radius: 0; // Reset border-radius
+            margin-left: 0;
+            padding: 0;
+            border-radius: 0;
 
-            // Asegurar que las imágenes y videos ocupen todo el espacio
             figure,
             video,
             .wp-block-video,
             .wp-block-embed {
-              width: 100% !important;
-              height: 100% !important;
-              margin: 0 !important;
-              padding: 0 !important;
-              border: none !important;
-              border-radius: 0; // Reset border-radius
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              border: none;
+              border-radius: 0;
             }
           }
 
@@ -783,45 +748,44 @@ html, body {
         }
 
         @include m.breakpoint(lg) {
-          // Reducir el espaciado en pantallas medianas
           gap: calc(var(--spacing-md) / 2);
 
           .wp-block-column {
             &:nth-child(1),
             &:nth-child(2) {
-              width: calc(50% - (var(--spacing-md) / 4)) !important;
-              margin-right: calc(var(--spacing-md) / 4) !important;
+              width: calc(50% - (var(--spacing-md) / 4));
+              margin-right: calc(var(--spacing-md) / 4);
             }
 
             &:nth-child(3) {
-              width: calc(100% - var(--spacing-md) / 2) !important;
-              margin-left: 0 !important;
+              width: calc(100% - var(--spacing-md) / 2);
+              margin-left: 0;
             }
           }
         }
 
         @include m.breakpoint(md) {
           .wp-block-column {
-            width: calc(100% - var(--spacing-md)) !important;
-            margin-right: 0 !important;
-            margin-left: 0 !important;
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
           }
         }
 
         // Estilos específicos para clases de texto dentro de mCol-3B
         .wp-block-column {
           &.mText {
-            padding: 4rem 0 !important;
+            padding: 4rem 0;
 
             &.mText-right {
-              padding-right: 15% !important;
+              padding-right: 15%;
             }
 
             &.mText-left {
-              padding: 4rem 2rem 4rem 15% !important;
+              padding: 4rem 2rem 4rem 15%;
 
               h3 {
-                font-weight: 2rem !important;
+                font-size: 1.5rem;
               }
             }
           }
@@ -831,23 +795,20 @@ html, body {
       &.mCol-4 {
         .wp-block-column {
           overflow: hidden;
-          width: calc(25% - (var(--spacing-md) / 4)) !important;
-          //margin-right: calc(var(--spacing-md) / 2) !important;
-          padding: 0 !important;
-          //margin-bottom: var(--spacing-md);
-          border-radius: 0; // Reset border-radius
+          width: calc(25% - (var(--spacing-md) / 4));
+          padding: 0;
+          border-radius: 0;
 
-          // Asegurar que las imágenes y videos ocupen todo el espacio
           figure,
           video,
           .wp-block-video,
           .wp-block-embed {
-            width: 100% !important;
-            height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-            border-radius: 0; // Reset border-radius
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 0;
           }
 
           // Solo esquinas exteriores redondeadas
@@ -874,69 +835,65 @@ html, body {
           }
 
           &:last-child {
-            margin-right: 0 !important;
+            margin-right: 0;
           }
 
           @include m.breakpoint(lg) {
-            // Ajustar espaciado en pantallas medianas
-            width: calc(25% - (var(--spacing-md) / 8)) !important;
-            margin-right: calc(var(--spacing-md) / 4) !important;
+            width: calc(25% - (var(--spacing-md) / 8));
+            margin-right: calc(var(--spacing-md) / 4);
             margin-bottom: calc(var(--spacing-md) / 2);
           }
 
           @include m.breakpoint(md) {
-            // En md, las imágenes van una por fila
-            width: 100% !important;
-            margin-right: 0 !important;
-            border-radius: var(--radius-md); // En móvil todas las esquinas redondeadas
+            width: 100%;
+            margin-right: 0;
+            border-radius: var(--radius-md);
 
             figure,
             video,
             .wp-block-video,
             .wp-block-embed {
               border-radius: var(--radius-md);
-              // En md solo usamos el padding del contenedor (como el hero)
-              width: 100% !important;
-              margin: 0 !important;
+              width: 100%;
+              margin: 0;
             }
 
-            &:nth-child(2n) { margin-right: 0 !important; }
+            &:nth-child(2n) { 
+              margin-right: 0; 
+            }
           }
 
           @include m.breakpoint(sm) {
-            // En sm reforzamos el single-column
-            width: 100% !important;
-            margin-right: 0 !important;
+            width: 100%;
+            margin-right: 0;
             
             figure,
             video,
             .wp-block-video,
             .wp-block-embed {
-              // Aplicar fórmula del hero para estandarizar ancho
-              width: calc(100% - var(--spacing-sm) * 2) !important;
-              margin: 0 auto !important;
+              width: calc(100% - var(--spacing-sm) * 2);
+              margin: 0 auto;
             }
           }
 
           // Estilos específicos para clases de texto dentro de mCol-4
           &.mText {
-            padding: 4rem 0 !important;
+            padding: 4rem 0;
 
             &.mText-right {
-              padding-right: 15% !important;
+              padding-right: 15%;
             }
 
             &.mText-left {
-              padding: 4rem 2rem 4rem 15% !important;
+              padding: 4rem 2rem 4rem 15%;
 
               h3 {
-                font-weight: 2rem !important;
+                font-size: 1.5rem;
               }
             }
           }
         }
       }
-
     }
   }
 
@@ -945,60 +902,59 @@ html, body {
   }
 
   @include m.breakpoint(lg) {
-    --col-w: 100% ;
+    --col-w: 100%;
 
     > article {
-      padding: 0 ;
+      padding: 0;
 
       > img {
-        width: 100% ;
+        width: 100%;
       }
     }
   }
+
   @include m.breakpoint(md) {
-    --col-w: 100% ;
+    --col-w: 100%;
 
     > article {
-      padding: 0 ;
+      padding: 0;
 
       > div.logo-cover {
-        width: 100% ;
+        width: 100%;
         margin: 0;
-        padding: 0 ;
+        padding: 0;
 
         > img {
-          display: block ;
-          width: 100% ;
- height: auto ;
+          display: block;
+          width: 100%;
+          height: auto;
           margin: 0;
         }
       }
 
       > img {
-        display: block ;
-        width: 100% ;
- height: auto ;
+        display: block;
+        width: 100%;
+        height: auto;
         margin: 0;
       }
 
       > div.contenido {
-        width: 100% ;
-        padding: 0 1.125rem ;
+        width: 100%;
+        padding: 0 1.125rem;
 
         > a.categoria {
-          font-size: 1.125rem ;
-          line-height: 1.125rem ;
+          font-size: 1.125rem;
+          line-height: 1.125rem;
         }
 
         h1 {
-          // Título del proyecto en md: fluido entre 700px (3rem/48px) y 481px (2.5rem/40px)
-          // f(w) = clamp(40px, 22.43px + 3.653vw, 48px)
           font-size: clamp(2.5rem, calc(22.43px + 3.653vw), 3rem);
-          line-height: 2.1rem ;
+          line-height: 2.1rem;
         }
 
         p {
-          width: 100% ;
+          width: 100%;
         }
       }
     }
@@ -1009,70 +965,69 @@ html, body {
   }
 
   @include m.breakpoint(sm) {
-    --col-w: 100% ;
+    --col-w: 100%;
 
     > article {
-      padding: 0 ;
+      padding: 0;
 
       > div.logo-cover {
-        width: 100% ;
+        width: 100%;
         margin: 0;
-        padding: 0 ;
+        padding: 0;
 
         > img {
-          display: block ;
-          width: 100% ;
-          height: auto ;
+          display: block;
+          width: 100%;
+          height: auto;
           margin: 0;
         }
       }
 
       > img {
-        display: block ;
-        width: 100% ;
-        height: auto ;
+        display: block;
+        width: 100%;
+        height: auto;
         margin: 0;
       }
 
       > div.contenido {
-        width: 100% ;
+        width: 100%;
         display: block;
-        padding: 0 ;
+        padding: 0;
 
-        // En el primer bloque de contenido (con el h1), ocultar la right-column
         &:first-of-type {
-          > .right-column { display: none !important; }
+          > .right-column { 
+            display: none; 
+          }
         }
 
         > a.categoria {
-          font-size: 1rem ;
-          line-height: 1rem ;
+          font-size: 1rem;
+          line-height: 1rem;
         }
 
         h1 {
-          // Título del proyecto en sm: fluido entre 480px (2.5rem/40px) y 375px (2rem/32px)
-          // f(w) = clamp(32px, 3.429px + 7.619vw, 40px)
           font-size: clamp(2rem, calc(3.429px + 7.619vw), 2.5rem);
-          line-height: 1.8rem ;
+          line-height: 1.8rem;
         }
 
         h2 {
-          font-size: 1.5rem ;
-          line-height: 1.6rem ;
-          margin-bottom: 1.5rem ;
+          font-size: 1.5rem;
+          line-height: 1.6rem;
+          margin-bottom: 1.5rem;
         }
 
         p {
-          width: 100% ;
-          padding-right: 0 ;
+          width: 100%;
+          padding-right: 0;
         }
 
         .datos {
           @include m.flex(column, flex-start, flex-start, nowrap, var(--spacing-sm));
 
           > div {
-            width: 100% ;
-            margin-right: 0 ;
+            width: 100%;
+            margin-right: 0;
             margin-bottom: var(--spacing-sm);
             padding: var(--spacing-sm);
             border-radius: var(--radius-sm);
@@ -1083,8 +1038,8 @@ html, body {
             }
 
             > a, p {
-              font-size: 1rem ;
-              line-height: 1.1rem ;
+              font-size: 1rem;
+              line-height: 1.1rem;
             }
 
             &:first-child,
@@ -1096,14 +1051,14 @@ html, body {
       }
 
       > div.galeria {
-        padding: 0 ;
+        padding: 0;
 
         .wp-block-columns {
-          padding: 0 ;
+          padding: 0;
 
           .wp-block-column {
-            width: 100% !important;
-            margin-right: 0 !important;
+            width: 100%;
+            margin-right: 0;
             margin-bottom: var(--spacing-sm);
             border-radius: var(--radius-sm);
 
@@ -1115,11 +1070,11 @@ html, body {
             }
 
             &.mText {
-              padding: 2rem 0 !important;
+              padding: 2rem 0;
 
               &.mText-right,
               &.mText-left {
-                padding: 2rem 1rem !important;
+                padding: 2rem 1rem;
               }
             }
           }
