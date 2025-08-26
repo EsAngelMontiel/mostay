@@ -261,7 +261,7 @@ html, body {
     @include m.breakpoint(md) {
       overflow-x: hidden;
       max-width: 100%;
-      padding: 0 var(--spacing-sm);
+      padding: 0 ;
       border-radius: 0 ;
 
       .wp-block-column {
@@ -277,6 +277,9 @@ html, body {
       // ya que se muestran solas en fila
       figure {
         border-radius: var(--radius-md) !important;
+        // En md solo usamos el padding del contenedor (como el hero)
+        width: 100% !important;
+        margin: 0 !important;
         
         > img,
         > video {
@@ -287,10 +290,16 @@ html, body {
       video,
       .wp-block-video {
         border-radius: var(--radius-md) !important;
+        // En md solo usamos el padding del contenedor (como el hero)
+        width: 100% !important;
+        margin: 0 !important;
       }
       
       .wp-block-embed .wp-block-embed__wrapper {
         border-radius: var(--radius-md) !important;
+        // En md solo usamos el padding del contenedor (como el hero)
+        width: 100% !important;
+        margin: 0 !important;
       }
     }
 
@@ -303,6 +312,9 @@ html, body {
       // ya que se muestran solas en fila
       figure {
         border-radius: var(--radius-md) !important;
+        // Aplicar fórmula del hero para estandarizar ancho
+        width: calc(100% - var(--spacing-sm) * 2) !important;
+        margin: 0 auto !important;
         
         > img,
         > video {
@@ -313,10 +325,16 @@ html, body {
       video,
       .wp-block-video {
         border-radius: var(--radius-md) !important;
+        // Aplicar fórmula del hero para estandarizar ancho
+        width: 100% !important;
+        margin: 0 !important;
       }
       
       .wp-block-embed .wp-block-embed__wrapper {
         border-radius: var(--radius-md) !important;
+        // Aplicar fórmula del hero para estandarizar ancho
+        width: 100% !important;
+        margin: 0 !important;
       }
     }
 
@@ -370,6 +388,17 @@ html, body {
             font-size: 0.875rem;
             text-align: center;
           }
+          
+          // Breakpoints específicos para md y sm
+          @include m.breakpoint(md) {
+            width: calc(100% - var(--spacing-sm) * 2) !important;
+            margin: 0 auto !important;
+          }
+          
+          @include m.breakpoint(sm) {
+            width: calc(100% - var(--spacing-sm) * 2) !important;
+            margin: 0 auto !important;
+          }
         }
 
         // Estilos específicos para videos
@@ -386,6 +415,21 @@ html, body {
           padding: 0 !important;
           border: none !important;
           object-fit: cover;
+          
+          // Breakpoints específicos para md y sm
+          @include m.breakpoint(md) {
+            width: calc(100% - var(--spacing-sm) * 2) !important;
+            min-width: calc(100% - var(--spacing-sm) * 2) !important;
+            max-width: calc(100% - var(--spacing-sm) * 2) !important;
+            margin: 0 auto !important;
+          }
+          
+          @include m.breakpoint(sm) {
+            width: calc(100% - var(--spacing-sm) * 2) !important;
+            min-width: calc(100% - var(--spacing-sm) * 2) !important;
+            max-width: calc(100% - var(--spacing-sm) * 2) !important;
+            margin: 0 auto !important;
+          }
         }
 
         // Estilos para videos embebidos
@@ -413,6 +457,25 @@ html, body {
               margin: 0 !important;
               padding: 0 !important;
               border: none !important;
+            }
+          }
+          
+          // Breakpoints específicos para md y sm
+          @include m.breakpoint(md) {
+            width: calc(100% - var(--spacing-sm) * 2) !important;
+            margin: 0 auto !important;
+            
+            .wp-block-embed__wrapper {
+              width: calc(100% - var(--spacing-sm) * 2) !important;
+            }
+          }
+          
+          @include m.breakpoint(sm) {
+            width: calc(100% - var(--spacing-sm) * 2) !important;
+            margin: 0 auto !important;
+            
+            .wp-block-embed__wrapper {
+              width: calc(100% - var(--spacing-sm) * 2) !important;
             }
           }
         }
@@ -517,6 +580,9 @@ html, body {
               .wp-block-video,
               .wp-block-embed {
                 border-radius: var(--radius-md);
+                // Aplicar fórmula del hero para estandarizar ancho
+                width: calc(100% - var(--spacing-sm) * 2) !important;
+                margin: 0 auto !important;
               }
             }
           }
@@ -592,6 +658,9 @@ html, body {
             .wp-block-video,
             .wp-block-embed {
               border-radius: var(--radius-md);
+              // Aplicar fórmula del hero para estandarizar ancho
+              width: calc(100% - var(--spacing-sm) * 2) !important;
+              margin: 0 auto !important;
             }
           }
         }
@@ -774,8 +843,9 @@ html, body {
           }
 
           @include m.breakpoint(md) {
-            width: calc(50% - (var(--spacing-md) / 2)) !important;
-            margin-right: calc(var(--spacing-md) / 2) !important;
+            // En md, las imágenes van una por fila
+            width: 100% !important;
+            margin-right: 0 !important;
             border-radius: var(--radius-md); // En móvil todas las esquinas redondeadas
 
             figure,
@@ -783,10 +853,26 @@ html, body {
             .wp-block-video,
             .wp-block-embed {
               border-radius: var(--radius-md);
+              // En md solo usamos el padding del contenedor (como el hero)
+              width: 100% !important;
+              margin: 0 !important;
             }
 
-            &:nth-child(2n) {
-              margin-right: 0 !important;
+            &:nth-child(2n) { margin-right: 0 !important; }
+          }
+
+          @include m.breakpoint(sm) {
+            // En sm reforzamos el single-column
+            width: 100% !important;
+            margin-right: 0 !important;
+            
+            figure,
+            video,
+            .wp-block-video,
+            .wp-block-embed {
+              // Aplicar fórmula del hero para estandarizar ancho
+              width: calc(100% - var(--spacing-sm) * 2) !important;
+              margin: 0 auto !important;
             }
           }
 
@@ -958,10 +1044,10 @@ html, body {
       }
 
       > div.galeria {
-        padding: var(--spacing-sm) ;
+        padding: 0 ;
 
         .wp-block-columns {
-          padding: 0 var(--spacing-sm);
+          padding: 0 ;
 
           .wp-block-column {
             width: 100% !important;
