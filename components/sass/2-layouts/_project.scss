@@ -1022,7 +1022,7 @@ html, body {
       > div.contenido {
         width: 100% ;
         display: block;
-        padding: 0 1rem ;
+        padding: 0 ;
 
         // En el primer bloque de contenido (con el h1), ocultar la right-column
         &:first-of-type {
