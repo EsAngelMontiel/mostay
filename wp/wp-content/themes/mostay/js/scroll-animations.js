@@ -73,6 +73,22 @@ class ScrollAnimations {
             // Observar elementos con animaciones
             this.observeElements();
             
+            // Fallback en desktop: forzar animaciones de elementos ya visibles en el viewport
+            // Este caso cubre escenarios donde el IO no dispara inmediatamente en carga inicial
+            if (window.innerWidth > 700) {
+                // En DOM listo
+                this.forceVisibleInViewport();
+                // Tras un pequeño delay por si hay fonts/imágenes que ajustan layout
+                setTimeout(() => this.forceVisibleInViewport(), 600);
+            }
+            
+            // Asegurar tras carga completa de recursos
+            window.addEventListener('load', () => {
+                if (window.innerWidth > 700) {
+                    this.forceVisibleInViewport();
+                }
+            });
+            
             // Manejar redimensionamiento de ventana
             window.addEventListener('resize', () => this.handleResize());
             
@@ -317,6 +333,9 @@ class ScrollAnimations {
         
         // Ajustar elementos typing existentes al nuevo tamaño de ventana
         this.adjustTypingElements();
+
+        // Fallback: tras resize, forzar los que estén visibles
+        this.forceVisibleInViewport();
     }
     
     adjustTypingElements() {
@@ -366,6 +385,34 @@ class ScrollAnimations {
         
         // Re-observar elementos
         this.observeElements();
+    }
+
+    // Determinar si un elemento está visible en el viewport
+    isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        const vh = (window.innerHeight || document.documentElement.clientHeight);
+        const vw = (window.innerWidth || document.documentElement.clientWidth);
+        // Considerar visible si hay una intersección razonable
+        const verticallyVisible = rect.top < vh && rect.bottom > 0;
+        const horizontallyVisible = rect.left < vw && rect.right > 0;
+        return verticallyVisible && horizontallyVisible;
+    }
+
+    // Forzar animación de elementos ya visibles en el viewport pero aún no animados
+    forceVisibleInViewport() {
+        try {
+            const candidates = document.querySelectorAll('[data-animate]');
+            candidates.forEach(el => {
+                if (!this.animatedElements.has(el) && this.isElementInViewport(el)) {
+                    const type = el.dataset.animate;
+                    this.animateElement(el, type);
+                    this.animatedElements.add(el);
+                }
+            });
+        } catch (e) {
+            // En caso de error, como último recurso, forzar todas
+            this.forceAllAnimations();
+        }
     }
 }
 
