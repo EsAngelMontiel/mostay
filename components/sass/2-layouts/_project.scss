@@ -402,9 +402,10 @@ html, body {
           }
           
           // Breakpoints específicos para md y sm
+          // En md mantener 100% para alinear con bordes del navegador
           @include m.breakpoint(md) {
-            width: calc(100% - var(--spacing-sm) * 2) !important;
-            margin: 0 auto !important;
+            width: 100% !important;
+            margin: 0 !important;
           }
           
           @include m.breakpoint(sm) {
@@ -474,11 +475,11 @@ html, body {
           
           // Breakpoints específicos para md y sm
           @include m.breakpoint(md) {
-            width: calc(100% - var(--spacing-sm) * 2) !important;
-            margin: 0 auto !important;
+            width: 100% !important;
+            margin: 0 !important;
             
             .wp-block-embed__wrapper {
-              width: calc(100% - var(--spacing-sm) * 2) !important;
+              width: 100% !important;
             }
           }
           
