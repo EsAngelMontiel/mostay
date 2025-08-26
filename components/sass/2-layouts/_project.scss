@@ -178,10 +178,11 @@ html, body {
         padding: 0 ;
       }
 
-      // Título del proyecto: fluido entre 700px (3rem) y 481px (2.5rem)
+      // Título del proyecto: fluido entre 700px (3rem/48px) y 481px (2.5rem/40px)
+      // f(w) = clamp(40px, 22.43px + 3.653vw, 48px)
       .left-column {
         h1 {
-          font-size: clamp(2.5rem, calc(1.402rem + 0.228vw), 3rem);
+          font-size: clamp(2.5rem, calc(22.43px + 3.653vw), 3rem);
         }
       }
 
@@ -969,8 +970,9 @@ html, body {
         }
 
         h1 {
-          // Título del proyecto en md: fluido entre 700px (3rem) y 481px (2.5rem)
-          font-size: clamp(2.5rem, calc(1.402rem + 0.228vw), 3rem);
+          // Título del proyecto en md: fluido entre 700px (3rem/48px) y 481px (2.5rem/40px)
+          // f(w) = clamp(40px, 22.43px + 3.653vw, 48px)
+          font-size: clamp(2.5rem, calc(22.43px + 3.653vw), 3rem);
           line-height: 2.1rem ;
         }
 
@@ -1021,8 +1023,9 @@ html, body {
         }
 
         h1 {
-          // Título del proyecto en sm: fluido entre 480px (2.5rem) y 375px (2rem)
-          font-size: clamp(2rem, calc(0.214rem + 0.476vw), 2.5rem);
+          // Título del proyecto en sm: fluido entre 480px (2.5rem/40px) y 375px (2rem/32px)
+          // f(w) = clamp(32px, 3.429px + 7.619vw, 40px)
+          font-size: clamp(2rem, calc(3.429px + 7.619vw), 2.5rem);
           line-height: 1.8rem ;
         }
 
