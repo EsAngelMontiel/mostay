@@ -54,6 +54,31 @@ $(document).ready(function(){
   
 
 
+  // FAQs Accordion
+  (function(){
+    const container = document.getElementById('faqsAccordion');
+    if(!container) return;
+
+    container.addEventListener('click', function(e){
+      const button = e.target.closest('.faq-item__question');
+      if(!button) return;
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      const panel = button.nextElementSibling;
+      if(!panel) return;
+
+      // toggle estado
+      button.setAttribute('aria-expanded', (!expanded).toString());
+      panel.hidden = expanded;
+
+      // Icono + / −
+      const icon = button.querySelector('.faq-item__icon');
+      if(icon){
+        const open = icon.getAttribute('data-icon-open') || '−';
+        const closed = icon.getAttribute('data-icon-closed') || '+';
+        icon.textContent = expanded ? closed : open;
+      }
+    });
+  })();
   
 
   // slider
