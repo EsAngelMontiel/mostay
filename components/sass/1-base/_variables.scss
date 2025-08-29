@@ -52,6 +52,9 @@
 --spacing-lg: 1.8rem ; // 30px
 --pading-top-lg: 3.125rem ;
 --pading-top-md: 2.5rem ;
+// Aliases correctos (no cambian estilos actuales)
+--padding-top-lg: var(--pading-top-lg);
+--padding-top-md: var(--pading-top-md);
 
 // Radius
 --radius-sm: 0.62rem ; // 10px
@@ -80,4 +83,7 @@
 --container-padding-md: 1.8rem;  // 30px
 --container-padding-lg: 3rem;
 --container-padding-xl: 4rem;
+
+// Aliases de color para consistencia en naming
+--darkgreen: var(--darkGreen);
 }
