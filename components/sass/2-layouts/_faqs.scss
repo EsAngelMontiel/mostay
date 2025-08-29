@@ -11,6 +11,7 @@
 
 	// Grid de contenido
 	&__grid {
+		padding: 3rem;
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		gap: var(--spacing-lg);
@@ -20,7 +21,7 @@
 	}
 
 	&__intro {
-		h1 { margin: 0 0 var(--spacing-md) 0; color: var(--darkgray); }
+		h1 { margin: 0 0 var(--spacing-md) 0; color: var(--orange); }
 		p { margin: 0; color: var(--darkgray); }
 	}
 
