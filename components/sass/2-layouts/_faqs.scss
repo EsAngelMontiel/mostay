@@ -3,7 +3,7 @@
 .faqs {
 	// Mini hero
 	&__mini-hero {
-		margin: var(--spacing-lg) 0;
+		margin: 0 0 var(--spacing-lg) 0;
 		border-radius: var(--radius-md);
 		overflow: hidden;
 		img { width: 100%; height: 140px; object-fit: cover; display: block; }
@@ -38,6 +38,12 @@
 				background: var(--offwhite);
 				text-align: left;
 				cursor: pointer;
+				transition: background-color 0.2s ease;
+				&:hover,
+				&:focus {
+					background-color: color-mix(in srgb, var(--offwhite), black 3%);
+					transform: none;
+				}
 				.faq-item__label { color: var(--green); font-weight: 600; }
 				.faq-item__icon { color: var(--green); font-size: 1.2rem; line-height: 1; }
 			}

@@ -6,14 +6,11 @@ if (have_posts()): while (have_posts()) : the_post();
 <main class="faqs">
 	<div class="container">
 		<!-- Mini hero dentro del main -->
-		<div class="faqs__mini-hero">
-			<?php
-			// Permitir imagen destacada como fondo, con fallback a un placeholder del tema
-			$mini_hero = get_the_post_thumbnail_url(get_the_ID(),'large');
-			$mini_hero = $mini_hero ? $mini_hero : get_template_directory_uri() . '/img/breadcrumb-bg.jpg';
-			?>
-			<img src="<?php echo esc_url($mini_hero); ?>" alt="<?php the_title_attribute(); ?>">
-		</div>
+		<?php $mini_hero = get_the_post_thumbnail_url(get_the_ID(),'large'); if ($mini_hero): ?>
+			<div class="faqs__mini-hero">
+				<img src="<?php echo esc_url($mini_hero); ?>" alt="<?php the_title_attribute(); ?>">
+			</div>
+		<?php endif; ?>
 
 		<!-- Contenido en dos columnas -->
 		<section class="faqs__grid">
