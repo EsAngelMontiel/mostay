@@ -308,18 +308,13 @@ function mostay_secondary_nav() {
 function mostay_enqueue_header_assets()
 {
     if (!is_admin()) {
-        // Unregister WordPress jQuery and register a newer version from a CDN with fallback
-        wp_deregister_script('jquery');
-        wp_register_script('jQuery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), '3.7.1', true);
+        // Usar jQuery nativo de WordPress y crear alias compatible con el handle 'jQuery'
+        wp_enqueue_script('jquery');
+        wp_register_script('jQuery', false, array('jquery'), null, true);
         wp_enqueue_script('jQuery');
+        // Exponer alias global $ solo si no existe
+        wp_add_inline_script('jQuery', 'if(typeof window.$==="undefined"){window.$=window.jQuery;}', 'after');
         
-        // Agregar fallback para jQuery
-        wp_add_inline_script('jQuery', '
-            if (typeof jQuery === "undefined") {
-                document.write(\'<script src="' . get_template_directory_uri() . '/js/jquery.min.js"><\/script>\');
-            }
-        ');
-
         // FontAwesome se carga desde header.php para mejor rendimiento
 
         // Enqueue Slick only where needed
@@ -624,7 +619,7 @@ function mostay_display_pagination() {
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'mostay_enqueue_header_assets'); // Add Custom Scripts to wp_head
+add_action('wp_enqueue_scripts', 'mostay_enqueue_header_assets'); // Add Custom Scripts to front-end
 add_action('wp_enqueue_scripts', 'mostay_enqueue_styles'); // Add Theme Stylesheet
 add_action('init', 'register_mostay_menu'); // Add mostay Menu
 add_action('init', 'register_mostay_secondary_menus'); // Add secondary Menu
