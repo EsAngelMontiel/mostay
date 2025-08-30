@@ -31,13 +31,13 @@ $(document).ready(function(){
   function handleStickyImage() {
     const scrollContainer = document.querySelector(".scroll-container");
     const textContainer = document.querySelector(".text-container");
-  
+
     // Si los elementos no existen, no hacer nada.
     if (!scrollContainer || !textContainer) return;
-  
+
     const textRect = textContainer.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
-  
+
     // Añade o quita la clase 'is-sticky' al contenedor principal
     // basado en si el contenedor de texto está visible en el viewport.
     if (textRect.top < 0 && textRect.bottom > viewportHeight) {
@@ -46,39 +46,14 @@ $(document).ready(function(){
       scrollContainer.classList.remove("is-sticky");
     }
   }
-  
+
   document.addEventListener("scroll", handleStickyImage);
   window.addEventListener("resize", handleStickyImage); // Asegura el ajuste al redimensionar la ventana
+
   
   
   
 
-
-  // FAQs Accordion
-  (function(){
-    const container = document.getElementById('faqsAccordion');
-    if(!container) return;
-
-    container.addEventListener('click', function(e){
-      const button = e.target.closest('.faq-item__question');
-      if(!button) return;
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      const panel = button.nextElementSibling;
-      if(!panel) return;
-
-      // toggle estado
-      button.setAttribute('aria-expanded', (!expanded).toString());
-      panel.hidden = expanded;
-
-      // Icono + / −
-      const icon = button.querySelector('.faq-item__icon');
-      if(icon){
-        const open = icon.getAttribute('data-icon-open') || '−';
-        const closed = icon.getAttribute('data-icon-closed') || '+';
-        icon.textContent = expanded ? closed : open;
-      }
-    });
-  })();
   
 
   // slider

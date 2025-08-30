@@ -336,6 +336,10 @@ function mostay_enqueue_header_assets()
         // Enqueue scroll animations script
         wp_register_script('mostay-scroll-animations', get_template_directory_uri() . '/js/scroll-animations.js', array('jQuery'), mostay_asset_version('js/scroll-animations.js'), true);
         wp_enqueue_script('mostay-scroll-animations');
+        
+        // Bootstrap JS desde CDN para funcionalidades (accordion, modales, tooltips, etc.)
+        wp_register_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), '5.3.2', true);
+        wp_enqueue_script('bootstrap-js');
     }
 }
 
@@ -352,7 +356,8 @@ function mostay_add_defer_attribute($tag, $handle) {
         'fontawesome',
         'slick',
         'mostay-bundle',
-        'mostay-scroll-animations'
+        'mostay-scroll-animations',
+        'bootstrap-js'
     );
 
     if (in_array($handle, $scripts_to_defer)) {

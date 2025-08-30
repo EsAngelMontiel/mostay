@@ -25,36 +25,63 @@
 		p { margin: 0; color: var(--darkgray); }
 	}
 
+	// Personalización del acordeón de Bootstrap
 	&__accordion {
-		.faq-item {
-			&__question {
-				display: grid;
-				grid-template-columns: 1fr auto;
-				align-items: center;
-				width: 100%;
-				padding: var(--spacing-md);
+		.accordion {
+			.accordion-item {
 				margin-bottom: var(--spacing-sm);
-				border: 0;
+				border: none;
 				border-radius: var(--radius-md);
 				background: var(--offwhite);
-				text-align: left;
-				cursor: pointer;
-				transition: background-color 0.2s ease;
-				&:hover,
-				&:focus {
-					background-color: color-mix(in srgb, var(--offwhite), black 3%);
-					transform: none;
-				}
-				.faq-item__label { color: var(--green); font-weight: 600; }
-				.faq-item__icon { color: var(--green); font-size: 1.2rem; line-height: 1; }
-			}
+				overflow: hidden;
 
-			&__panel {
-				margin-top: calc(var(--spacing-sm) * -0.5);
-				padding: var(--spacing-md);
-				border-radius: 0 0 var(--radius-md) var(--radius-md);
-				background: var(--offwhite);
-				p { margin: 0; color: var(--darkgray); }
+				.accordion-button {
+					background: transparent;
+					border: 0;
+					color: var(--green);
+					font-weight: 600;
+					font-size: 1.4rem;
+					padding: var(--spacing-md);
+					box-shadow: none;
+					border-radius: 0;
+
+					&:not(.collapsed) {
+						background-color: transparent;
+						color: var(--green);
+						box-shadow: none;
+					}
+
+					&:focus {
+						box-shadow: none;
+						border-color: transparent;
+					}
+
+					&::after {
+						background-image: none;
+						content: "+";
+						font-size: 1.2rem;
+						color: var(--green);
+						font-weight: bold;
+						transform: none;
+						transition: transform 0.3s ease;
+					}
+
+					&:not(.collapsed)::after {
+						background-image: none;
+						content: "−";
+						transform: none;
+					}
+				}
+
+				.accordion-collapse {
+					.accordion-body {
+						padding: var(--spacing-md);
+						background: transparent;
+						border-top: 1px solid var(--green);
+						color: var(--darkgray);
+						font-size: 1rem;
+					}
+				}
 			}
 		}
 	}
