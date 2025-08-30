@@ -5,6 +5,15 @@
  *  Custom functions, support, custom post types and more.
  */
 
+/**
+ * Get CTA component
+ * 
+ * @since 1.0.0
+ */
+function get_cta() {
+    get_template_part('template-parts/cta');
+}
+
 // ** CRÍTICO: Protección contra SQL Injection y XSS **
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
