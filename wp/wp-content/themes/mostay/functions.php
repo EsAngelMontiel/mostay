@@ -14,6 +14,15 @@ function get_cta() {
     get_template_part('template-parts/cta');
 }
 
+/**
+ * Get newsletter component
+ *
+ * @since 1.0.0
+ */
+function get_newsletter() {
+    get_template_part('template-parts/newsletter');
+}
+
 // ** CRÍTICO: Protección contra SQL Injection y XSS **
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
