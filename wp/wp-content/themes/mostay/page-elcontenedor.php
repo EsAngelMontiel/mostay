@@ -6,26 +6,12 @@ $main_cover = get_the_post_thumbnail_url(get_the_ID(),'medium');
 $video = get_field('el_contenedor_video_cover');
 ?>
 
+<!-- Hero Section -->
+<?php mostay_display_hero(); ?>
+</section>
 
-
-<!-- ********************** resumen de posts ********************** -->
+<!-- Main Content Section -->
 <section class="services">
-  <div class="cover">
-    <div class="hero__video">
-      <?php
-        if ($video): ?>
-        <video autoplay muted loop playsinline>
-            <source src="<?php echo esc_url($video['url']); ?>" type="<?php echo esc_attr($video['mime_type']); ?>">
-            Tu navegador no soporta la etiqueta de video.
-        </video>
-        <?php else: ?>
-        <?php if (has_post_thumbnail()) : ?>
-            <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
-        <?php endif; ?>
-        <?php endif; ?>
-    </div>
-  </div>
-
   <div class="container service-header elcontenedor">
     <div></div>
     <div>

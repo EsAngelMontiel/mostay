@@ -19,11 +19,7 @@ $email = get_field('email', $postid);
    <section class="services">
      <article>
        <!-- ******* Hero Cover ********* -->
-       <div class="cover">
-         <div class="hero__video">
-           <video src="<?php echo $videoLogo ; ?>" playsinline autoplay muted loop poster="<?php echo $image_url ; ?>"></video>
-         </div>
-       </div>
+       <?php mostay_display_hero(); ?>
        <!-- ******* End Hero Cover ********* -->
        <!-- ******* Service Header ********* -->
        <div class="container service-header" data-animate="fade-in">

@@ -9,13 +9,7 @@ $main_cover = get_the_post_thumbnail_url(get_the_ID(),'medium');
 
 <!-- ********************** resumen de posts ********************** -->
 <section class="services" data-animate="fade-in">
-  <div class="cover" data-animate="slide-up">
-    <div>
-      <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-        <img src="<?php echo $main_img ; ?>" alt="<?php the_title(); ?>">
-      <?php endif; ?>
-    </div>
-  </div>
+  <?php mostay_display_hero(); ?>
 
   <div class="container service-header" data-animate="fade-in">
     <div></div>

@@ -23,6 +23,51 @@ function get_newsletter() {
     get_template_part('template-parts/newsletter');
 }
 
+/**
+ * Display the hero component.
+ *
+ * This function displays a customizable hero section. It prioritizes a video from an
+ * ACF field ('hero_video') and falls back to the post's featured image.
+ * The hero's appearance can be modified via the 'type' parameter.
+ *
+ * @param array $args {
+ *     Optional. An array of arguments.
+ *
+ *     @type string $type The type of hero to display. Accepts 'normal' or 'mini'. Default 'normal'.
+ * }
+ * @since 1.0.0
+ */
+function mostay_display_hero($args = []) {
+    $defaults = [
+        'type' => 'normal', // 'normal' or 'mini'
+        'post_id' => null,
+    ];
+    $args = wp_parse_args($args, $defaults);
+
+    $source_post_id = $args['post_id'] ? $args['post_id'] : get_the_ID();
+
+    $video_acf = function_exists('get_field') ? get_field('hero_video', $source_post_id) : null;
+    $thumbnail_url = get_the_post_thumbnail_url($source_post_id, 'hero-lg');
+    $modifier_class = $args['type'] === 'mini' ? ' hero--mini' : '';
+
+    // Only render the hero if there is a video or a thumbnail
+    if (!$video_acf && !$thumbnail_url) {
+        // En lugar de retornar vacío, podríamos mostrar un hero de color sólido o nada. Por ahora, no mostramos nada.
+        return;
+    }
+    ?>
+    <section class="hero<?php echo esc_attr($modifier_class); ?>">
+        <div class="hero__background">
+            <?php if ($video_acf): ?>
+                <video src="<?php echo esc_url($video_acf['url']); ?>" playsinline autoplay muted loop poster="<?php echo esc_url($thumbnail_url); ?>"></video>
+            <?php elseif ($thumbnail_url): ?>
+                <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr(get_the_title($source_post_id)); ?>">
+            <?php endif; ?>
+        </div>
+    <?php
+    // No cerramos la etiqueta </section> aquí para permitir contenido superpuesto en las plantillas.
+}
+
 // ** CRÍTICO: Protección contra SQL Injection y XSS **
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -715,6 +760,80 @@ function my_rewrite_flush() {
 }
 register_activation_hook(__FILE__, 'my_rewrite_flush');
 
+/**
+ * Register FAQ Custom Post Type and FAQ Group taxonomy
+ */
+function mostay_register_faq_cpt() {
+    $labels = array(
+        'name'               => 'FAQs',
+        'singular_name'      => 'FAQ',
+        'menu_name'          => 'FAQs',
+        'name_admin_bar'     => 'FAQ',
+        'add_new'            => 'Agregar Nuevo',
+        'add_new_item'       => 'Agregar Nueva FAQ',
+        'new_item'           => 'Nueva FAQ',
+        'edit_item'          => 'Editar FAQ',
+        'view_item'          => 'Ver FAQ',
+        'all_items'          => 'Todas las FAQs',
+        'search_items'       => 'Buscar FAQs',
+        'not_found'          => 'No se encontraron FAQs',
+        'not_found_in_trash' => 'No hay FAQs en la papelera'
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-editor-help',
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'has_archive'        => false,
+        'rewrite'            => array('slug' => 'faqs'),
+        'show_in_rest'       => true,
+    );
+
+    register_post_type('faq', $args);
+
+    // Taxonomy: faq_group
+    $t_labels = array(
+        'name'              => 'Grupos de FAQ',
+        'singular_name'     => 'Grupo de FAQ',
+        'search_items'      => 'Buscar Grupos',
+        'all_items'         => 'Todos los Grupos',
+        'parent_item'       => 'Grupo Padre',
+        'parent_item_colon' => 'Grupo Padre:',
+        'edit_item'         => 'Editar Grupo',
+        'update_item'       => 'Actualizar Grupo',
+        'add_new_item'      => 'Agregar Nuevo Grupo',
+        'new_item_name'     => 'Nombre del Nuevo Grupo',
+        'menu_name'         => 'Grupos'
+    );
+
+    $t_args = array(
+        'hierarchical'      => true,
+        'labels'            => $t_labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'faq-group'),
+        'show_in_rest'      => true,
+    );
+
+    register_taxonomy('faq_group', array('faq'), $t_args);
+}
+add_action('init', 'mostay_register_faq_cpt');
+
+/**
+ * Flush rewrite rules on activation to register CPT permalinks.
+ */
+function mostay_faq_rewrite_flush() {
+    mostay_register_faq_cpt();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'mostay_faq_rewrite_flush');
+
 //Changing Admin Menu Labels
 function change_post_menu_label() {
     global $menu;
@@ -961,4 +1080,5 @@ function mostay_asset_version($file) {
     }
     return '1.0.0';
 }
+
 ?>

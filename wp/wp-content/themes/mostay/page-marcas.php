@@ -11,32 +11,8 @@ get_header(); ?>
             <section class="services">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <!-- ******* Hero Cover ********* -->
-                <?php 
-                $cover = get_field('cover'); // Obtener el grupo "cover"
-
-                $video = isset($cover['servicio_video']) ? $cover['servicio_video'] : '';
-                $imagen = isset($cover['servicio_cover']) ? $cover['servicio_cover'] : '';
-                ?>
-                <div class="cover">
-                    <div class="hero__video">
-                        <?php if ($video): ?>
-                            <video autoplay loop muted playsinline>
-                                <source src="<?php echo esc_url($video['url']); ?>" type="<?php echo esc_attr($video['mime_type']); ?>">
-                                Tu navegador no soporta la etiqueta de video.
-                            </video>
-                        <?php elseif ($imagen): ?>
-                            <img src="<?php echo esc_url($imagen['sizes']['hero-lg']); ?>" 
-                                srcset="
-                                    <?php echo esc_url($imagen['sizes']['hero-md']); ?> 800w, 
-                                    <?php echo esc_url($imagen['sizes']['hero-lg']); ?> 1920w, 
-                                    <?php echo isset($imagen['sizes']['hero-xl']) ? esc_url($imagen['sizes']['hero-xl']) . ' 3840w' : ''; ?>"
-                                sizes="(max-width: 700px) 800px, 
-                                        (max-width: 1440px) 1920px, 
-                                        3840px"
-                                alt="<?php echo esc_attr(get_the_title()); ?>">
-                        <?php endif; ?>
-                    </div>
-                </div>
+                <?php mostay_display_hero(['post_id' => 749]); ?>
+                </section>
                 <!-- ******* End Hero Cover ********* -->
                 <!-- ******* Service Header ********* -->
                 <div class="container service-header">

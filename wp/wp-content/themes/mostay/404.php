@@ -4,13 +4,7 @@ $image_url = wp_get_attachment_image_url( $attachment_id, 'full' );
 ?>
 
 <section class="services">
-    <div class="cover cover--half">
-        <div>
-            <?php if ( $image_url ) : // Check if Thumbnail exists ?>
-                <img src="<?php echo $image_url ; ?>" alt="Página no encontrada">
-            <?php endif; ?>
-        </div>
-    </div>
+    <?php mostay_display_hero(['post_id' => 927]); ?>
 
     <div class="header-404">
         <div class="frase">

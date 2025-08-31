@@ -1,13 +1,6 @@
 <?php get_header(); ?>
 
-<section class="hero">
-  <div class="hero__video">
-    <video  autoplay muted loop playsinline>
-      <source src="<?php echo get_template_directory_uri(); ?>/img/Cover.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
+<?php mostay_display_hero(['post_id' => 101]); ?>
   <div class="hero__text" data-animate="slide-up">
       <h1 data-animate="typing">Nuestra misión es darle vida a tu marca.</h1>
       <h2 data-animate="fade-in"><strong>Un estudio de diseño de marca enfocado en el crecimiento de nuestros clientes:</strong> Creo que el diseño debe ser tanto funcional como estético; debe tener un propósito claro y estar al servicio de las necesidades de nuestros clientes y sus consumidores.</h2>

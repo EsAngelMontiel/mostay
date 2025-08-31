@@ -1,17 +1,8 @@
 @use "../1-base/mixins" as m;
 
 .faqs {
-	// Mini hero
-	&__mini-hero {
-		margin: 0 0 var(--spacing-lg) 0;
-		border-radius: var(--radius-md);
-		overflow: hidden;
-		img { width: 100%; height: 140px; object-fit: cover; display: block; }
-	}
-
 	// Grid de contenido
 	&__grid {
-		padding: 3rem;
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		gap: var(--spacing-lg);
@@ -29,6 +20,18 @@
 	&__intro {
 		h1 { margin: 0 0 var(--spacing-md) 0; color: var(--orange); }
 		p { margin: 0; color: var(--darkgray); }
+	}
+
+	// Estilo para los títulos de grupo dentro de las FAQs
+	.faq-group__title {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		padding-left: var(--spacing-md);
+	}
+
+	// Espaciado inferior para cada grupo de FAQs
+	.faq-group {
+		padding-bottom: 2rem;
 	}
 
 	// Personalización del acordeón de Bootstrap
