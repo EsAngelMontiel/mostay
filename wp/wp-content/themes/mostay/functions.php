@@ -394,6 +394,10 @@ add_filter('script_loader_tag', 'mostay_add_defer_attribute', 10, 2);
 // Load mostay styles
 function mostay_enqueue_styles()
 {
+    // Bootstrap CSS from CDN for components like accordion
+    wp_register_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2', 'all');
+    wp_enqueue_style('bootstrap-css');
+
     // Only load Slick style if the script is loaded
     if (is_front_page() || is_page(13) || is_page(71) || is_archive()) {
         wp_register_style('slick', get_template_directory_uri() . '/slick/slick.css', array(), '1.0', 'all');

@@ -15,9 +15,15 @@
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		gap: var(--spacing-lg);
-		@media (max-width: 64rem) {
+
+		@include m.breakpoint(lg) {
 			grid-template-columns: 1fr;
 		}
+        
+        @include m.breakpoint(md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
 	}
 
 	&__intro {
@@ -44,6 +50,12 @@
 					padding: var(--spacing-md);
 					box-shadow: none;
 					border-radius: 0;
+                    width: 100%;
+                    text-align: left;
+
+                    &:hover {
+                        transform: none !important;
+                    }
 
 					&:not(.collapsed) {
 						background-color: transparent;
@@ -62,14 +74,14 @@
 						font-size: 1.2rem;
 						color: var(--green);
 						font-weight: bold;
-						transform: none;
-						transition: transform 0.3s ease;
+						transform: rotate(0deg);
+						transition: transform 0.3s ease-in-out;
 					}
 
 					&:not(.collapsed)::after {
 						background-image: none;
 						content: "−";
-						transform: none;
+						transform: rotate(180deg);
 					}
 				}
 
