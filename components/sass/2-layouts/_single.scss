@@ -148,6 +148,10 @@
     padding: var(--pading-top-lg) 0 ;
     background-color: var(--white);
 
+    .article-container {
+      max-width: 100ch;
+    }
+
     p {
       margin-bottom: 2rem ;
       font-size: 1.2rem ;

@@ -21,7 +21,7 @@
     <!-- Article header -->
     <div class="container article-container" data-animate="fade-in">
       <div class="contenido">
-        <h1 data-animate="typing"><?php the_title(); ?></h1>
+        <h1><?php the_title(); ?></h1>
         <div class="datos" data-animate="stagger">
           <div data-stagger-item>
             <h4>Categoría</h4>
